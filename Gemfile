@@ -9,9 +9,9 @@ source "https://rubygems.org"
 # This will help ensure the proper Jekyll version is running.
 # Happy Jekylling!
 
-gem "github-pages", group: :jekyll_plugins
+#gem "github-pages", group: :jekyll_plugins
 #gem "jekyll", "~> 3.5"
-#gem "minimal-mistakes-jekyll"
+gem "minimal-mistakes-jekyll"
 
 # To upgrade, run `bundle update`.
 
@@ -27,4 +27,5 @@ group :jekyll_plugins do
   gem "jemoji"
   gem "jekyll-include-cache"
   gem "jekyll-seo-tag"
+  gem 'jekyll-relative-links'
 end

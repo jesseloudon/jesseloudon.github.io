@@ -3,7 +3,6 @@ title:  "Blogging Toolkit"
 permalink: /BloggingToolkit/
 excerpt: "A collection of links to help you get setup with Open Source blogging."
 date:   "2020-02-16"
-toc: "true"
 categories: 
 - "How-To"
 tags: 

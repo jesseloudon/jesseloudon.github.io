@@ -10,9 +10,9 @@
 # Review documentation to determine if you should use `theme` or `remote_theme`
 # https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/#installing-the-theme
 
-#theme                  : "minimal-mistakes-jekyll"
-remote_theme           : "mmistakes/minimal-mistakes"
-minimal_mistakes_skin    : "dark" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
+theme                  : "minimal-mistakes-jekyll"
+#remote_theme           : "mmistakes/minimal-mistakes"
+minimal_mistakes_skin    : "air"
 
 # Site Settings
 locale                   : "en-AU"
@@ -224,6 +224,7 @@ plugins:
   - jekyll-include-cache
   - jemoji
   - jekyll-seo-tag
+  - jekyll-relative-links
 
 # mimic GitHub Pages with --safe
 whitelist:
@@ -234,6 +235,7 @@ whitelist:
   - jekyll-include-cache
   - jemoji
   - jekyll-seo-tag
+  - jekyll-relative-links
 
 # Archives
 #  Type
@@ -281,8 +283,6 @@ defaults:
     values:
       layout: single
       classes: wide
-      toc: "true"
-      toc_sticky: "false"
       author_profile: false
       read_time: "false"
       comments: "true"
