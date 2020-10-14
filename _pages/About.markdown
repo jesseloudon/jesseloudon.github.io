@@ -10,6 +10,11 @@ tags:
 galleryintro: 
   - excerpt: "Industry Accreditation"
 gallery:
+
+  - url: "https://www.youracclaim.com/user/jesseloudon"
+    image_path: /assets/images/hashicorp-certified-terraform-associate.png
+    alt: "HashiCorp Certified Terraform Associate"
+    title: "HashiCorp Certified Terraform Associate"
   - url: "https://enjinx.io/eth/asset/88785197?source=EnjinWallet-1.8.2"
     image_path: /assets/images/AzureContentHeroBadge.png
     alt: "Azure Content Hero #228"
@@ -34,6 +39,10 @@ gallery:
     image_path: /assets/images/MCSE-Cloud-Platform-Infrastructure-2018.png
     alt: "MCSE Cloud Platform and Infrastructure"
     title: "MCSE Cloud Platform and Infrastructure"
+  - url: "https://www.youracclaim.com/user/jesseloudon"
+    image_path: /assets/images/mcsa-cloud-platform-certified-2018.png.png
+    alt: "MCSA Cloud Platform"
+    title: "MCSA Cloud Platform"
   - url: "https://www.youracclaim.com/user/jesseloudon"
     image_path: /assets/images/MCSA+Windows+Server+2012-01.png
     alt: "MCSA Windows Server 2012"
