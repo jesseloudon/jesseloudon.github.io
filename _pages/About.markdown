@@ -40,7 +40,7 @@ gallery:
     alt: "MCSE Cloud Platform and Infrastructure"
     title: "MCSE Cloud Platform and Infrastructure"
   - url: "https://www.youracclaim.com/user/jesseloudon"
-    image_path: /assets/images/mcsa-cloud-platform-certified-2018.png.png
+    image_path: /assets/images/mcsa-cloud-platform-certified-2018.png
     alt: "MCSA Cloud Platform"
     title: "MCSA Cloud Platform"
   - url: "https://www.youracclaim.com/user/jesseloudon"
