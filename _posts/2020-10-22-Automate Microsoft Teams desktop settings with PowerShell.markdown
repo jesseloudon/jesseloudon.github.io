@@ -23,7 +23,7 @@ Here's what a `desktop-config.json` file looks like in VSCode after I've run it 
 
 Note above that I've highlighted `"currentWebLanguage":"en-us"`. This is the relevant key and value which aligns to the `App language` setting I mentioned at the start of this blog.
 
-So to modify the desired Teams desktop client setting `App language` we can run the below PowerShell script through a GPO targeting your AD users or computers.
+So to modify the desired Teams desktop client setting `App language` we can run the below PowerShell script through a GPO targeting your AD users.
 
 Please note:
 
@@ -87,6 +87,7 @@ if (!$processCheckFinal -and $cookieFileCheck)
     }
 }
 ```
+> The full script above can be found [here](https://gist.github.com/jesseloudon/e723b5f81b52daed41caba5c572566f5)
 
 The above PowerShell script can be modified to cater for situations where you have multiple settings to manage - for example:
 
@@ -151,8 +152,9 @@ if ($registryPathCheck -and $configCheck)
     }
 }
 ```
+> The full script above can be found [here](https://gist.github.com/jesseloudon/e3e9dc838cff1b4a8085edc35acd0bb0)
 
-In the future I expect there'll be a GPO/ADMX for configuring these settings easily at scale, for now I'm happy to continue managing these settings with PowerShell.
+In the future I hope there'll be an GPO/ADMX for configuring these settings easily at scale, for now I'm happy to continue managing these settings with PowerShell.
 
 Cheers,
 
