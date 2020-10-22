@@ -155,4 +155,5 @@ if ($registryPathCheck -and $configCheck)
 In the future I expect there'll be a GPO/ADMX for configuring these settings easily at scale, for now I'm happy to continue managing these settings with PowerShell.
 
 Cheers,
+
 Jesse
