@@ -136,13 +136,13 @@ The "Audit usage of custom RBAC rules" policy has two rules under if > allOf
     }
 ```
 
-You can see the policy above is evaluating against an exact match on the “CustomRole” value within the Microsoft.Authorization/roleDefinitions/type property alias.
+You can see the policy above is evaluating against an exact match on the `CustomRole` value within the `Microsoft.Authorization/roleDefinitions/type` property alias.
 
-At the time, this was a big hint for me because if we can match on CustomRole for a role definition how about a User assignment on a resource ACL?
+At the time, this was a big hint for me because if we can match on `CustomRole` for a role definition how about a User assignment on a resource ACL?
 
-After browsing through the Resources/Resource Providers/Microsoft.Authorization namespace I noticed that there’s a tree called roleAssignments. And within properties.principalType I could see a value of “User” for one of the role assignments. Boom!
+After browsing through the `Resources/Resource Providers/Microsoft.Authorization` namespace I noticed that there’s a tree called `roleAssignments`. And within `properties.principalType` I could see a value of `User` for one of the role assignments. Boom!
 
-Hovering my mouse pointer over properties.principalType the policy extension displayed the available property alias on screen - Microsoft.Authorization/roleAssignments/principalType
+Hovering my mouse pointer over `properties.principalType` the policy extension displayed the available property alias on screen - `Microsoft.Authorization/roleAssignments/principalType`
 
 ![azure policy extension roleassignments principaltype](/assets/images/azurepolicy8.png)
 
@@ -190,9 +190,9 @@ So to meet my requirement of auditing users who’ve been assigned direct access
 }
 ```
 
-You may notice above that I’m setting principalType into a parameter – this is so other possible values such as “Group” or “ServicePrincipal” can easily be used with the same custom policy definition.
+You may notice above that I’m setting `principalType` into a parameter – this is so other possible values such as `Group` or `ServicePrincipal` can easily be used with the same custom policy definition.
 
-Within paramaters.principalType.defaultValue I'm also setting it to "User" so the parameter value is automatically filled when you are creating/assigning the policy in Azure.
+Within `paramaters.principalType.defaultValue` I'm also setting it to `User` so the parameter value is automatically filled when you are creating/assigning the policy in Azure.
 
 Running this custom policy definition in Azure against my subscription shows 4 out of 8 non-compliant resources. So that means there are 4 User role assignments out of 8 total role assignments in my subscription.
 

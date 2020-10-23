@@ -8,7 +8,7 @@ tags:
 - "AZURE POLICY"
 - "TERRAFORM"
 ---
-This is Part 2 of the Azure Policy as Code with Terraform series. During Part 1 I introduced you to various patterns for adopting an Azure Policy as Code workflow and illustrated an example multi-environment architecture using Azure, Terraform Cloud, and GitHub.
+This is Part 2 of the Azure Policy as Code with Terraform series. During [Part 1](https://jloudon.com/cloud/Azure-Policy-as-Code-with-Terraform-Part-1/) I introduced you to various patterns for adopting an Azure Policy as Code workflow and illustrated an example multi-environment architecture using Azure, Terraform Cloud, and GitHub.
 
 In this blog we'll look under the hood of an example repository I created to deploy a set of custom Azure policies, initiatives, and assignments. I'll also demo the code and show you how to resolve an issue that may arise when recreating a policy which is a member of a policyset.
 
@@ -136,9 +136,9 @@ This pattern creates a policy definition multiple times based on the count of ta
 
 **Implementation Steps**
 
-1. Define a variable list containing your tag keys.
-2. Use 'count' to create a resource multiple times based on the length of your variable list.
-3. Reference values from your variable list using [count.index].
+1. Define a variable `list` containing your tag keys.
+2. Use `count` to create a resource multiple times based on the length of your variable list.
+3. Reference values from your variable list using `[count.index]`.
 
 First, within your policy definition module, define a variable list containing your tag keys. For example:
 
@@ -157,7 +157,7 @@ variable "mandatory_tag_keys" {
 }
 ```
 
-Next, within your policy definition resource block, you can reference your variable list using count = length(var.variableName).
+Next, within your policy definition resource block, you can reference your variable list using `count = length(var.variableName)`.
 
 This will create your policy definition resource multiple times based on the length of your variable list. So for example, if you have 6 tag keys defined in your variable list, your policy definition resource will be created 6 times.
 
@@ -166,11 +166,11 @@ resource "azurerm_policy_definition" "addTagToRG" {
   count = length(var.mandatory_tag_keys)
 ```
 
-Finally, also within the policy definition resource block, you can reference your variable list values using ${var.variableName[count.index]}.
+Finally, also within the policy definition resource block, you can reference your variable list values using `${var.variableName[count.index]}`.
 
-Using ${var.variableName[count.index]} means the index of tag keys contained in your variable list can be referenced for each policy definition resource created.
+Using `${var.variableName[count.index]} `means the index of tag keys contained in your variable list can be referenced for each policy definition resource created.
 
-Specific variable index items can also be referenced using ${var.variableName[0]}, ${var.variableName[1]}, ${var.variableName[2]}, etc.
+Specific variable index items can also be referenced using `${var.variableName[0]}`, `${var.variableName[1]}`, `${var.variableName[2]}`, etc.
 
 ```terraform
   name         = "addTagToRG_${var.mandatory_tag_keys[count.index]}"
@@ -258,11 +258,11 @@ output "addTagToRG_policy_ids" {
 }
 ```
 
-All resources created by a resource block that uses count = length(var.variableName) can be referenced using ${resourceProvider.resourceType.resourceName.*.output}.
+All resources created by a resource block that uses `count = length(var.variableName)` can be referenced using `${resourceProvider.resourceType.resourceName.*.output}`.
 
 This output variable should be defined in the same module where the policy definition resource is created.
 
-Next, within your policyset module, define an input variable e.g. addTagToRG_policy_id_0 for each policy definition resource created by the policy definition resource block that uses count.
+Next, within your policyset module, define an input variable e.g. `addTagToRG_policy_id_0` for each policy definition resource created by the policy definition resource block that uses count.
 
 ```terraform
 variable "addTagToRG_policy_id_0" {
@@ -334,7 +334,7 @@ POLICY_DEFINITIONS
 }
 ```
 
-Finally, from the parent module file which calls the child modules, map each input variable to the output variable using inputVariableName = "${module.moduleName.outputVariableName[X]}".
+Finally, from the parent module file which calls the child modules, map each input variable to the output variable using `inputVariableName` = `"${module.moduleName.outputVariableName[X]}"`.
 
 ```terraform
 module "policyset_definitions" {
@@ -355,9 +355,9 @@ This pattern creates a policyset (initiative) and avoids hard-coding built-in po
 
 **Implementation Steps**
 
-1. Define a variable list containing the display names of built-in policy definitions.
-2. Define a data source to azurerm_policy_definition referencing the variable list.
-3. Reference each data source value within the policyset policy_definitions resource block.
+1. Define a variable `list` containing the display names of built-in policy definitions.
+2. Define a `data source` to `azurerm_policy_definition `referencing the variable list.
+3. Reference each data source value within the policyset `policy_definitions` resource block.
 
 First, define a variable list containing the display names of existing built-in policy definitions that you want to include in a policyset.
 
@@ -385,9 +385,9 @@ variable "security_policyset_definitions" {
 }
 ```
 
-Next, define a data source to azurerm_policy_definition and use count = length(var.variableName) to iterate the data source lookup based on the number of values in your variable list.
+Next, define a data source to azurerm_policy_definition and use `count = length(var.variableName) `to iterate the data source lookup based on the number of values in your variable list.
 
-Then, use display_name = var.variableName[count.index] to lookup policy definitions based on the display names definined in your variable list.
+Then, use `display_name` = `var.variableName[count.index]` to lookup policy definitions based on the display names definined in your variable list.
 
 ``` terraform
 data "azurerm_policy_definition" "security_policyset_definitions" {
@@ -396,7 +396,7 @@ data "azurerm_policy_definition" "security_policyset_definitions" {
 }
 ```
 
-Finally, within the policyset resource block, reference each policydefinitionId from the data source using ${data.dataSource.dataSourceName.*.id[X]}.
+Finally, within the policyset resource block, reference each `policydefinitionId `from the data source using `${data.dataSource.dataSourceName.*.id[X]}`.
 
 The example below is for if you have 15 policy definitions contained in your variable list.
 
