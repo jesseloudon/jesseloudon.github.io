@@ -1,26 +1,19 @@
-# main links
-#main:
-#- title: "About"
-#  url: /about/
-#- title: "GitHub"
-#  url: "https://github.com/jesseloudon/"
-#- title: "Blogging Toolkit"
-#  url: /BloggingToolkit/
-
 customsidenav:
 - title: Internal
   children:
     - title: "Home"
       url: /
-    - title: "About"
+    - title: "About Me"
       url: /about/
-    - title: "Blogging Toolkit"
+    - title: "My Blogging Toolkit"
       url: /BloggingToolkit/
 - title: External
   children:
-    - title: "GitHub"
+    - title: "My Blog Tracker"
+      url: https://github.com/jesseloudon/jesseloudon.github.io/projects/1
+    - title: "My GitHub"
       url: https://github.com/jesseloudon
-    - title: "GitHub Scripts"
+    - title: "My GitHub Scripts"
       url: https://gist.github.com/jesseloudon
-    - title: "Telstra Purple"
+    - title: "Telstra Purple Blog"
       url: https://purple.telstra.com.au/blog
