@@ -56,11 +56,19 @@ gallery:
     alt: "Citrix Certified Administrator XenApp"
     title: "Citrix Certified Administrator XenApp"
 ---
-I'm an Azure Consultant at [Telstra Purple][telstrapurple] and blogger at [jloudon.com][jloudon] and [purple.telstra.com.au][purple]
+Hello, I'm Jesse.
+
+I'm a Lead Consultant at [Telstra Purple][telstrapurple] and blogger at [jloudon.com][jloudon] and [purple.telstra.com.au][purple]
 
 My passion is working with customers to envision, design, and implement solutions which solve key business problems & transform underlying processes with technology.
 
-I also enjoy pursing hands-on technical experience with bleeding edge concepts and love architecting and deploying cloud-native solutions.
+I enjoy pursing hands-on technical experience with bleeding edge concepts and love architecting and deploying cloud-native solutions.
+
+It may help you to know I'm also a dad, husband, middle child, pc gamer, footballer, table tennis player, and coffee drinker.
+
+If you have benefited from my work, or would love to show your support, please consider sponsoring me - this helps by allowing me to dedicate more time to open source content creation and projects.
+
+<iframe src="https://github.com/sponsors/jesseloudon/button" title="Sponsor jesseloudon" height="35" width="116" style="border: 0;"></iframe>
 
 {% include gallery %}
 
