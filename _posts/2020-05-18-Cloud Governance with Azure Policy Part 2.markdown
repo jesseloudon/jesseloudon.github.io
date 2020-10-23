@@ -7,7 +7,7 @@ categories:
 tags: 
 - "AZURE POLICY"
 ---
-This is Part 2 of a blog series on Azure Policy. In Part 1 I introduced you to the audit vs deny debate, using the native tooling for Cloud governance, and governance at scale through policy as code workflows.
+This is Part 2 of a blog series on Azure Policy. In [Part 1](https://jloudon.com/cloud/Cloud-Governance-with-Azure-Policy-Part-1/) I introduced you to the audit vs deny debate, using the native tooling for Cloud governance, and governance at scale through policy as code workflows.
 
 # Using the Azure Policy extension for VSCode
 
@@ -257,7 +257,7 @@ What's coming...
 
 If you have any ideas, feature requests, or find any bugs with the Azure Policy extension you can email authorpolicy@microsoft.com
 
-In Part 3 of this series I’ll walkthrough managing the Azure Policy Lifecycle.
+In Part 3 (WIP) of this series I’ll walkthrough managing the Azure Policy Lifecycle.
 
 Cheers,
 

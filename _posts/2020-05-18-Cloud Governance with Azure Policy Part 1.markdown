@@ -95,7 +95,7 @@ Balancing priorities in the audit vs deny debate can be a comparison of reactive
 
 Governance at scale is possible through adoption of a policy as code workflow and using an IaC/DevOps mindset to integrate repeatable processes for consumption of Azure Policy.  
 
-In Part 2 of this series I’ll deep dive into using the Azure Policy extension for Visual Studio Code and show you a real-world example of using it to author a custom policy definition by finding resource property aliases.
+In [Part 2](https://jloudon.com/cloud/Cloud-Governance-with-Azure-Policy-Part-2/) of this series I’ll deep dive into using the Azure Policy extension for Visual Studio Code and show you a real-world example of using it to author a custom policy definition by finding resource property aliases.
 
 Cheers,
 
