@@ -43,14 +43,15 @@ After defining your Azure policies as JSON files you need to decide which of the
 
 For example, the below three cmdlets all create a single policy definition named "Audit Storage Accounts Open to Public Networks".
 
-**PowerShell**
-```PowerShell
-New-AzPolicyDefinition -Name 'AuditStorageAccounts' -DisplayName 'Audit Storage Accounts Open to Public Networks' -Policy 'AuditStorageAccounts.json'
-```
 
 **ARMClient**
 ```
 armclient PUT "/subscriptions/{subscriptionId}/providers/Microsoft.Authorization/policyDefinitions/AuditStorageAccounts?api-version=2019-09-01" @<path to policy definition JSON file>
+```
+
+**Azure PowerShell**
+```powershell
+New-AzPolicyDefinition -Name 'AuditStorageAccounts' -DisplayName 'Audit Storage Accounts Open to Public Networks' -Policy 'AuditStorageAccounts.json'
 ```
 
 **Azure CLI**
