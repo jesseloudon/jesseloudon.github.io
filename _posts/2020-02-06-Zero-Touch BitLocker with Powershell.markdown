@@ -1,11 +1,13 @@
 ---
 title:  "Zero-Touch BitLocker with PowerShell"
-excerpt: "The heart and soul of all this is a single PowerShell script which is designed to check several pre-requisites are met before enabling BitLocker on the local system drive and backing up the recovery key to Active Directory. As per my diagram above I am applying this PS script from a GPO to run during a corporate Laptop's system shutdown. I found this reduced user impact and was as seamless as it gets."
+excerpt: "The heart and soul of all this is a single PowerShell script which is designed to check several pre-requisites are met before enabling BitLocker on the local system drive and backing up the recovery key to AD."
 date:   "2020-02-06"
 categories: 
 - "SECURITY"
 tags: 
 - "BITLOCKER"
+- "POWERSHELL"
+- "AUTOMATION"
 ---
 The majority of IT engineers and architects traverse various forms of security on a daily basis ranging from our complex alphanumeric corporate logon passwords to the increasingly common MFA prompts on our mobiles. You could say that we have become experts in navigating modern security measures required to stay protected. But perhaps you're not familiar in planning and rolling out that same security, at scale, to your organisation's Windows laptops in the form of disk encryption.
 
