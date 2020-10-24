@@ -62,7 +62,7 @@ I'm currently a Lead Consultant at [Telstra Purple][telstrapurple] where I speci
 
 My passion is working with others to envision, design, and implement solutions which solve key problems. I enjoy transforming repeatable tasks into a software package which can be run by anyone or anything.
 
-It may help you to know I'm also a dad, husband, middle child, pc gamer, footballer, table tennis player, and coffee drinker.
+It may also help you to know I'm (in no particular order) a dad, husband, middle child, pc gamer, footballer, table tennis player, and coffee drinker.
 
 If you have benefited from my work and would love to show your support, please consider sponsoring me. This helps by allowing me to dedicate more time to open source content creation and projects.
 
