@@ -56,7 +56,7 @@ gallery:
     alt: "Citrix Certified Administrator XenApp"
     title: "Citrix Certified Administrator XenApp"
 ---
-Hello, I'm Jesse (aka just another Azure guy). I live in the Land Down Under.
+Hello, I'm Jesse (aka 'just another Azure guy'). I live in the Land Down Under.
 
 I'm currently a Lead Consultant at [Telstra Purple][telstrapurple] where I specialise in Azure and DevOps initiatives. I'm excited to share ideas with the community and enable developers to do more with code. In my spare time you can find me pushing new code to GitHub, or blogging about pushing new code to GitHub 😀
 
