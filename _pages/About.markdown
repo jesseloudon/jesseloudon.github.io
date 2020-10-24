@@ -56,17 +56,15 @@ gallery:
     alt: "Citrix Certified Administrator XenApp"
     title: "Citrix Certified Administrator XenApp"
 ---
-Hello, I'm Jesse.
+Hello, I'm Jesse (aka just another Azure guy). I live in the Land Down Under.
 
-I'm a Lead Consultant at [Telstra Purple][telstrapurple] and blogger at [jloudon.com][jloudon] and [purple.telstra.com.au][purple]
+I'm currently a Lead Consultant at [Telstra Purple][telstrapurple] where I specialise in Azure and DevOps initiatives. I'm excited to share ideas with the community and enable developers to do more with code. In my spare time you can find me pushing new code to GitHub, or blogging about pushing new code to GitHub 😀
 
-My passion is working with customers to envision, design, and implement solutions which solve key business problems & transform underlying processes with technology.
-
-I enjoy pursing hands-on technical experience with bleeding edge concepts and love architecting and deploying cloud-native solutions.
+My passion is working with others to envision, design, and implement solutions which solve key problems. This means I generally enjoy automating repeatable tasks into a coded package which can be run by anyone or anything.
 
 It may help you to know I'm also a dad, husband, middle child, pc gamer, footballer, table tennis player, and coffee drinker.
 
-If you have benefited from my work, or would love to show your support, please consider sponsoring me - this helps by allowing me to dedicate more time to open source content creation and projects.
+If you have benefited from my work and would love to show your support, please consider sponsoring me. This helps by allowing me to dedicate more time to open source content creation and projects.
 
 <iframe src="https://github.com/sponsors/jesseloudon/button" title="Sponsor jesseloudon" height="35" width="116" style="border: 0;"></iframe>
 
