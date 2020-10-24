@@ -60,7 +60,7 @@ Hello, I'm Jesse (aka just another Azure guy). I live in the Land Down Under.
 
 I'm currently a Lead Consultant at [Telstra Purple][telstrapurple] where I specialise in Azure and DevOps initiatives. I'm excited to share ideas with the community and enable developers to do more with code. In my spare time you can find me pushing new code to GitHub, or blogging about pushing new code to GitHub 😀
 
-My passion is working with others to envision, design, and implement solutions which solve key problems. This means I generally enjoy automating repeatable tasks into a coded package which can be run by anyone or anything.
+My passion is working with others to envision, design, and implement solutions which solve key problems. I enjoy transforming repeatable tasks into a software package which can be run by anyone or anything.
 
 It may help you to know I'm also a dad, husband, middle child, pc gamer, footballer, table tennis player, and coffee drinker.
 
