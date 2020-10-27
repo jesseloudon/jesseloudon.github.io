@@ -1,7 +1,7 @@
 ---
 title: "About"
 permalink: /about/
-excerpt: "Hi I'm Jesse Loudon, an Azure Consultant / Architect at Telstra Purple and blogger at jloudon.com and purple.telstra.com.au"
+excerpt: "Jesse Loudon - just another Azure guy"
 date: "2020-02-06"
 categories: 
 - "Personal"
@@ -56,20 +56,12 @@ gallery:
     alt: "Citrix Certified Administrator XenApp"
     title: "Citrix Certified Administrator XenApp"
 ---
-Hello, I'm Jesse (aka 'just another Azure guy'). I live in the Land Down Under.
+Hello everybody, I'm Jesse aka 'just another Azure guy'
 
-I'm currently a Lead Consultant at [Telstra Purple][telstrapurple] where I specialise in Azure and DevOps initiatives. I'm excited to share ideas with the community and enable developers to do more with code. In my spare time you can find me pushing new code to GitHub, or blogging about pushing new code to GitHub 😀
-
-My passion is working with others to envision, design, and implement solutions which solve key problems. I enjoy transforming repeatable tasks into a software package which can be run by anyone or anything.
-
-It may also help you to know I'm (in no particular order) a dad, husband, middle child, pc gamer, footballer, table tennis player, and coffee drinker.
-
-If you have benefited from my work and would love to show your support, please consider sponsoring me. This helps by allowing me to dedicate more time to open source content creation and projects.
+* I enjoy sharing ideas with the community and enabling developers to do more with code
+* In my spare time you can find me pushing new code to GitHub, or blogging about pushing new code to GitHub 😀
+* If you have benefited from my work and would love to show your support - please consider sponsoring me
 
 <iframe src="https://github.com/sponsors/jesseloudon/button" title="Sponsor jesseloudon" height="35" width="116" style="border: 0;"></iframe>
 
 {% include gallery %}
-
-[telstrapurple]:https://www.telstra.com.au/business-enterprise/services/telstra-purple
-[jloudon]:https://jloudon.com
-[purple]:https://purple.telstra.com.au/blog
