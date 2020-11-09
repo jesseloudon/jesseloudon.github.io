@@ -8,9 +8,11 @@ tags:
 - "AZURE"
 - "ANSIBLE"
 - "TERRAFORM"
-- "MOLECULE"
+- "MOLECULE-AZURE"
 ---
-This is Part 3 of the Ansible on Azure series. In this blog I'll provide YAML examples to kickstart your Ansible development journey with the Molecule-Azure driver. During my own discovery and testing of this solution - examples of using the Molecule-Azure driver were scarce to find so I'm hoping to aggregate my learnings in this blog.
+This is Part 3 of the Ansible on Azure series. In this blog you'll discover Ansible role development patterns on Azure using the Molecule-Azure driver through methodologies you can follow and YAML examples.
+
+During my own discovery and testing solution examples of the Molecule-Azure driver were scarce to find so I'm hoping to aggregate my learnings in this blog.
 
 * [Part 1](https://jloudon.com/cloud/Ansible-on-Azure-Part-1/) covers the birds-eye solution overview and introduces you to key components.
 * [Part 2](https://jloudon.com/cloud/Ansible-on-Azure-Part-2/) showcases the Terraform module used to automate deployment of an Ansible control host into Azure.

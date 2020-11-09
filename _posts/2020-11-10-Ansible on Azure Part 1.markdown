@@ -8,10 +8,9 @@ tags:
 - "AZURE"
 - "ANSIBLE"
 - "TERRAFORM"
-- "MOLECULE"
+- "MOLECULE-AZURE"
 ---
-Greetings fellow Azure enthusiasts. This 3-part series 'Ansible on Azure' will help you get started with developing Ansible playbooks on the Azure cloud. 
-I've really enjoyed writing this series and hope you find use in my content.
+Greetings fellow Azure enthusiasts. This is a 3-part series I've really enjoyed writing and hope you find use in my content. In this blog you'll discover the Ansible on Azure development ecosystem, key advantages/disadvantages, and how to get started.
 
 * [Part 1](https://jloudon.com/cloud/Ansible-on-Azure-Part-1/) covers the birds-eye solution overview and introduces you to key components.
 * [Part 2](https://jloudon.com/cloud/Ansible-on-Azure-Part-2/) showcases the Terraform module used to automate deployment of an Ansible control host into Azure.
@@ -28,10 +27,10 @@ Key solutions used in this series:
 * [GitHub](https://github.com/join) - source control repositories.
 
 ## Quick Background
-I'm not experienced with *nix and when an opportunity arose to develop new Ansible roles I tried, and failed spectacularly, with having my development environment solely on my Win10 SurfaceBook2 coupled with WSL1 and Ubuntu 18.04 distro. The root cause stemmed from a lack of available RAM to host numerous VMs locally. Also because WSL2 isn't available for my specific OS build I was stuck with WSL1 so ran into various integration issues. After many hours were dropped into troubleshooting issues with Docker, Vagrant, and WSL1 on my local environment. In summary, I shelved WSL and the local dev dream until I can test out WSL2 on a beefier host.
+I'm not experienced with *nix and when an opportunity arose to develop new Ansible roles I tried, and failed spectacularly, with having my development environment solely on my Win10 SurfaceBook2 coupled with WSL1 and Ubuntu 18.04 distro. The root cause stemmed from a lack of available RAM to host numerous VMs locally. Also because WSL2 isn't available for my specific OS build I was stuck with WSL1 so ran into various integration issues. After many hours were dropped into troubleshooting issues between Docker, Vagrant, and WSL1 on my local environment it was time to let it go. In summary, I shelved WSL and the local-only dev dream until I can test out WSL2 on a beefier host.
 
 ## Ansible on Azure: Development Ecosystem and Flow
-The ecosystem I settled on below is a cloud-only solution. I've used this to rapidly develop Ansible roles on Azure via Molecule's YAML files. All from the comfort of my local machine and the familiarity of VSCode.
+The ecosystem I settled on below is a cloud-only solution. I've used this to rapidly develop Ansible roles on Azure via the Azure-Molecule driver YAML files -all from the comfort of my local machine and the familiarity of VSCode.
 
 ![ansible configuration management ecosystem overview](/assets/images/ansibleonazure01.png)
 

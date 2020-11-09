@@ -8,9 +8,11 @@ tags:
 - "AZURE"
 - "ANSIBLE"
 - "TERRAFORM"
-- "MOLECULE"
+- "MOLECULE-AZURE"
 ---
-This is Part 2 of the Ansible on Azure series. In this blog I'll show you the code from the TF module [terraform-azurerm-ansible-linux-vm](https://github.com/globalbao/terraform-azurerm-ansible-linux-vm) and highlight some noteworthy items. Each new heading will cover a different resource type for easy reader consumption.
+This is Part 2 of the Ansible on Azure series. In this blog you'll discover how Terraform IaC can automate your Ansible control host deployment to Azure. 
+
+I'll showcase the custom module [terraform-azurerm-ansible-linux-vm](https://github.com/globalbao/terraform-azurerm-ansible-linux-vm) and highlight some noteworthy items. Each new heading will cover a different resource type for easy reader consumption.
 
 * [Part 1](https://jloudon.com/cloud/Ansible-on-Azure-Part-1/) covers the birds-eye solution overview and introduces you to key components.
 * [Part 2](https://jloudon.com/cloud/Ansible-on-Azure-Part-2/) showcases the Terraform module used to automate deployment of an Ansible control host into Azure.
