@@ -397,7 +397,7 @@ pip3 install -r https://raw.githubusercontent.com/globalbao/terraform-azurerm-an
 pip3 install -r https://raw.githubusercontent.com/globalbao/terraform-azurerm-ansible-linux-vm/master/scripts/requirements-azure.txt
 ```
 
-* `Requirements-ansible.txt`contains packages/plugins related to Ansible/Molecule development.
+* `Requirements-ansible.txt` contains packages/plugins related to Ansible/Molecule development.
 * If any new versions are released for the below requirements a new Ansible control host should be deployed using the updated `requirements-ansible.txt` file.
 
 ```text
