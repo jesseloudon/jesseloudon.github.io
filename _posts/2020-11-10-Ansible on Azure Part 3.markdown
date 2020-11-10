@@ -30,28 +30,28 @@ Let's examine two possible scenarios you may encounter with Ansible role develop
 
 **Creating a new Ansible role**:
 
-* Run `molecule init role ansible-role-exampleApp -d azure` to initialize a new Ansible role that uses the Molecule-Azure driver
-* Modify the default Molecule scenario `/Molecule/default/*.yml` files to suit your test requirements
-* Create your Ansible tasks e.g. `/Tasks/*.yml`
-* Run `az login` to authenticate to Azure
-* Run `molecule create` to test the Molecule scenario's resource deployment
-* Run `molecule converge` to test your Ansible tasks against the Molecule scenario resources
-* Run `molecule destroy` to remove the Molecule scenario resources
-* Run `molecule test` to fully test (dependency, lint, cleanup, destroy, syntax, create, prepare, converge, idempotence, side_effect, verify, cleanup, destroy)
-* Push your new role into source control via Git
+1. Run `molecule init role ansible-role-exampleApp -d azure` to initialize a new Ansible role that uses the Molecule-Azure driver
+2. Modify the default Molecule scenario files to suit your test requirements e.g. `/Molecule/default/*.yml`
+3. Create your Ansible tasks e.g. `/Tasks/*.yml`
+4. Run `az login` to authenticate to Azure
+5. Run `molecule create` to test the Molecule scenario's resource deployment
+6. Run `molecule converge` to test your Ansible tasks against the Molecule scenario resources
+7. Run `molecule destroy` to remove the Molecule scenario resources
+8. Run `molecule test` to fully test (dependency, lint, cleanup, destroy, syntax, create, prepare, converge, idempotence, side_effect, verify, cleanup, destroy)
+9. Push your new role into source control via Git
 
 **Modifying an existing Ansible role**:
 
-* Pull the existing role from source control via Git
-* Run `molecule init scenario rhel8 -d azure` to initialize a new Molecule scenario that uses the Molecule-Azure driver
-* Modify the new Molecule scenario files to suit your test requirements e.g. `/Molecule/rhel8/*.yml` 
-* Update the Ansible tasks as required e.g. `/Tasks/*.yml`
-* Run `az login` to authenticate to Azure
-* Run `molecule create -s rhel8` to test the new Molecule scenario's resource deployment
-* Run `molecule converge -s rhel8` to test your Ansible tasks against the Molecule scenario resources
-* Run `molecule destroy -s rhel8` to remove the Molecule scenario resources
-* Run `molecule test -s rhel8` to fully test (dependency, lint, cleanup, destroy, syntax, create, prepare, converge, idempotence, side_effect, verify, cleanup, destroy)
-* Push your changes into source control via Git
+1. Pull the existing role from source control via Git
+2. Run `molecule init scenario rhel8 -d azure` to initialize a new Molecule scenario that uses the Molecule-Azure driver
+3. Modify the new Molecule scenario files to suit your test requirements e.g. `/Molecule/rhel8/*.yml` 
+4. Update the Ansible tasks as required e.g. `/Tasks/*.yml`
+5. Run `az login` to authenticate to Azure
+6. Run `molecule create -s rhel8` to test the new Molecule scenario's resource deployment
+7. Run `molecule converge -s rhel8` to test your Ansible tasks against the Molecule scenario resources
+8. Run `molecule destroy -s rhel8` to remove the Molecule scenario resources
+9. Run `molecule test -s rhel8` to fully test (dependency, lint, cleanup, destroy, syntax, create, prepare, converge, idempotence, side_effect, verify, cleanup, destroy)
+10. Push your changes into source control via Git
 
 ## Role/Scenario Init Examples
 
