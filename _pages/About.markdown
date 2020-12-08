@@ -1,7 +1,7 @@
 ---
 title: "About"
 permalink: /about/
-excerpt: "Jesse Loudon - just another Azure guy"
+excerpt: "Jesse Loudon - Just another Azure guy"
 date: "2020-02-06"
 categories: 
 - "Personal"
