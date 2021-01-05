@@ -11,9 +11,9 @@ tags:
 ---
 After such a memorable 2020 year (for both good & bad reasons) I've been itching to publish my retrospective. 
 
-Now unless you've been living in a remote wilderness, surrounded by nature and with no internet access, I think there's a high chance you've been impacted in some way by [COVID-19](https://en.wikipedia.org/wiki/Coronavirus_disease_2019) so I've split this retro into two parts 'pre COVID-19' and 'during COVID-19' to assist with my recollection of events from 2020. Yay.
+I've split this retro into two parts 'pre COVID-19' and 'during COVID-19' to assist with my recollection of events. Yay.
 
-So what the heck happened in 2020??
+So what the heck happened in 2020?
 
 # Pre COVID-19 (Jan to Mar 2020)
 
