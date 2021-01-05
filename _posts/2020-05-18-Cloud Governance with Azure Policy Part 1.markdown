@@ -23,14 +23,15 @@ Every stakeholder above has valid underlying reasons for their priorities and so
 
 Some examples of audit vs deny decisions you may face:
 
-* A resource group is created without the minimum tags (e.g. costcentre) - audit or deny?
-* A virtual machine is created without any backup configured - audit or deny?
-* A storage account is created and allows firewall access from all networks - audit or deny?
-* A subnet is created without any network security group association - audit or deny?
-* A network security group inbound rule is created allowing RDP/3389 from any source - audit or deny?
-* A network security group is applied to a gateway subnet - audit or deny?
-* An external guest user is assigned owner-level access to your Azure subscription - audit or deny?
-* Another way to think of this debate can be to look at how you apply governance as either proactive or reactive measures.
+* A resource group is created without the minimum tags (e.g. costcentre) - `audit` or `deny`?
+* A virtual machine is created without any backup configured - `audit` or `deny`?
+* A storage account is created and allows firewall access from all networks - `audit` or `deny`?
+* A subnet is created without any network security group association - `audit` or `deny`?
+* A network security group inbound rule is created allowing RDP/3389 from any source - `audit` or `deny`?
+* A network security group is applied to a gateway subnet - `audit` or `deny`?
+* An external guest user is assigned owner-level access to your Azure subscription - `audit` or `deny`?
+
+Another way to think of this debate can be to look at how you apply governance as either proactive or reactive measures.
 
 An example of a proactive measure could be to deny resource group creation if the minimum tags are missing, this helps prevent a future remediation task to add the missing tags. A reactive measure for the same scenario would be to audit resource groups where the tags are missing and then remediate later.
 
@@ -81,7 +82,7 @@ Azure Policy provides that governance at scale by giving you the ability to:
 
 Governance at scale can be achieved by moving away from manually managing policies in the Azure Portal to having a repeatable process for policy authoring, testing, and deployment across multiple Azure tenants and subscriptions.
 
-Currently the Microsoft pattern for a [policy as code workflow](https://docs.microsoft.com/en-us/azure/governance/policy/concepts/policy-as-code) provides high-level guidance on:
+At the time of writing (May 2020), the Microsoft pattern for a [policy as code workflow](https://docs.microsoft.com/en-us/azure/governance/policy/concepts/policy-as-code) provides high-level guidance on:
 
 * Creating and updating policy definitions
 * Creating and updating initiative definitions
@@ -89,7 +90,8 @@ Currently the Microsoft pattern for a [policy as code workflow](https://docs.mic
 * Enabling remediation tasks
 * Updating to enforced assignments
 * Processing integrated evaluations
-* Closing Remarks
+
+# Closing Remarks
 
 Balancing priorities in the audit vs deny debate can be a comparison of reactive vs proactive measures and choosing which path to take on each.
 
