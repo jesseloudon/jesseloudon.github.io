@@ -34,7 +34,7 @@ So what the heck happened in 2020?
 
 * Attended all meetings/standups virtually...except for a couple weeks in Dec 2020
 * Received numerous invitations to virtual events/meetups and attended some when the sun, stars, and moon aligned
-* Reconfigured my home office environment to optimise permenant working from home (more natural light/desk space)
+* Reconfigured my home office environment to optimise for permanent working from home (more natural light/desk space)
 * Was able to send my daughter to an Early Learning Centre as places became available. Possibly due to parents pulling their children out around the same time?
 * Progressed through my employer's [brand change](https://www.crn.com.au/news/inside-telstra-purple-telstras-new-professional-services-business-530869) from Kloud Solutions to Telstra Purple
 * Continued blogging about tech on the new [https://purple.telstra.com.au/blog](https://purple.telstra.com.au/blog)
