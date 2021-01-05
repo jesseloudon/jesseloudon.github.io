@@ -56,7 +56,7 @@ So what the heck happened in 2020?
 
 # My Year Wrapped
 
-* 730+ coffees downed (2x365)
+* 732+ coffees downed (2x366)
 * 20 new blog posts (jloudon.com)
 * 5 "thank you for blogging" community msgs (Social Media)
 * 700 contributions, 4 pull requests, 3 stars, 33 issues (GitHub)
