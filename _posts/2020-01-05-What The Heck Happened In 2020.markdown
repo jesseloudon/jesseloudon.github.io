@@ -51,6 +51,7 @@ So what the heck happened in 2020??
 * Advocated for blogging at Telstra Purple presenting an internal hour-long virtual session covering blogging tips, tricks, methodology.
 * Decided to avoid [cruise ships](https://youtu.be/_9WpEoJSuCM) indefinitely
 * Finished the year with 20x blogs covering many IaC/DevOps topics and averaging 1500-2000 hits per month to jloudon.com
+* Converted my blog backlog from Excel to a [GitHub Project](https://github.com/jesseloudon/jesseloudon.github.io/projects/1) to track changes easier
 * Farewelled my employer [Kloud Solutions/Telstra Purple](https://www.telstra.com.au/business-enterprise/services/telstra-purple) after 2+ wonderful years and many great memories
 
 # My Year Wrapped
