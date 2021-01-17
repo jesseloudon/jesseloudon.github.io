@@ -12,21 +12,9 @@ galleryintro:
 gallery:
 
   - url: "https://www.youracclaim.com/user/jesseloudon"
-    image_path: /assets/images/hashicorp-certified-terraform-associate.png
-    alt: "HashiCorp Certified Terraform Associate"
-    title: "HashiCorp Certified Terraform Associate"
-  - url: "https://enjinx.io/eth/asset/88785197?source=EnjinWallet-1.8.2"
-    image_path: /assets/images/AzureContentHeroBadge.png
-    alt: "Azure Content Hero #228"
-    title: "Azure Content Hero #228"
-  - url: "https://www.youracclaim.com/user/jesseloudon"
-    image_path: /assets/images/openhack-containers.png
-    alt: "OpenHack Containers"
-    title: "OpenHack Containers"
-  - url: "https://www.youracclaim.com/user/jesseloudon"
-    image_path: /assets/images/TOGAF-9.2-badges-2019.png
-    alt: "TOGAF 9.2"
-    title: "TOGAF 9.2"
+    image_path: /assets/images/CERT-Expert-DevOps-Engineer-600x600.png
+    alt: "DevOps Engineer Expert"
+    title: "DevOps Engineer Expert"
   - url: "https://www.youracclaim.com/user/jesseloudon"
     image_path: /assets/images/azure-solutions-architect-expert-600x600.png
     alt: "Azure Solutions Architect Expert"
@@ -47,6 +35,22 @@ gallery:
     image_path: /assets/images/MCSA+Windows+Server+2012-01.png
     alt: "MCSA Windows Server 2012"
     title: "MCSA Windows Server 2012"
+  - url: "https://www.youracclaim.com/user/jesseloudon"
+    image_path: /assets/images/hashicorp-certified-terraform-associate.png
+    alt: "HashiCorp Certified Terraform Associate"
+    title: "HashiCorp Certified Terraform Associate"
+  - url: "https://enjinx.io/eth/asset/88785197?source=EnjinWallet-1.8.2"
+    image_path: /assets/images/AzureContentHeroBadge.png
+    alt: "Azure Content Hero #228"
+    title: "Azure Content Hero #228"
+  - url: "https://www.youracclaim.com/user/jesseloudon"
+    image_path: /assets/images/openhack-containers.png
+    alt: "OpenHack Containers"
+    title: "OpenHack Containers"
+  - url: "https://www.youracclaim.com/user/jesseloudon"
+    image_path: /assets/images/TOGAF-9.2-badges-2019.png
+    alt: "TOGAF 9.2"
+    title: "TOGAF 9.2"
   - url: "https://www.youracclaim.com/user/jesseloudon"
     image_path: "/assets/images/VCP5.png"
     alt: "VMware Certified Professional"
