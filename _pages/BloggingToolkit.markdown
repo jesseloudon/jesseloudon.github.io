@@ -60,7 +60,7 @@ Minimal Mistakes by Michael Rose is the Jekyll theme I currently use for this si
 * [https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/][MinimalMistakesQuickStart]
 
 ### CloudSkew
-CloudSkew is a tool I currently use to create diagrams via a web browser. Free for individual users.
+CloudSkew is a tool I currently use to create diagrams via a web browser.
 
 * [https://github.com/cloudskew/cloudskew][CloudSkew]
 

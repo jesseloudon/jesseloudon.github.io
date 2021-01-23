@@ -19,7 +19,7 @@ In reality I needed to automate the activation of BitLocker disk encryption on t
 
 # A Zero-Touch BitLocker Deployment
 
-This is such a catchy heading I had to reuse it. If this is new to you I recommend Adam Eyob and his deep-dive post on zero-touch BitLocker which really helped me get a handle on the difficulties involved with enterprise deployments. There's a lack of quality community guidance out there on this particular subject so I appreciate the effort Adam undertook to document his solution and share it with the world.
+This is such a catchy heading I had to reuse it. If this is new to you I recommend Adam Eyob and his [deep-dive post](https://adameyob.com/2016/12/08/zero-touch-bitlocker-deployments/) on zero-touch BitLocker which really helped me get a handle on the difficulties involved with enterprise deployments. There's a lack of quality community guidance out there on this particular subject so I appreciate the effort Adam undertook to document his solution and share it with the world.
 
 You might be wondering what is Zero-Touch BitLocker? Basically it means the TPM chip and BitLocker work together to unlock the drive upon system startup - without user intervention. No passwords, pin codes, or USB keys required for the user which is a win-win for everyone!
 
@@ -59,6 +59,9 @@ I recommend creating and testing your own script by taking elements that you req
 
 <script src="https://gist.github.com/jesseloudon/7f7482916c2c4c993948c2157a537045.js"></script>
 
+Assuming you may want to reverse engineer and improve upon this imperfect script I’ve included descriptions below of the logic to smooth the journey.
+
+![bitlocker powershell logic table](/assets/images/table-zero-touch-bitlocker-deployment-with-powershell.png)
 
 # Overall Approach
 
@@ -75,11 +78,15 @@ For my project I used several SCCM query statements to keep track of Laptops wit
 
 <b>SCCM Query Name: TPM discovery</b>
 
+```
 select distinct SMS_R_System.Name, SMS_R_System.ADSiteName, SMS_R_System.IPAddresses, SMS_R_System.DistinguishedName, SMS_R_System.LastLogonUserName, SMS_R_System.operatingSystem, SMS_G_System_COMPUTER_SYSTEM.Domain, SMS_G_System_COMPUTER_SYSTEM.Manufacturer, SMS_G_System_COMPUTER_SYSTEM.Model, SMS_G_System_TPM.IsEnabled_InitialValue, SMS_G_System_TPM.SpecVersion, SMS_G_System_PROCESSOR.Is64Bit from SMS_R_System inner join SMS_G_System_COMPUTER_SYSTEM on SMS_G_System_COMPUTER_SYSTEM.ResourceID = SMS_R_System.ResourceId inner join SMS_G_System_PROCESSOR on SMS_G_System_PROCESSOR.ResourceID = SMS_R_System.ResourceId inner join SMS_G_System_TPM on SMS_G_System_TPM.ResourceID = SMS_R_System.ResourceId order by SMS_G_System_COMPUTER_SYSTEM.Model
+```
 
 <b>SCCM Query Name: TPM and BitLocker discovery</b>
 
+```
 select distinct SMS_R_System.Name, SMS_R_System.ADSiteName, SMS_R_System.IPAddresses, SMS_R_System.DistinguishedName, SMS_R_System.LastLogonUserName, SMS_R_System.operatingSystem, SMS_G_System_COMPUTER_SYSTEM.Domain, SMS_G_System_COMPUTER_SYSTEM.Manufacturer, SMS_G_System_COMPUTER_SYSTEM.Model, SMS_G_System_TPM.IsEnabled_InitialValue, SMS_G_System_TPM.SpecVersion, SMS_G_System_ENCRYPTABLE_VOLUME.ProtectionStatus, SMS_G_System_PROCESSOR.Is64Bit from SMS_R_System inner join SMS_G_System_COMPUTER_SYSTEM on SMS_G_System_COMPUTER_SYSTEM.ResourceID = SMS_R_System.ResourceId inner join SMS_G_System_PROCESSOR on SMS_G_System_PROCESSOR.ResourceID = SMS_R_System.ResourceId inner join SMS_G_System_ENCRYPTABLE_VOLUME on SMS_G_System_ENCRYPTABLE_VOLUME.ResourceID = SMS_R_System.ResourceId inner join SMS_G_System_TPM on SMS_G_System_TPM.ResourceID = SMS_R_System.ResourceId order by SMS_G_System_COMPUTER_SYSTEM.Model
+```
 
 # Today's Challenges Are Tomorrow's Opportunities
 
@@ -100,5 +107,3 @@ You may have also come across similar challenges in your project and have your o
 
 Cheers,
 Jesse
-
-<!--more-->

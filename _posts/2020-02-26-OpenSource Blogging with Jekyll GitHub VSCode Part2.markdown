@@ -12,8 +12,8 @@ In Part 1 of this series I introduced you to open source blogging using some awe
 
 Shortly I'll provide a detailed walkthrough of everything you need to get started with your own blog site.
 
-* Part 1 - Why I'm using open source and an overview of my blog setup
-* Part 2 - Getting started with a step-by-step guide - `you are here`
+* [Part 1](https://jloudon.com/blogging/OpenSource-Blogging-with-Jekyll-GitHub-VSCode-Part1/) - Why I'm using open source and an overview of my blog setup
+* [Part 2](https://jloudon.com/blogging/OpenSource-Blogging-with-Jekyll-GitHub-VSCode-Part2/) - Getting started with a step-by-step guide
 * Part 3 - Securing your Content and Going Live with GitHub Pages
 * Part 4 - Tips & Tricks with Jekyll and Markdown editing
 
