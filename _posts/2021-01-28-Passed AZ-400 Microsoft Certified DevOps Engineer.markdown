@@ -51,6 +51,8 @@ I'm constantly looking for new ways to learn on the fly and more efficiently fin
 
 Instead of taking the time to read every sentence of the AZ-400 skills outline and pick out key phrases I've used [Azure Text Analytics](https://docs.microsoft.com/en-us/azure/cognitive-services/text-analytics/) and the [Key Phrases API](https://docs.microsoft.com/en-us/azure/cognitive-services/text-analytics/how-tos/text-analytics-how-to-keyword-extraction) to rapidly analyse the entire AZ400 skills outline and output the main points.
 
+> The Text Analytics API is a suite of text analytics web services built with best-in-class Microsoft machine learning algorithms. The API can be used to analyze unstructured text for tasks such as sentiment analysis, key phrase extraction and language detection. No training data is needed to use this API; just bring your text data. This API uses advanced natural language processing techniques to deliver best in class predictions. Src: Microsoft]
+
 **If you want to reproduce this method and/or are interested in applying this methodology to other exams; this is what worked for me.**
 
 1. Download the AZ-400 skills outline and remove all bullet points and non-text formatting from the blocks of text. I used [Notepad++](https://notepad-plus-plus.org/) to do this easily. You should end up with an ugly/unformatted multi-line document with all the AZ-400 exam sections/sentences.
