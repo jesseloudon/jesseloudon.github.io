@@ -21,20 +21,14 @@ After doing a few of these exams over the years you’ll find a rhythm that work
 7. Pass the Exam!
 8. Celebrate!
 
-# General thoughts on exams which may help you.
+# General Thoughts On Exams
 
 * Book the exam early on after taking a look at the exam skills outline as you will need to estimate how much study time is needed. I generally book the exam in 1-2 months time.
-
-*  Being a ‘morning person’ I book exams about 10:00am and make sure to arrive at least 20 mins early to the test centre. I have a light breakfast and a quick review of my notes on the morning of the test.
-
-*  No coffee before an exam unless I’ve had a sleepless night as it can make me more nervous and jittery. BTW – nerves before exams are completely normal and I’ve learnt to embrace them as part of the experience.
-
-*  During the test I use the scratch pad to take notes on questions I have trouble with. Writing something, anything, down is also a tactic to reduce stress and maintain focus rather than just staring at the test question on the screen.
-
-*  Creating your own study guide helps with tracking progress as you will need to break your study time across days/weeks to suit your schedule.
-
+* Being a ‘morning person’ I book exams about 10:00am and make sure to arrive at least 20 mins early to the test centre. I have a light breakfast and a quick review of my notes on the morning of the test.
+* No coffee before an exam unless I’ve had a sleepless night as it can make me more nervous and jittery. BTW – nerves before exams are completely normal and I’ve learnt to embrace them as part of the experience.
+* During the test I use the scratch pad to take notes on questions I have trouble with. Writing something, anything, down is also a tactic to reduce stress and maintain focus rather than just staring at the test question on the screen.
+* Creating your own study guide helps with tracking progress as you will need to break your study time across days/weeks to suit your schedule.
 * I try not to tackle every subject and dedicate sufficient time and energy to my weakest areas to ensure I have a broad understanding.
-
 * After passing the exam – creating content and sharing it with the community is a great way to contribute and say “thanks” to those that helped you in your study journey.
 
 # AZ-400 Helpful Resources
