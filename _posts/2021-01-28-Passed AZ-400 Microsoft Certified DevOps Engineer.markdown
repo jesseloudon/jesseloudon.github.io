@@ -59,11 +59,11 @@ Instead of taking the time to read every sentence of the AZ-400 skills outline a
 4. Hit the [Microsoft Text Analytics API portal](https://westus2.dev.cognitive.microsoft.com/docs/services/TextAnalytics-v3-0/operations/KeyPhrases)
 5. Select your region where your Azure Text Analytics is deployed e.g. `Australia East`
 6. Paste in your Azure Text Analytics API key into the `Headers / Ocp-Apim-Subscription-Key` value
-7. Paste in your unformatted AZ-400 exam sections/sentences into the `Request Body / "text":` value. Use multiple document blocks if necessary (see note below).
+7. Paste in your unformatted AZ-400 exam sections/sentences into the `Request Body / "text":` value. Use multiple ID blocks if necessary (see note below).
 8. Hit Send
 9. Copy the Response Content into a [JSON linter](https://jsonlint.online/) to easily reformat into a readable list of strings as shown below. After that you can paste the list into Notepad++ and easily sort alphabetically.
 
-> Note: Your Document size must be 5,120 or fewer characters per document, and you can have up to 1,000 items (IDs) per collection. Src: [Microsoft](https://docs.microsoft.com/en-us/azure/cognitive-services/text-analytics/how-tos/text-analytics-how-to-keyword-extraction#preparation) - When I submitted the unformatted AZ400 skills outline there were 9806 characters total so I broke this up into two seperate request submissions using multiple document blocks.
+> Note: Your Document size must be 5,120 or fewer characters per document, and you can have up to 1,000 items (IDs) per collection. Src: [Microsoft](https://docs.microsoft.com/en-us/azure/cognitive-services/text-analytics/how-tos/text-analytics-how-to-keyword-extraction#preparation) - When I submitted the unformatted AZ400 skills outline there were 9806 characters total so I broke this up into two seperate request submissions using multiple ID blocks.
 
 **AZ-400 Key Phrases: January 2021**
 
@@ -429,7 +429,7 @@ Instead of taking the time to read every sentence of the AZ-400 skills outline a
 
 Passing an exam like AZ-400 cannot be my final destination, it's simply part of an extensive journey as I discover what I don't know.
 
-I hope you've found this blog insightful and helpful in your journey.
+I hope you've found this blog insightful and helpful in your journey and good luck with AZ-400!
 
 Cheers,
 
