@@ -429,7 +429,7 @@ Instead of taking the time to read every sentence of the AZ-400 skills outline a
 
 Passing an exam like AZ-400 cannot be my final destination, it's simply part of an extensive journey as I discover what I don't know.
 
-I hope you've found this blog insightful and helpful in your journey and good luck with AZ-400!
+I hope you've found this blog insightful and helpful in your journey; and good luck with AZ-400!
 
 Cheers,
 
