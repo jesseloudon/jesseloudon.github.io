@@ -1,6 +1,8 @@
 ---
 title:  "Your 2020 Study Guide to Azure DevOps Solutions (AZ-400)"
 excerpt: "With Microsoft announcing sweeping changes to a few Azure exams later in March 2020 the time is ripe to blog about an exam I’ve had my eye on for a while: Azure DevOps Solutions (AZ-400)."
+header:
+    og_image: /assets/images/CERT-Expert-DevOps-Engineer-600x600.png
 date:   "2020-02-07"
 categories: 
 - "EXAMS"
@@ -249,10 +251,10 @@ set up an automated pipeline to inspect security and compliance
 I hope you found this guide useful and wish you the best of luck in your exam journey 🙂
 Look out for another post after I pass the exam `/confidence`
 
+> Update Jan 2021: Read about how I passed AZ400 here: [https://jloudon.com/exams/Passed-AZ-400-Microsoft-Certified-DevOps-Engineer/](https://jloudon.com/exams/Passed-AZ-400-Microsoft-Certified-DevOps-Engineer/)
+
 Cheers,
 Jesse
-
-<!--more-->
 
 [AZ400-URL1]:https://visualstudio.microsoft.com/dev-essentials/
 [AZ400-URL2]:https://www.azuredevopslabs.com/
