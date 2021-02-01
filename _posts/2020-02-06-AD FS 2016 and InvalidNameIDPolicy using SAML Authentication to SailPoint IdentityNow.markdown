@@ -29,7 +29,7 @@ I then moved onto creating a new AD FS 2016 relying party trust using the sp-met
 
 <script src="https://gist.github.com/jesseloudon/5abc590e4d11be89c8629fca6a816f9f.js"></script>
 
-![ADFSClaimIssuanceRules](/assets/images/ClaimIssuanceRules.png)
+![ADFSClaimIssuanceRules](/assets/images/ClaimIssuanceRules.png "ADFS Claim Issuance Rules")
 
 Unfortunately during my testing I was continually returned the following web page message from the customer’s IdentityNow portal. 
 
