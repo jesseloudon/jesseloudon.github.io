@@ -1,11 +1,17 @@
 ---
 title:  "0.09ms using Azure Proximity Placement Groups"
-excerpt: "Today I’ll give you a quick intro to Proximity Placement Groups demonstrating how to deploy a test environment into your Azure Subscription using one of my favourite tools AzureCLI. I’ll also test network latency with a PPG and without to show you the difference."
+excerpt: "Intro to Proximity Placement Groups demonstrating how to deploy a test environment"
+header:
+    og_image: /assets/images/AzureIaaS-withPPG.png
 date:   "2020-02-07"
 categories: 
-- "CLOUD"
+- "cloud"
 tags: 
-- "AZURE"
+- "azure"
+- "ppg"
+- "proximity placement group"
+- "accelerated networking"
+- "azcli"
 ---
 Reducing network latency for critical apps running on Azure IaaS has become easier since Microsoft’s announcement of General Availability for Proximity Placement Groups (PPG) on Dec 2019.
 
@@ -15,7 +21,7 @@ Today I’ll give you a quick intro to Proximity Placement Groups demonstrating 
 
 Prior to proximity groups being available the main solution to reduce VM-to-VM network latency was to use Accelerated Networking aka Single Root IO Virtualisation. 
 
-![AzureAcceleratedNetworking](/assets/images/accelerated-networking.png)
+![AzureAcceleratedNetworking](/assets/images/accelerated-networking.png "Azure Accelerated Networking")
 
 However simply using Accelerated Networking does not guarantee that VMs are deployed into the same data centre. This means added latency to traffic if VM 1 was in a separate data centre to VM 2 depending on the distance and network infrastructure traversed.
 
@@ -29,13 +35,13 @@ As per Microsoft’s best practice recommendation to achieve the lowest latency 
 
 Without using a proximity placement group for the availability sets my lab VMs could be automatically deployed to separate Azure region data centres depending on Microsoft’s physical resource availability at the time. Here’s a diagram which illustrates this.
 
-![AzureDemoLabNoPPG](/assets/images/AzureIaaS-NoPPG.png)
+![AzureDemoLabNoPPG](/assets/images/AzureIaaS-NoPPG.png "Azure Demo Lab No PPG")
 
 So in order to guarantee that my lab VMs are co-located in the same data centre I’m going to associate the availability sets to a single proximity placement group as shown in the following diagram.
 
 With the VM NICs also set to use Accelerated Networking this ensures that traffic between VMs is optimised for minimal network latency.
 
-![AzureDemoLabWithPPG](/assets/images/AzureIaaS-withPPG.png)
+![AzureDemoLabWithPPG](/assets/images/AzureIaaS-withPPG.png "Azure Demo Lab With PPG")
 
 # Deploying Proximity Placement Groups with AzureCLI
 The complete AzureCLI script I used is below and ready to go for a demo deployment in your own subscription. You can use VS Code and the AzureCLI extension for easy editing/deployment.
@@ -57,7 +63,7 @@ When you’re finished simply delete the Resource Group with this .azcli cmd to 
 # Testing latency
 Using Microsoft’s tool Latte to test TCP traffic between my VMs produced some interesting results. As you can see below when testing my lab VMs that were using PPG and Accelerated Networking I achieved 88.80 usec or 0.09 ms of latency between servers. Compared to 774.51 usec or 0.77 ms of latency when NOT using Microsoft’s recommended solutions.
 
-![AzurePPGtests](/assets/images/PPGtests.png)
+![AzurePPGtests](/assets/images/PPGtests.png "Azure PPG tests")
 
 # Conclusion
 Azure Proximity Placement Groups (co-location) are a nice inclusion from Microsoft and provides Azure IT Pros with another solution to further reduce network latency by grouping IaaS VMs in the same Azure data centre. When used along with Accelerated Networking NICs there is a noticeable improvement as shown in my test above.
@@ -66,5 +72,3 @@ Consultants and Architects should weigh the pros and cons of using PPGs against 
 
 Cheers,
 Jesse
-
-<!--more-->
