@@ -28,7 +28,7 @@ You might be wondering what is Zero-Touch BitLocker? Basically it means the TPM 
 
 BTW, here's what a TPM chip looks like.
 
-![TPM Chip](/assets/images/TPM_Asus-2-300x255.jpg "Source = Wikipedia")
+![TPM Chip](/assets/images/TPM_Asus-2-300x255.jpg "TPM Chip: Source = Wikipedia")
 
 I don't recommend opening up your laptop to discover yours as that could void the manufacturer's warranty! Instead run this cmdlet in an elevated PowerShell window:
 
@@ -42,7 +42,7 @@ If you get any output from the above cmdlet then you have a TPM chip and can rel
 
 Anyways let's begin with a simple diagram of our solution to put things into perspective. We might call this a birds eye view? :-)
 
-![Birds Eye](/assets/images/Birds_eye.png)
+![Birds Eye](/assets/images/Birds_eye.png "Birds Eye View")
 
 ![BitLocker Enterprise Solution Diagram](/assets/images/BitLocker-Design-Diagram.png "BitLocker Enterprise Solution Diagram")
 
@@ -64,7 +64,7 @@ I recommend creating and testing your own script by taking elements that you req
 
 Assuming you may want to reverse engineer and improve upon this imperfect script I’ve included descriptions below of the logic to smooth the journey.
 
-![bitlocker powershell logic table](/assets/images/table-zero-touch-bitlocker-deployment-with-powershell.png)
+![bitlocker powershell logic table](/assets/images/table-zero-touch-bitlocker-deployment-with-powershell.png "BitLocker PowerShell Logic Table")
 
 # Overall Approach
 

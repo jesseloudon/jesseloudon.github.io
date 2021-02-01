@@ -33,7 +33,7 @@ I then moved onto creating a new AD FS 2016 relying party trust using the sp-met
 
 Unfortunately during my testing I was continually returned the following web page message from the customer’s IdentityNow portal. 
 
-![SailpointIdentityNowWebError](/assets/images/SailPoint-Error.png)
+![SailpointIdentityNowWebError](/assets/images/SailPoint-Error.png "Sailpoint IdentityNow Web Error")
 
 This was occurring after the initial AD FS authentication and token being issued.
 
@@ -47,7 +47,7 @@ Event ID #364: Encountered error during federation passive request. The SAML req
 
 Event ID #321: The SAML authentication request had a NameID Policy that could not be satisfied.
 
-![ADFSeventerrors](/assets/images/ADFS-Events-364_321.png)
+![ADFSeventerrors](/assets/images/ADFS-Events-364_321.png "ADFS event errors")
 
 Events #364 and #321 also verified that the NameIDPolicy required from IdentityNow was not being met by the AD FS token issued.
 
@@ -63,7 +63,7 @@ The SPNameQualifier value needed to match the Entity ID specified in our Identit
 
 Because I couldn’t find SPNameQualifier property in any of the Claim rule templates I used a Custom Rule which you can create as shown below.
 
-![ADFSCustomClaimRule](/assets/images/SendClaimsUsingaCustomRule.png)
+![ADFSCustomClaimRule](/assets/images/SendClaimsUsingaCustomRule.png "ADFS Custom Claim Rule")
 
 The following Claim rule combines my original Rule #2 (described at the beginning of this post) with the new claim property for SPNameQualifier.
 
@@ -75,7 +75,7 @@ After updating my claim rule with the above change a quick test of authenticatin
 
 Happy days! 🙂
 
-![SailpointIdentityNowSAMLevents](/assets/images/IdentityNow-SAML-Events.png)
+![SailpointIdentityNowSAMLevents](/assets/images/IdentityNow-SAML-Events.png "Sailpoint IdentityNow SAML events")
 
 # Summary
 
