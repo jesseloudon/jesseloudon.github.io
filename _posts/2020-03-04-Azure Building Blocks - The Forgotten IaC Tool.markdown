@@ -1,11 +1,16 @@
 ---
 title:  "Azure Building Blocks - The Forgotten IaC Tool"
-excerpt: "Because I'm not keen on authoring large JSON files for IaC (aka ARM templates) I'm going to put Azure Building Blocks to the test with a simple Hub & Spoke VNET deployment. Later on I'll also demonstrate the same deployment using an AzureCLI script - my current preferred alternative to ARM Templates - so you'll see the differences."
+excerpt: "Putting Azure Building Blocks to the test with a simple Hub & Spoke VNET deployment"
+header:
+    og_image: /assets/images/AZBBlogo.png
 date:   "2020-03-04"
 categories: 
-- "CLOUD"
+- "cloud"
 tags:
-- "INFRASTRUCTURE AS CODE"
+- "infrastructure as code"
+- "iac"
+- "azure building blocks"
+- "azbb"
 ---
 Whilst researching Infrastructure as Code alternatives to Azure Resource Manager templates I stumbled across the [Azure Building Blocks][AZBB] (AZBB) tool. It's not widely adopted and you'll see why later on this in blog.
 
@@ -24,10 +29,11 @@ FYI - AZBB currently supports the following resource types:
 <i>Note: Before writing this blog I also tested deploying VMs to Azure using the AZBB tool and ran into an issue which turned out to be a blocker for further tests. You can view open/closed AZBB project issues [here][azbb-issues].</i>
 
 ## What is AZBB?
-![AzBBlogo](/assets/images/AZBBlogo.png)
+![AzBBlogo](/assets/images/AZBBlogo.png "azbb logo")
 
 > The Azure Building Blocks project is a command line tool and set of Azure Resource Manager templates designed to simplify deployment of Azure resources. Users author a set of simplified parameters to specify settings for Azure resources, and the command line tool merges these parameters with best practice defaults to produce a set of final parameter files that can be deployed with the Azure Resource Manager templates - source: [Microsoft][AZBBWiki]
-![AzBBOverview](/assets/images/azbb-overview.png)
+
+![AzBBOverview](/assets/images/azbb-overview.png "azbb Overview")
 
 Based on the above description - a key advantage behind using Azure Building Blocks is to save you time by merging your JSON parameter files with it's pre-defined ARM templates as part of it's deployment flow to Azure. 
 
@@ -44,7 +50,7 @@ Unfortunately these best-practice defaults are not easily found - so to discover
 ## Demo Deployment
 For this demo I'm deploying a basic HUB/SPOKE Virtual Network architecture common with production Azure environments where the Hub VNET may contain shared services such as a Firewall, Domain Controllers, JumpBoxes, and an ExpressRoute Gateway. 
 
-![azbbdemo](/assets/images/azbb-demodeployment.png)
+![azbbdemo](/assets/images/azbb-demodeployment.png "azbb demo deployment")
 
 <i>This deployment is sourced from premade AZBB parameter files publicly available here: [https://github.com/mspnp/template-building-blocks/tree/master/scenarios][AZBBScenarios]</i>
 
@@ -60,7 +66,7 @@ azbb
 
 Seeing this screen is a good sign :)
 
-![azbbshell](/assets/images/azbb-shell.png)
+![azbbshell](/assets/images/azbb-shell.png "azbb shell")
 
 ## Step 2 - Generate/Copy a .JSON parameter file
 Before we can deploy into Azure we either need to create a new parameter file or use a premade one. To save time I cloned the AZBB repo from GitHub and referenced a premade parameter file matching the demo deployment details e.g. VNETs, TAGS, PEERINGS, DNS SERVERS.
@@ -191,7 +197,7 @@ azbb -g "VNET-AZBB-RG" -s "your-subscription-id" -l "your-azure-region" -p "C:\T
 
 After azbb completed running I could see the deployment tasks had succeeded from the Azure Portal > Resource Group > Deployments tab.
 
-![AZBBportalstatus](/assets/images/AZBB-portaldeployments.png)
+![AZBBportalstatus](/assets/images/AZBB-portaldeployments.png "azbb post-deployment portal status")
 
 > `azbb` switches you should be aware of:
 * -g is the resource group you are deploying to
@@ -202,7 +208,7 @@ After azbb completed running I could see the deployment tasks had succeeded from
 
 3x deployment artefacts are also generated which you can use for redeployment/troubleshooting/documentation:
 
-![azbb-output](/assets/images/azbb-output.png)
+![azbb-output](/assets/images/azbb-output.png "azbb output")
 
 ## Deploy with AzCLI
 To demonstrate the difference with JSON vs azcli I've included the exact same VNET architecture deployed above and transferred it to .azcli format so you can see the differences in structure. I can deploy this script directly from a VSCode terminal using the AzureCLI extension for VSCode [https://github.com/microsoft/vscode-azurecli][azcliextension].
@@ -237,7 +243,7 @@ Azure Building Blocks showed potential as an alternative to ARM templates but I'
 
 For now I'm sticking with AzureCLI as my IaC tool for deployments. 
 
-Would be interesting to hear your thoughts on this.
+Would be interesting to hear your thoughts on this in the comments below!
 
 Cheers,
 Jesse
