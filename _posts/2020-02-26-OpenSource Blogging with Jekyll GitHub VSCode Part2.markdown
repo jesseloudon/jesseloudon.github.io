@@ -1,12 +1,17 @@
 ---
 title: "OpenSource Blogging with Jekyll GitHub VSCode Part2"
-excerpt: "During Part 1 of this series I introduced you to open source blogging using some awesome tools and platforms available today. Shortly I'll provide a detailed walkthrough of everything you need to get started with your own blog site."
+excerpt: "Detailed walkthrough of everything you need to get started with your own blog site using Jekyll GitHub VSCode"
+header:
+    og_image: /assets/images/OpenSourceBlogDiagram.png
 date:   "2020-02-26"
 categories: 
-- "BLOGGING"
+- "blogging"
 tags: 
-- "GITHUB PAGES"
-- "JEKYLL"
+- "github pages"
+- "jekyll"
+- "open source blogging"
+- "oss blogging"
+- "vscode"
 ---
 In Part 1 of this series I introduced you to open source blogging using some awesome tools and platforms available today. I also shared my own setup so you can see what's involved end-to-end.
 
@@ -23,7 +28,7 @@ First we need to setup our local development environment for the blog site by in
 
 * As I'm running a Surface Book 2 these instructions are for the Windows 64-bit OS but can be modified to suit MacOS or Linux as needed.
 
-![DevDeploymentPlan](/assets/images/Part2deploymentplan.png)
+![DevDeploymentPlan](/assets/images/Part2deploymentplan.png "Dev Deployment Plan")
 
 ## Coming Up...
 >
@@ -50,7 +55,7 @@ First we need to setup our local development environment for the blog site by in
 3. During the install wizard - make sure to choose `Visual Studio Code as Git's default editor` from the drop-down (shown below).
 4. All other install defaults seem fine to leave as-is!
 
-![GitInstall](/assets/images/GitInstall1.png)
+![GitInstall](/assets/images/GitInstall1.png "Git Install")
 
 ### Install Jekyll / Ruby
 
@@ -67,21 +72,21 @@ $ gem install jekyll bundler
 ```
 9. If you run into issues here try re-installing Ruby+Devkit starting from Step 2 above.
 
-![RubyInstaller](/assets/images/RubyInstaller.png)
+![RubyInstaller](/assets/images/RubyInstaller.png "Ruby Installer")
 
-![RubyInstallWiz1](/assets/images/RubyInstallWiz1.png)
+![RubyInstallWiz1](/assets/images/RubyInstallWiz1.png "Ruby Install Wizard p1")
 
-![RubyInstallWiz2](/assets/images/RubyInstallWiz2.png)
+![RubyInstallWiz2](/assets/images/RubyInstallWiz2.png "Ruby Install Wizard p2")
 
-![RubyInstallWiz3](/assets/images/RubyInstallWiz3.png)
+![RubyInstallWiz3](/assets/images/RubyInstallWiz3.png "Ruby Install Wizard p3")
 
-![RubyInstallWiz4](/assets/images/RubyInstallWiz4.png)
+![RubyInstallWiz4](/assets/images/RubyInstallWiz4.png "Ruby Install Wizard p4")
 
-![RubyInstallWiz5](/assets/images/RubyInstallWiz5.png)
+![RubyInstallWiz5](/assets/images/RubyInstallWiz5.png "Ruby Install Wizard p5")
 
-![Jekyllinstall1](/assets/images/Jekyll_install1.png)
+![Jekyllinstall1](/assets/images/Jekyll_install1.png "Jekyll Install p1")
 
-![Jekyllinstall2](/assets/images/Jekyll_install2.png)
+![Jekyllinstall2](/assets/images/Jekyll_install2.png "Jekyll Install p2")
 
 ### Cloning a Jekyll Theme
 
@@ -95,7 +100,7 @@ $ cd my-awesome-site
 $ bundle exec jekyll serve
 ```
 After a successful serve - browsing to http://localhost:4000 will display a home page like this:
-![Minimatheme](/assets/images/Minima-theme.png)
+![Minimatheme](/assets/images/Minima-theme.png "Minima theme")
 
 Currently I'm using [Minimal Mistakes][MmistakesGH] by Michael Rose because it suits my needs & because of Michael's helpful documentation available - for example check out [https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/][Mmistakes]
 
@@ -117,11 +122,11 @@ $ bundle exec jekyll serve
 
 After a successful serve - browsing to http://localhost:4000 will display a home page like this:
 
-![Jekylltheme1](/assets/images/Jekylltheme1.png)
+![Jekylltheme1](/assets/images/Jekylltheme1.png "Jekyll theme")
 
 Open the newly created folder `C:\mm-github-pages-starter` from VSCode to access the following site structure.
 
-![Jekylltheme2](/assets/images/Jekylltheme2.png)
+![Jekylltheme2](/assets/images/Jekylltheme2.png "Jekyll theme")
 
 Here's a breakdown of what you see above. It's important to understand this structure as the majority of your changes will happen here.
 
@@ -159,7 +164,7 @@ Here's a breakdown of what you see above. It's important to understand this stru
 
 We've completed installation of our open source blogging dependencies to our local dev environment and cloned/served a Jekyll theme.
 
-![Part2DevComplete](/assets/images/Part2devcomplete.png)
+![Part2DevComplete](/assets/images/Part2devcomplete.png "Part2 Dev Complete")
 
 Congrats on getting this far!
 

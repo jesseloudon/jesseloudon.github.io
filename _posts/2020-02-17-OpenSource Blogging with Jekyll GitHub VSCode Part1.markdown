@@ -1,12 +1,17 @@
 ---
 title: "OpenSource Blogging with Jekyll GitHub VSCode Part1"
-excerpt: "Kicking off the new year brought forward a renewed motivation to join the community of tech bloggers. In this blog series I'll share everything you need to know to get you setup with your own blog site, for free, using open source tooling such as Jekyll, GitHub, and Visual Studio Code."
+excerpt: "Introduction to getting setup with your own blog site using Jekyll GitHub VSCode"
+header:
+    og_image: /assets/images/OpenSourceBlogDiagram.png
 date:   "2020-02-17"
 categories: 
-- "BLOGGING"
+- "blogging"
 tags: 
-- "GITHUB PAGES"
-- "JEKYLL"
+- "github pages"
+- "jekyll"
+- "open source blogging"
+- "oss blogging"
+- "vscode"
 ---
 Kicking off the new year brought forward a renewed motivation to join the community of tech bloggers. 
 
@@ -19,7 +24,7 @@ In this blog series I'll share everything you need to know to get you setup with
 
 To start off here's an overview of my blogging toolkit:
 
-![OpenSourceBlogDependencies](/assets/images/OpenSourceBlogDependencies.png) 
+![OpenSourceBlogDependencies](/assets/images/OpenSourceBlogDependencies.png "Open Source Blog Dependencies") 
 > A collection of helpful links can be found [here][BloggingToolkit].
 
 ## Why Open Source?
@@ -35,7 +40,7 @@ Being in a technical role I tend to deep-dive into solutions and explore the pos
 As part of my 9-5 job I'm already using open source tools such as [Visual Studio Code][VisualStudioCode] to write/test my .ps1 and .azcli scripts and [GitHub][GitHub] to store/share my code in the cloud and apply version control. So it made sense to continue using `familiar tooling` and this greatly helped to reduce the time needed to deploy and maintain my blog. 
 
 ## Overview of Blog Setup
-![OpenSourceBlogOverview](/assets/images/OpenSourceBlogDiagram.png)
+![OpenSourceBlogOverview](/assets/images/OpenSourceBlogDiagram.png "Open Source Blog Overview")
 
 ### Local Dependencies
 On my laptop I have the following clients installed:
@@ -47,7 +52,7 @@ On my laptop I have the following clients installed:
 ### Creating content
 I create and modify content using the Visual Studio Code client. It has native support for markdown editing and integration with [Git][Git]. Maximum appreciation goes to VSCode's `preview window` which allows you to see your markdown content in it's published form.
 
-![VSCodePreview](/assets/images/VSCode-Preview.png)
+![VSCodePreview](/assets/images/VSCode-Preview.png "VSCode Preview")
 
 > Note: You can also use GitHub from a web browser to create content via their GUI however you cannot preview the entire site without publishing it. This is the main reason I use my Surface Book 2 as a local dev environment.
 
