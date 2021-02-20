@@ -1,12 +1,18 @@
 ---
 title: "Azure Policy as Code with Terraform Part 1"
-excerpt: "Discover patterns for usage of Azure Policy as Code with Terraform and examine deployment methodologies, module structures, Azure policy best-practices, and Terraform best-practices."
+excerpt: "Discover patterns for usage of Azure Policy as Code with Terraform and examine deployment methodologies, module structures, Azure policy best-practices, and Terraform best-practices"
+header:
+    og_image: /assets/images/terraform1.png
+    teaser: /assets/images/terraform1.png
 date:   "2020-06-09"
 categories: 
-- "CLOUD"
+- "cloud"
 tags: 
-- "AZURE POLICY"
-- "TERRAFORM"
+- "azure policy"
+- "terraform"
+- "policy as code"
+- "terraform azurerm policy"
+- "azure governance"
 ---
 During my last blog series [Cloud Governance with Azure Policy](https://jloudon.com/cloud/Cloud-Governance-with-Azure-Policy-Part-1/) I introduced some common use cases for Azure Policy and demonstrated how to author a custom policy definition using the Azure Policy extension for VSCode. This blog series is still related to cloud governance but, because it focuses more on managing an Azure policy as code workflow using Terraform, it deserves a new heading.
 
@@ -18,7 +24,7 @@ Coming up I’ll show you some usage patterns for deploying Azure policies using
 
 We'll also examine the following multi-environment architecture using Azure, Terraform Cloud, GitHub, and VSCode. I've included this diagram early on because helps to have an end-goal in mind whilst reading this blog and I believe many Azure consumers utilise separate environments for Dev, Test, and Prod.
 
-![Terraform Azure Multi-Environment Pattern](/assets/images/terraform1.png)
+![Terraform Azure Multi-Environment Pattern](/assets/images/terraform1.png "Terraform Azure Multi-Environment Pattern")
 
 # What is Policy as Code?
 
@@ -33,7 +39,7 @@ I believe there are 4 key elements of a policy as code workflow:
 
 Before we start looking at Terraform patterns, let’s examine the existing Azure Policy as Code pattern from Microsoft. Here’s the Microsoft example of a folder structure for your policy source code repo. 
 
-![Microsoft policy as code folder structure](/assets/images/terraform2.png)
+![Microsoft policy as code folder structure](/assets/images/terraform2.png "Microsoft policy as code folder structure")
 
 After defining your Azure policies as JSON files you need to decide which of the following three common languages to use for deployment:
 
@@ -72,7 +78,7 @@ If you’re new to using Terraform I recommend starting with a simple deployment
 
 A quick proof of concept will give you valuable experience with key Terraform concepts such as the tfstate file and cmdlets like init, plan, and apply.
 
-![Terraform to Azure proof of concept](/assets/images/terraform3.png)
+![Terraform to Azure proof of concept](/assets/images/terraform3.png "Terraform to Azure proof of concept")
 
 Three key elements of the above proof of concept are:
 
@@ -193,7 +199,7 @@ Through the utilisation of Terraform workspaces you can create a 1-to-many mappi
 * Repo -> Test TF Workspace -> Test AZ Management Group
 * Repo -> Prod TF Workspace -> Prod AZ Management Group
 
-![Terraform Azure Multi-environment Pattern](/assets/images/terraform1.png)
+![Terraform Azure Multi-environment Pattern](/assets/images/terraform1.png "Terraform Azure Multi-environment Pattern")
 
 There are five key elements of this architecture pattern. These are the ability to:
 
@@ -207,7 +213,7 @@ Terraform usage can be a single main.tf file or a module consisting of main.tf, 
 
 So to make your policy as code repo repeatable and scalable for consumption across multiple teams and environments you can break up the resources into child modules and use a single parent module to call them as shown below.
 
-![Terraform parent child module pattern](/assets/images/terraform4.png)
+![Terraform parent child module pattern](/assets/images/terraform4.png "Terraform parent child module pattern")
 
 Note: Terraform [AzureRM provider](https://www.terraform.io/docs/providers/azurerm/index.html) resource types can be:
 
@@ -218,7 +224,7 @@ Note: Terraform [AzureRM provider](https://www.terraform.io/docs/providers/azure
 
 For example, here's a high level diagram of an example [AzureRM policy modules repo](https://github.com/globalbao/terraform-azurerm-policy) I've created for managing Azure Policy with Terraform.
 
-![GlobalBao AzureRM Policy Module diagram](/assets/images/terraform5.png)
+![GlobalBao AzureRM Policy Module diagram](/assets/images/terraform5.png "GlobalBao AzureRM Policy Module diagram")
 
 Using parent/child modules is more complex than a single module where all resources are created from the same set of files, however, some advantages are:
 

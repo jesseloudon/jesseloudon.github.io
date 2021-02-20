@@ -1,12 +1,18 @@
 ---
 title: "Migrating your Azure Tags with PowerShell"
 excerpt: "How to migrate existing Azure tag values to new tag key/value pairs programmatically using PowerShell"
+header:
+    og_image: /assets/images/azuretags5.png
+    teaser: /assets/images/azuretags5.png
 date:   "2020-06-15"
 categories: 
-- "CLOUD"
+- "cloud"
 tags: 
-- "AZURE TAGS"
-- "POWERSHELL"
+- "azure tags"
+- "powershell"
+- "migrating tags"
+- "key value pairs"
+- "update aztag"
 ---
 Tags are important metadata elements attached to our Azure resources in the form of pairs of key/value strings.
 
@@ -92,15 +98,15 @@ In lines 11-12 below we're defining the old tag key costcenter in a variable $ol
 
 Note: You can change these variable values to anything you want of course. I've just provided them as an example for the context of this blog.
 
-![tag migration script lines 10-12](/assets/images/azuretags1.png)
+![tag migration script lines 10-12](/assets/images/azuretags1.png "tag migration script lines 10-12")
 
 Next we're using the Get-AzResourceGroup cmdlet with an object filter matching Tags.Keys to $oldKey and then storing the results in a variable named $rgsOldKeyBackup and finally providing a count of the variable results.
 
-![tag migration script lines 15-16](/assets/images/azuretags2.png)
+![tag migration script lines 15-16](/assets/images/azuretags2.png "tag migration script lines 15-16")
 
 In lines 17-18 we're running an if statement on the $rgsOldKeyBackup variable, so if the results are not empty then we'll again use the Get-AzResourceGroup cmdlet with the object filter and backup our results to a CSV for future reference if required.
 
-![tag migration script lines 17-18](/assets/images/azuretags3.png)
+![tag migration script lines 17-18](/assets/images/azuretags3.png "tag migration script lines 17-18")
 
 Lines 19-29 below are where the heavy lifting happens, beginning with a new variable $rgs being used to store Get-AzResourceGroup cmdlet results before starting a ForEach-Object task to cycle through the query results.
 
@@ -110,7 +116,7 @@ $rgNewTag will be called by Update-AzTag to merge the new tag key and existing t
 
 $rgOldTag will be called by Update-AzTag to delete the old tag key if the new tag key has been successfully created on the resource group.
 
-![tag migration script lines 19-29](/assets/images/azuretags4.png)
+![tag migration script lines 19-29](/assets/images/azuretags4.png "tag migration script lines 19-29")
 
 Lines 33-49 are using the same script logic explained above, but we are querying resources (not resource groups) this time using Get-AzResource.
 
@@ -120,7 +126,7 @@ Now I'll demonstrate using my tag migration script.
 
 The screenshot below shows my demo environment where I have a mix of resources and resource groups with the tag key costcenter and various tag values e.g. examplevalue1, examplevalue2, etc
 
-![tag migration demo environment](/assets/images/azuretags5.png)
+![tag migration demo environment](/assets/images/azuretags5.png "tag migration demo environment")
 
 In the tag migration script, I have
 
@@ -131,15 +137,15 @@ Running the script from the terminal gives me a local CSV backup of all existing
 
 The screenshot below explains some of the return outputs I receive from my terminal window when running the tag migration script. This is specific to resource groups.
 
-![tag migration demo environment script output for resource groups](/assets/images/azuretags6.png)
+![tag migration demo environment script output for resource groups](/assets/images/azuretags6.png "tag migration demo environment script output for resource groups")
 
 And here's a return output explanation specific to resources e.g. a Recovery Services Vault.
 
-![tag migration demo environment script output for resources](/assets/images/azuretags7.png)
+![tag migration demo environment script output for resources](/assets/images/azuretags7.png "tag migration demo environment script output for resources")
 
 The end result after my tag migration script completes is that I have all old tag key values migrated to the new tag key and I have deleted the old tag key from Azure. Happy days!
 
-![tag migration demo environment end result](/assets/images/azuretags8.png)
+![tag migration demo environment end result](/assets/images/azuretags8.png "tag migration demo environment end result")
 
 # Closing Remarks
 

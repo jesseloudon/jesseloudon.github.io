@@ -1,12 +1,18 @@
 ---
 title: "Azure Policy as Code with Terraform Part 2"
-excerpt: "Discover patterns for usage of Azure Policy as Code with Terraform and examine deployment methodologies, module structures, Azure policy best-practices, and Terraform best-practices."
+excerpt: "Look under the hood of an example repository I created to deploy a set of custom Azure policies, initiatives, and assignments"
+header:
+    og_image: /assets/images/terraform5.png
+    teaser: /assets/images/terraform5.png
 date:   "2020-06-30"
 categories: 
-- "CLOUD"
+- "cloud"
 tags: 
-- "AZURE POLICY"
-- "TERRAFORM"
+- "azure policy"
+- "terraform"
+- "policy as code"
+- "terraform azurerm policy"
+- "azure governance"
 ---
 This is Part 2 of the Azure Policy as Code with Terraform series. During [Part 1](https://jloudon.com/cloud/Azure-Policy-as-Code-with-Terraform-Part-1/) I introduced you to various patterns for adopting an Azure Policy as Code workflow and illustrated an example multi-environment architecture using Azure, Terraform Cloud, and GitHub.
 
@@ -18,7 +24,7 @@ Later we'll also explore some Terraform coding patterns which can be reused for 
 
 In case you missed Part 1, let's take a quick look again at my example repository comprising of 4 AzureRM modules:
 
-![globalbao azurerm policy modules](/assets/images/terraform5.png)
+![globalbao azurerm policy modules](/assets/images/terraform5.png "globalbao azurerm policy modules")
 
 Each child module above manages only 1 resource type. For example /modules/policy-definitions manages AzureRM policy definitions. 
 
@@ -62,11 +68,11 @@ I have the following software installed locally:
 
 My demo Azure environment also currently has 0 custom policy definitions, policysets (initiatives), and assignments. This is as 'clean slate' as it gets!
 
-![azure demo environment policy definitions](/assets/images/terraform7.png)
+![azure demo environment policy definitions](/assets/images/terraform7.png "azure demo environment policy definitions")
 
-![azure demo environment policy assignments](/assets/images/terraform8.png)
+![azure demo environment policy assignments](/assets/images/terraform8.png "azure demo environment policy assignments")
 
-![azure demo environment policy compliance](/assets/images/terraform6.png)
+![azure demo environment policy compliance](/assets/images/terraform6.png "azure demo environment policy compliance")
 
 First, I've authenticated to Azure using az login from my terminal.
 
@@ -74,19 +80,19 @@ Next, running terraform init from the root module automatically downloads the mo
 
 Then, using terraform plan and terraform apply from the root module I see a message showing 24 resources to add.  And because I'm happy to proceed with the changes I've entered the word yes.
 
-![terraform apply job result](/assets/images/terraform10.png)
+![terraform apply job result](/assets/images/terraform10.png "terraform apply job result")
 
 After the apply job has completed we get a nice green summary. Green is usually a good sign :)
 
-![terraform apply job result](/assets/images/terraform11.png)
+![terraform apply job result](/assets/images/terraform11.png "terraform apply job result")
 
 Looking at my demo Azure environment, you can see the custom policies, policysets, and assignments have been deployed as per the code. Success!
 
-![azure demo environment policy definitions deployed](/assets/images/terraform13.png)
+![azure demo environment policy definitions deployed](/assets/images/terraform13.png "azure demo environment policy definitions deployed")
 
-![azure demo environment policy assignments deployed](/assets/images/terraform14.png)
+![azure demo environment policy assignments deployed](/assets/images/terraform14.png "azure demo environment policy assignments deployed")
 
-![azure demo environment policy compliance deployed status](/assets/images/terraform12.png)
+![azure demo environment policy compliance deployed status](/assets/images/terraform12.png "azure demo environment policy compliance deployed status")
 
 Note: You might notice above that the compliance state for my newly deployed Azure policy assignments show as "Not started".
 
@@ -98,7 +104,7 @@ When modifying variable values which are used for Terraform resource names (such
 
 In this example I've modified the variable list value CostCentre, changing it to CostCenter.
 
-![terraform variable list change example](/assets/images/terraform17.png)
+![terraform variable list change example](/assets/images/terraform17.png "terraform variable list change example")
 
 After running terraform plan/apply I receive one or more errors such as the below snippet:
 
@@ -110,17 +116,17 @@ The error above provides details that the policy definition resource cannot be r
 
 So to resolve this we need to use terraform taint to target the relevant policyset resource and force that to be recreated as part of the run.
 
-![terraform taint policyset example](/assets/images/terraform18.png)
+![terraform taint policyset example](/assets/images/terraform18.png "terraform taint policyset example")
 
 After tainting the relevant policyset and rerunning terraform plan/apply I get the following change summary:
 
-![terraform apply output](/assets/images/terraform19.png)
+![terraform apply output](/assets/images/terraform19.png "terraform apply output")
 
 A successful completion shows my updated custom Azure policies in the portal. Boom!
 
-![terraform apply job result](/assets/images/terraform20.png)
+![terraform apply job result](/assets/images/terraform20.png "terraform apply job result")
 
-![azure custom policy post-change](/assets/images/terraform21.png)
+![azure custom policy post-change](/assets/images/terraform21.png "azure custom policy post-change")
 
 # Terraform Coding Patterns
 
