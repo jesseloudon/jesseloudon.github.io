@@ -1,5 +1,5 @@
 customsidenav:
-- title: jInternalLinks
+- title: internal
   children:
     - title: "Home"
       url: /
@@ -7,11 +7,11 @@ customsidenav:
       url: /about/
     - title: "Blogging Toolkit"
       url: /BloggingToolkit/
-- title: jExternalLinks
+- title: external
   children:
-    - title: "GitHub"
+    - title: "GitHub (jesseloudon)"
       url: https://github.com/jesseloudon
-    - title: "GitHub Organization"
+    - title: "GitHub Org (globalbao)"
       url: https://github.com/globalbao
-    - title: "GitHub Gists"
+    - title: "GitHub Gists (jesseloudon)"
       url: https://gist.github.com/jesseloudon
