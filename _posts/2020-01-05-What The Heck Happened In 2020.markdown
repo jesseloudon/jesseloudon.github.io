@@ -1,13 +1,16 @@
 ---
 title: "What The Heck Happened In 2020"
 excerpt: "After such a 2020 memorable year (for both good & bad reasons) I've been itching to publish my retrospective"
+header:
+    og_image: /assets/images/CanvaLogoLarge.png
 date:   "2021-01-05"
 categories: 
-- "Personal"
+- "personal"
 tags: 
-- "WORKING FROM HOME"
-- "RETROSPECTIVE"
-- "COVID19"
+- "working from home"
+- "retrospective"
+- "covid19"
+- "2020"
 ---
 After such a memorable 2020 year (for both good & bad reasons) I've been itching to publish my retrospective. 
 

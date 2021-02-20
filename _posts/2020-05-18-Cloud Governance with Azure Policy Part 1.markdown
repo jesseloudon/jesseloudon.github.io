@@ -1,11 +1,16 @@
 ---
 title: "Cloud Governance with Azure Policy Part 1"
-excerpt: "Introduction to the audit vs deny debate, native tooling, and governance at scale."
+excerpt: "Introduction to the audit vs deny debate, native tooling, and governance at scale"
 date:   "2020-05-18"
+header:
+    og_image: /assets/images/azurepolicy7.png
 categories: 
-- "CLOUD"
+- "cloud"
 tags: 
-- "AZURE POLICY"
+- "azure policy"
+- "azure governance"
+- "policy as code"
+- "policy audit vs deny effects"
 ---
 I'd like to start this blog series with a discussion about balancing priorities because governance over your Azure tenants and subscriptions can be a tricky path to navigate. 
 

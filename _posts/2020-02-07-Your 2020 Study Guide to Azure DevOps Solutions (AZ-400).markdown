@@ -5,9 +5,10 @@ header:
     og_image: /assets/images/CERT-Expert-DevOps-Engineer-600x600.png
 date:   "2020-02-07"
 categories: 
-- "EXAMS"
+- "exams"
 tags: 
-- "AZ-400"
+- "az400"
+- "2020"
 ---
 With Microsoft announcing sweeping changes to a few Azure exams later in March 2020 the time is ripe to blog about an exam I’ve had my eye on for a while: Azure DevOps Solutions (AZ-400). This is an advanced exam that targets professionals familiar with Azure administration and Azure development. I can see this exam providing value to engineers, consultants, and architects who are driving for increased adoption of Agile practices and Infrastructure as Code.
 
@@ -16,7 +17,7 @@ After doing a few of these exams over the years you’ll find a rhythm that work
 
 1. Go to https://docs.microsoft.com/en-us/learn/certifications/browse/
 2. Search for and go to the relevant exam page (e.g. AZ-400)
-3. Download the Exam Skills Outline ![AZ400ExamSkillsOutline](/assets/images/AZ400SkillsMeasured.png)
+3. Download the Exam Skills Outline ![AZ400ExamSkillsOutline](/assets/images/AZ400SkillsMeasured.png "AZ400 Exam Skills Outline")
 4. Create a repository of study resources (docs, images, links, etc)
 5. Book the Exam!
 6. Absorb Content, Get Hands-On, Take Notes, Review Review Review!

@@ -1,11 +1,18 @@
 ---
 title: "Cloud Governance with Azure Policy Part 2"
-excerpt: "Intro to the Azure Policy extension for VSCode and authoring custom policy definitions by finding property aliases."
+excerpt: "Intro to the Azure Policy extension for VSCode and authoring custom policy definitions by finding property aliases"
+header:
+    og_image: /assets/images/azurepolicy12.png
 date:   "2020-05-18"
 categories: 
-- "CLOUD"
+- "cloud"
 tags: 
-- "AZURE POLICY"
+- "azure policy"
+- "azure governance"
+- "policy as code"
+- "custom policies"
+- "policy extension vscode"
+- "policy alias"
 ---
 This is Part 2 of a blog series on Azure Policy. In [Part 1](https://jloudon.com/cloud/Cloud-Governance-with-Azure-Policy-Part-1/) I introduced you to the audit vs deny debate, using the native tooling for Cloud governance, and governance at scale through policy as code workflows.
 
@@ -23,7 +30,7 @@ To start with policy authoring I recommend you grab the following:
 * Azure Account extension
 * Azure Policy extension
 
-![azure extensions vscode](/assets/images/azurepolicy1.png)
+![azure extensions vscode](/assets/images/azurepolicy1.png "azure extensions vscode")
 
 Side note: I’ve found VSCode to be one of the top tools for working on Azure, outside of the Portal, because of the wide range of extensions available. Since the release of PowerShell v7 I’ve completely replaced the Windows PowerShell ISE with the VSCode PowerShell extension.
 
@@ -31,25 +38,25 @@ The Azure policy extension comes with some default settings such as alias and re
 
 You can turn these settings off to see all resources, namespaces, and resource types just be aware that extension timeouts to management.azure.com and slow policy tree loading are more likely to occur.
 
-![azure policy extension settings](/assets/images/azurepolicy2.png)
+![azure policy extension settings](/assets/images/azurepolicy2.png "azure policy extension settings")
 
 After extension installation, authenticate to Azure via the VSCode command palette (CTRL+SHIFT+P) > Azure Sign In 
 
-![azure signin vscode](/assets/images/azurepolicy3.png)
+![azure signin vscode](/assets/images/azurepolicy3.png "azure signin vscode")
 
 Authentication is also possible via  Azure Policy Extension > Sign in to Azure 
 
-![azure policy extension signin](/assets/images/azurepolicy4.png)
+![azure policy extension signin](/assets/images/azurepolicy4.png "azure policy extension signin")
 
 After authentication, if you have access to multiple subscriptions, you can add/remove Azure subscriptions from the policy extension using  CTRL+SHIFT+P > Azure: Select Subscriptions 
 
 For optimal performance, I recommend having only 1 Azure subscription selected when using the policy extension.
 
-![azure subscription select vscode](/assets/images/azurepolicy5.png)
+![azure subscription select vscode](/assets/images/azurepolicy5.png "azure subscription select vscode")
 
 Here’s a quick overview of the trees currently available in the Azure Policy extension:
 
-![azure policy extension tree](/assets/images/azurepolicy6.png)
+![azure policy extension tree](/assets/images/azurepolicy6.png "azure policy extension tree")
 
 * Resources
   * Subscription
@@ -89,7 +96,7 @@ When you browse through the built-in policy definitions you’ll notice the JSON
 
 Here's a collapsed snippet of a policy definition in JSON.
 
-![azure policy definition structure](/assets/images/azurepolicy9.png)
+![azure policy definition structure](/assets/images/azurepolicy9.png "azure policy definition structure")
 
 To best understand what a policy definition is doing I recommend you give extra attention to the following:  
 
@@ -106,7 +113,7 @@ At the time this happened, there was no built-in policy definition that met my r
 
 Inspiration would come by browsing to Policies/Built-in Definitions via the Azure policy extension where I found an existing built-in policy (Audit usage of custom RBAC rules) which did a similar job to my requirement.
 
-![azure policy audit usage of custom rbac rules](/assets/images/azurepolicy7.png)
+![azure policy audit usage of custom rbac rules](/assets/images/azurepolicy7.png "azure policy audit usage of custom rbac rules")
 
 The "Audit usage of custom RBAC rules" policy has two rules under if > allOf
 
@@ -144,11 +151,11 @@ After browsing through the `Resources/Resource Providers/Microsoft.Authorization
 
 Hovering my mouse pointer over `properties.principalType` the policy extension displayed the available property alias on screen - `Microsoft.Authorization/roleAssignments/principalType`
 
-![azure policy extension roleassignments principaltype](/assets/images/azurepolicy8.png)
+![azure policy extension roleassignments principaltype](/assets/images/azurepolicy8.png "azure policy extension roleassignments principaltype")
 
 To verify my findings, I chased up the Resource Group and Principal ID specified in the Role Assignment above and found it matched to a User assigned directly to the access control list (IAM). This is exactly what I wanted my custom policy definition to look for.
 
-![azure iam roleassignments](/assets/images/azurepolicy11.png)
+![azure iam roleassignments](/assets/images/azurepolicy11.png "azure iam roleassignments")
 
 So to meet my requirement of auditing users who’ve been assigned direct access to Azure resources outside of an AD/AAD group, my custom policy needed to be:
 
@@ -198,9 +205,9 @@ Running this custom policy definition in Azure against my subscription shows 4 o
 
 I now have a working policy which audits users who’ve been assigned direct access to Azure resources outside of an AD/AAD group. The non-compliant results are a good indication of where “RBAC drift” is occurring and provides data that could be used to transition the direct user access to AD/AAD group access.
 
-![azure policy custom definition compliance status](/assets/images/azurepolicy16.png)
+![azure policy custom definition compliance status](/assets/images/azurepolicy16.png "azure policy custom definition compliance status")
 
-![azure policy custom definition compliance details](/assets/images/azurepolicy17.png)
+![azure policy custom definition compliance details](/assets/images/azurepolicy17.png "azure policy custom definition compliance details")
 
 # A Pattern for Custom Policy Authoring
 
