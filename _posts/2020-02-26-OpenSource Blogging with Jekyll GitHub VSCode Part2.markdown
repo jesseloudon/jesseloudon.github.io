@@ -2,7 +2,7 @@
 title: "OpenSource Blogging with Jekyll GitHub VSCode Part2"
 excerpt: "Detailed walkthrough of everything you need to get started with your own blog site using Jekyll GitHub VSCode"
 header:
-    og_image: /assets/images/OpenSourceBlogDiagram.png
+    og_image: /assets/images/Part2deploymentplan.png
 date:   "2020-02-26"
 categories: 
 - "blogging"

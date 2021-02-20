@@ -1,15 +1,21 @@
 ---
 title: "My experience at Microsoft Containers OpenHack featuring Kubernetes challenges"
-excerpt: "About 80 attendees were split up between the 20 tables in the room. My team had 2 international attendees and 3 locals (myself included). Everyone was joining the OpenHack with varying levels of real experience with K8s/AKS so things were destined to be kept interesting. The underlying theme of OpenHack is that there's no clear path forward through the challenges and the 'unknown' factor is ever present."
+excerpt: "The underlying theme of OpenHack is that there's no clear path forward through the challenges and the 'unknown' factor is ever present"
+header:
+    og_image: /assets/images/openhack-containers.png
 date:   "2020-02-28"
 categories:
-- "EVENTS"
+- "events"
 tags: 
-- "OPENHACK"
+- "openhack"
+- "team challenge"
+- "k8s"
+- "aks"
+- "containers"
 ---
 Azure consultants are constantly looking to expand our scope of expertise and aligning to this I've recently attended a Microsoft Containers OpenHack in Sydney. This event was a huge success for me and a rapid introduction to Kubernetes (K8s) and Azure Kubernetes Service (AKS) through a series of challenges over 3 days.
 
-![OpenHackLogo](/assets/images/OpenHackLogo1.png)
+![OpenHackLogo](/assets/images/OpenHackLogo1.png "Open Hack Logo")
 
 > Microsoft OpenHack is a developer-focused engagement where a wide variety of participants (Open) learn through hands-on experimentation (Hack) using challenges based on real-world customer scenarios designed to mimic the developer journey - Source: Microsoft
 
@@ -42,7 +48,7 @@ There were some tense moments here as we waited for something, anything to break
 
 Due to limited time of the OpenHack (3 days) the focus was on completing challenges quickly by meeting the success criteria. This often led us to implement any available solution because there wasn't sufficient time to compare options with a `best` vs `sub-optimal` decision. In this case I was happy to put aside consulting habits to keep things ticking along.
 
-![EscapeRoom](/assets/images/the-cipher-room.jpg)
+![EscapeRoom](/assets/images/the-cipher-room.jpg "Escape Room")
 
 Personally I believe the structure of OpenHack works because, similar to an Escape Room, it seemed as if Microsoft had locked you into the room and to get out you needed to build a working Kubernetes environment on Azure. 
 Hackathons, where teams have limited time and resources to design and present their submission, are also a similiar concept to how an OpenHack operates.
@@ -143,7 +149,7 @@ We looked into deploying a <b>service mesh</b> into the AKS cluster using either
 
 ## Closing Remarks
 
-![ChallengeComplete](/assets/images/openhack-containers.png)
+![ChallengeComplete](/assets/images/openhack-containers.png "Challenge Complete")
 
 My first Microsoft OpenHack was a great experience. I went in with low expectations and came away with more hands-on experience with Kubernetes and Azure Kubernetes Service than I would've hoped to achieve in 3 days.
 
