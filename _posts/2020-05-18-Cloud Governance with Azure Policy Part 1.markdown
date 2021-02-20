@@ -4,6 +4,7 @@ excerpt: "Introduction to the audit vs deny debate, native tooling, and governan
 date:   "2020-05-18"
 header:
     og_image: /assets/images/azurepolicy7.png
+    teaser: /assets/images/azurepolicy7.png
 categories: 
 - "cloud"
 tags: 

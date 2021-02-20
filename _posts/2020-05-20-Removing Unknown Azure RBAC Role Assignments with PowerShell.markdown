@@ -1,12 +1,16 @@
 ---
 title: "Removing Unknown Azure RBAC Role Assignments with PowerShell"
 excerpt: "How to programmatically find and remove 'Unknown' type Azure RBAC role assignments with PowerShell"
+header:
+    og_image: /assets/images/rbac1.png
+    teaser: /assets/images/rbac1.png
 date:   "2020-05-20"
 categories: 
-- "CLOUD"
+- "cloud"
 tags: 
-- "AZURE RBAC"
-- "POWERSHELL"
+- "azure rbac"
+- "rbac unknown identities"
+- "powershell"
 ---
 Ever wondered how to programmatically find and remove Azure RBAC role assignments of 'Unknown' ObjectType, at scale, in your Azure subscription?
 
@@ -14,7 +18,7 @@ In this blog I'll describe the problem using an example scenario and then show y
 
 # Unknown Role Assignments with Identity Not Found
 
-![rbac identity not found](/assets/images/rbac1.png)
+![rbac identity not found](/assets/images/rbac1.png "rbac identity not found")
 
 Looking at Access Control (IAM) role assignments within the Azure portal, you might've noticed that a security principal is listed as "Identity not found" with an "Unknown" type.
 
@@ -38,7 +42,7 @@ Imagine you're testing Azure policy definitions using 'deployIfNotExists' or 'mo
 
 In the screenshot below you can see a managed identity will be created automatically as part of the task to assign a policy initiative. So far, so good!
 
-![policy assignment managed identity](/assets/images/rbac2.png)
+![policy assignment managed identity](/assets/images/rbac2.png "policy assignment managed identity")
 
 Now this new managed identity will also have a corresponding RBAC role assignment created on the scope defined by the policy assignment.
 

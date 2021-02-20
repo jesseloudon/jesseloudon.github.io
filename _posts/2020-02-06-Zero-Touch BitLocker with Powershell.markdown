@@ -3,6 +3,7 @@ title: "Zero-Touch BitLocker with PowerShell"
 excerpt: "The heart and soul of all this is a single PowerShell script"
 header:
     og_image: /assets/images/BitLocker-Design-Diagram.png
+    teaser: /assets/images/BitLocker-Design-Diagram.png
 date:   "2020-02-06"
 categories: 
 - "security"

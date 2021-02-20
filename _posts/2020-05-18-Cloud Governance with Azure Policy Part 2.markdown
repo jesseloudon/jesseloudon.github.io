@@ -3,6 +3,7 @@ title: "Cloud Governance with Azure Policy Part 2"
 excerpt: "Intro to the Azure Policy extension for VSCode and authoring custom policy definitions by finding property aliases"
 header:
     og_image: /assets/images/azurepolicy12.png
+    teaser: /assets/images/azurepolicy12.png
 date:   "2020-05-18"
 categories: 
 - "cloud"

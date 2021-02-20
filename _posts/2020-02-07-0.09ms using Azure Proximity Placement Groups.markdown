@@ -3,6 +3,7 @@ title:  "0.09ms using Azure Proximity Placement Groups"
 excerpt: "Intro to Proximity Placement Groups demonstrating how to deploy a test environment"
 header:
     og_image: /assets/images/AzureIaaS-withPPG.png
+    teaser: /assets/images/AzureIaaS-withPPG.png
 date:   "2020-02-07"
 categories: 
 - "cloud"

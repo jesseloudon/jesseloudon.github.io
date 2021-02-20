@@ -3,6 +3,7 @@ title: "My experience at Microsoft Containers OpenHack featuring Kubernetes chal
 excerpt: "The underlying theme of OpenHack is that there's no clear path forward through the challenges and the 'unknown' factor is ever present"
 header:
     og_image: /assets/images/openhack-containers.png
+    teaser: /assets/images/openhack-containers.png
 date:   "2020-02-28"
 categories:
 - "events"

@@ -3,6 +3,7 @@ title:  "Azure Building Blocks - The Forgotten IaC Tool"
 excerpt: "Putting Azure Building Blocks to the test with a simple Hub & Spoke VNET deployment"
 header:
     og_image: /assets/images/AZBBlogo.png
+    teaser: /assets/images/AZBBlogo.png
 date:   "2020-03-04"
 categories: 
 - "cloud"

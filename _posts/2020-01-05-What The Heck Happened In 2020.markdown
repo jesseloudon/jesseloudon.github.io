@@ -2,7 +2,7 @@
 title: "What The Heck Happened In 2020"
 excerpt: "After such a 2020 memorable year (for both good & bad reasons) I've been itching to publish my retrospective"
 header:
-    og_image: /assets/images/CanvaLogoLarge.png
+    og_image: /assets/images/CanvaLogoResized.png
 date:   "2021-01-05"
 categories: 
 - "personal"
