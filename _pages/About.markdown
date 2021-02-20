@@ -73,7 +73,6 @@ Hello everybody, I'm Jesse Loudon aka 'Just another Azure guy'
 * Promote the [LAB3](https://lab3.com.au/) brand and capability in Microsoft Azure and DevOps/IaC initiatives
 * Reach a larger audience
 * Continue blogging about tech, specifically; Microsoft Azure, DevOps, and Infra-as-Code
-* Continue tracking content creation progress through my [GitHub project](https://github.com/jesseloudon/jesseloudon.github.io/projects/1)
 * Expand to other forms of collaboration/media such as recorded video sessions, conference speaking, online/inperson meetups
 
 ## Get in touch :octocat:
