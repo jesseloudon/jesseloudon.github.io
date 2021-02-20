@@ -1,17 +1,21 @@
 ---
 title: "Automate Microsoft Teams desktop settings with PowerShell"
 excerpt: "How to manage Teams desktop client settings automatically with PowerShell"
+header:
+    og_image: /assets/images/teamspowershell1.png
+    teaser: /assets/images/teamspowershell1png
 date:   "2020-10-22"
 categories: 
-- "M365"
+- "m365"
 tags: 
-- "TEAMS SETTINGS"
-- "POWERSHELL"
-- "AUTOMATION"
+- "microsoft teams automation"
+- "powershell"
+- "teams client desktop settings"
+- "json"
 ---
 The Microsoft Teams desktop client has many configurable settings one of which is `App language` within the General tab > Language. So in this blog I'll show you how to manage Teams desktop client settings automatically with PowerShell.
 
-![microsoft teams desktop settings](/assets/images/teamspowershell1.png)
+![microsoft teams desktop settings](/assets/images/teamspowershell1.png "microsoft teams desktop settings")
 
 If you're looking for a GPO/ADMX that provides easy control over Teams desktop client settings, at the time of writing you're out of luck.
 
@@ -19,7 +23,7 @@ Instead, we can configure the desired settings by modifying the `desktop-config.
 
 Here's what a `desktop-config.json` file looks like in VSCode after I've run it through a JSON linter.
 
-![microsoft teams desktop config file](/assets/images/teamspowershell2.png)
+![microsoft teams desktop config file](/assets/images/teamspowershell2.png "microsoft teams desktop config file")
 
 Note above that I've highlighted `"currentWebLanguage":"en-us"`. This is the relevant key and value which aligns to the `App language` setting I mentioned at the start of this blog.
 

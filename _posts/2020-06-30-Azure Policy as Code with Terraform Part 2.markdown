@@ -13,6 +13,7 @@ tags:
 - "policy as code"
 - "terraform azurerm policy"
 - "azure governance"
+- "json"
 ---
 This is Part 2 of the Azure Policy as Code with Terraform series. During [Part 1](https://jloudon.com/cloud/Azure-Policy-as-Code-with-Terraform-Part-1/) I introduced you to various patterns for adopting an Azure Policy as Code workflow and illustrated an example multi-environment architecture using Azure, Terraform Cloud, and GitHub.
 

@@ -1,12 +1,18 @@
 ---
 title:  "Using GitHub Actions and Terraform for IaC Automation"
-excerpt: "Combine GitHub Actions and Terraform to achieve an automated Infrastructure as Code workflow."
+excerpt: "Combine GitHub Actions and Terraform to achieve an automated Infrastructure as Code workflow"
+header:
+    og_image: /assets/images/tf_gh_action0.png
+    teaser: /assets/images/tf_gh_action0.png
 date:   "2020-08-04"
 categories: 
-- "CLOUD"
+- "cloud"
 tags: 
-- "TERRAFORM"
-- "GITHUB ACTIONS"
+- "terraform"
+- "terraform cloud"
+- "github actions"
+- "iac workflow"
+- "yaml"
 ---
 Using GitHub Actions and Terraform to achieve an automated ‘Infrastructure as Code’ (IaC) workflow helps to reduce the possibility of human error and ensures our deployment time is kept minimal.
 
@@ -37,7 +43,7 @@ Note: Although my solution above uses some specific platforms/products - they’
 
 Here’s a simple diagram that shows a bird’s eye view.
  
-![hashicorp terraform github action solution](/assets/images/tf_gh_action0.png)
+![hashicorp terraform github action solution](/assets/images/tf_gh_action0.png "hashicorp terraform github action solution")
 
 To implement this example solution architecture we’ll need to:
 
@@ -61,19 +67,19 @@ To get started, let’s head over to [https://app.terraform.io/signup/account](h
 
 Once we’ve logged into Terraform Cloud, we need to create a new Organization.
  
-![terraform cloud new organization](/assets/images/tf_gh_action1.png)
+![terraform cloud new organization](/assets/images/tf_gh_action1.png "terraform cloud new organization")
 
 Now let’s create a new Workspace and select ‘No VCS connection’. 
 
 Note: This is to avoid duplicating/overlapping with the workflow automation already provided by GitHub Actions. 
  
-![terraform cloud new workspace](/assets/images/tf_gh_action2.png)
+![terraform cloud new workspace](/assets/images/tf_gh_action2.png "terraform cloud new workspace")
 
 Once we’ve finished creating a new Workspace – we should go to Settings > General Settings and set the Terraform version to match the version used by our Terraform code. Failing to match these two versions can result in some state file issues.
 
 For example: Our Terraform code could be pinned to 0.12.0 but if the Workspace is set to 0.12.29 then the state file will also use 0.12.29. This will result in a versioning mismatch after we perform subsequent Terraform runs. Ouch!
  
-![terraform cloud workspace settings](/assets/images/tf_gh_action3.png)
+![terraform cloud workspace settings](/assets/images/tf_gh_action3.png "terraform cloud workspace settings")
 
 For this solution walkthrough we’re using Azure as the target environment. To deploy our Terraform code to Azure via GitHub Actions the best practice is to use an Azure Service Principal for authentication. 
 
@@ -87,7 +93,7 @@ Once we have our Azure Service Principal connection details we can store them as
 
 This ensures they are available during API calls to the Workspace regardless of whether the API calls originate from Github Actions, Azure DevOps, or local Terraform CLI.
  
-![terraform cloud environment variable](/assets/images/tf_gh_action4.png)
+![terraform cloud environment variable](/assets/images/tf_gh_action4.png "terraform cloud environment variable")
 
 One alternative to storing these variables in the Terraform Cloud Workspace would be to save them as GitHub Secrets. Then we can define them within our GitHub Actions YAML file, like below.
  
@@ -97,13 +103,13 @@ Now for our GitHub Action workflow to authenticate to the Terraform Cloud Worksp
 
 Let’s head over to Organization > Settings > Teams to create a new Team API token as shown below.
  
-![terraform cloud api token](/assets/images/tf_gh_action5.png)
+![terraform cloud api token](/assets/images/tf_gh_action5.png "terraform cloud api token")
 
 Note: We can also create a User API token from User Settings > Tokens.
 
 Once we have an API token we need to store it as a GitHub Secret in the same repository where our GitHub Action workflow will run. This will allow our Action to make API calls to the Terraform Cloud Workspace during the workflow run.
  
-![github secrets](/assets/images/tf_gh_action6.png)
+![github secrets](/assets/images/tf_gh_action6.png "github secrets")
 
 Awesome - now that most of the prerequisites are completed, we need to ensure that our Terraform remote backend is using the new Terraform Cloud Organization/Workspace.
 
@@ -119,7 +125,7 @@ Here comes the fun part – setting up GitHub Actions.
 
 In this solution walkthrough we’re creating 2x GitHub Action YAML files in our repository as shown below.
 
-![github action yaml workflows](/assets/images/tf_gh_action7.png)
+![github action yaml workflows](/assets/images/tf_gh_action7.png "github action yaml workflows")
 
 The first GitHub Action YAML file we need to create/test in our repo under /.github/workflows is terraform_plan.yaml.
  
@@ -137,11 +143,11 @@ Key points:
 
 After committing to your master branch, your new terraform_plan.yaml will run automatically. Within the GitHub Actions workflow logs, a successful run will look like this.
  
-![github action terraform plan](/assets/images/tf_gh_action8.png)
+![github action terraform plan](/assets/images/tf_gh_action8.png "github action terraform plan")
 
 At this stage we have successfully implemented and tested the following core solution elements!
  
-![hashicorp terraform github action solution](/assets/images/tf_gh_action9.png)
+![hashicorp terraform github action solution](/assets/images/tf_gh_action9.png "hashicorp terraform github action solution")
 
 To complete the solution and deploy our Terraform code to the target environment Azure – we need to create/test the last YAML file terraform_apply.yaml as shown below.
  
@@ -154,19 +160,19 @@ Key points:
 
 After committing our terraform_apply.yaml file to our repo, we can find the `Terraform Apply` Action and kick off a run with `Run workflow` as shown below.
  
-![github action manual trigger](/assets/images/tf_gh_action10.png)
+![github action manual trigger](/assets/images/tf_gh_action10.png "github action manual trigger")
 
 Again, within the GitHub Actions workflow logs, a successful run of the above terraform_apply.yaml will look like this.
  
-![github action terraform apply](/assets/images/tf_gh_action11.png)
+![github action terraform apply](/assets/images/tf_gh_action11.png "github action terraform apply")
 
 Brilliant! Now that a Terraform Apply has completed from GitHub Actions we should now see our Azure resources deployed to our Azure Subscription – in the example below I’ve deployed custom Azure Policies and Initiatives.
  
-![azure policy custom deployment](/assets/images/tf_gh_action12.png)
+![azure policy custom deployment](/assets/images/tf_gh_action12.png "azure policy custom deployment")
 
 We can also view our latest Terraform state file within the Terraform Cloud Workspace as shown below.
 
-![terraform cloud workspace state file](/assets/images/tf_gh_action13.png)
+![terraform cloud workspace state file](/assets/images/tf_gh_action13.png "terraform cloud workspace state file")
 
 # Closing Remarks
 

@@ -13,6 +13,7 @@ tags:
 - "policy as code"
 - "terraform azurerm policy"
 - "azure governance"
+- "json"
 ---
 During my last blog series [Cloud Governance with Azure Policy](https://jloudon.com/cloud/Cloud-Governance-with-Azure-Policy-Part-1/) I introduced some common use cases for Azure Policy and demonstrated how to author a custom policy definition using the Azure Policy extension for VSCode. This blog series is still related to cloud governance but, because it focuses more on managing an Azure policy as code workflow using Terraform, it deserves a new heading.
 
