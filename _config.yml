@@ -91,12 +91,14 @@ facebook:
   app_id                 :
   publisher              :
 og_image                 : /assets/images/AzureIaaS-withPPG-resized.png
-# For specifying social profiles
-# - https://developers.google.com/structured-data/customize/social-profiles
 social:
-  type                   : # Person or Organization (defaults to Person)
-  name                   : # If the user or organization name differs from the site's name
-  links: # An array of links to social media profiles
+  type                   : Person
+  name                   : Jesse Loudon
+  links:
+  - "https://twitter.com/coder_au"
+  - "https://www.linkedin.com/in/jesseloudon/"
+  - "https://github.com/jesseloudon"
+  - "https://github.com/globalbao"
 
 # Analytics
 analytics:
@@ -119,7 +121,7 @@ author:
       url: "https://jloudon.com"
     - label: "LinkedIn"
       icon: "fab fa-fw fa-linkedin"
-      url: https://www.linkedin.com/in/jesseloudon/
+      url: "https://www.linkedin.com/in/jesseloudon/"
     - label: "Twitter"
       icon: "fab fa-fw fa-twitter-square"
       url: "https://twitter.com/coder_au"
