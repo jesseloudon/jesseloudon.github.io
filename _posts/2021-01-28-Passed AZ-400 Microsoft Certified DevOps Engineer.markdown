@@ -1,19 +1,22 @@
 ---
 title:  "Passed AZ-400 Designing and Implementing Microsoft DevOps Solutions"
-excerpt: "In this blog I'll cover a concept called 'Just Enough Study' and demonstrate a method to hunt Key Phrases with Azure Text Analytics"
+excerpt: "Discover the 'Just Enough Study' concept and learn how to hunt key phrases using Azure Text Analytics"
 header:
     og_image: /assets/images/CERT-Expert-DevOps-Engineer-600x600.png
+    teaser: /assets/images/CERT-Expert-DevOps-Engineer-600x600.png
 date:   "2021-01-28"
 categories: 
-- "EXAMS"
+- "exams"
 tags: 
-- "AZ-400"
-- "AZURE TEXT ANALYTICS"
-- "JUST ENOUGH STUDY"
+- "az400"
+- "azure text analytics"
+- "just enough study"
+- "keyword hunting"
+- "exam tips and tricks"
 ---
-Hey everyone. I've recently passed the AZ-400 exam for Microsoft Certified DevOps Engineer Expert after about a month of solid study and wanted to share my experience to help others achieve a pass. In this blog I'll cover a concept called **Just Enough Study** and demonstrate a method to hunt **Key Phrases** with **Azure Text Analytics**. Both methods have helped me achieve exam passes on many occasions over the years.
+Hey everyone. I've recently passed the AZ-400 exam for Microsoft Certified DevOps Engineer Expert after about a month of solid study and wanted to share my experience to help others achieve a pass. In this blog I'll cover a concept called **Just Enough Study** and demonstrate a method to hunt **key phrases** with **Azure Text Analytics**. Both methods have helped me achieve exam passes on many occasions over the years.
 
-![AZ-400 cert badge](/assets/images/CERT-Expert-DevOps-Engineer-600x600.png)
+![AZ-400 cert badge](/assets/images/CERT-Expert-DevOps-Engineer-600x600.png "AZ-400 cert badge")
 
 > Candidates for this exam should have subject matter expertise working with people, processes, and technologies to continuously deliver business value. Responsibilities for this role include designing and implementing strategies for collaboration, code, infrastructure, source control, security, compliance, continuous integration, testing, delivery, monitoring, and feedback. A candidate for this exam must be familiar with both Azure administration and development and must be expert in at least one of these areas. Src: [Exam AZ-400: Designing and Implementing Microsoft DevOps Solutions](https://docs.microsoft.com/en-us/learn/certifications/exams/az-400)
 

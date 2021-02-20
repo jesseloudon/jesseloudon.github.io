@@ -3,7 +3,7 @@ title: "Automate Microsoft Teams desktop settings with PowerShell"
 excerpt: "How to manage Teams desktop client settings automatically with PowerShell"
 header:
     og_image: /assets/images/teamspowershell1.png
-    teaser: /assets/images/teamspowershell1png
+    teaser: /assets/images/teamspowershell1.png
 date:   "2020-10-22"
 categories: 
 - "m365"

@@ -1,14 +1,18 @@
 ---
 title: "Ansible on Azure Part 3"
 excerpt: "Discover Ansible role development patterns on Azure using the Molecule-Azure driver"
+header:
+    og_image: /assets/images/ansibleonazure01.png
+    teaser: /assets/images/ansibleonazure01.png
 date:   "2020-11-10"
 categories: 
-- "CLOUD"
+- "cloud"
 tags: 
-- "AZURE"
-- "ANSIBLE"
-- "TERRAFORM"
-- "MOLECULE-AZURE"
+- "azure"
+- "ansible"
+- "terraform"
+- "molecule azure driver"
+- "ansible on azure"
 ---
 This is Part 3 of the Ansible on Azure series. In this blog you'll discover Ansible role development patterns on Azure using the Molecule-Azure driver through methodologies you can follow and YAML examples.
 
@@ -20,9 +24,9 @@ During my own discovery and testing solution examples of the Molecule-Azure driv
 
 ## Development Ecosystem Mapping
 
-In terms of our development ecosystem described in [Part 1](https://jloudon.com/cloud/Ansible-on-Azure-Part-1/), and shown below, this blog covers stages 4-7.
+In terms of our development ecosystem described in [Part 1](https://jloudon.com/cloud/Ansible-on-Azure-Part-1/), and shown below, this blog covers **stages 4-7**.
 
-![ansible configuration management ecosystem](/assets/images/ansibleonazure01.png)
+![ansible configuration management ecosystem](/assets/images/ansibleonazure01.png "ansible configuration management ecosystem")
 
 ## Ansible Role Development Methodology
 
@@ -62,7 +66,7 @@ Here's some quick code snippets to get you started with generating new roles and
 molecule init role ansible-role-exampleApp -d azure
 ```
 
-![new ansible role files](/assets/images/ansibleonazure03.png)
+![new ansible role files](/assets/images/ansibleonazure03.png "new ansible role files")
 
 ```bash
 # Initialise new Molecule scenario that uses the Molecule-Azure driver
@@ -72,7 +76,7 @@ molecule init scenario rhel8 -d azure
 molecule list
 ```
 
-![new ansible scenario files](/assets/images/ansibleonazure04.png)
+![new ansible scenario files](/assets/images/ansibleonazure04.png "new ansible scenario files")
 
 > If the concept of roles/scenarios is completely new I recommend checking out the [Molecule docs](https://molecule.readthedocs.io/en/latest/getting-started.html#creating-a-new-role) for a more detailed explanation.
 

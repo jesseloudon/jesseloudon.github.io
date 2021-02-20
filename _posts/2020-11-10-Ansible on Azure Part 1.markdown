@@ -1,14 +1,18 @@
 ---
 title: "Ansible on Azure Part 1"
 excerpt: "Discover the Ansible on Azure development ecosystem, key advantages/disadvantages, and how to get started"
+header:
+    og_image: /assets/images/ansibleonazure01.png
+    teaser: /assets/images/ansibleonazure01.png
 date:   "2020-11-10"
 categories: 
-- "CLOUD"
+- "cloud"
 tags: 
-- "AZURE"
-- "ANSIBLE"
-- "TERRAFORM"
-- "MOLECULE-AZURE"
+- "azure"
+- "ansible"
+- "terraform"
+- "molecule azure driver"
+- "ansible on azure"
 ---
 Greetings fellow Azure enthusiasts. This is a 3-part series I've really enjoyed writing and hope you find use in my content. In this blog you'll discover the Ansible on Azure development ecosystem, key advantages/disadvantages, and how to get started.
 
@@ -32,7 +36,7 @@ I'm not experienced with *nix and when an opportunity arose to develop new Ansib
 ## Ansible on Azure: Development Ecosystem and Flow
 The ecosystem I settled on below is a cloud-only solution. I've used this to rapidly develop Ansible roles on Azure via the Azure-Molecule driver YAML files -all from the comfort of my local machine and the familiarity of VSCode.
 
-![ansible configuration management ecosystem overview](/assets/images/ansibleonazure01.png)
+![ansible configuration management ecosystem overview](/assets/images/ansibleonazure01.png "ansible configuration management ecosystem overview")
 
 So let's step through a typical development flow of events as shown above.
 
@@ -65,7 +69,7 @@ To help you get started I've made this Terraform module publicly available [terr
 
 Usage of the module automates the creation of the following Ansible development environment:
 
-![ansible configuration management ecosystem resources](/assets/images/ansibleonazure02.png)
+![ansible configuration management ecosystem resources](/assets/images/ansibleonazure02.png "ansible configuration management ecosystem resources")
 
 Resource Type | Count | Notes
 -------------:|:-----:|:------

@@ -1,14 +1,18 @@
 ---
 title: "Ansible on Azure Part 2"
 excerpt: "Discover how Terraform IaC can automate your Ansible control host deployment into Azure"
+header:
+    og_image: /assets/images/ansibleonazure01.png
+    teaser: /assets/images/ansibleonazure01.png
 date:   "2020-11-10"
 categories: 
-- "CLOUD"
+- "cloud"
 tags: 
-- "AZURE"
-- "ANSIBLE"
-- "TERRAFORM"
-- "MOLECULE-AZURE"
+- "azure"
+- "ansible"
+- "terraform"
+- "molecule azure driver"
+- "ansible on azure"
 ---
 This is Part 2 of the Ansible on Azure series. In this blog you'll discover how Terraform IaC can automate your Ansible control host deployment to Azure. 
 
@@ -22,9 +26,9 @@ Finally, I'll also provide a step-by-step example of using the module to deploy 
 
 ## Development Ecosystem Mapping
 
-In terms of our development ecosystem described in [Part 1](https://jloudon.com/cloud/Ansible-on-Azure-Part-1/), and shown below, this blog covers stages 1-3.
+In terms of our development ecosystem described in [Part 1](https://jloudon.com/cloud/Ansible-on-Azure-Part-1/), and shown below, this blog covers **stages 1-3**.
 
-![ansible configuration management ecosystem](/assets/images/ansibleonazure01.png)
+![ansible configuration management ecosystem](/assets/images/ansibleonazure01.png "ansible configuration management ecosystem")
 
 ## 1 - Resource Group (RG)
 
