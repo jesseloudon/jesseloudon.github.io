@@ -13,6 +13,7 @@ tags:
 - "terraform"
 - "molecule azure driver"
 - "ansible on azure"
+- "molecule"
 ---
 This is Part 3 of the Ansible on Azure series. In this blog you'll discover Ansible role development patterns on Azure using the Molecule-Azure driver through methodologies you can follow and YAML examples.
 
