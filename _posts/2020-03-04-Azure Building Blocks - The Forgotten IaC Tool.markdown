@@ -12,6 +12,7 @@ tags:
 - "iac"
 - "azure building blocks"
 - "azbb"
+- "arm templates"
 ---
 Whilst researching Infrastructure as Code alternatives to Azure Resource Manager templates I stumbled across the [Azure Building Blocks][AZBB] (AZBB) tool. It's not widely adopted and you'll see why later on this in blog.
 
