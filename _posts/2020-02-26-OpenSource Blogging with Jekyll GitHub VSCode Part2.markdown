@@ -13,6 +13,7 @@ tags:
 - "open source blogging"
 - "oss blogging"
 - "vscode"
+- "markdown"
 ---
 In Part 1 of this series I introduced you to open source blogging using some awesome tools and platforms available today. I also shared my own setup so you can see what's involved end-to-end.
 

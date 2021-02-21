@@ -13,6 +13,7 @@ tags:
 - "open source blogging"
 - "oss blogging"
 - "vscode"
+- "markdown"
 ---
 Kicking off the new year brought forward a renewed motivation to join the community of tech bloggers. 
 
