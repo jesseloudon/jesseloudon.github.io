@@ -13,6 +13,7 @@ tags:
 - "terraform"
 - "molecule azure driver"
 - "ansible on azure"
+- "molecule"
 ---
 This is Part 2 of the Ansible on Azure series. In this blog you'll discover how Terraform IaC can automate your Ansible control host deployment to Azure. 
 
