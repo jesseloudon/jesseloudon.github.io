@@ -2,8 +2,8 @@
 title: "Migrating your Azure Tags with PowerShell"
 excerpt: "How to migrate existing Azure tag values to new tag key/value pairs programmatically using PowerShell"
 header:
-    og_image: /assets/images/azuretags5.png
-    teaser: /assets/images/azuretags5.png
+    og_image: /assets/images/azuretags6.png
+    teaser: /assets/images/azuretags6.png
 date:   "2020-06-15"
 categories: 
 - "cloud"
