@@ -1,5 +1,5 @@
 ---
-title:  "DINE to Automate your Monitoring Governance with AzMonitor Metric Alerts"
+title:  "DINE to Automate your Monitoring Governance with Azure Monitor Metric Alerts"
 excerpt: ""
 header:
     og_image: /assets/images/
@@ -15,4 +15,18 @@ tags:
 - "azure monitor"
 - "metric alerts"
 ---
+#Foreword
+Why, Who
+
+
+#Introduction
+What, When
+
+
+#DINE examples
+Where, How
+
+
+#Conclusion
+Next Steps
 
