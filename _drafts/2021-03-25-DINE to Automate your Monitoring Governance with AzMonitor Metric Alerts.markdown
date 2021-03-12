@@ -26,6 +26,8 @@ What, When
 #DINE examples
 Where, How
 
+## Az Monitoring Governance
+We can leverage Azure Monitor Metric Alerts and Azure Policy's DINE effect to automate implementation of our monitoring governance requirements. Azure Policy provides the engine and platform for resource compliance evaluation and remediation.
 
 #Conclusion
 Next Steps
