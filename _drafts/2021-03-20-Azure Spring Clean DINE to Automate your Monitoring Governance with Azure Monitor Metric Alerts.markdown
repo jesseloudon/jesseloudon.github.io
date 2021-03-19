@@ -4,7 +4,7 @@ excerpt: "Azure Spring Clean is an annual community-driven event, founded by Joe
 header:
     og_image: /assets/images/azspringclean-dine-blog-image.png
     teaser: /assets/images/azspringclean-dine-blog-image.png
-date:   "2021-03-21"
+date:   "2021-03-19"
 categories: 
 - "cloud"
 tags: 
@@ -18,16 +18,21 @@ tags:
 ---
 ![AzureSpringClean2021](/assets/images/azspringclean-dine-blog-image.png "Azure Spring Clean 2021")
 
-Azure Spring Clean is an annual community-driven event founded by Joe Carlyle & Thomas Thornton to promote well managed Azure tenants. Today I'm excited to share with you a pattern for leveraging DeployIfNotExists (DINE) policies to automate your Azure Monitoring Governance with Azure Monitor Metric Alerts.
+Azure Spring Clean is a global community-driven event hosted annually and founded by Joe Carlyle and Thomas Thornton to promote well managed Azure tenants. Today I'm excited to share with you patterns for leveraging DeployIfNotExists (DINE) policies to automate your Azure Monitoring Governance with Azure Monitor Metric Alerts.
 
 This blog post aims to give you a *general* overview of what you need to know with splashings of *advanced* technical details from the field. 
 
-## Executive Summary
-* Azure Policy can automate your governance standards using the DINE effect
-* Azure Monitor Metric Alerts are just one example of a use case for the above automation
-* Policy-as-Code workflows are important to ensure a repeatible, scalable, automated, and auditable policy management process.
+## Executive Summary (TLDR)
+* Azure Policy can automate your governance standards using the DeployIfNotExists effect
+* Azure Monitor Metric Alerts are just one example use-case for policy automation
+* Policy-as-Code workflows are important to ensure a repeatible, scalable, automated, and auditable policy management process
+* Example deployment of 2x Metric Alerts using our example DeployIfNotExists policy
 
-## What is a DINE policy?
+![DINEPolicyDeployment1](/assets/images/azspringclean-dine-blog-image5.png "DINE policy example deployment 2x metric alerts - Source: jloudon.com")
+
+![DINEPolicyDeployment2](/assets/images/azspringclean-dine-blog-image6.png "DINE policy example deployment 2x metric alerts - Source: jloudon.com")
+
+## Wait, What is a DINE policy?
 Firstly let me introduce DINE policies to you! Do you recall the film Inception where Cobb (Leonardo DiCaprio) uses dreams to extract information from, or plant ideas on, his targets?
 
 ![Inception2010](/assets/images/azspringclean-dine-blog-image2.jpg "Source: Inception (2010)")
@@ -44,12 +49,12 @@ With DINE policies you can apply compliance, at scale, to your Management Groups
 
 In the context of this blog post we'll leverge the magic and majesty of DINE policies to automate delivery of our desired Azure Monitoring Governance standard as defined below.
 
-> Azure Monitoring Governance standard: Provision a *Metric Alert (v2) with Dynamic Threshold* to a *Standard Load Balancer* if it does not exist and configure automated alert *email notification* to a mailbox.
+> Azure Monitoring Governance standard (high-level): Provision a *Metric Alert (v2) with Dynamic Threshold* to a *Standard Load Balancer* if it does not exist and configure automated alert *email notification* to a mailbox.
 
 ## Machine Learning and Dynamic Thresholds
 Before we continue I think it's worth giving a shoutout to the Microsoft team for giving us Dynamic Thresholds for use with Azure Monitor Metric Alerts (v2).
 
-I think it's extremely-super-cool that we have the option to use either Static or Dynamic Thresholds (Machine Learning) for Metric Alerts because with more configuration choice comes greater use-cases for consumers. And we're also less constrained when designing our Azure Monitoring Governance patterns.
+I think it's super-duper-cool that we have the option to use either Static or Dynamic Thresholds (Machine Learning) for Metric Alerts because with more configuration choice comes greater use-cases for consumers. And we're also less constrained when designing our Azure Monitoring Governance patterns.
 
 > Metric Alert with Dynamic Thresholds detection leverages advanced machine learning (ML) to learn metrics' historical behavior, identify patterns and anomalies that indicate possible service issues. It provides support of both a simple UI and operations at scale by allowing users to configure alert rules through the Azure Resource Manager API, in a fully automated manner.
 Once an alert rule is created, it will fire only when the monitored metric doesn’t behave as expected, based on its tailored thresholds. Src: Microsoft
@@ -75,26 +80,59 @@ What resource type are we evaluating for the DINE deployment? | Microsoft.Insigh
 What condition(s) should evaluate to true/false before we mark a resource as non-compliant/complaint? | metricNamespace = Microsoft.Network/loadBalancers, metricName = DipAvailability, scope = resourceID
 What resource(s) need to be created via the ARM template?  | 1x Metric Alert v2 using Dynamic Threshold for Microsoft.Network/loadBalancers DipAvailability deployed to the resource's existing RG
 
-So for implementation of our Azure Monitoring Governance standard mentioned prior I'm showcasing two example policy-as-code workflows:
+**We should also think about inputs for our DINE Policy**
+
+Parameter | Type | Default Value
+:----------|:-----|:--------
+resourceGroupName | string | 'BicepExampleRG'
+resourceGrouplocation | string |'australiaeast'
+actionGroupName | string |'BicepExampleAG'
+actionGroupEnabled | bool |true
+actionGroupShortName | string |'bicepag'
+actionGroupEmailName | string |'jloudon'
+actionGroupEmail | string |'jesse.loudon@lab3.com.au'
+actionGroupAlertSchema | bool | true
+metricAlertResourceNamespace | string | 'Microsoft.Network/loadBalancers'
+metricAlertName | string | 'DipAvailability'
+metricAlertDimension1 | string | 'ProtocolType'
+metricAlertDimension2 | string | 'FrontendIPAddress'
+metricAlertDimension3 | string | 'BackendIPAddress'
+metricAlertDescription | string | 'Average Load Balancer health probe status per time duration'
+metricAlertSeverity | string | '2'
+metricAlertEnabled | string | 'true'
+metricAlertEvaluationFrequency | string | 'PT15M'
+metricAlertWindowSize | string |'PT1H'
+metricAlertSensitivity | string | 'Medium'
+metricAlertOperator | string | 'LessThan'
+metricAlertTimeAggregation | string | 'Average'
+metricAlertCriterionType | string | 'DynamicThresholdCriterion'
+metricAlertAutoMitigate | string | 'true'
+assignmentEnforcementMode | string | 'Default'
+
+> :wave: If the metricAlert inputs above aren't making much sense I recommend parsing Microsoft's ARM template reference for [Metric Alerts](https://docs.microsoft.com/en-us/azure/templates/microsoft.insights/metricalerts?tabs=json)
+
+## Policy As Code with Bicep
+Now that we've completed an initial *design*, let's look at *implementation* of our Azure Monitoring Governance standard. Today I'm showcasing two example policy-as-code workflows -
 
 1. Bicep (Microsoft)
 2. Terraform (HashiCorp)
 
 > You can also create and test all examples shown in this blog post directly via the Azure Portal!
 
-## Policy As Code with Bicep
-Prior to writing this blog post I dived into Bicep v0.3.1 and converted one of my previous DINE policies written in Terraform (.tf) into a Bicep (.bicep) format. The end result was these 4 files below. 
+Prior to writing this blog post I actually dived into [Bicep v0.3.1](https://github.com/Azure/bicep/releases/tag/v0.3.1) and manually converted one of my previous DINE policies written in Terraform (.tf) into a Bicep (.bicep) format. The end result was these 4 files below. 
 
 | File | Purpose
 :-----|:------
-main.bicep | Root module/file to pass in parameter values to other modules and run the deployment
-policyDefinition.bicep | Creates the DeployIfNotExists Policy Definition and Initiative
-policyAssignment.bicep | Creates the Policy Assignment for the Initiative
-actionGroup.bicep | Creates the Azure Monitor Action Group used by the DINE Policy
+main.bicep | Root module and creates 1x Resource Group for the AzMonitor Action Group
+policyDefinition.bicep | Creates 1x DeployIfNotExists Policy Definition and 1x Initiative (policyset)
+policyAssignment.bicep | Creates 1x Policy Assignment for the Initiative and 1x Role Assignment
+actionGroup.bicep | Creates 1x AzMonitor Action Group used by the DINE Policy
 
-For the sake of keeping this blog post under 20 minutes reading time I'm going to break out the key sections of only the `policyDefinition.bicep` file and `main.bicep` file.
+Now for the sake of keeping this blog post under 2 hours reading time (no, not kidding!) I'm going to focus only on key sections of the above .bicep files.
 
-**Firstly we should define condition(s) for policy evaluation**
+**Firstly, we should define condition(s) for policy evaluation - policyDefinition.bicep**
+* This ensures we are looking for the desired resource **Microsoft.Network/loadBalancers** in our environment
+* Only Load Balancers with **Standard SKU** support Metric Alerts
 
 ```s
 policyRule: {
@@ -112,7 +150,11 @@ policyRule: {
     }
 ```
 
-**Secondly we need to use the DINE effect, set a resource type to evaluate, and define condition(s) for DINE evaluation**
+**Here we'll use the DINE effect, set a resource type to evaluate, and define condition(s) for DINE evaluation - policyDefinition.bicep**
+* **Contributor** RBAC role is needed for the DINE policy to deploy a resource
+* **Microsoft.Insights/metricAlerts** is our resource type to evaluate during the DINE policy operation
+* 3x existenceCondition rules determine whether our resource is compliant or non-compliant. Notice that these rules are kept high-level/simple.
+* Note the Bicep escape sequence e.g. `\'/resourceGroups/\'` used in the 3rd rule below. Read more about it [here](https://github.com/Azure/bicep/blob/main/docs/spec/bicep.md#strings)
 
 ```s
 then: {
@@ -140,7 +182,11 @@ then: {
         }
 ```
 
-**Finally we can define resource(s) to create with an ARM template**
+**Here we'll define resource(s) to create with an ARM template -policyDefinition.bicep**
+* 
+* 
+* 
+* 
 
 ```s
 deployment: {
@@ -286,8 +332,9 @@ deployment: {
     }
 }
 ```
+**And here's the parameter values we're passing in - main.bicep**
 
-**Key parameter values we're passing in from main.bicep**
+*Remember those inputs we designed for? :smile:*
 
 ```s
 param resourceGroupName string = 'BicepExampleRG'
@@ -316,15 +363,55 @@ param metricAlertAutoMitigate string = 'true'
 param assignmentEnforcementMode string = 'Default'
 ```
 
+**Finally we're assigning the policy and RBAC role - policyAssignment.bicep**
+* 
+* 
+* 
 
-You can find the full Bicep example from above here: [deployifnotexists-policy-with-initiative-and-assignment](https://github.com/Azure/bicep/tree/main/docs/examples/301/deployifnotexists-policy-with-initiative-and-assignment)
+```s
+resource bicepExampleAssignment 'Microsoft.Authorization/policyAssignments@2020-09-01' = {
+  name: 'bicepExampleAssignment'
+  location: assignmentIdentityLocation
+  identity: {
+    type: 'SystemAssigned'
+  }
+  properties: {
+    displayName: 'Bicep Example Assignment'
+    description: 'Bicep Example Assignment'
+    enforcementMode: assignmentEnforcementMode
+    metadata: {
+      source: 'Bicep'
+      version: '0.1.0'
+    }
+    policyDefinitionId: bicepExampleInitiativeId
+    nonComplianceMessages: [
+      {
+        message: 'Resource is not compliant with a DeployIfNotExists policy'
+      }
+    ]
+  }
+}
 
-To deploy this example with Bicep make sure you have at least [azure-cli](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli) version 2.20.0 which comes with Bicep integration.
+resource roleAssignment 'Microsoft.Authorization/roleAssignments@2020-04-01-preview' = {
+  name: guid(bicepExampleAssignment.name, bicepExampleAssignment.type, subscription().subscriptionId)
+  properties: {
+    principalId: bicepExampleAssignment.identity.principalId
+    roleDefinitionId: '/providers/microsoft.authorization/roleDefinitions/b24988ac-6180-42a0-ab88-20f7382dd24c' // contributor RBAC role for deployIfNotExists effect
+  }
+}
+```
+
+Wow that was a ton of code to process, congrats if you're still with me! :clap:
+
+> You can find the full Bicep example from above here: [deployifnotexists-policy-with-initiative-and-assignment](https://github.com/globalbao/bicep-policy-examples/tree/main/deployifnotexists-policy-with-initiative-and-assignment)
+
+To deploy this example with Bicep ensure you have at least [azure-cli](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli) version 2.20.0 which comes with Bicep integration (nice!).
 
 ```
 az login
 az bicep build -f ./main.bicep
 az deployment sub create -f ./main.bicep -l australiaeast
+az policy state trigger-scan
 ```
 
 ## Policy As Code with Terraform
