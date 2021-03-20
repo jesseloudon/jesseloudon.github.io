@@ -455,6 +455,10 @@ Here's 5 DINE policies I've picked out as examples specifically related to Azure
 # Conclusion
 Next Steps
 
+Whew! Well this blog post was extended past my usual word count due to my excitement about contributing to Azure Spring Clean 2021 and the fact everytime I shut my laptop down I'd think of new ideas and updates to this post. Typical scope creep!
+
+There's a wealth of expert level content being published through Azure Spring Clean which you can check out here.
+
 
 https://learn.hashicorp.com/collections/terraform/azure-get-started
 https://docs.microsoft.com/en-us/learn/modules/build-cloud-governance-strategy-azure/8-control-audit-resources-azure-policy
