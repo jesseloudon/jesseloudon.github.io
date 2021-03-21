@@ -437,7 +437,7 @@ terraform apply
 az policy state trigger-scan
 ```
 
-* **2 - Steps 2-5 here are the same as described above within the 'DINE with Bicep/Implemention/Testing Flow' section**
+* **2 - Steps 2-5 here are the same as described above within the 'DINE with Bicep > Implemention/Testing Flow' section**
 
 ## Machine Learning via Dynamic Thresholds
 Before we continue on with this blog post it's worth giving a shoutout to the Microsoft team that brought us dynamic thresholds for use with Azure monitor metric alerts (v2) :+1:
