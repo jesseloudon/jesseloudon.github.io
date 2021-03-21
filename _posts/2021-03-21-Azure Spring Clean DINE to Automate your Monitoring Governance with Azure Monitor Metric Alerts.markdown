@@ -491,7 +491,7 @@ az policy definition list --query [?parameters.effect.allowedValues=='DeployIfNo
 **AzCLI + AzPowerShell - thanks to [Casey Mullineaux](https://twitter.com/Nurfballs) :star:**
 
 ```powershell
-az policy definition list |  ConvertFrom-Json | Where-Object { $_.parameters.effect.defaultValue -like 'DeployIfNotExists' }
+az policy definition list |  ConvertFrom-Json | Where-Object { $_.parameters.effect.allowedValues -like 'DeployIfNotExists' }
 ```
 
 **Microsoft Docs**
