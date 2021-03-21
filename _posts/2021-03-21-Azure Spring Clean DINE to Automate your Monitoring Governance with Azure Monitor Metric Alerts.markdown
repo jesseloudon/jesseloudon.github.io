@@ -494,11 +494,11 @@ az policy definition list |  ConvertFrom-Json | Where-Object { $_.parameters.eff
 
 **Microsoft Docs**
 
-Go to [https://docs.microsoft.com/en-us/azure/governance/policy/samples/built-in-policies](https://docs.microsoft.com/en-us/azure/governance/policy/samples/built-in-policies) then use CTRL + F in your browser to quickly find DINE policies.
+Microsoft Doc enthusiasts can go to [built-in-policies](https://docs.microsoft.com/en-us/azure/governance/policy/samples/built-in-policies) and use CTRL + F in your browser with the keyword `deploy` to quickly find DINE policies.
 
 **Azure Portal**
 
-Go to [https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyMenuBlade/Definitions](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyMenuBlade/Definitions) and using the provided search box with the keyword `deploy` you can narrow down results to *mostly* DINE policies.
+Portal vanguards can go to [azure portal](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyMenuBlade/Definitions) then using the provided search box with the keyword `deploy` you can narrow down results to DINE policies.
 
 ### 5 Example Built-In Azure Monitoring Governance DINE policies
 
