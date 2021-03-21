@@ -369,7 +369,7 @@ az policy state trigger-scan
 ```
 
 * **2 - Deploy a new Load Balancer**
-* **3 - Wait about 11 minutes (*this is how long it took in my environment before the DINE policy automatically kicked in*)**
+* **3 - Wait about 11 minutes** (*this is how long it took in my environment before the DINE policy automatically deployed the metric alert*)
 * **4 - Verify the DINE policy deployed 1x metric alert to your Load Balancer's resource group** (*tip: toggle **Show Hidden Types** in the portal*)
 * **5 - For existing Load Balancers run a remediation task from the Azure Policy blade and repeat step 4 above**
 
