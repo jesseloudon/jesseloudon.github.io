@@ -419,13 +419,16 @@ az login
 #(optional) Set your Azure Subscription context
 az subscription set -s xxxxx-xxxxx-xxxxx-xxxxx-xxxxx
 
-#(optional, recommended) Verify terraform files
+#(required) Initialize the Terraform modules
+terraform init
+
+#(optional, recommended) Verify Terraform files
 terraform validate
 
-#(optional, recommended) View your terraform changes to Azure
+#(optional, recommended) Verify/What-If your Terraform changes to Azure
 terraform plan
 
-#(required) Apply your terraform changes to Azure
+#(required) Apply your Terraform changes to Azure
 terraform apply
 
 #(optional) Trigger a Subscription scope policy compliance scan
