@@ -502,7 +502,9 @@ Portal vanguards can go to [azure portal](https://portal.azure.com/#blade/Micros
 
 ### 5 Example Built-In Azure Monitoring Governance DINE policies
 
-If searching is not your thing or you're time poor here's 5 DINE policies I've picked out as examples specifically related to Azure Monitoring Governance. You can freely test these policies today in your environment!
+If searching using the above methods isn't your thing and you're time poor here's 5 DINE policies I've picked out as examples specifically related to Azure Monitoring Governance. 
+
+You can freely test these policies today in your environment!
 
 * **Deploy Diagnostic Settings for Network Security Groups** - [Portal](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2Fc9c29499-c1d1-4195-99bd-2ec9e3a9dc89), [GitHub](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Monitoring/DiagnosticSettingsForNSG_Deploy.json)
 * **Preview: Deploy Log Analytics agent to Linux Azure Arc machines** - [Portal](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F9d2b61b4-1d14-4a63-be30-d4498e7ad2cf), [GitHub](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Monitoring/LogAnalyticsExtension_Linux_HybridVM_Deploy.json)
