@@ -70,7 +70,7 @@ Now that we've completed an initial design, let's look at implementation of our 
 1. Bicep (Microsoft)
 2. Terraform (HashiCorp)
 
-> For a comparison of Bicep v Terraform check out Bicep vs [Terraform - A fair and balanced comparison - Jon Gallant](https://youtu.be/3lTrIgTJ9yc) and [Azure Bicep vs Terraform Overview - AzureTar](https://youtu.be/exk1QIRwAhU)
+> For a comparison of Bicep v Terraform check out [Bicep vs Terraform - A fair and balanced comparison - Jon Gallant](https://youtu.be/3lTrIgTJ9yc) and [Azure Bicep vs Terraform Overview - AzureTar](https://youtu.be/exk1QIRwAhU)
 
 Prior to writing this blog post I dived into [Bicep v0.3.1](https://github.com/Azure/bicep/releases/tag/v0.3.1) and manually converted one of my previous DINE policies written in Terraform (.tf) into a Bicep (.bicep) format. The end result was these 4 files below. 
 
