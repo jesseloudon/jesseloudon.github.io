@@ -442,16 +442,16 @@ Before we continue on with this blog post it's worth giving a shoutout to the Mi
 
 I think it's ultra-cool that we have the option to use either static or dynamic thresholds (machine learning) because with more configuration choice comes greater use-cases for consumers. And we're also less constrained when designing our Azure Monitoring Governance patterns.
 
+> Metric Alert with Dynamic Thresholds detection leverages advanced machine learning (ML) to learn metrics' historical behavior, identify patterns and anomalies that indicate possible service issues. It provides support of both a simple UI and operations at scale by allowing users to configure alert rules through the Azure Resource Manager API, in a fully automated manner. Once an alert rule is created, it will fire only when the monitored metric doesn’t behave as expected, based on its tailored thresholds. Src: Microsoft
+
+![AzureMonitorMetricAlertsDynamicThresholds](/assets/images/azspringclean-dine-blog-image4.png "Azure Monitor Metric Alerts using Dynamic Thresholds - Source: Microsoft")
+
 Historically I've preferred leveraging dynamic thresholds over static thresholds because:
 
 * As resource usage patterns change seasonally, or due to other predictable events, only sigificant / out of the ordinary alerts are raised for resources resulting in reduced 'alert noise' for the service desk to respond to
 * I'm also an advocate of data-driven monitoring where buckets of data are analyzed by machine learning for trends/patterns and alerts raised only if they meet our dynamic threshold specifications
 
 > The big caveat to using Dynamic Thresholds is that without enough metric data ([3 days and at least 30 samples](https://docs.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-dynamic-thresholds#how-much-data-is-needed-to-trigger-an-alert)) to parse and learn from you won't have any alerts raised by Azure Monitor. This doesn't impact existing resources that have enough historical metric data to provide, but does impact our ability to effectively monitor newly provisioned resources. To combat this caveat you can look to deploy metric alerts using static thresholds to your new resources and then remove them after a period of time. 
-
-![AzureMonitorMetricAlertsDynamicThresholds](/assets/images/azspringclean-dine-blog-image4.png "Azure Monitor Metric Alerts using Dynamic Thresholds - Source: Microsoft")
-
-> Metric Alert with Dynamic Thresholds detection leverages advanced machine learning (ML) to learn metrics' historical behavior, identify patterns and anomalies that indicate possible service issues. It provides support of both a simple UI and operations at scale by allowing users to configure alert rules through the Azure Resource Manager API, in a fully automated manner. Once an alert rule is created, it will fire only when the monitored metric doesn’t behave as expected, based on its tailored thresholds. Src: Microsoft
 
 What are your thoughts on static vs dynamic thresholds? Let me know in the comments below! :loudspeaker:
 
