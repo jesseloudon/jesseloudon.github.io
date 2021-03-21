@@ -52,20 +52,22 @@ With DINE policies you can apply compliance, at scale, to your Management Groups
 
 **Key Questions To Ask Yourself**
 
-Some key questions which sets the vision for your DINE policy include:
+Key questions which help set the vision for your DINE policy include:
 
 ![DINEPolicyDesignKeyQuestions](/assets/images/azspringclean-dine-blog-image7.png "DINE Policy Design Key Questions - Image Source: LAB3")
 
 **Example Responses**
 
-And here's some example responses to these key questions using my Azure Monitoring Governance Standard as follows:
+And here's some example responses to these key questions based on the below Azure Monitoring Governance Standard:
 
 > Ensure all production Load Balancers have a baseline metric alert provisioned for DipAvailability (health probe status).
 
 ![DINEPolicyDesignKeyQuestionResponses](/assets/images/azspringclean-dine-blog-image8.png "DINE Policy Design Key Question Responses - Image Source: LAB3")
 
 ## Implementing DINE with Bicep
-Now that we've completed an initial design, let's look at implementation of our Azure Monitoring Governance standard. Today I'm showcasing two example policy-as-code workflows -
+Now that we've completed an initial design, let's look at implementation of our Azure Monitoring Governance Standard. 
+
+Today I'm showcasing two example policy-as-code workflows -
 
 1. Bicep (Microsoft)
 2. Terraform (HashiCorp)
