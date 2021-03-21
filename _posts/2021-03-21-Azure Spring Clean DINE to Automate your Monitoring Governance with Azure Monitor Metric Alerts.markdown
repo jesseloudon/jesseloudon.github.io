@@ -407,7 +407,7 @@ And here's a summary of the Monitoring Governance resources deployed:
 | policyset_definitions  | azurerm_policy_set_definition | monitoring_governance                  | 1
 | policy_assignments     | azurerm_policy_assignment     | monitoring_governance                  | 1
 
-> There's plenty of detailed README action within this project so I won't duplicate the Terraform code here, but you can find the full Terraform code here: [terraform-azurerm-policy](https://github.com/globalbao/terraform-azurerm-policy)
+> There's plenty of detailed README action within this project so I won't duplicate the Terraform code here. You can find the full repo here: [terraform-azurerm-policy](https://github.com/globalbao/terraform-azurerm-policy)
 
 ### Implementation/Testing Flow
 To deploy/test this example with Terraform ensure you have at least [hashicorp-terraform](https://releases.hashicorp.com/terraform/0.13.6/) version 0.13.6. I also recommend grabbing the [HashiCorp Terraform VSCode extension](https://marketplace.visualstudio.com/items?itemName=HashiCorp.terraform) to benefit from syntax highlighting and other awesome editing features for your .tf files.
