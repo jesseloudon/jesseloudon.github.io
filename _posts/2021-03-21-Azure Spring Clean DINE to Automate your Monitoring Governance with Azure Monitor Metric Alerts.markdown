@@ -83,6 +83,8 @@ policyDefinition.bicep | Creates 1x DeployIfNotExists Policy Definition and 1x I
 policyAssignment.bicep | Creates 1x Policy Assignment for the Initiative and 1x Role Assignment
 actionGroup.bicep | Creates 1x AzMonitor Action Group used by the DINE Policy
 
+The structure/layout of the .bicep files (illustrated below) ensures that as your Bicep deployment grows in complexity/size you can keep resource types organised in a modular fashion. I've carried this pattern across from past experience managing large Terraform deployments.
+
 ![DINEPolicyBicepModules](/assets/images/azspringclean-dine-blog-image9.png "Implementing DINE policies with Bicep Modules - Source: jloudon.com") 
 
 Now for the sake of keeping this blog post under 30 minutes reading time (no, not kidding!) I'm going to focus only on key sections of the above .bicep files.
@@ -147,7 +149,8 @@ then: {
 * Template parameters `resourceName`, `resourceId`, and `resourceLocation` are used to pass in field() values accessible during template runtime
 * Template parameters `actionGroupName`, `actionGroupRG`, and `actionGroupID` are used to pass in values from the actionGroup.bicep file
 * Note the Bicep escaping required for `odata.type`
-* 3x Alert Dimensions provide additional monitoring capability across multiple data fields e.g. `ProtocolType`, `FrontendIPAddress`, and `BackendIPAddress`
+* 1x Metric Alert v2 resource is created within the target Load Balancer's resource group
+* 3x Metric Alert Dimensions provide additional monitoring capability across multiple data fields e.g. `ProtocolType`, `FrontendIPAddress`, and `BackendIPAddress`
 
 *:arrow_down: policyDefinition.bicep*
 ```s
@@ -371,11 +374,12 @@ az policy state trigger-scan
 * **2 - Deploy a new Load Balancer**
 * **3 - Wait about 11 minutes** (*this is how long it took in my environment before the DINE policy automatically deployed the metric alert*)
 * **4 - Verify the DINE policy deployed 1x metric alert to your Load Balancer's resource group** (*tip: toggle **Show Hidden Types** in the portal*)
-* **5 - For existing Load Balancers run a remediation task from the Azure Policy blade and repeat step 4 above**
 
 ![DINEPolicyDeploymentResult1](/assets/images/azspringclean-dine-blog-image5.png "DINE policy example deployment 2x metric alerts - Source: jloudon.com")
 
 ![DINEPolicyDeploymentResult2](/assets/images/azspringclean-dine-blog-image6.png "DINE policy example deployment 2x metric alerts - Source: jloudon.com")
+
+* **5 - For existing Load Balancers run a remediation task from the Azure Policy blade and repeat step 4 above**
 
 > If you want to get really DevOps-y and shift your policy testing to the left within your deployment pipeline check out Fabian Wohlschläger's [azure-policy-testing](https://github.com/fawohlsc/azure-policy-testing) project!
 
@@ -383,15 +387,15 @@ az policy state trigger-scan
 
 Last year (2020) was a huge year of Terraform for me and I had the wonderful opportunity to design and deploy about 38 Azure Monitoring Governance DINE policies for a large customer. 
 
-These 38 DINE policies are designed to provide baseline monitoring governance for production workloads where no existing metric alerts are deployed. 
+These 38 DINE policies are designed to provide baseline Monitoring Governance for production workloads where no existing metric alerts are deployed. 
 
-> If metric alerts are deployed to the target resources e.g. Load Balancer, SQL DB, etc and they match the existenceCondition rules set within the policy JSON then these DINE policies will not deny or replace these alerts.
+> Note: There's flexibility provided by the DINE policy via their `existenceCondition` rules. For example - if metric alerts are deployed to the target resources e.g. Load Balancer, SQL Database, etc and they match the existenceCondition rules set within the policy JSON then these DINE policies will not overwrite, deny, or replace these alerts.
 
-My Terraform modules are organised as per the following diagram:
+My Terraform modules are organised as per the following diagram ensuring the same resource types are located and managed together.
 
 ![DINEPolicyTerraformModules](/assets/images/terraform5.png "Implementing DINE policies with Terraform Modules - Source: jloudon.com")
 
-And here's a summary of the Monitoring Governance resources deployed:
+And here's a summary of the 38x Monitoring Governance DINE policies, 1x Initiative, and 1x Assignment:
 
 |Module                  | Resource Type                 | Resource name                          | Deployment Count
 |:-----------------------|:------------------------------|:---------------------------------------|:-----
@@ -407,7 +411,7 @@ And here's a summary of the Monitoring Governance resources deployed:
 | policyset_definitions  | azurerm_policy_set_definition | monitoring_governance                  | 1
 | policy_assignments     | azurerm_policy_assignment     | monitoring_governance                  | 1
 
-> There's plenty of detailed README action within this project so I won't duplicate the Terraform code here. You can find the full repo at [terraform-azurerm-policy](https://github.com/globalbao/terraform-azurerm-policy)
+> There's plenty of detailed README action within this project so I'm hesitant to duplicate the Terraform code here as the JSON pattern is nearly identical to what I've shown above with Bicep. You can find the full repo at [terraform-azurerm-policy](https://github.com/globalbao/terraform-azurerm-policy)
 
 ### Implementation/Testing Flow
 To deploy/test this example with Terraform ensure you have at least [hashicorp-terraform](https://releases.hashicorp.com/terraform/0.13.6/) version 0.13.6. I also recommend grabbing the [HashiCorp Terraform VSCode extension](https://marketplace.visualstudio.com/items?itemName=HashiCorp.terraform) to benefit from syntax highlighting and other awesome editing features for your .tf files.
@@ -516,10 +520,14 @@ You can freely test these policies today in your environment!
 
 # Conclusion
 
-I'm going to end this blog post here although I've many more ideas/thoughts to include about the why/where/what/when/who of Azure Policy and the automation capability of the DeployIfNotExists effect. Many hours of sleep have been lost but it's been worth every cycle to share knowledge and learnings with the Azure community :heart:
+I'm going to have to end this blog post here although I've many more ideas and thoughts to include about the why, where, what, when, and who of Azure Policy and it's automation capability via the DeployIfNotExists effect. 
+
+Many hours of sleep have been lost but it's been worth every cycle to share knowledge and learnings with the Azure community :heart:
 
 Huge thanks to [Joe Carlyle](https://twitter.com/wedoazure) and [Thomas Thornton](https://twitter.com/tamstar1234) for the opportunity to contribute to this year's #AzureSpringClean - make sure to check out expert-level content from contributors around the globe via [AzureSpringClean.com](https://www.azurespringclean.com/) :rocket:
 
-I hope this blog post has inspired you to do more with Azure Policy, Azure Monitor Metric Alerts, and adopt a policy-as-code workflow for your well managed Azure Tenants. Your comments/questions are most welcome, cheers!
+I hope this blog post has inspired you to do more with Azure Policy, Azure Monitor Metric Alerts, and adopt a policy-as-code workflow for your well managed Azure Tenants. 
+
+Your comments/questions/suggestions are most welcome, cheers!
 
 Jesse
