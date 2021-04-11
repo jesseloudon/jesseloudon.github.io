@@ -1,7 +1,7 @@
 ---
 title: "About"
 permalink: /about/
-excerpt: "Jesse Loudon - Just another Azure guy"
+excerpt: "Jesse Loudon - Just another #Azure guy"
 date: "2020-02-06"
 categories: 
 - "Personal"
@@ -60,7 +60,7 @@ gallery:
     alt: "Citrix Certified Administrator XenApp"
     title: "Citrix Certified Administrator XenApp"
 ---
-Hello everybody, I'm Jesse Loudon aka 'Just another Azure guy'
+Hello everybody :wave: I'm Jesse Loudon aka 'Just another #Azure guy'
 
 ## About Jesse Loudon :aquarius:
 * Consultant specialising in Azure, DevOps, Infra-as-Code
@@ -68,9 +68,9 @@ Hello everybody, I'm Jesse Loudon aka 'Just another Azure guy'
 * Continual learner and collector of [certifications](https://www.youracclaim.com/users/jesseloudon/badges)
 * Since early 2020 have been publishing technical posts about once every 1-2 months to my [personal blog](https://jloudon.com) and cross-posting to my previous [employer’s blog](https://purple.telstra.com/blog)
 * Using LinkedIn/Twitter to share blog posts out to my connections
+* Started building my YouTube channel
 
 ## Jesse's Goals For 2021 :rocket:
-* Promote the [LAB3](https://lab3.com.au/) brand and capability in Microsoft Azure and DevOps/IaC initiatives
 * Reach a larger audience
 * Continue blogging about tech, specifically; Microsoft Azure, DevOps, and Infra-as-Code
 * Expand to other forms of collaboration/media such as recorded video sessions, conference speaking, online/inperson meetups
@@ -81,6 +81,7 @@ Hello everybody, I'm Jesse Loudon aka 'Just another Azure guy'
 * LinkedIn: [@JesseLoudon](https://www.linkedin.com/in/jesseloudon/)
 * Web: [jloudon.com](https://jloudon.com)
 * GitHub: [@JesseLoudon](https://github.com/jesseloudon)
+* YouTube: [Jesse Loudon](https://www.youtube.com/channel/UCZ79IZ2ofpJhLVAOgN0n9tw)
 
 ## Support Jesse's Work :revolving_hearts:
 
