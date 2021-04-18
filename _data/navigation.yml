@@ -5,13 +5,7 @@ customsidenav:
       url: /
     - title: "About"
       url: /about/
+    - title: "Speaking"
+      url: /speaking/
     - title: "Blogging Toolkit"
       url: /BloggingToolkit/
-- title: external
-  children:
-    - title: "GitHub (jesseloudon)"
-      url: https://github.com/jesseloudon
-    - title: "GitHub Org (globalbao)"
-      url: https://github.com/globalbao
-    - title: "GitHub Gists (jesseloudon)"
-      url: https://gist.github.com/jesseloudon

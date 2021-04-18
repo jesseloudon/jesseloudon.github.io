@@ -77,11 +77,12 @@ Hello everybody :wave: I'm Jesse Loudon aka 'Just another #Azure guy'
 
 ## Get in touch :octocat:
 
-* Twitter: [@coder_au](https://twitter.com/coder_au)
-* LinkedIn: [@JesseLoudon](https://www.linkedin.com/in/jesseloudon/)
+* Twitter: [coder_au](https://twitter.com/coder_au)
+* LinkedIn: [JesseLoudon](https://www.linkedin.com/in/jesseloudon/)
 * Web: [jloudon.com](https://jloudon.com)
-* GitHub: [@JesseLoudon](https://github.com/jesseloudon)
-* YouTube: [Jesse Loudon](https://www.youtube.com/channel/UCZ79IZ2ofpJhLVAOgN0n9tw)
+* GitHub: [JesseLoudon](https://github.com/jesseloudon)
+* Sessionize: [JesseLoudon](https://sessionize.com/JesseLoudon/)
+* YouTube: [JesseLoudon](https://www.youtube.com/channel/UCZ79IZ2ofpJhLVAOgN0n9tw)
 
 ## Support Jesse's Work :revolving_hearts:
 
