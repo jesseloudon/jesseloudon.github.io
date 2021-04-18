@@ -33,6 +33,8 @@ I structured my presentation into 3x levels so that beginners could start with a
 * 1x main.bicep
 * Manual CLI deployment
 
+[YouTube Video Timestamp 16m 10s](https://www.youtube.com/watch?v=qpnMJXw6pIg&t=16m10s)
+
 ### [Level 2](https://github.com/globalbao/azure-policy-as-code/tree/main/Bicep/Level2)
 
 * Uses built-in policies and custom policies
@@ -41,6 +43,8 @@ I structured my presentation into 3x levels so that beginners could start with a
 * Manual CLI deployment
 * Targeting multiple Azure environments
 * Uses parameter files for environment-specfic values passed during deployment
+
+[YouTube Video Timestamp 50m 3s](https://www.youtube.com/watch?v=qpnMJXw6pIg&t=50m3s)
 
 ### [Level 3](https://github.com/globalbao/azure-policy-as-code/tree/main/Bicep/Level3)
 
@@ -51,6 +55,8 @@ I structured my presentation into 3x levels so that beginners could start with a
 * Advanced modules organised per resource type
 * CI/CD workflow automation with GitHub Actions YAML
 * Targeting multiple Azure environments with authentication via GitHub secrets
+
+[YouTube Video Timestamp 1h 11m 45s](https://www.youtube.com/watch?v=qpnMJXw6pIg&t=1h11m45s)
 
 ## Kudos
 
