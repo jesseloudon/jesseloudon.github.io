@@ -24,7 +24,11 @@ Recently I've been diving into Microsoft's new DSL Bicep and as I'm passionate a
 Admittedly, I left my [sessionize submission](https://sessionize.com/JesseLoudon/) very late and probably just scraped in. Even so it was a wonderful surprise to see my session accepted followed by a frantic scramble to prepare my presentation (below) and code which can be found here [https://github.com/globalbao/azure-policy-as-code](https://github.com/globalbao/azure-policy-as-code).
 
 ## Presentation Structure
-I structured my presentation into 3x levels so that beginners could start with a small proof of concept deployment and then scale up in complexity and advanced logic as their comfort levels increased with Bicep and Azure Policy. More experienced users can jump straight to Level 3 and learn/adopt a Policy as Code workflow with Bicep.
+I structured my presentation into 3x levels so that beginners could start with a small proof of concept deployment and then scale up in complexity and advanced logic as their comfort levels increased with Bicep and Azure Policy. 
+
+More experienced users can jump straight to Level 3 and learn/adopt a Policy as Code workflow with Bicep.
+
+Links to skip to specific content levels in the recorded session are included below!
 
 ### [Level 1](https://github.com/globalbao/azure-policy-as-code/tree/main/Bicep/Level1)
 
@@ -67,7 +71,5 @@ This year's Global Azure event was the biggest yet with over 560 speakers and 53
 Looking forward to next year's Global Azure!
 
 Jesse
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/qpnMJXw6pIg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ![GlobalAzure2021Sessions](/assets/images/globalazure2021sessions.png "Global Azure 2021 Sessions")
