@@ -17,7 +17,7 @@ tags:
 
 > [Global Azure](https://globalazure.net/) is a community event about the Microsoft Azure platform. On April 15-17 the Global Azure community goes online to share, learn, and have community Azure fun together. 
 
-This year (2021) I was fortunate to have a session accepted for Global Azure 2021 titled: **Policy as Code with Bicep for Enterprise Scale**
+This year I was fortunate to have a session accepted for Global Azure 2021 titled: **Policy as Code with Bicep for Enterprise Scale**
 
 Recently I've been diving into Microsoft's new DSL Bicep and as I'm passionate about Azure Policy I thought why not combine both aspects into a session?
 
