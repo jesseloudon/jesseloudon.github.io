@@ -21,7 +21,7 @@ This year I was fortunate to have a session accepted for Global Azure 2021 title
 
 Recently I've been diving into Microsoft's new DSL Bicep and as I'm passionate about Azure Policy I thought why not combine both aspects into a session?
 
-Admittedly, I left my [sessionize submission](https://sessionize.com/JesseLoudon/) very late and probably just scraped in. Even so it was a wonderful surprise to see my session accepted followed by a frantic scramble to prepare my presentation (below) and code which can be found here [https://github.com/globalbao/azure-policy-as-code](https://github.com/globalbao/azure-policy-as-code).
+Admittedly, I left my [sessionize submission](https://sessionize.com/JesseLoudon/) very late and probably just scraped in. Even so it was a wonderful surprise to see my session accepted followed by a frantic scramble to prepare my presentation (YT links below) and code which can be found here [https://github.com/globalbao/azure-policy-as-code](https://github.com/globalbao/azure-policy-as-code).
 
 ## Presentation Structure
 I structured my presentation into 3x levels so that beginners could start with a small proof of concept deployment and then scale up in complexity and advanced logic as their comfort levels increased with Bicep and Azure Policy. 
