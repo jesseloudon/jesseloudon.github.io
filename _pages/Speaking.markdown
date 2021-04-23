@@ -15,7 +15,7 @@ gallery:
     image_path: /assets/images/GlobalAzure2021PolicyAsCodeWithBicep.png
     alt: "Global Azure: Policy as Code with Bicep for Enterprise Scale"
     title: "Global Azure: Policy as Code with Bicep for Enterprise Scale"
-  - url: "https://www.youtube.com/watch?v=JuzBolDyGdg=16m16s"
+  - url: "https://www.youtube.com/watch?v=JuzBolDyGdg&t==16m16s"
     image_path: /assets/images/hashitalksanz2021.jpg
     alt: "HashiTalks ANZ: DRY coding with Terraform, CSVs, ForEach"
     title: "HashiTalks ANZ: DRY coding with Terraform, CSVs, ForEach"
