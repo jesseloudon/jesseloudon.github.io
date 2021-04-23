@@ -18,7 +18,7 @@ gallery:
   - url: "https://www.youtube.com/watch?v=JuzBolDyGdg=16m16s"
     image_path: /assets/images/hashitalksanz2021.png
     alt: "HashiTalks ANZ: DRY coding with Terraform, CSVs, ForEach"
-    title: "HashiTalks ANZ: DRY coding with Terraform, CSVs, ForEach""
+    title: "HashiTalks ANZ: DRY coding with Terraform, CSVs, ForEach"
     
 ---
 
