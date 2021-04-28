@@ -84,19 +84,22 @@ Regardless of if you choose YAML or CSV watch out for these common IaC issues re
 * **API timeouts and resource dependencies** - the larger your IaC implementation gets (I'm talking hundreds of resources as code in a single TFstate file) you'll need to manage your changes in a staggered fashion to avoid seeing API timeouts and errors relating to dependencies not being ready.
 * **TF provider parity with ARM** - I've had a few cases where the AzureRM provider didn't support something I needed as IaC and needed to use ARM templates or AzureCLI or even click-ops to acheive the desired outcome!
 
-Session Slides:
+## Session Slides:
 ![HashiTalksANZ2021](/assets/gifs/hashitalksanz2021.gif "HashiTalks ANZ: DRY Coding with Terraform, CSVs, ForEach")
 
-Recorded Session:
+## Recorded Session:
 [HashiTalks: Australia / New Zealand - YouTube](https://www.youtube.com/watch?v=JuzBolDyGdg&t=976s)
 
-VSCode extensions:
+## VSCode extensions:
 [Edit csv](https://marketplace.visualstudio.com/items?itemName=janisdd.vscode-edit-csv)
+
 [Rainbox CSV](https://marketplace.visualstudio.com/items?itemName=mechatroner.rainbow-csv)
 
-Additional Reading:
+## Additional Reading:
 [Terraform + CSVs = Netflix](https://lucian.blog/terraform-csvs-netflix/)
+
 [CSVDecode](https://www.terraform.io/docs/language/functions/csvdecode.html)
+
 [ForEach](https://www.terraform.io/docs/language/meta-arguments/for_each.html)
 
 Cheers,
