@@ -11,6 +11,10 @@ galleryintro:
   - excerpt: "Speaking"
 gallery:
 
+  - url: "https://youtu.be/AVn5glYBz84?t=2380"
+    image_path: /assets/images/ASUG-PolicyAsCode2021.png
+    alt: "Azure Sydney User Group: Azure Policy as Code - Zero to Hero in 60 minutes"
+    title: "Azure Sydney User Group: Azure Policy as Code - Zero to Hero in 60 minutes"
   - url: "https://youtu.be/qpnMJXw6pIg"
     image_path: /assets/images/GlobalAzure2021PolicyAsCodeWithBicep.png
     alt: "Global Azure: Policy as Code with Bicep for Enterprise Scale"
