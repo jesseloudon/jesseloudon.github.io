@@ -36,9 +36,13 @@ The following builtin policy seemed to fit my requirements above perfectly so I 
     },
 ```
 
-> When testing deployIfNotExists policies you should verify (1) the ARM template deployment for your non-compliant resources was successful, and (2) the resource is marked as compliant post-remediation task.
+> When testing deployIfNotExists policies you should verify (1) the Azure Resource Manager (ARM) template deployment for your non-compliant resources was successful, and (2) the resource is marked as compliant post-remediation task.
 
-Here's a simple image illustrating my flow when troubleshooting and resolving the root cause of this non-compliant policy:
+In case you're not familiar with deployIfNotExists policies this snippet gives a high-level overview of the JSON:
+
+![AzurePolicyDeployIfNotExists](/assets/images/azspringclean-dine-blog-image3.png "DeployIfNotExists policy")
+
+So here's a simplistic image illustrating my flow when troubleshooting and resolving the root cause of this non-compliant policy. I'll cover each highlighted point in more detail in the following sections.
 
 ![AzurePolicyNonCompliance](/assets/images/policy-noncompliance0.svg "How to Win vs Azure Policy Non-Compliance")
 
@@ -72,7 +76,7 @@ This is great, as it allows developers/admins to be flexible with the policy's s
 
 I found that the builtin policy's existenceCondition shown below only 100% works if the logs/metric parameter default values do not change e.g. from "True" to "False". 
 
-By "100% works" I'm referring a deployIfNotExists policy which successfully deploys the policy's nested ARM template to your non-compliant resource and then marks the resource as compliant after an evaluation scan.
+By "100% works" I'm referring to a deployIfNotExists policy which successfully deploys the policy's nested ARM template to your non-compliant resource and then marks the resource as compliant after an evaluation scan.
 
 ```json
 "existenceCondition": {
