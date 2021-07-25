@@ -76,8 +76,6 @@ This is great, as it allows developers/admins to be flexible with the policy's s
 
 I found that the builtin policy's existenceCondition shown below only 100% works if the logs/metric parameter default values do not change e.g. from "True" to "False". 
 
-By "100% works" I'm referring to a deployIfNotExists policy which successfully deploys the policy's nested ARM template to your non-compliant resource and then marks the resource as compliant after an evaluation scan.
-
 ```json
 "existenceCondition": {
     "allOf": [
@@ -97,7 +95,12 @@ By "100% works" I'm referring to a deployIfNotExists policy which successfully d
 },
 ```
 
-For my use-case I needed to set a few of these parameters to "False" per below example.
+My definition of an 100% working deployIfNotExists policy is one which:
+
+* successfully deploys the policy's nested ARM template to your non-compliant resource 
+* post-remediation marks the resource as compliant after an evaluation scan
+
+Now for my use-case I needed to set a few of these parameters to "False" per below example.
 
 ```json
 parameter_values = {
@@ -109,7 +112,7 @@ parameter_values = {
     }
 ```
 
-Because the builtin policy's existenceCondition shown above expected all values in the array alias for "**Microsoft.Insights/diagnosticSettings/logs.enabled**" to equal to "**True**" I was never going to get a compliant resource. The remediation tasks would be successful but the policy was only really 50% working 'out-of-the-box'. Not cool!
+Because the builtin policy's existenceCondition shown previously expected all values in the array alias for "**Microsoft.Insights/diagnosticSettings/logs.enabled**" to equal to "**True**" I was never going to get a compliant resource. The remediation tasks would be successful but the policy was only really 50% working 'out-of-the-box'. Not cool!
 
 > This is good example of incomplete policy authoring and why testing new policies against a proven methodology and framework can surface the issues as described in this blog post, particularly when the policy's parameter values are changing.
 
