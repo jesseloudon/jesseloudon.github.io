@@ -1,5 +1,5 @@
 ---
-title: "How To Win vs Azure Policy Non-Compliance"
+title: "How to Win vs Azure Policy Non-Compliance"
 excerpt: "Fixing a design flaw with the existenceCondition for builtin policies"
 header:
     og_image: /assets/images/policy-noncompliance.jpg
@@ -13,6 +13,7 @@ tags:
 - "deployifnotexists"
 - "non-compliance"
 - "existenceCondition"
+- "aks diagnostic settings"
 ---
 
 Hey folks in this blog post I'm going to share with you how to win the battle versus Azure Policy non-compliance.
