@@ -42,31 +42,32 @@ In case you're not familiar with deployIfNotExists policies this snippet gives a
 
 ![AzurePolicyDeployIfNotExists](/assets/images/azspringclean-dine-blog-image3.png "DeployIfNotExists policy")
 
-So here's a simplistic image illustrating my flow when troubleshooting and resolving the root cause of this non-compliant policy. I'll cover each highlighted point in more detail in the following sections.
+So here's a simplistic image illustrating my flow when troubleshooting the root cause of this non-compliant policy. I'll cover each highlighted point in more detail soon.
 
 ![AzurePolicyNonCompliance](/assets/images/policy-noncompliance0.svg "How to Win vs Azure Policy Non-Compliance")
 
-# Fighting The Enemy
+# Fighting The 'Non-Compliance' Enemy
 
-Screenshot #1 (or SS #1) shows a non-compliant AKS cluster. This evaluation result is AFTER a remediation task had successfully configured the diagnostic settings per my requirements on the resource. Initially I was puzzled to see this non-compliant result but it became clear why this was was happening as I investigated the policy's existenceCondition.
+`Screenshot #1` (or `SS #1`) shows a non-compliant AKS cluster. This evaluation result is AFTER a remediation task had successfully configured the diagnostic settings per my requirements on the resource. Initially I was puzzled to see this non-compliant result but it became clear why this was was happening as I investigated the policy's existenceCondition.
 
-SS #2 shows the reason for non-compliance is because **target value** and **current value** for the **evaluated field** is **not matching**. The path for the evaluated field is also an array "properties.logs[*].enabled" which basically means there's more than one element to evaluate. 
+`SS #2` shows the reason for non-compliance is because **target value** and **current value** for the **evaluated field** is **not matching**. The path for the evaluated field is also an array "properties.logs[*].enabled" which basically means there's more than one element to evaluate. 
 
 > I was able to view the reason for non-compliance by clicking into the *Details* link under the Compliance reason column -- a crucial piece of evidence for troubleshooting -- in the future I hope we'll be able to query this exact data programmatically.
 
-SS #3 shows my verification of the successful remediation task on the resource. This confirms the policy's nested Azure Resource Manager (ARM) template deployment was a SUCCESS.
+`SS #3` shows my verification of the successful remediation task on the resource. This confirms the policy's nested Azure Resource Manager (ARM) template deployment was a SUCCESS.
 
-SS #4 shows our root cause issue with one of the existenceCondition blocks where the alias "Microsoft.Insights/diagnosticSettings/logs.enabled" needs to equal to "True" for the resource to be marked as compliant.
+`SS #4` shows our root cause issue with one of the existenceCondition blocks where the alias "Microsoft.Insights/diagnosticSettings/logs.enabled" needs to equal to "True" for the resource to be marked as compliant.
 
-> Again, based on the fact that this alias maps to an array (as seen in SS #2) this condition is basically saying that every element in the array needs equal to "True" for the resource to be marked as compliant after an evaluation scan. A bit of an 'opps' moment here :smile:
+> Again, based on the fact that this alias maps to an array (as seen in `SS #2`) this condition is basically saying that every element in the array needs equal to "True" for the resource to be marked as compliant after an evaluation scan. A bit of an 'opps' moment here :smile:
 
 # Winning The Battle
 
-SS #5 and SS #6 show how I resolved this issue by:
+`SS #5` and `SS #6` show how I resolved this issue by:
+
 1. changing the condition from "**equals**" to "**in**"
 2. referencing each AKS log parameter name in the array aka "**[parameters('kube-apiserver')]**" etc
 
-> These parameter names also need to be in the right order. And as the original policy was a builtin type, I duplicated the JSON into a custom policy and modified the existenceCondition as shown in SS #5.
+> These parameter names also need to be in the right order. And as the original policy was a builtin type, I duplicated the JSON into a custom policy and modified the existenceCondition as shown in `SS #5`.
 
 After checking numerous builtin policies for configuring diagnostic settings I can confirm Microsoft have paramaterised the individual logs/metrics so you can specify during your policy assignment which logs/metrics you want to configure (by default they are all set to "True"). 
 
@@ -145,9 +146,11 @@ The new existenceCondition shown below 100% works even if the logs/metric parame
 },
 ```
 
-You can read more about Azure Kubernetes Service (AKS) logs [here](https://docs.microsoft.com/en-us/azure/aks/view-control-plane-logs)
+Thanks for joining me today, I look forward to your feedback and questions.
 
-If you're interested in authoring policies which evaluate array aliases I recommend reading [this](https://docs.microsoft.com/en-us/azure/governance/policy/how-to/author-policies-for-arrays#in-and-notin)
+Read more about Azure Kubernetes Service (AKS) logs [here](https://docs.microsoft.com/en-us/azure/aks/view-control-plane-logs)
+
+Interested in authoring policies which evaluate array aliases? I recommend reading [this](https://docs.microsoft.com/en-us/azure/governance/policy/how-to/author-policies-for-arrays#in-and-notin)
 
 For a breakdown of available policy evaluation conditions check out this [link](https://docs.microsoft.com/en-us/azure/governance/policy/concepts/definition-structure#conditions)
 
