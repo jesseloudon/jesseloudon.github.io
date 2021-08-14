@@ -136,6 +136,21 @@ The PowerShell script above does the following:
 3. Imports the results from CSV and sets variables for the required fields needed to remove a role assignment (ObjectID, RoleDefinitionName and Scope)
 4. Uses a for each loop to remove each role assignment specified from the imported CSV
 
+> For the simplest removal script without any authentication or CSV export/import for documentation purposes, you can use the following PowerShell script:
+
+``` powershell
+$OBJTYPE = "Unknown"
+#Find Azure RBAC Role Assignments of 'Unknown' Type
+$RAUNKNOWN =  Get-AzRoleAssignment | where-object {$_.ObjectType.Equals($OBJTYPE)}
+#Remove each 'Unknown' Type Azure Role Assignment
+$RAUNKNOWN | ForEach-Object {
+$object = $_.ObjectId
+$roledef = $_.RoleDefinitionName
+$rolescope = $_.Scope
+Remove-AzRoleAssignment -ObjectId $object -RoleDefinitionName $roledef -Scope $rolescope
+}
+```
+
 # Closing Remarks
 
 Finding and removing Azure RBAC role assignments might not be a common occurence for your team but I think it's important to share with the community how to complete a task like this programmatically.
