@@ -11,6 +11,10 @@ galleryintro:
   - excerpt: "Speaking"
 gallery:
 
+  - url: "https://youtu.be/dPwy8nlNyNM?t=570"
+    image_path: /assets/images/DevOpsSydney2021.png
+    alt: "DevOps Sydney: Automating Infrastructure Governance with Azure Policy"
+    title: "DevOps Sydney: Automating Infrastructure Governance with Azure Policy"
   - url: "https://youtu.be/AVn5glYBz84?t=2380"
     image_path: /assets/images/ASUG-PolicyAsCode2021.png
     alt: "Azure Sydney User Group: Azure Policy as Code - Zero to Hero in 60 minutes"
