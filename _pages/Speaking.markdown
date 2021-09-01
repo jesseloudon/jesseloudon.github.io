@@ -8,12 +8,12 @@ categories:
 tags: 
 - "Speaking"
 ---
-## Speaking @ Events/Meetups 
+# Speaking @ Events/Meetups 
 
 * Slides used are available for download (PDF)
 * GIF + recorded sessions (YouTube)
 
-:date: 2021
+## 2021 :date:
 
 ### DevOps Sydney 2021: Automating Infrastructure Governance with Azure Policy [ :floppy_disk: [slides](/assets/pdfs/SydDevOps2021_AutomateInfraGovWithAzPolicy.pdf) ]
 [![DevOps Sydney 2021: Automating Infrastructure Governance with Azure Policy](/assets/gifs/SydDevOps2021_AutomateInfraGovWithAzPolicy.gif)](https://youtu.be/dPwy8nlNyNM?t=570)
