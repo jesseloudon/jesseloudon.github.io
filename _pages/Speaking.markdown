@@ -9,6 +9,7 @@ tags:
 - "Speaking"
 ---
 :star: Slides used are available for download (PDF)
+
 :star: GIF + recorded sessions (YouTube)
 
 ## 2021 :date:
