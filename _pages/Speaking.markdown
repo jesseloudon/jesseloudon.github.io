@@ -1,5 +1,5 @@
 ---
-title: "Speaking"
+title: "Speaking @ Events/Meetups"
 permalink: /speaking/
 excerpt: "Speaking experiences"
 date: "2021-04-18"
@@ -8,10 +8,8 @@ categories:
 tags: 
 - "Speaking"
 ---
-# Speaking @ Events/Meetups 
-
-* Slides used are available for download (PDF)
-* GIF + recorded sessions (YouTube)
+:star: Slides used are available for download (PDF)
+:star: GIF + recorded sessions (YouTube)
 
 ## 2021 :date:
 
