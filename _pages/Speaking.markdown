@@ -7,32 +7,22 @@ categories:
 - "Personal"
 tags: 
 - "Speaking"
-galleryintro: 
-  - excerpt: "Speaking"
-gallery:
 
-  - url: "https://youtu.be/dPwy8nlNyNM?t=570"
-    image_path: /assets/images/DevOpsSydney2021.png
-    alt: "DevOps Sydney: Automating Infrastructure Governance with Azure Policy"
-    title: "DevOps Sydney: Automating Infrastructure Governance with Azure Policy"
-  - url: "https://youtu.be/AVn5glYBz84?t=2380"
-    image_path: /assets/images/ASUG-PolicyAsCode2021.png
-    alt: "Azure Sydney User Group: Azure Policy as Code - Zero to Hero in 60 minutes"
-    title: "Azure Sydney User Group: Azure Policy as Code - Zero to Hero in 60 minutes"
-  - url: "https://youtu.be/qpnMJXw6pIg"
-    image_path: /assets/images/GlobalAzure2021PolicyAsCodeWithBicep.png
-    alt: "Global Azure: Policy as Code with Bicep for Enterprise Scale"
-    title: "Global Azure: Policy as Code with Bicep for Enterprise Scale"
-  - url: "https://www.youtube.com/watch?v=JuzBolDyGdg&t=16m16s"
-    image_path: /assets/images/hashitalksanz2021.jpg
-    alt: "HashiTalks ANZ: DRY coding with Terraform, CSVs, ForEach"
-    title: "HashiTalks ANZ: DRY coding with Terraform, CSVs, ForEach"
-    
----
+## History of my public speaking and presentations.
 
-History of my public speaking and presentations.
+:date: 2021
 
-{% include gallery %}
+- DevOps Sydney 2021: Automating Infrastructure Governance with Azure Policy [ :floppy_disk: [slides](/assets/pdfs/SydDevOps2021_AutomateInfraGovWithAzPolicy.pdf) ]
+[![DevOps Sydney 2021: Automating Infrastructure Governance with Azure Policy]/assets/gifs/SydDevOps2021_AutomateInfraGovWithAzPolicy.gif)](https://youtu.be/dPwy8nlNyNM?t=570)
+
+
+- Azure Sydney User Group 2021: Azure Policy as Code - Zero to Hero in 60 minutes [ :floppy_disk: [slides](/assets/pdfs/AzureSydUserGroup2021_PolicyAsCode_ZeroToHero60min.pdf) ]
+[![Azure Sydney User Group 2021: Azure Policy as Code - Zero to Hero in 60 minutes](/assets/gifs/AzureSydUserGroup2021_PolicyAsCode_ZeroToHero60min.gif)](https://youtu.be/AVn5glYBz84?t=2380)
+
+
+- Global Azure 2021: Policy as Code with Bicep for Enterprise Scale [ :floppy_disk: [slides](/assets/pdfs/GlobalAzure2021_PolicyAsCodeWithBicepForEnterpriseScale.pdf) ]
+[![Global Azure 2021: Policy as Code with Bicep for Enterprise Scale](/assets/gifs/GlobalAzure2021_PolicyAsCodeWithBicepForEnterpriseScale.gif)](https://youtu.be/qpnMJXw6pIg)
+
 
 ## Get in touch :octocat:
 
