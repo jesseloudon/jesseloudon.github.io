@@ -8,7 +8,10 @@ categories:
 tags: 
 - "Speaking"
 ---
-## History of my public speaking and presentations.
+## Speaking @ Events/Meetups 
+
+* Slides used are available for download (PDF)
+* GIF + recorded sessions (YouTube)
 
 :date: 2021
 
