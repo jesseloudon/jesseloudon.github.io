@@ -8,9 +8,8 @@ categories:
 tags: 
 - "Speaking"
 ---
-:star: Slides used are available for download (PDF)
-
-:star: GIF + recorded sessions (YouTube)
+- [x] :star: Slides available for download (PDF)
+- [x] :star: Recorded sessions (YouTube)
 
 ## 2021 :date:
 
