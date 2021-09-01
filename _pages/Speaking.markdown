@@ -7,13 +7,13 @@ categories:
 - "Personal"
 tags: 
 - "Speaking"
-
+---
 ## History of my public speaking and presentations.
 
 :date: 2021
 
 - DevOps Sydney 2021: Automating Infrastructure Governance with Azure Policy [ :floppy_disk: [slides](/assets/pdfs/SydDevOps2021_AutomateInfraGovWithAzPolicy.pdf) ]
-[![DevOps Sydney 2021: Automating Infrastructure Governance with Azure Policy]/assets/gifs/SydDevOps2021_AutomateInfraGovWithAzPolicy.gif)](https://youtu.be/dPwy8nlNyNM?t=570)
+[![DevOps Sydney 2021: Automating Infrastructure Governance with Azure Policy](/assets/gifs/SydDevOps2021_AutomateInfraGovWithAzPolicy.gif)](https://youtu.be/dPwy8nlNyNM?t=570)
 
 
 - Azure Sydney User Group 2021: Azure Policy as Code - Zero to Hero in 60 minutes [ :floppy_disk: [slides](/assets/pdfs/AzureSydUserGroup2021_PolicyAsCode_ZeroToHero60min.pdf) ]
@@ -22,6 +22,10 @@ tags:
 
 - Global Azure 2021: Policy as Code with Bicep for Enterprise Scale [ :floppy_disk: [slides](/assets/pdfs/GlobalAzure2021_PolicyAsCodeWithBicepForEnterpriseScale.pdf) ]
 [![Global Azure 2021: Policy as Code with Bicep for Enterprise Scale](/assets/gifs/GlobalAzure2021_PolicyAsCodeWithBicepForEnterpriseScale.gif)](https://youtu.be/qpnMJXw6pIg)
+
+
+- HashiTalks ANZ 2021: DRY coding with Terraform, CSVs, ForEach [ :floppy_disk: [slides](/assets/pdfs/DRY_CodingwithTerraformCSVsForEach.pdf) ]
+[![HashiTalks ANZ 2021: DRY coding with Terraform, CSVs, ForEach](/assets/gifs/hashitalksanz2021.jpg)](https://www.youtube.com/watch?v=JuzBolDyGdg&t=16m16s)
 
 
 ## Get in touch :octocat:
