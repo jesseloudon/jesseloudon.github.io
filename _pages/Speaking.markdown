@@ -25,7 +25,7 @@ tags:
 
 
 - HashiTalks ANZ 2021: DRY coding with Terraform, CSVs, ForEach [ :floppy_disk: [slides](/assets/pdfs/DRY_CodingwithTerraformCSVsForEach.pdf) ]
-[![HashiTalks ANZ 2021: DRY coding with Terraform, CSVs, ForEach](/assets/gifs/hashitalksanz2021.jpg)](https://www.youtube.com/watch?v=JuzBolDyGdg&t=16m16s)
+[![HashiTalks ANZ 2021: DRY coding with Terraform, CSVs, ForEach](/assets/gifs/hashitalksanz2021.gif)](https://www.youtube.com/watch?v=JuzBolDyGdg&t=16m16s)
 
 
 ## Get in touch :octocat:
