@@ -60,11 +60,11 @@ gallery:
     alt: "Citrix Certified Administrator XenApp"
     title: "Citrix Certified Administrator XenApp"
 ---
-Hello everybody :wave: I'm Jesse Loudon aka 'Just another #Azure guy'
+Hello everybody :wave: I'm Jesse Loudon an 'Azure Policy as Code' advocate
 
 ## About Jesse Loudon :aquarius:
 * Consultant specialising in Azure, DevOps, Infra-as-Code
-* 10+ years professional IT experience, most recently Telstra Purple/Kloud Solutions
+* 10+ years professional IT experience, currently LAB3, previously Telstra Purple/Kloud Solutions
 * Continual learner and collector of [certifications](https://www.youracclaim.com/users/jesseloudon/badges)
 * Since early 2020 have been publishing technical posts about once every 1-2 months to my [personal blog](https://jloudon.com) and cross-posting to my previous [employer’s blog](https://purple.telstra.com/blog)
 * Using LinkedIn/Twitter to share blog posts out to my connections
