@@ -14,7 +14,7 @@ tags:
 ## 2021 :date:
 
 ### Azure Back to School 2021: Bicep Builders: Azure Sentinel and Policy as Code
-[![AzureBacktoSchool 2021: Bicep Builders: Azure Sentinel and policy as code](https://youtu.be/B03V3Tazcec)
+[![AzureBacktoSchool 2021: Bicep Builders: Azure Sentinel and Policy as Code](https://img.youtube.com/vi/B03V3Tazcec/0.jpg)](https://youtu.be/B03V3Tazcec)
 
 ### DevOps Sydney 2021: Automating Infrastructure Governance with Azure Policy [ :floppy_disk: [slides](/assets/pdfs/SydDevOps2021_AutomateInfraGovWithAzPolicy.pdf) ]
 [![DevOps Sydney 2021: Automating Infrastructure Governance with Azure Policy](/assets/gifs/SydDevOps2021_AutomateInfraGovWithAzPolicy.gif)](https://youtu.be/dPwy8nlNyNM?t=570)
