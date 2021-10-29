@@ -28,7 +28,7 @@ Shortly I'll provide a detailed walkthrough of everything you need to get starte
 
 First we need to setup our local development environment for the blog site by installing a few dependencies. 
 
-* As I'm running a Surface Book 2 these instructions are for the Windows 64-bit OS but can be modified to suit MacOS or Linux as needed.
+> At the time of writing I'm running a Surface Book 2 so these instructions are for the Windows 64-bit OS but can be modified to suit MacOS or Linux as needed. See [https://jekyllrb.com/docs/installation/](https://jekyllrb.com/docs/installation/) for more Jekyll installation guides.
 
 ![DevDeploymentPlan](/assets/images/Part2deploymentplan.png "Dev Deployment Plan")
 
@@ -37,7 +37,7 @@ First we need to setup our local development environment for the blog site by in
 1. We'll install VSCode
 2. We'll install Git
 3. We'll install Ruby and Jekyll
-4. We'll clone a Jekyll Theme to a local folder and preview the site
+4. We'll clone a free remote Jekyll Theme to a local folder and preview the site
 
 <i> Already have Visual Studio Code or Git installed? --> Update to the latest release prior to continuing with this guide.
 
@@ -90,28 +90,18 @@ $ gem install jekyll bundler
 
 ![Jekyllinstall2](/assets/images/Jekyll_install2.png "Jekyll Install p2")
 
-### Cloning a Jekyll Theme
+### Cloning a remote Jekyll Theme
 
-We want to be blogging today-ish, not next week or a month later. So let's `clone` an existing Jekyll theme to our local dev environment. We can then modify it to suit our needs without reinventing the wheel!
+We want to be blogging today-ish, not next week or a month later. So let's `clone` an existing remote Jekyll theme to our local dev environment. We can then modify it to suit our needs without reinventing the wheel!
 
-> By the way! The default Jekyll theme is [Minima][Minima] and seems fine for a quick proof of concept. I don't recommend going live with it because of what it lacks when compared to other themes out there.
-You can check it out by executing the following cmdlets from a VSCode Terminal:
-``` bash
-$ jekyll new my-awesome-site
-$ cd my-awesome-site
-$ bundle exec jekyll serve
-```
-After a successful serve - browsing to http://localhost:4000 will display a home page like this:
-![Minimatheme](/assets/images/Minima-theme.png "Minima theme")
-
-Currently I'm using [Minimal Mistakes][MmistakesGH] by Michael Rose because it suits my needs & because of Michael's helpful documentation available - for example check out [https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/][Mmistakes]
+At the time of writing I'm using the [Minimal Mistakes][MmistakesGH] theme by Michael Rose because it suits my needs & because of Michael's helpful documentation available - for example check out [https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/][Mmistakes]
 
 The quickest way to get started with the Minimal Mistakes theme is to `git clone` one of the following GitHub repositories.
 
 * [Minimal Mistakes Remote Theme Starter][MmistakesRemote]
 * [Minimal Mistakes][MmistakesGH]
 
-Let's look at how this works with the <b>Remote Theme</b>.
+Let's look at how this works with the **Remote Theme** (1st from the list above)
 
 Try executing the following cmdlets from a VSCode Terminal:
 
@@ -122,6 +112,8 @@ $ cd mm-github-pages-starter/
 $ bundle exec jekyll serve
 ```
 
+> When running `bundle exec jekyll serve` - if you're seeing an error similar to 'cannot load such file -- webrick (LoadError)' use `bundle add webrick` [https://github.com/jekyll/jekyll/issues/8531](https://github.com/jekyll/jekyll/issues/8531)
+
 After a successful serve - browsing to http://localhost:4000 will display a home page like this:
 
 ![Jekylltheme1](/assets/images/Jekylltheme1.png "Jekyll theme")
@@ -130,37 +122,60 @@ Open the newly created folder `C:\mm-github-pages-starter` from VSCode to access
 
 ![Jekylltheme2](/assets/images/Jekylltheme2.png "Jekyll theme")
 
+### Understanding Jekyll
+
 Here's a breakdown of what you see above. It's important to understand this structure as the majority of your changes will happen here.
 
-* `_data` contains a .yml file which controls the site navigation links visible at the top of pages. Modify the navigation.yml file as you add/remove pages to your site.
+#### _data 
+* contains a .yml file which controls the site navigation links visible at the top of pages. 
+* modify the navigation.yml file as you add/remove pages to your site.
 
-* `_pages` contains .markdown files used by the site such as the 404 and About pages. Modify the existing pages in this folder or create new ones to suit your needs.
+#### _pages
+* contains .markdown files used by the site such as the 404 and About pages
+* modify the existing pages in this folder or create new ones to suit your needs
 
-* `_posts` contains .markdown files that are published to the site as new posts. Place your new posts into this folder.
+#### _posts
+* contains .markdown files that are published to the site as new posts
+* place your new posts into this folder
 
-* `_site` is where Jekyll has built and stored the site before publishing it locally. You can ignore this folder.
+#### _site 
+* where Jekyll has built and stored the site before publishing it locally
+* you can ignore this folder
 
-* `assets\images` contains image files used by the site and pages/posts. Save your PNG/JPEG/BMP/GIF files into this folder and reference the path in your markdown.
+#### assets\images 
+* contains image files used by the site and pages/posts
+* save your PNG/JPEG/BMP/GIF files into this folder and reference the path in your markdown for example `![%ImageDescription%](/assets/images/%filename%)`.
 
-* `_config.yml` is the main configuration file that Jekyll references to build the site after you have used `bundle exec jekyll serve`. Modify this file first to update key properties/variables and then rerun a jekyll serve to see the changes locally.
+#### _config.yml
+* the main configuration file that Jekyll references to build the site after you have used `bundle exec jekyll serve`
+* modify this file first to update key properties/variables and then rerun a jekyll serve to see the changes locally
 
-* `.gitignore` contains files or folders that you do not want syncing via Git to your GitHub repository. Modify this file if you add a _drafts folder later on for posts that you don't want sync'd into GitHub.
+#### .gitignore 
+* contains files or folders that you do not want syncing via Git to your GitHub repository
+* modify this file if you add a _drafts folder later on for posts that you don't want sync'd into GitHub
 
-* `Gemfile` is used to define RubyGems that are loaded for the site. Modify this file as needed for changes to plugins.
+#### Gemfile
+* used to define RubyGems that are loaded for the site
+* modify this file as needed for changes to plugins
 
-* `Gemfile.lock` is a Jekyll autogenerated file that appears after you have used `bundle exec jekyll serve` - you can ignore it.
+#### Gemfile.lock
+* a Jekyll autogenerated file that appears after you have used `bundle exec jekyll serve`
+* you can ignore this file
 
-* `index.html` defines some YAML Front Matter for the site's home page. There's no need to modify this file.
+#### index.html
+* defines some YAML Front Matter for the site's home page 
+* there's no need to modify this file
 
-* `README.md` is a helpful introduction to the Remote Theme written by the author Michael Rose.
+#### README.md 
+* a helpful introduction to the Remote Theme written by the author Michael Rose
 
-<b> Next Steps </b>
+## Next Steps
 
-- Review and update `Config.yml`
-- Create a few blog posts into the `_posts` folder.
-- Add your own images into the `assets\images` folder and reference them into posts using `![%ImageDescription%](/assets/images/%filename%)`.
-- Create your own `About` page or update the existing `_pages/About.md`.
-- Run `bundle exec jekyll serve` to see the results!
+1. Review and update `Config.yml`.
+2. Create a few blog posts into the `_posts` folder.
+3. Add your own images into the `assets\images` folder and reference them into posts using `![%ImageDescription%](/assets/images/%filename%)`.
+4. Create your own `About` page or update the existing `_pages/About.md`.
+5. Run `bundle exec jekyll serve` to see the results!
 
 ## Recap
 
@@ -168,7 +183,7 @@ We've completed installation of our open source blogging dependencies to our loc
 
 ![Part2DevComplete](/assets/images/Part2devcomplete.png "Part2 Dev Complete")
 
-Congrats on getting this far!
+Congrats on getting this far! If you've followed this guide you should be armed with enough knowledge of Jekyll to be dangerous :-)
 
 Join me for `Part 3` of this series where we'll look at taking your blog live with [GitHub][GitHub] and [GitHub Pages][GitHubPages].
 
