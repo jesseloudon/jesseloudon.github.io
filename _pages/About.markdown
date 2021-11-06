@@ -12,7 +12,7 @@ galleryintro:
 gallery:
 
   - url: "https://mvp.microsoft.com/en-us/PublicProfile/5004598"
-    image_path: /assets/images/MVP_Logo_Preferred_Cyan300_RGB_72ppi.png
+    image_path: /assets/images/MVP_Logo_Avatar_Preferred_Cyan300_RGB_300ppi.png
     alt: "Microsoft Azure MVP - Jesse Loudon"
     title: "Microsoft Azure MVP"
   - url: "https://www.youracclaim.com/user/jesseloudon"
