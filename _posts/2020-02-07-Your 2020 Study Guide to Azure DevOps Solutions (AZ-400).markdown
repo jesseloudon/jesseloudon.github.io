@@ -16,7 +16,7 @@ With Microsoft announcing sweeping changes to a few Azure exams later in March 2
 # Establish your Rhythm
 After doing a few of these exams over the years you’ll find a rhythm that works for you. Here’s mine.
 
-1. Go to https://docs.microsoft.com/en-us/learn/certifications/browse/
+1. Go to [https://docs.microsoft.com/en-us/learn/certifications/browse/](https://docs.microsoft.com/en-us/learn/certifications/browse/?WT.mc_id=AZ-MVP-5004598)
 2. Search for and go to the relevant exam page (e.g. AZ-400)
 3. Download the Exam Skills Outline ![AZ400ExamSkillsOutline](/assets/images/AZ400SkillsMeasured.png "AZ400 Exam Skills Outline")
 4. Create a repository of study resources (docs, images, links, etc)
@@ -258,11 +258,11 @@ Look out for another post after I pass the exam `/confidence`
 Cheers,
 Jesse
 
-[AZ400-URL1]:https://visualstudio.microsoft.com/dev-essentials/
-[AZ400-URL2]:https://www.azuredevopslabs.com/
+[AZ400-URL1]:https://visualstudio.microsoft.com/dev-essentials/?WT.mc_id=AZ-MVP-5004598
+[AZ400-URL2]:https://www.azuredevopslabs.com/?WT.mc_id=AZ-MVP-5004598
 [AZ400-URL3]:https://www.pluralsight.com/search?q=DevOps
 [AZ400-URL4]:https://www.udemy.com/topic/microsoft-azure-devops/
-[AZ400-URL5]:https://docs.microsoft.com/en-us/azure/devops/?view=azure-devops
-[AZ400-URL6]:https://docs.microsoft.com/en-us/azure/architecture/checklist/dev-ops
-[AZ400-URL7]:https://docs.microsoft.com/en-us/azure/devops/learn/devops-at-microsoft/
-[AZ400-URL8]:https://devblogs.microsoft.com/devops/
+[AZ400-URL5]:https://docs.microsoft.com/en-us/azure/devops/?view=azure-devops?WT.mc_id=AZ-MVP-5004598
+[AZ400-URL6]:https://docs.microsoft.com/en-us/azure/architecture/checklist/dev-ops?WT.mc_id=AZ-MVP-5004598
+[AZ400-URL7]:https://docs.microsoft.com/en-us/azure/devops/learn/devops-at-microsoft/?WT.mc_id=AZ-MVP-5004598
+[AZ400-URL8]:https://devblogs.microsoft.com/devops/?WT.mc_id=AZ-MVP-5004598

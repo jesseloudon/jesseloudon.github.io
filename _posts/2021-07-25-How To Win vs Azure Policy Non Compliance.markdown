@@ -148,11 +148,11 @@ The new existenceCondition shown below 100% works even if the logs/metric parame
 
 Thanks for joining me today, I look forward to your feedback and questions.
 
-Read more about Azure Kubernetes Service (AKS) logs [here](https://docs.microsoft.com/en-us/azure/aks/view-control-plane-logs)
+Read more about Azure Kubernetes Service (AKS) logs [here](https://docs.microsoft.com/en-us/azure/aks/view-control-plane-logs?WT.mc_id=AZ-MVP-5004598)
 
-Interested in authoring policies which evaluate array aliases? I recommend reading [this](https://docs.microsoft.com/en-us/azure/governance/policy/how-to/author-policies-for-arrays#in-and-notin)
+Interested in authoring policies which evaluate array aliases? I recommend reading [this](https://docs.microsoft.com/en-us/azure/governance/policy/how-to/author-policies-for-arrays#in-and-notin?WT.mc_id=AZ-MVP-5004598)
 
-For a breakdown of available policy evaluation conditions check out this [link](https://docs.microsoft.com/en-us/azure/governance/policy/concepts/definition-structure#conditions)
+For a breakdown of available policy evaluation conditions check out this [link](https://docs.microsoft.com/en-us/azure/governance/policy/concepts/definition-structure#conditions?WT.mc_id=AZ-MVP-5004598)
 
 Keep fighting the good fight!
 

@@ -328,7 +328,7 @@ param metricAlertAutoMitigate string = 'true'
 param assignmentEnforcementMode string = 'Default'
 ```
 
-> :wave: If the metricAlert inputs above aren't making much sense I recommend parsing Microsoft's ARM template reference for [Metric Alerts](https://docs.microsoft.com/en-us/azure/templates/microsoft.insights/metricalerts?tabs=json)
+> :wave: If the metricAlert inputs above aren't making much sense I recommend parsing Microsoft's ARM template reference for [Metric Alerts](https://docs.microsoft.com/en-us/azure/templates/microsoft.insights/metricalerts?tabs=json?WT.mc_id=AZ-MVP-5004598)
 
 **Finally we're creating an RBAC role assignment**
 * This step is needed because Azure policy assignments don't automatically create an RBAC role assignment for the generated identity which means our DINE policy won't have the required permissions to create a metric alert at the target's resource group
@@ -350,7 +350,7 @@ Ok folks, that was a ton of code to process so congrats if you're still with me!
 > You can find the full Bicep example from above here: [deployifnotexists-policy-with-initiative-and-assignment](https://github.com/globalbao/bicep-policy-examples/tree/main/deployifnotexists-policy-with-initiative-and-assignment)
 
 ### Implementation/Testing Flow
-To deploy this example with Bicep ensure you have at least [azure-cli](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli) version 2.20.0 which comes with Bicep integration (nice!). I also recommend grabbing the [Bicep VSCode extension](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-bicep) to benefit from validation and intellisense for your .bicep files.
+To deploy this example with Bicep ensure you have at least [azure-cli](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli?WT.mc_id=AZ-MVP-5004598) version 2.20.0 which comes with Bicep integration (nice!). I also recommend grabbing the [Bicep VSCode extension](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-bicep) to benefit from validation and intellisense for your .bicep files.
 
 * **1 - Deploy your DINE policy using Bicep via below cli steps**
 
@@ -457,7 +457,7 @@ Historically I've preferred leveraging dynamic thresholds over static thresholds
 * As resource usage patterns change seasonally, or due to other predictable events, only sigificant / out of the ordinary alerts are raised for resources resulting in reduced 'alert noise' for the service desk to respond to
 * I'm also an advocate of data-driven monitoring where buckets of data are analyzed by machine learning for trends/patterns and alerts raised only if they meet our dynamic threshold specifications
 
-> The big caveat to using Dynamic Thresholds is that without enough metric data ([3 days and at least 30 samples](https://docs.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-dynamic-thresholds#how-much-data-is-needed-to-trigger-an-alert)) to parse and learn from you won't have any alerts raised by Azure Monitor. This doesn't impact existing resources that have enough historical metric data to provide, but does impact our ability to effectively monitor newly provisioned resources. To combat this caveat you can look to deploy metric alerts using static thresholds to your new resources and then remove them after a period of time. 
+> The big caveat to using Dynamic Thresholds is that without enough metric data ([3 days and at least 30 samples](https://docs.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-dynamic-thresholds#how-much-data-is-needed-to-trigger-an-alert?WT.mc_id=AZ-MVP-5004598)) to parse and learn from you won't have any alerts raised by Azure Monitor. This doesn't impact existing resources that have enough historical metric data to provide, but does impact our ability to effectively monitor newly provisioned resources. To combat this caveat you can look to deploy metric alerts using static thresholds to your new resources and then remove them after a period of time. 
 
 What are your thoughts on static vs dynamic thresholds? Let me know in the comments below! :loudspeaker:
 
@@ -500,7 +500,7 @@ az policy definition list |  ConvertFrom-Json | Where-Object { $_.parameters.eff
 
 **Microsoft Docs**
 
-Microsoft Doc enthusiasts can go to [built-in-policies](https://docs.microsoft.com/en-us/azure/governance/policy/samples/built-in-policies) and use CTRL + F in your browser with the keyword `deploy` to quickly find DINE policies.
+Microsoft Doc enthusiasts can go to [built-in-policies](https://docs.microsoft.com/en-us/azure/governance/policy/samples/built-in-policies?WT.mc_id=AZ-MVP-5004598) and use CTRL + F in your browser with the keyword `deploy` to quickly find DINE policies.
 
 **Azure Portal**
 

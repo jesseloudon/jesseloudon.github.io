@@ -88,7 +88,7 @@ If you're keen to get started first install these pre-requisities on your local 
 * [Git](https://git-scm.com/downloads)
 * [VSCode](https://code.visualstudio.com/download)
 * [VSCode (extension) Remote Development](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.vscode-remote-extensionpack)
-* [AzureCLI](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli)
+* [AzureCLI](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli?WT.mc_id=AZ-MVP-5004598)
 
 Then follow the development flow listed in steps 1-7 above and/or check out [Part 2](https://jloudon.com/cloud/Ansible-on-Azure-Part-2/) and [Part 3](https://jloudon.com/cloud/Ansible-on-Azure-Part-3/) of this series for in-depth guidance.
 

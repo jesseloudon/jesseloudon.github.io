@@ -119,29 +119,18 @@ Inspiration would come by browsing to Policies/Built-in Definitions via the Azur
 The "Audit usage of custom RBAC rules" policy has two rules under if > allOf
 
 ``` json
-    "if": {
-
-      "allOf": [
-
+"if": {
+    "allOf": [
         {
-
-          "field": "type",
-
-          "equals": "Microsoft.Authorization/roleDefinitions"
-
+            "field": "type",
+            "equals": "Microsoft.Authorization/roleDefinitions"
         },
-
         {
-
-          "field": "Microsoft.Authorization/roleDefinitions/type",
-
-          "equals": "CustomRole"
-
+            "field": "Microsoft.Authorization/roleDefinitions/type",
+            "equals": "CustomRole"
         }
-
-      ]
-
-    }
+    ]
+}
 ```
 
 You can see the policy above is evaluating against an exact match on the `CustomRole` value within the `Microsoft.Authorization/roleDefinitions/type` property alias.
@@ -162,39 +151,39 @@ So to meet my requirement of auditing users who’ve been assigned direct access
 
 ``` json
 {
-  "mode": "All",
-  "policyRule": {
-    "if": {
-      "allOf": [
-        {
-          "field": "type",
-          "equals": "Microsoft.Authorization/roleAssignments"
+    "mode": "All",
+    "policyRule": {
+        "if": {
+            "allOf": [
+                {
+                    "field": "type",
+                    "equals": "Microsoft.Authorization/roleAssignments"
+                },
+                {
+                    "field": "Microsoft.Authorization/roleAssignments/principalType",
+                    "equals": "[parameters('principalType')]"
+                }
+            ]
         },
-        {
-          "field": "Microsoft.Authorization/roleAssignments/principalType",
-          "equals": "[parameters('principalType')]"
+        "then": {
+            "effect": "audit"
         }
-      ]
     },
-    "then": {
-      "effect": "audit"
+    "parameters": {
+        "principalType": {
+            "type": "String",
+            "metadata": {
+                "displayName": "principalType",
+                "description": "Which principaltype to audit against e.g. 'User'"
+            },
+            "allowedValues": [
+                "User",
+                "Group",
+                "ServicePrincipal"
+            ],
+            "defaultValue": "User"
+        }
     }
-  },
-  "parameters": {
-    "principalType": {
-      "type": "String",
-      "metadata": {
-        "displayName": "principalType",
-        "description": "Which principaltype to audit against e.g. 'User'"
-      },
-      "allowedValues": [
-        "User",
-        "Group",
-        "ServicePrincipal"
-      ],
-      "defaultValue": "User"
-    }
-  }
 }
 ```
 

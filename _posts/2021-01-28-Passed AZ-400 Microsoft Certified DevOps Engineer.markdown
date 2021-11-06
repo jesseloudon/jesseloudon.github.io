@@ -18,7 +18,7 @@ Hey everyone. I've recently passed the AZ-400 exam for Microsoft Certified DevOp
 
 ![AZ-400 cert badge](/assets/images/CERT-Expert-DevOps-Engineer-600x600.png "AZ-400 cert badge")
 
-> Candidates for this exam should have subject matter expertise working with people, processes, and technologies to continuously deliver business value. Responsibilities for this role include designing and implementing strategies for collaboration, code, infrastructure, source control, security, compliance, continuous integration, testing, delivery, monitoring, and feedback. A candidate for this exam must be familiar with both Azure administration and development and must be expert in at least one of these areas. Src: [Exam AZ-400: Designing and Implementing Microsoft DevOps Solutions](https://docs.microsoft.com/en-us/learn/certifications/exams/az-400)
+> Candidates for this exam should have subject matter expertise working with people, processes, and technologies to continuously deliver business value. Responsibilities for this role include designing and implementing strategies for collaboration, code, infrastructure, source control, security, compliance, continuous integration, testing, delivery, monitoring, and feedback. A candidate for this exam must be familiar with both Azure administration and development and must be expert in at least one of these areas. Src: [Exam AZ-400: Designing and Implementing Microsoft DevOps Solutions](https://docs.microsoft.com/en-us/learn/certifications/exams/az-400?WT.mc_id=AZ-MVP-5004598)
 
 # Just Enough Study (JES)
 
@@ -36,7 +36,7 @@ I'm positive that the concept of studying just enough to pass is nothing new or 
 *Utilise study resources, practice tests, and labs to address major knowledge gaps*
 * There's many AZ-400 study resources available online (mostly free) if you search, here's a few that I've found helpful in my journey to becoming a Microsoft Certified DevOps Engineer Expert.
 
-1. **[Microsoft Learn - DevOps Engineer Learning Paths](https://docs.microsoft.com/en-us/learn/browse/?roles=devops-engineer&resource_type=learning%20path)** - *Free*
+1. **[Microsoft Learn - DevOps Engineer Learning Paths](https://docs.microsoft.com/en-us/learn/browse/?roles=devops-engineer&resource_type=learning%20path?WT.mc_id=AZ-MVP-5004598)** - *Free*
 2. **[Pluralsight](https://app.pluralsight.com/search/?q=Continuous%20Delivery%20on%20Microsoft%20Azure%20for%20DevOps%20Engineers&type=conference%2Cvideo-course%2Cguide%2Cwebinar%2Cpath%2Cassessment&m_sort=relevance&query_id=2063a8f1-64ac-4a39-87bc-327383f3353b&source=user_typed)** - *Paid*
 3. **[YouTube - search for recent AZ400 content](https://www.youtube.com/results?search_query=az400)** - *Free*
 4. **[GitHub - Timothy Warner's AZ400 course](https://github.com/timothywarner/az400)** - *Free*
@@ -52,7 +52,7 @@ I'm positive that the concept of studying just enough to pass is nothing new or 
 
 I'm constantly looking for new ways to learn on the fly and more efficiently find gaps in my knowledge so I can quickly address those gaps with targeted study sprints.
 
-Instead of taking the time to read every sentence of the AZ-400 skills outline and pick out key phrases I've used [Azure Text Analytics](https://docs.microsoft.com/en-us/azure/cognitive-services/text-analytics/) and the [Key Phrases API](https://docs.microsoft.com/en-us/azure/cognitive-services/text-analytics/how-tos/text-analytics-how-to-keyword-extraction) to rapidly analyse the entire AZ400 skills outline and output the main points.
+Instead of taking the time to read every sentence of the AZ-400 skills outline and pick out key phrases I've used [Azure Text Analytics](https://docs.microsoft.com/en-us/azure/cognitive-services/text-analytics/?WT.mc_id=AZ-MVP-5004598) and the [Key Phrases API](https://docs.microsoft.com/en-us/azure/cognitive-services/text-analytics/how-tos/text-analytics-how-to-keyword-extraction?WT.mc_id=AZ-MVP-5004598) to rapidly analyse the entire AZ400 skills outline and output the main points.
 
 > The Text Analytics API is a suite of text analytics web services built with best-in-class Microsoft machine learning algorithms. The API can be used to analyze unstructured text for tasks such as sentiment analysis, key phrase extraction and language detection. No training data is needed to use this API; just bring your text data. This API uses advanced natural language processing techniques to deliver best in class predictions. Src: Microsoft
 
@@ -68,7 +68,7 @@ Instead of taking the time to read every sentence of the AZ-400 skills outline a
 8. Hit Send
 9. Copy the Response Content into a [JSON linter](https://jsonlint.online/) to easily reformat into a readable list of strings as shown below. After that you can paste the list into Notepad++ and easily sort alphabetically.
 
-> Note: Your Document size must be 5,120 or fewer characters per document, and you can have up to 1,000 items (IDs) per collection. Src: [Microsoft](https://docs.microsoft.com/en-us/azure/cognitive-services/text-analytics/how-tos/text-analytics-how-to-keyword-extraction#preparation) - When I submitted the unformatted AZ400 skills outline there were 9806 characters total so I broke this up into two seperate request submissions using multiple ID blocks.
+> Note: Your Document size must be 5,120 or fewer characters per document, and you can have up to 1,000 items (IDs) per collection. Src: [Microsoft](https://docs.microsoft.com/en-us/azure/cognitive-services/text-analytics/how-tos/text-analytics-how-to-keyword-extraction#preparation?WT.mc_id=AZ-MVP-5004598) - When I submitted the unformatted AZ400 skills outline there were 9806 characters total so I broke this up into two seperate request submissions using multiple ID blocks.
 
 **AZ-400 Key Phrases: January 2021**
 

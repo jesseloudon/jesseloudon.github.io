@@ -43,7 +43,7 @@ An example of a proactive measure could be to deny resource group creation if th
 
 # Native Tooling for Cloud Governance
 
-This brings me to [Azure Policy](https://docs.microsoft.com/en-us/azure/governance/policy/overview) which is a native tool that allows you to apply governance decisions by specifying policy effects such as:
+This brings me to [Azure Policy](https://docs.microsoft.com/en-us/azure/governance/policy/overview?WT.mc_id=AZ-MVP-5004598) which is a native tool that allows you to apply governance decisions by specifying policy effects such as:
 
 * Append
 * Audit
@@ -88,7 +88,7 @@ Azure Policy provides that governance at scale by giving you the ability to:
 
 Governance at scale can be achieved by moving away from manually managing policies in the Azure Portal to having a repeatable process for policy authoring, testing, and deployment across multiple Azure tenants and subscriptions.
 
-At the time of writing (May 2020), the Microsoft pattern for a [policy as code workflow](https://docs.microsoft.com/en-us/azure/governance/policy/concepts/policy-as-code) provides high-level guidance on:
+At the time of writing (May 2020), the Microsoft pattern for a [policy as code workflow](https://docs.microsoft.com/en-us/azure/governance/policy/concepts/policy-as-code?WT.mc_id=AZ-MVP-5004598) provides high-level guidance on:
 
 * Creating and updating policy definitions
 * Creating and updating initiative definitions

@@ -104,5 +104,5 @@ Jesse
 <!--more-->
 
 [AzPortal]:https://portal.azure.com
-[AzureBackupExplorer]:https://docs.microsoft.com/en-gb/azure/backup/monitor-azure-backup-with-backup-explorer
-[BackupExplorerPreview]:https://azure.microsoft.com/en-gb/blog/backup-explorer-now-available-in-preview/
+[AzureBackupExplorer]:https://docs.microsoft.com/en-gb/azure/backup/monitor-azure-backup-with-backup-explorer?WT.mc_id=AZ-MVP-5004598
+[BackupExplorerPreview]:https://azure.microsoft.com/en-gb/blog/backup-explorer-now-available-in-preview/?WT.mc_id=AZ-MVP-5004598

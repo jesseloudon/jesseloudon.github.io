@@ -31,9 +31,9 @@ Sometimes we also need to migrate our existing tag values to new tag key/value p
 
 I created this script to handle the tag migration leg work based on the above example tag migration problem statement.
 
-It uses [Get-AzResourceGroup](https://docs.microsoft.com/en-us/powershell/module/az.resources/get-azresourcegroup?view=azps-4.2.0) and [Get-AzResource](https://docs.microsoft.com/en-us/powershell/module/az.resources/get-azresource?view=azps-4.2.0) to query Azure for RGs/resources matching our tag key object filters. The query results are also backed up to a local CSV file because we never want to modify anything without a backup!
+It uses [Get-AzResourceGroup](https://docs.microsoft.com/en-us/powershell/module/az.resources/get-azresourcegroup?view=azps-4.2.0?WT.mc_id=AZ-MVP-5004598) and [Get-AzResource](https://docs.microsoft.com/en-us/powershell/module/az.resources/get-azresource?view=azps-4.2.0?WT.mc_id=AZ-MVP-5004598) to query Azure for RGs/resources matching our tag key object filters. The query results are also backed up to a local CSV file because we never want to modify anything without a backup!
 
-Importantly the script uses [Update-AzTag](https://docs.microsoft.com/en-us/powershell/module/az.resources/update-aztag?view=azps-4.2.0) to merge the existing/old tag key values with our new tag keys. That's the migration part taken care of!
+Importantly the script uses [Update-AzTag](https://docs.microsoft.com/en-us/powershell/module/az.resources/update-aztag?view=azps-4.2.0?WT.mc_id=AZ-MVP-5004598) to merge the existing/old tag key values with our new tag keys. That's the migration part taken care of!
 
 Update-AzTag is also leveraged to delete the old tag key after the new tag key has been created on the resource. Essentially a cleanup/housekeeping task.
 

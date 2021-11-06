@@ -22,7 +22,7 @@ In this blog I'll describe the problem using an example scenario and then show y
 
 Looking at Access Control (IAM) role assignments within the Azure portal, you might've noticed that a security principal is listed as "Identity not found" with an "Unknown" type.
 
-There's 2 possible [reasons](https://docs.microsoft.com/en-us/azure/role-based-access-control/troubleshooting#role-assignments-with-identity-not-found) this can occur:
+There's 2 possible [reasons](https://docs.microsoft.com/en-us/azure/role-based-access-control/troubleshooting#role-assignments-with-identity-not-found?WT.mc_id=AZ-MVP-5004598) this can occur:
 
 * You recently invited a user when creating a role assignment
 * You deleted a security principal that had a role assignment
@@ -60,7 +60,7 @@ My hope is that Microsoft identify this as a problem and resolve it - so I've re
 
 There's no current method I know of to easily find and remove these 'Unknown' type role assignments via the Azure Portal without doing a bunch of clicking.
 
-So to programmatically discover Azure RBAC role assignments of the 'Unknown' type we can use the [Get-AzRoleAssignment](https://docs.microsoft.com/en-us/powershell/module/az.resources/get-azroleassignment?view=azps-4.1.0) cmdlet:
+So to programmatically discover Azure RBAC role assignments of the 'Unknown' type we can use the [Get-AzRoleAssignment](https://docs.microsoft.com/en-us/powershell/module/az.resources/get-azroleassignment?view=azps-4.1.0?WT.mc_id=AZ-MVP-5004598) cmdlet:
 
 ``` powershell
 $OBJTYPE = "Unknown"
@@ -73,21 +73,13 @@ An example output of the above cmdlet is shown below.
 
 ```
 RoleAssignmentId   : /subscriptions/xxxx-xxxx-xxxx-xxxx-xxxxx/providers/Microsoft.Authorization/roleAssignments/e4d6e646-b378-4fdc-9eda-08ebed262188
-
 Scope              : /subscriptions/xxxx-xxxx-xxxx-xxxx-xxxxx
-
 DisplayName        :
-
 SignInName         :
-
 RoleDefinitionName : Contributor
-
 RoleDefinitionId   : b24988ac-6180-42a0-ab88-20f7382dd24c
-
 ObjectId           : 47bfa834-e673-43e2-9d87-77f4c445dc5f
-
 ObjectType         : Unknown
-
 CanDelegate        : False
 ```
 
@@ -95,12 +87,12 @@ You may have noticed above that the values for DisplayName and SignInName are nu
 
 # Removing Role Assignments of 'Unknown' ObjectType with PowerShell
 
-To programmatically remove Azure RBAC role assignments of the 'Unknown' type we can use the [Remove-AzRoleAssignment](https://docs.microsoft.com/en-us/powershell/module/az.resources/remove-azroleassignment?view=azps-4.1.0) cmdlet.
+To programmatically remove Azure RBAC role assignments of the 'Unknown' type we can use the [Remove-AzRoleAssignment](https://docs.microsoft.com/en-us/powershell/module/az.resources/remove-azroleassignment?view=azps-4.1.0?WT.mc_id=AZ-MVP-5004598) cmdlet.
 
 Please note:
 
 * When removing a role assignment you'll need to specify the ObjectID, RoleDefinitionName and Scope
-* You'll also need Microsoft.Authorization/roleAssignments/delete permissions, such as [User Access Administrator](https://docs.microsoft.com/en-us/azure/role-based-access-control/built-in-roles#user-access-administrator) or [Owner](https://docs.microsoft.com/en-us/azure/role-based-access-control/built-in-roles#owner)
+* You'll also need Microsoft.Authorization/roleAssignments/delete permissions, such as [User Access Administrator](https://docs.microsoft.com/en-us/azure/role-based-access-control/built-in-roles#user-access-administrator?WT.mc_id=AZ-MVP-5004598) or [Owner](https://docs.microsoft.com/en-us/azure/role-based-access-control/built-in-roles#owner?WT.mc_id=AZ-MVP-5004598)
 * Always test your scripts in a development environment first before using in production.
 
 ``` powershell
