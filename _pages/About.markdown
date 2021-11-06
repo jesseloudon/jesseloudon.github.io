@@ -8,9 +8,13 @@ categories:
 tags: 
 - "AboutMe"
 galleryintro: 
-  - excerpt: "Industry Accreditation"
+  - excerpt: "Industry Awards & Accreditation"
 gallery:
 
+  - url: "https://mvp.microsoft.com/en-us/PublicProfile/5004598"
+    image_path: /assets/images/MVP_Logo_Preferred_Cyan300_RGB_300ppi.png
+    alt: "Microsoft Azure MVP - Jesse Loudon"
+    title: "Microsoft Azure MVP"
   - url: "https://www.youracclaim.com/user/jesseloudon"
     image_path: /assets/images/CERT-Expert-DevOps-Engineer-600x600.png
     alt: "DevOps Engineer Expert"
