@@ -11,23 +11,25 @@ tags:
 - [x] :star: Slides available for download (PDF)
 - [x] :star: Recorded sessions (YouTube)
 
-## 2021 :date:
+## :date: 2021
 
-### Azure Back to School 2021: Bicep Builders: Azure Sentinel and Policy as Code
-[![AzureBacktoSchool 2021: Bicep Builders: Azure Sentinel and Policy as Code](/assets/images/AzureBackToSchool2021-BicepBuildersAzureSentinelPolicyAsCode.png)](https://youtu.be/B03V3Tazcec)
+### Melbourne Azure Security Meetup: Flexing Your Security Governance with Azure Policy As Code [ :floppy_disk: [slides](/assets/pdfs/MelbAzureSecMeetup2021_FlexingYourSecurityGovernanceWithAzurePolicyAsCode.pdf)
+[![Melbourne Azure Security Meetup: Flexing Your Security Governance with Azure Policy As Code](/assets/images/MelbAzureSecMeetup2021_FlexingYourSecurityGovernanceWithAzurePolicyAsCode.jfif)](https://youtu.be/-KSLh2I9e1U)
 
-### DevOps Sydney 2021: Automating Infrastructure Governance with Azure Policy [ :floppy_disk: [slides](/assets/pdfs/SydDevOps2021_AutomateInfraGovWithAzPolicy.pdf) ]
-[![DevOps Sydney 2021: Automating Infrastructure Governance with Azure Policy](/assets/gifs/SydDevOps2021_AutomateInfraGovWithAzPolicy.gif)](https://youtu.be/dPwy8nlNyNM?t=570)
+### Azure Back to School: Bicep Builders: Azure Sentinel and Policy as Code
+[![AzureBacktoSchool: Bicep Builders: Azure Sentinel and Policy as Code](/assets/images/AzureBackToSchool2021-BicepBuildersAzureSentinelPolicyAsCode.png)](https://youtu.be/B03V3Tazcec)
 
-### Azure Sydney User Group 2021: Azure Policy as Code - Zero to Hero in 60 minutes [ :floppy_disk: [slides](/assets/pdfs/AzureSydUserGroup2021_PolicyAsCode_ZeroToHero60min.pdf) ]
-[![Azure Sydney User Group 2021: Azure Policy as Code - Zero to Hero in 60 minutes](/assets/gifs/AzureSydUserGroup2021_PolicyAsCode_ZeroToHero60min.gif)](https://youtu.be/AVn5glYBz84?t=2380)
+### DevOps Sydney: Automating Infrastructure Governance with Azure Policy [ :floppy_disk: [slides](/assets/pdfs/SydDevOps2021_AutomateInfraGovWithAzPolicy.pdf) ]
+[![DevOps Sydney: Automating Infrastructure Governance with Azure Policy](/assets/gifs/SydDevOps2021_AutomateInfraGovWithAzPolicy.gif)](https://youtu.be/dPwy8nlNyNM?t=570)
 
-### Global Azure 2021: Policy as Code with Bicep for Enterprise Scale [ :floppy_disk: [slides](/assets/pdfs/GlobalAzure2021_PolicyAsCodeWithBicepForEnterpriseScale.pdf) ]
-[![Global Azure 2021: Policy as Code with Bicep for Enterprise Scale](/assets/gifs/GlobalAzure2021_PolicyAsCodeWithBicepForEnterpriseScale.gif)](https://youtu.be/qpnMJXw6pIg)
+### Azure Sydney User Group: Azure Policy as Code - Zero to Hero in 60 minutes [ :floppy_disk: [slides](/assets/pdfs/AzureSydUserGroup2021_PolicyAsCode_ZeroToHero60min.pdf) ]
+[![Azure Sydney User Group: Azure Policy as Code - Zero to Hero in 60 minutes](/assets/gifs/AzureSydUserGroup2021_PolicyAsCode_ZeroToHero60min.gif)](https://youtu.be/AVn5glYBz84?t=2380)
 
-### HashiTalks ANZ 2021: DRY coding with Terraform, CSVs, ForEach [ :floppy_disk: [slides](/assets/pdfs/DRY_CodingwithTerraformCSVsForEach.pdf) ]
-[![HashiTalks ANZ 2021: DRY coding with Terraform, CSVs, ForEach](/assets/gifs/hashitalksanz2021.gif)](https://www.youtube.com/watch?v=JuzBolDyGdg&t=16m16s)
+### Global Azure: Policy as Code with Bicep for Enterprise Scale [ :floppy_disk: [slides](/assets/pdfs/GlobalAzure2021_PolicyAsCodeWithBicepForEnterpriseScale.pdf) ]
+[![Global Azure: Policy as Code with Bicep for Enterprise Scale](/assets/gifs/GlobalAzure2021_PolicyAsCodeWithBicepForEnterpriseScale.gif)](https://youtu.be/qpnMJXw6pIg)
 
+### HashiTalks ANZ: DRY coding with Terraform, CSVs, ForEach [ :floppy_disk: [slides](/assets/pdfs/DRY_CodingwithTerraformCSVsForEach.pdf) ]
+[![HashiTalks ANZ: DRY coding with Terraform, CSVs, ForEach](/assets/gifs/hashitalksanz2021.gif)](https://www.youtube.com/watch?v=JuzBolDyGdg&t=16m16s)
 
 ## Get in touch :octocat:
 
