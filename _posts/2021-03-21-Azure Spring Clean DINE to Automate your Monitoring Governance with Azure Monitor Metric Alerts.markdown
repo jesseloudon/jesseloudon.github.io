@@ -116,7 +116,7 @@ policyRule: {
 * Contributor RBAC role needed for the ARM template to deploy a Metric Alert
 * Microsoft.Insights/metricAlerts is our resource type to evaluate during the DINE policy operation
 * 3x existenceCondition rules determine whether our resource is compliant or non-compliant (*note: these rules purposefully have broad requirements*)
-* The Bicep escape sequence e.g. `\'/resourceGroups/\'` used in our 3rd existenceCondition rule is interesting - read more about it [here](https://github.com/Azure/bicep/blob/main/docs/spec/bicep.md#strings)
+* The Bicep escape sequence e.g. `\'/resourceGroups/\'` used in our 3rd existenceCondition rule is interesting - read more about it [here](https://docs.microsoft.com/en-us/azure/azure-resource-manager/bicep/data-types#strings?WT.mc_id=AZ-MVP-5004598)
 
 *:arrow_down: policyDefinition.bicep*
 ```s
@@ -347,7 +347,7 @@ resource roleAssignment 'Microsoft.Authorization/roleAssignments@2020-04-01-prev
 
 Ok folks, that was a ton of code to process so congrats if you're still with me! :clap:
 
-> You can find the full Bicep example from above here: [deployifnotexists-policy-with-initiative-and-assignment](https://github.com/globalbao/bicep-policy-examples/tree/main/deployifnotexists-policy-with-initiative-and-assignment)
+> You can find more examples of Bicep usage w/ Azure Policies here: [github.com/globalbao/azure-policy-as-code](https://github.com/globalbao/azure-policy-as-code)
 
 ### Implementation/Testing Flow
 To deploy this example with Bicep ensure you have at least [azure-cli](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli?WT.mc_id=AZ-MVP-5004598) version 2.20.0 which comes with Bicep integration (nice!). I also recommend grabbing the [Bicep VSCode extension](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-bicep) to benefit from validation and intellisense for your .bicep files.
@@ -381,11 +381,11 @@ az policy state trigger-scan
 
 * **5 - For existing Load Balancers run a remediation task from the Azure Policy blade and repeat step 4 above**
 
-> If you want to get really DevOps-y and shift your policy testing to the left within your deployment pipeline check out Fabian Wohlschläger's [azure-policy-testing](https://github.com/fawohlsc/azure-policy-testing) project!
+> If you want to get really DevOps-y and shift your policy testing to the left within your deployment pipeline check out Fabian Wohlschläger's [github.com/fawohlsc/azure-policy-testing](https://github.com/fawohlsc/azure-policy-testing) project!
 
 ## Implementing DINE with Terraform
 
-Last year (2020) was a huge year of Terraform for me and I had the wonderful opportunity to design and deploy about 38 Azure Monitoring Governance DINE policies for a large customer. 
+Last year (2020) was a huge year of Terraform for me and I had the wonderful opportunity to design and deploy about 38 Azure Monitoring Governance DINE policies for a large client. 
 
 These 38 DINE policies are designed to provide baseline Monitoring Governance for production workloads where no existing metric alerts are deployed. 
 
@@ -411,7 +411,7 @@ And here's a summary of the 38x Monitoring Governance DINE policies, 1x Initiati
 | policyset_definitions  | azurerm_policy_set_definition | monitoring_governance                  | 1
 | policy_assignments     | azurerm_policy_assignment     | monitoring_governance                  | 1
 
-> There's plenty of detailed README action within this project so I'm hesitant to duplicate the Terraform code here as the JSON pattern is nearly identical to what I've shown above with Bicep. You can find the full repo at [terraform-azurerm-policy](https://github.com/globalbao/terraform-azurerm-policy)
+> There's plenty of detailed README action within this project so I'm hesitant to duplicate the Terraform code here as the JSON pattern is nearly identical to what I've shown above with Bicep. You can find the full repo at [github.com/globalbao/azure-policy-as-code](https://github.com/globalbao/azure-policy-as-code)
 
 ### Implementation/Testing Flow
 To deploy/test this example with Terraform ensure you have at least [hashicorp-terraform](https://releases.hashicorp.com/terraform/0.13.6/) version 0.13.6. I also recommend grabbing the [HashiCorp Terraform VSCode extension](https://marketplace.visualstudio.com/items?itemName=HashiCorp.terraform) to benefit from syntax highlighting and other awesome editing features for your .tf files.
@@ -500,11 +500,11 @@ az policy definition list |  ConvertFrom-Json | Where-Object { $_.parameters.eff
 
 **Microsoft Docs**
 
-Microsoft Doc enthusiasts can go to [built-in-policies](https://docs.microsoft.com/en-us/azure/governance/policy/samples/built-in-policies?WT.mc_id=AZ-MVP-5004598) and use CTRL + F in your browser with the keyword `deploy` to quickly find DINE policies.
+Microsoft Doc enthusiasts can go to [docs.microsoft.com/en-us/azure/governance/policy/samples/built-in-policies](https://docs.microsoft.com/en-us/azure/governance/policy/samples/built-in-policies?WT.mc_id=AZ-MVP-5004598) and use CTRL + F in your browser with the keyword `deploy` to quickly find DINE policies.
 
 **Azure Portal**
 
-Portal vanguards can go to [azure portal](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyMenuBlade/Definitions) then using the provided search box with the keyword `deploy` you can narrow down results to DINE policies.
+Azure Portal vanguards can go to [portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyMenuBlade/Definitions](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyMenuBlade/Definitions) then using the provided search box with the keyword `deploy` you can narrow down results to DINE policies.
 
 ### 5 Example Built-In Azure Monitoring Governance DINE policies
 
