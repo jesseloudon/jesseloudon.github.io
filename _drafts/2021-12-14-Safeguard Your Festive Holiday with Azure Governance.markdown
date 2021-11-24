@@ -9,4 +9,7 @@ categories:
 - "cloud"
 tags: 
 - "azure policy"
+- "policy as code"
+- "cloud governance"
+- "festive tech calendar"
 ---
