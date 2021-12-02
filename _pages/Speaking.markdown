@@ -13,6 +13,10 @@ tags:
 
 ## :date: 2021
 
+### Ctrl+Alt+Azure Podcast: Azure Policy as Code
+#### [ :writing_hand: [article](https://jloudon.com/cloud/Talking-Azure-Policy-as-Code-on-the-CtrlAltAzure-podcast/) ]
+[![Ctrl+Alt+Azure Podcast: Azure Policy as Code](/assets/images/JesseLoudonTeamsBackground.png)](https://ctrlaltazure.com/episodes/109-azure-policy-as-code)
+
 ### Melbourne Azure Security Meetup: Flexing Your Security Governance with Azure Policy As Code
 #### [ :floppy_disk: [slides](/assets/pdfs/MelbAzureSecMeetup2021_FlexingYourSecurityGovernanceWithAzurePolicyAsCode.pdf) ]
 [![Melbourne Azure Security Meetup: Flexing Your Security Governance with Azure Policy As Code](/assets/images/MelbAzureSecMeetup2021_FlexingYourSecurityGovernanceWithAzurePolicyAsCode.jfif)](https://youtu.be/-KSLh2I9e1U)
