@@ -1,5 +1,5 @@
 ---
-title: "Safeguard Your Festive Holiday with Azure Governance"
+title: "Safeguard Your Festive Holiday with Azure Governance (draft)"
 excerpt: ""
 header:
     og_image: /assets/images/FestiveTechCalendar2021-BlogIntro.jpg
