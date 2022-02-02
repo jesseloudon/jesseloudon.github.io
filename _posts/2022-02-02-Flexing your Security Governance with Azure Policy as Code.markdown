@@ -36,17 +36,16 @@ Watch a session on managing the logging and security of Azure Key Vaults at-scal
 Watch a session on deploying Azure Policy as Code with Bicep walking through levels 1-2-3 of configuration.
 - [YouTube: Policy as Code with Bicep for Enterprise Scale](https://youtu.be/qpnMJXw6pIg)
 
-
 ## Learn & Discover
 
 Learn about what exactly is Azure Policy from Microsoft Docs.
 - [Microsoft Docs: What is Azure Policy?](https://docs.microsoft.com/en-us/azure/governance/policy/overview?WT.mc_id=AZ-MVP-5004598)
 
 Learn about the Azure Security Benchmark from Microsoft Docs.
-- [Microsoft Docs: Azure Security Benchmark introduction](https://docs.microsoft.com/en-us/security/benchmark/azure/introduction)
+- [Microsoft Docs: Azure Security Benchmark introduction](https://docs.microsoft.com/en-us/security/benchmark/azure/introduction?WT.mc_id=AZ-MVP-5004598)
 
 Discover how to apply and enforce Zero Trust concepts with Azure Policy.
-- [Microsoft Blogs: Enforcing Policy for Zero Trust with Azure Policy](https://devblogs.microsoft.com/azuregov/enforcing-policy-for-zero-trust-with-azure-policy-4-of-6/)
+- [Microsoft Blogs: Enforcing Policy for Zero Trust with Azure Policy](https://devblogs.microsoft.com/azuregov/enforcing-policy-for-zero-trust-with-azure-policy-4-of-6/?WT.mc_id=AZ-MVP-5004598)
 
 Discover how to enable Defender for Cloud plans to protect workflows in Azure.
 - [Community Blog: Automatically Enable and Audit Microsoft Defender for Cloud Enhanced Security Features](https://samilamppu.com/2021/12/28/automatically-enable-microsoft-defender-for-cloud-enhanced-security-features/)
