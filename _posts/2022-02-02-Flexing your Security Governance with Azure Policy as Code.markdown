@@ -47,6 +47,9 @@ Learn about the Azure Security Benchmark from Microsoft Docs.
 Learn about Microsoft Security Best Practices.
 - [Microsoft Docs: What's inside Microsoft Security Best Practices?](https://docs.microsoft.com/en-us/security/compass/microsoft-security-compass-introduction?WT.mc_id=AZ-MVP-5004598)
 
+Learn about what is Microsoft Defender for Cloud.
+- [Microsoft Docs: What is Microsoft Defender for Cloud?](https://docs.microsoft.com/en-us/azure/defender-for-cloud/defender-for-cloud-introduction?WT.mc_id=AZ-MVP-5004598)
+
 Discover how to apply and enforce Zero Trust concepts with Azure Policy.
 - [Microsoft Blogs: Enforcing Policy for Zero Trust with Azure Policy](https://devblogs.microsoft.com/azuregov/enforcing-policy-for-zero-trust-with-azure-policy-4-of-6/?WT.mc_id=AZ-MVP-5004598)
 
@@ -55,6 +58,12 @@ Discover how to enable Defender for Cloud plans to protect workflows in Azure.
 
 Discover how to create custom Microsoft Defender for Cloud recommendations with Azure Policy.
 - [Community Blog: Create a custom Azure Security Center recommendation with Azure Policy](https://zimmergren.net/create-custom-security-center-recommendation-with-azure-policy/)
+
+Discover how to create custom security recommendations within Microsoft Defender for Cloud.
+- [Community Blog: Custom security recommendation within Microsoft Defender for Cloud](https://msftplayground.com/2022/02/custom-security-recommendation-within-microsoft-defender-for-cloud/)
+
+Discover Security Posture Management with Azure Policy and Microsoft Defender for Cloud.
+- [Community Blog: Security Posture Management with Azure Policy and Microsoft Defender for Cloud](https://securecloud.blog/2021/12/17/security-posture-management-with-azure-policy-and-microsoft-defender-for-cloud/)
 
 ## Find
 
@@ -69,6 +78,9 @@ Find and adopt working modules and CI/CD pipelines for Azure Policy as Code work
 
 Find the related (this blog post) code used for the Bicep demo on Security Governance with Azure Policy as Code.
 - [GitHub: Bicep Demo Security Governance](https://github.com/globalbao/azure-policy-as-code/tree/main/Bicep/demos/security-governance)
+
+Find a list of past security mistakes by CSPs.
+- [GitHub: List of security mistakes by cloud service providers (AWS, GCP, and Azure)](https://github.com/SummitRoute/csp_security_mistakes)
 
 ## Keep Informed
 
