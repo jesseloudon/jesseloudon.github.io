@@ -41,28 +41,34 @@ Watch a session on deploying Azure Policy as Code with Bicep walking through lev
 Learn about what exactly is Azure Policy from Microsoft Docs.
 - [Microsoft Docs: What is Azure Policy?](https://docs.microsoft.com/en-us/azure/governance/policy/overview?WT.mc_id=AZ-MVP-5004598)
 
+Learn about how Azure Policy effects work from Microsoft Docs.
+- [Understand Azure Policy effects](https://docs.microsoft.com/en-us/azure/governance/policy/concepts/effects?WT.mc_id=AZ-MVP-5004598)
+
+Learn about scoping your Azure Policy assignments from Microsoft Docs.
+- [Understand scope in Azure Policy](https://docs.microsoft.com/en-us/azure/governance/policy/concepts/scope?WT.mc_id=AZ-MVP-5004598)
+
 Learn about the Azure Security Benchmark from Microsoft Docs.
 - [Microsoft Docs: Azure Security Benchmark introduction](https://docs.microsoft.com/en-us/security/benchmark/azure/introduction?WT.mc_id=AZ-MVP-5004598)
 
-Learn about Microsoft Security Best Practices.
+Learn about Microsoft Security Best Practices from Microsoft Docs.
 - [Microsoft Docs: What's inside Microsoft Security Best Practices?](https://docs.microsoft.com/en-us/security/compass/microsoft-security-compass-introduction?WT.mc_id=AZ-MVP-5004598)
 
-Learn about what is Microsoft Defender for Cloud.
+Learn about what is Microsoft Defender for Cloud from Microsoft Docs..
 - [Microsoft Docs: What is Microsoft Defender for Cloud?](https://docs.microsoft.com/en-us/azure/defender-for-cloud/defender-for-cloud-introduction?WT.mc_id=AZ-MVP-5004598)
 
-Discover how to apply and enforce Zero Trust concepts with Azure Policy.
+Discover how to apply and enforce Zero Trust concepts with Azure Policy from Microsoft Blogs.
 - [Microsoft Blogs: Enforcing Policy for Zero Trust with Azure Policy](https://devblogs.microsoft.com/azuregov/enforcing-policy-for-zero-trust-with-azure-policy-4-of-6/?WT.mc_id=AZ-MVP-5004598)
 
-Discover how to enable Defender for Cloud plans to protect workflows in Azure.
+Discover how to enable Defender for Cloud plans to protect workflows in Azure from the community.
 - [Community Blog: Automatically Enable and Audit Microsoft Defender for Cloud Enhanced Security Features](https://samilamppu.com/2021/12/28/automatically-enable-microsoft-defender-for-cloud-enhanced-security-features/)
 
-Discover how to create custom Microsoft Defender for Cloud recommendations with Azure Policy.
+Discover how to create custom Microsoft Defender for Cloud recommendations with Azure Policy from the community.
 - [Community Blog: Create a custom Azure Security Center recommendation with Azure Policy](https://zimmergren.net/create-custom-security-center-recommendation-with-azure-policy/)
 
-Discover how to create custom security recommendations within Microsoft Defender for Cloud.
+Discover how to create custom security recommendations within Microsoft Defender for Cloud from the community.
 - [Community Blog: Custom security recommendation within Microsoft Defender for Cloud](https://msftplayground.com/2022/02/custom-security-recommendation-within-microsoft-defender-for-cloud/)
 
-Discover Security Posture Management with Azure Policy and Microsoft Defender for Cloud.
+Discover Security Posture Management with Azure Policy and Microsoft Defender for Cloud from the community.
 - [Community Blog: Security Posture Management with Azure Policy and Microsoft Defender for Cloud](https://securecloud.blog/2021/12/17/security-posture-management-with-azure-policy-and-microsoft-defender-for-cloud/)
 
 ## Find
