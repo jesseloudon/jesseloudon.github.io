@@ -45,7 +45,7 @@ Learn about the Azure Security Benchmark from Microsoft Docs.
 - [Microsoft Docs: Azure Security Benchmark introduction](https://docs.microsoft.com/en-us/security/benchmark/azure/introduction?WT.mc_id=AZ-MVP-5004598)
 
 Learn about Microsoft Security Best Practices.
-- [Microsoft Docs: What's inside Microsoft Security Best Practices?](https://docs.microsoft.com/en-us/security/compass/microsoft-security-compass-introduction)
+- [Microsoft Docs: What's inside Microsoft Security Best Practices?](https://docs.microsoft.com/en-us/security/compass/microsoft-security-compass-introduction?WT.mc_id=AZ-MVP-5004598)
 
 Discover how to apply and enforce Zero Trust concepts with Azure Policy.
 - [Microsoft Blogs: Enforcing Policy for Zero Trust with Azure Policy](https://devblogs.microsoft.com/azuregov/enforcing-policy-for-zero-trust-with-azure-policy-4-of-6/?WT.mc_id=AZ-MVP-5004598)
