@@ -31,7 +31,7 @@ Live presentation on Azure Policy as Code (security focus) using Azure Bicep lan
 ### Podcast: [Ctrl+Alt+Azure](https://ctrlaltazure.com/) - 24 Nov 2021
 Chatted with guest hosts Tobias Zimmergren and Jussi Roine about managing Azure Policy as Code using Azure Bicep language. 
 
-[Read](https://jloudon.com/cloud/Talking-Azure-Policy-as-Code-on-the-CtrlAltAzure-podcast/) -- [Listen](https://ctrlaltazure.com/episodes/109-azure-policy-as-code) -- [Engage1](https://www.linkedin.com/posts/jesseloudon_cloudfamily-mvpbuzz-azurepolicy-activity-6869366611468537856-_Ded) [Engage2](https://twitter.com/coder_au/status/1463553923935989766?s=20&t=JCjNrz4FKupn-896-HXnCA)
+[Listen](https://ctrlaltazure.com/episodes/109-azure-policy-as-code) -- [Read](https://jloudon.com/cloud/Talking-Azure-Policy-as-Code-on-the-CtrlAltAzure-podcast/) -- [Engage1](https://www.linkedin.com/posts/jesseloudon_cloudfamily-mvpbuzz-azurepolicy-activity-6869366611468537856-_Ded) [Engage2](https://twitter.com/coder_au/status/1463553923935989766?s=20&t=JCjNrz4FKupn-896-HXnCA)
 
 ### Meetup: [Melbourne Azure Security](https://www.meetup.com/Melbourne-Azure-Security-Meetup/) - 10 Nov 2021
 Live presentation on Azure Policy as Code (security focus) using Azure Bicep language including live demonstration, slides, and Q&A. 
