@@ -20,11 +20,11 @@ title                    : "Jesse (JSON) Loudon"
 title_separator          : "|"
 subtitle                 : "Azure Policy as Code advocate"
 name                     : "jloudon.com"
-description              : "Azure Policy as Code workflows, Infrastructure as Code patterns and practices, DevOps methodologies"
+description              : "Microsoft MVP (Azure), Principal Consultant, Policy as Code advocate"
 url                      : "https://jloudon.com" # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : "/" # the subpath of your site, e.g. "/blog"
 repository               : "jesseloudon/jesseloudon.github.io" # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
-teaser                   : "/assets/images/CanvaLogoResized.png"
+teaser                   : "/assets/images/JesseJson2021.JPG"
 logo                     : "/assets/images/LinkedIn_1.png" # path of logo image to display in the masthead, e.g. "/assets/images/88x88.png"
 masthead_title           : # overrides the website title displayed in the masthead, use " " for no title
 github                   : [metadata] #added to resolve jekyll serve error "GitHub Metadata: No GitHub API authentication could be found."
@@ -90,7 +90,7 @@ facebook:
   username               :
   app_id                 :
   publisher              :
-og_image                 : "/assets/images/CanvaLogoResized.png"
+og_image                 : "/assets/images/JesseJson2021.JPG"
 social:
   type                   : Person
   name                   : Jesse Loudon
@@ -128,6 +128,9 @@ author:
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
       url: "https://github.com/jesseloudon"
+    - label: "YouTube"
+      icon: "fab fa-fw fa-youtube"
+      url: "https://www.youtube.com/channel/UCZ79IZ2ofpJhLVAOgN0n9tw"
 
 # Site Footer
 footer:
@@ -144,6 +147,9 @@ footer:
     - label: ""
       icon: "fab fa-fw fa-github"
       url: "https://github.com/jesseloudon"
+    - label: ""
+      icon: "fab fa-fw fa-youtube"
+      url: "https://www.youtube.com/channel/UCZ79IZ2ofpJhLVAOgN0n9tw"
 
 
 # Reading Files
