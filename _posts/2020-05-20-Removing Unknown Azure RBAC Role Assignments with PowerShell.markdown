@@ -64,7 +64,7 @@ So to programmatically discover Azure RBAC role assignments of the 'Unknown' typ
 
 ``` powershell
 $OBJTYPE = "Unknown"
-Get-AzRoleAssignment | Where Object {$_.ObjectType.Equals($OBJTYPE)}
+Get-AzRoleAssignment | Where-Object {$_.ObjectType.Equals($OBJTYPE)}
 ```
 
 Above you can see we are searching on the ObjectType field matching the value 'Unknown'.
