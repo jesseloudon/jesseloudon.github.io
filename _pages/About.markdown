@@ -64,7 +64,6 @@ gallery:
     alt: "Citrix Certified Administrator XenApp"
     title: "Citrix Certified Administrator XenApp"
 ---
-Hello everybody :wave: I'm Jesse (JSON) Loudon an 'Azure Policy as Code' advocate
 
 ## Get in touch
 
