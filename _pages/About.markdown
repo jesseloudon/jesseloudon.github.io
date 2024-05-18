@@ -66,7 +66,7 @@ gallery:
 ---
 Hello everybody :wave: I'm Jesse (JSON) Loudon an 'Azure Policy as Code' advocate
 
-## Get in touch :octocat:
+## Get in touch
 
 * Twitter: [coder_au](https://twitter.com/coder_au)
 * LinkedIn: [JesseLoudon](https://www.linkedin.com/in/jesseloudon/)
