@@ -78,6 +78,3 @@ Hello everybody :wave: I'm Jesse (JSON) Loudon an 'Azure Policy as Code' advocat
 ## Jesse's Industry Awards & Accreditation :ballot_box_with_check:
 
 {% include gallery %}
-
-## Gamer Humour :shipit:
-<blockquote class="twitter-tweet"><p lang="en" dir="ltr">So the next big question fans will ask is... do we meet at Undercity or Orgrimmar. <a href="https://twitter.com/swardley?ref_src=twsrc%5Etfw">@swardley</a> ? <a href="https://t.co/cCdmHOcaHV">https://t.co/cCdmHOcaHV</a></p>&mdash; Jesse Loudon (@coder_au) <a href="https://twitter.com/coder_au/status/1238962787000303617?ref_src=twsrc%5Etfw">March 14, 2020</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
