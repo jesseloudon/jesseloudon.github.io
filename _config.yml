@@ -16,16 +16,16 @@ minimal_mistakes_skin    : "air"
 
 # Site Settings
 locale                   : "en-AU"
-title                    : "Jesse (JSON) Loudon"
+title                    : "JLoudon"
 title_separator          : "|"
-subtitle                 : "Azure Policy as Code advocate"
+subtitle                 : "Tech Insights"
 name                     : "jloudon.com"
 description              : "Microsoft MVP (Azure), Principal Consultant, Policy as Code advocate"
 url                      : "https://jloudon.com" # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : "/" # the subpath of your site, e.g. "/blog"
 repository               : "jesseloudon/jesseloudon.github.io" # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
 teaser                   : "/assets/images/JesseJson2021.JPG"
-logo                     : "/assets/images/LinkedIn_1.png" # path of logo image to display in the masthead, e.g. "/assets/images/88x88.png"
+logo                     : "/assets/images/favicon.png" # path of logo image to display in the masthead, e.g. "/assets/images/88x88.png"
 masthead_title           : # overrides the website title displayed in the masthead, use " " for no title
 github                   : [metadata] #added to resolve jekyll serve error "GitHub Metadata: No GitHub API authentication could be found."
 # breadcrumbs            : false # true, false (default)
