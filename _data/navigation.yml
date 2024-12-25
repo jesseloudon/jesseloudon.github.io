@@ -1,5 +1,5 @@
 customsidenav:
-- title: internal
+- title: Links
   children:
     - title: "Home"
       url: /
