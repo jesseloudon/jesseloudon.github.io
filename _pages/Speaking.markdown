@@ -1,17 +1,17 @@
 ---
-title: "Jesse Loudon: Speaking"
+title: "Public Speaking"
 permalink: /speaking/
 excerpt: "Jesse Loudon: Public Speaking"
 date: "2021-04-18"
 categories: 
 - "Personal"
 tags: 
-- "Speaking"
+- "Public Speaking"
 ---
 
 Public speaking is a powerful medium for communicating ideas and sharing knowledge with the community. Throughout the year you might find me speaking at various technology events and meetups across Australia.
 
-## Speaking
+## History
 
 ### Event: [Global Azure @ Microsoft Reactor Sydney](https://www.meetup.com/Microsoft-Reactor-Sydney/) - May 2024
 Live presentation on using GitHub Copilot on Azure Policies. Walkthrough through a few scenarios to demonstrate and determine if an AI-assistant can help us in our Policy development journey including live demonstration, slides, and Q&A.
