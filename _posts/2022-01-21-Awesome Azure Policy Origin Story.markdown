@@ -13,9 +13,7 @@ tags:
 - "awesome azure policy"
 - "policy examples"
 ---
-Welcome folks this is the Awesome Azure Policy origin story. So I've been reflecting on a few key events in my technology career and the preceding thoughts and eventual actions which might be of interest to the community. This article is not going to be a technical one showcasing how to achieve XYZ. This is a retrospective, a reflection, a decomposition of the past, the present, and what the future may hold.
-
-My career in tech started with what I would describe as a hard-fought journey. Not because of the what I've been employed to do over the last decade but rather because I'm not a smart person who understands quickly or 'gets' things immediately.
+Welcome folks this is the Awesome Azure Policy origin story.
 
 My first experience with Azure Policy was mid-2020 engaged as a consultant for an enterprise client in the retail industry. They had been steadily growing their Microsoft Azure footprint since before the start of the COVID pandemic. Then there appeared to be somewhat of an explosion in projects to onboard and migrate applications and infrastructure into their Azure tenancies. Due to this explosion of growth there also happened to be what I would call 'governance drift'. Examples of which included:
 
