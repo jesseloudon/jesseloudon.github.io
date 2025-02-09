@@ -1,7 +1,7 @@
 ---
 title: "Jesse Loudon: Speaking"
 permalink: /speaking/
-excerpt: "Jesse Loudon: Speaking history and availability"
+excerpt: "Jesse Loudon: Public Speaking"
 date: "2021-04-18"
 categories: 
 - "Personal"
@@ -9,9 +9,7 @@ tags:
 - "Speaking"
 ---
 
-Public speaking is a powerful medium for communicating ideas and sharing knowledge with the community. Throughout the year you'll often find me speaking at various technology events and meetups in Australia.
-
-I'm always interested to hear feedback on how I did for a presentation and can be reached via DM on Twitter: [@coder_au](https://twitter.com/coder_au) or LinkedIn: [@JesseLoudon](https://www.linkedin.com/in/jesseloudon/).
+Public speaking is a powerful medium for communicating ideas and sharing knowledge with the community. Throughout the year you might find me speaking at various technology events and meetups across Australia.
 
 ## Speaking
 

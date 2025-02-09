@@ -1,5 +1,5 @@
 customsidenav:
-- title: internal
+- title: Links
   children:
     - title: "Home"
       url: /
@@ -7,5 +7,3 @@ customsidenav:
       url: /about/
     - title: "Speaking"
       url: /speaking/
-    - title: "Blogging Toolkit"
-      url: /BloggingToolkit/
