@@ -115,18 +115,22 @@ An example of a valid JSON object block which would be read and used by the abov
 
 To support the `'update'` operation I repeated the above pipeline step logic as above, but added additional input and logic to support extracting and passing in the `ip_access_list_id` which is required.
 
+{% raw %}
+
 ```bash
-json_file="workspace-ip-access-lists/${{parameters.BUNDLE_TARGET}}.json"
+json_file="workspace-ip-access-lists/${{ parameters.BUNDLE_TARGET }}.json"
 
 jq -c '.[]' "$json_file" | while IFS= read -r json_object_update; do
     operation=$(echo $json_object_update | jq -r '.operation')
     ip_access_list_id=$(echo $json_object_update | jq -r '.ip_access_list_id')
     if [[ ${operation,,} == "update"* ]]; then
         echo "Updating existing specified Databricks IP Access List: $json_object_update"
-        databricks ip-access-lists update "$ip_access_list_id" --json "$json_object_update" -t "${{parameters.BUNDLE_TARGET}}" --log-level "${{parameters.DATABRICKS_LOG_LEVEL}}" || true
+        databricks ip-access-lists update "$ip_access_list_id" --json "$json_object_update" -t "${{ parameters.BUNDLE_TARGET }}" --log-level "${{ parameters.DATABRICKS_LOG_LEVEL }}" || true
     fi
 done
 ```
+
+{% endraw %}
 
 An example of a valid JSON object block which would be read and used by the above pipeline step is below. Note the `ip_access_list_id` value and `operation` value.
 
