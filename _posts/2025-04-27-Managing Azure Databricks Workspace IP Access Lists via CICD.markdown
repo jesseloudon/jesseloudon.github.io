@@ -89,13 +89,13 @@ Now that I had the IP ACLs defined in .JSON files within the repo I then added a
 This is the full pipeline step to create a new ADB IP access list:
 
 ```bash
-json_file="workspace-ip-access-lists/${{ parameters.BUNDLE_TARGET }}.json"
+json_file="workspace-ip-access-lists/${{parameters.BUNDLE_TARGET}}.json"
 
 jq -c '.[]' "$json_file" | while IFS= read -r json_object_creation; do
     operation=$(echo $json_object_creation | jq -r '.operation')
     if [[ ${operation,,} == "create"* ]]; then
         echo "Creating new specified Databricks IP Access List: $json_object_creation"
-        databricks ip-access-lists create --json "$json_object_creation" -t "${{ parameters.BUNDLE_TARGET }}" --log-level "${{ parameters.DATABRICKS_LOG_LEVEL }}" || true
+        databricks ip-access-lists create --json "$json_object_creation" -t "${{parameters.BUNDLE_TARGET}}" --log-level "${{parameters.DATABRICKS_LOG_LEVEL}}" || true
     fi
 done
 ```
@@ -116,14 +116,14 @@ An example of a valid JSON object block which would be read and used by the abov
 To support the `'update'` operation I repeated the above pipeline step logic as above, but added additional input and logic to support extracting and passing in the `ip_access_list_id` which is required.
 
 ```bash
-json_file="workspace-ip-access-lists/${{ parameters.BUNDLE_TARGET }}.json"
+json_file="workspace-ip-access-lists/${{parameters.BUNDLE_TARGET}}.json"
 
 jq -c '.[]' "$json_file" | while IFS= read -r json_object_update; do
     operation=$(echo $json_object_update | jq -r '.operation')
     ip_access_list_id=$(echo $json_object_update | jq -r '.ip_access_list_id')
     if [[ ${operation,,} == "update"* ]]; then
         echo "Updating existing specified Databricks IP Access List: $json_object_update"
-        databricks ip-access-lists update "$ip_access_list_id" --json "$json_object_update" -t "${{ parameters.BUNDLE_TARGET }}" --log-level "${{ parameters.DATABRICKS_LOG_LEVEL }}" || true
+        databricks ip-access-lists update "$ip_access_list_id" --json "$json_object_update" -t "${{parameters.BUNDLE_TARGET}}" --log-level "${{parameters.DATABRICKS_LOG_LEVEL}}" || true
     fi
 done
 ```
@@ -145,14 +145,14 @@ An example of a valid JSON object block which would be read and used by the abov
 The `'delete'` operation shown below follows a similar implementation logic as the 'update' operation to handle `ip_access_list_id` which is required.
 
 ```bash
-json_file="workspace-ip-access-lists/${{ parameters.BUNDLE_TARGET }}.json"
+json_file="workspace-ip-access-lists/${{parameters.BUNDLE_TARGET}}.json"
 
 jq -c '.[]' "$json_file" | while IFS= read -r json_object_delete; do
     operation=$(echo $json_object_delete | jq -r '.operation')
     ip_access_list_id=$(echo $json_object_delete | jq -r '.ip_access_list_id')
     if [[ ${operation,,} == "delete"* ]]; then
         echo "Deleting specified Databricks IP Access List: $json_object_delete"
-        databricks ip-access-lists delete "$ip_access_list_id" -t "${{ parameters.BUNDLE_TARGET }}" --log-level "${{ parameters.DATABRICKS_LOG_LEVEL }}" || true
+        databricks ip-access-lists delete "$ip_access_list_id" -t "${{parameters.BUNDLE_TARGET}}" --log-level "${{parameters.DATABRICKS_LOG_LEVEL}}" || true
     fi
 done
 ```
@@ -175,13 +175,13 @@ Now that I had the basic foundations to manage this all from a pipeline and repo
 
 1. create a new branch of the [github.com/globalbao/azure-databricks-cicd](https://github.com/globalbao/azure-databricks-cicd) repo
 2. update an existing .JSON file within `./workspace-ip-access-lists` with the desired ADB IP access list operation (create, update, delete)
-3. optionally, update the `'ADB_ENABLE_IP_ACCESS_LISTS' ` parameter value to `true` or `false` from the [calling pipeline](https://github.com/globalbao/azure-databricks-cicd/blob/main/devops/ado-databricks-cicd.yml#L59)
+3. optionally, update the `'ADB_ENABLE_IP_ACCESS_LISTS'` parameter value to `true` or `false` from the [calling pipeline](https://github.com/globalbao/azure-databricks-cicd/blob/main/devops/ado-databricks-cicd.yml#L59)
 4. pull request and merge the new branch to main
 5. approve the latest pipeline run from main to deploy the IP access list changes
 
 ![AzureDatabricksDevOpsPipeline](/assets/images/databricks-devops-pipeline.png "Azure Databricks DevOps Pipeline")
 
-# Final thoughts
+# Final Thoughts
 
 Some improvements I can think of if I were to get a chance at this again:
 
