@@ -11,6 +11,7 @@ tags:
   - "azure databricks"
   - "workspace-ip-access"
   - "databricks devops"
+render_with_liquid: false
 ---
 
 Hey folks in this blog post I'm going to cover how you can manage Azure Databricks (ADB) Workspace IP access lists via CICD and DevOps processes. Hopefully this blog may save you time and potential headaches as I feel that, based on what I've experienced in the past, the available documentation and tooling support for this particular area has been limited.
@@ -89,13 +90,13 @@ Now that I had the IP ACLs defined in .JSON files within the repo I then added a
 This is the full pipeline step to create a new ADB IP access list:
 
 ```bash
-json_file="workspace-ip-access-lists/${{parameters.BUNDLE_TARGET}}.json"
+json_file="workspace-ip-access-lists/${{ parameters.BUNDLE_TARGET }}.json"
 
 jq -c '.[]' "$json_file" | while IFS= read -r json_object_creation; do
     operation=$(echo $json_object_creation | jq -r '.operation')
     if [[ ${operation,,} == "create"* ]]; then
         echo "Creating new specified Databricks IP Access List: $json_object_creation"
-        databricks ip-access-lists create --json "$json_object_creation" -t "${{parameters.BUNDLE_TARGET}}" --log-level "${{parameters.DATABRICKS_LOG_LEVEL}}" || true
+        databricks ip-access-lists create --json "$json_object_creation" -t "${{ parameters.BUNDLE_TARGET }}" --log-level "${{ parameters.DATABRICKS_LOG_LEVEL }}" || true
     fi
 done
 ```
@@ -115,8 +116,6 @@ An example of a valid JSON object block which would be read and used by the abov
 
 To support the `'update'` operation I repeated the above pipeline step logic as above, but added additional input and logic to support extracting and passing in the `ip_access_list_id` which is required.
 
-{% raw %}
-
 ```bash
 json_file="workspace-ip-access-lists/${{ parameters.BUNDLE_TARGET }}.json"
 
@@ -129,8 +128,6 @@ jq -c '.[]' "$json_file" | while IFS= read -r json_object_update; do
     fi
 done
 ```
-
-{% endraw %}
 
 An example of a valid JSON object block which would be read and used by the above pipeline step is below. Note the `ip_access_list_id` value and `operation` value.
 
@@ -149,14 +146,14 @@ An example of a valid JSON object block which would be read and used by the abov
 The `'delete'` operation shown below follows a similar implementation logic as the 'update' operation to handle `ip_access_list_id` which is required.
 
 ```bash
-json_file="workspace-ip-access-lists/${{parameters.BUNDLE_TARGET}}.json"
+json_file="workspace-ip-access-lists/${{ parameters.BUNDLE_TARGET }}.json"
 
 jq -c '.[]' "$json_file" | while IFS= read -r json_object_delete; do
     operation=$(echo $json_object_delete | jq -r '.operation')
     ip_access_list_id=$(echo $json_object_delete | jq -r '.ip_access_list_id')
     if [[ ${operation,,} == "delete"* ]]; then
         echo "Deleting specified Databricks IP Access List: $json_object_delete"
-        databricks ip-access-lists delete "$ip_access_list_id" -t "${{parameters.BUNDLE_TARGET}}" --log-level "${{parameters.DATABRICKS_LOG_LEVEL}}" || true
+        databricks ip-access-lists delete "$ip_access_list_id" -t "${{ parameters.BUNDLE_TARGET }}" --log-level "${{ parameters.DATABRICKS_LOG_LEVEL }}" || true
     fi
 done
 ```
