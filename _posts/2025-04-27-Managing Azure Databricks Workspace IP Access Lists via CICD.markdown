@@ -1,6 +1,6 @@
 ---
 title: "Managing Azure Databricks Workspace IP Access Lists via CICD"
-excerpt: "Managing Azure Databricks Workspace IP Access Lists via CICD"
+excerpt: "How you can manage Azure Databricks (ADB) Workspace IP access lists via CICD and DevOps processes"
 header:
   og_image: /assets/images/databricks-ip-access-list-flow.png
   teaser: /assets/images/databricks-ip-access-list-flow.png
