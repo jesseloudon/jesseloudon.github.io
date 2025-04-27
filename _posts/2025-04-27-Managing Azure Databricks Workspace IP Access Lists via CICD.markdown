@@ -30,11 +30,11 @@ Access is checked according to this flow below. Image Source: [Microsoft Docs](h
 
 # Problem Statement and Rabbit Holes
 
-When working on a project to deploy and manage multiple ADB workspaces via code, I had already deployed the workspaces using Terraform AzureRM and I briefly explored the option of managing the workspace IP access configuration using the available [Terraform Databricks IP Access List](https://registry.terraform.io/providers/databricks/databricks/latest/docs/resources/ip_access_list) resource. Ultimately I didn't go down the path of using the Terraform Databricks provider for various reasons specific to that project but I am interested in getting hands-on with that provider in future if there was an opportunity.
+When working on a project to deploy and manage multiple ADB workspaces via code, I had already deployed the workspaces using Terraform AzureRM and I briefly explored the option of managing the workspace IP access configuration using the available [Terraform Databricks IP Access List](https://registry.terraform.io/providers/databricks/databricks/latest/docs/resources/ip_access_list) resource. Ultimately I didn't go down the path of using the Terraform Databricks provider for various reasons specific to that project but I am interested in getting hands-on with that provider in future if there was the right opportunity.
 
-So I still needed to manage the ADB workspace IP access lists via CICD and the next best option was to leverage the latest [Databricks CLI](https://learn.microsoft.com/en-us/azure/databricks/dev-tools/cli/commands) (currently Public Preview). This first led me down a bit of a rabbit hole of various Databricks CLI authentication options until I finally figured out that 'magic' set of environment variables to use for OAuth machine-to-machine (M2M) authetication to successfully work to the workspaces. I describe how I setup CLI authentication at a high level in my [repo's README](https://github.com/globalbao/azure-databricks-cicd?tab=readme-ov-file#databricks-workspace-authentication).
+So I still needed to manage the ADB workspace IP access lists via CICD and the next best option was to leverage the latest [Databricks CLI](https://learn.microsoft.com/en-us/azure/databricks/dev-tools/cli/commands) (currently Public Preview). This first led me down a bit of a rabbit hole of various Databricks CLI authentication options until I finally figured out that 'magic' set of environment variables to use for OAuth machine-to-machine (M2M) authetication to successfully work to the workspaces. If you're interested in knowing more about Databricks CLI authentication, I have some high level details in my [repo's README](https://github.com/globalbao/azure-databricks-cicd?tab=readme-ov-file#databricks-workspace-authentication).
 
-The second rabbit hole was related to Databricks CLI itself and how confused I was about what the actual supported cmdlets and inputs were for the tool. I'll try not to bore you too much with the details but in general I found the [Databricks CLI commands documentation](https://learn.microsoft.com/en-us/azure/databricks/dev-tools/cli/commands) to be a bit incomplete in terms of available/supported commands that map to the REST APIs. This was further validated when I discovered various `//TODO` comments in the CLI's .go files for the `workspace/ip-access-lists` command as shown [here](https://github.com/databricks/cli/blob/ee55316007810446e975b2bd5173ab3daeaa3ff4/cmd/workspace/ip-access-lists/ip-access-lists.go#L86). With Databricks saying the CLI is still in public preview I'm hoping these doco gaps are fleshed out and completed prior to it going GA.
+The second rabbit hole was related to Databricks CLI itself. During this project I often found myself confused about what the actual supported cmdlets and inputs were for the CLI. I'll try not to bore you too much with the details but in general I found the [Databricks CLI commands documentation](https://learn.microsoft.com/en-us/azure/databricks/dev-tools/cli/commands) to be a bit incomplete in terms of available/supported commands that map to the REST APIs. This was further validated when I discovered various `//TODO` comments in the CLI's .go files for the `workspace/ip-access-lists` command as shown [here](https://github.com/databricks/cli/blob/ee55316007810446e975b2bd5173ab3daeaa3ff4/cmd/workspace/ip-access-lists/ip-access-lists.go#L86). With Databricks saying the CLI is still in public preview I'm hoping these doco gaps are fleshed out and completed prior to it going GA.
 
 # Managing Azure Databricks Workspace IP Access Lists via CICD
 
@@ -52,7 +52,7 @@ I then added a single step in my build and release pipeline template to:
 2. enable or disable the IP access lists based on a [parameter input](https://github.com/globalbao/azure-databricks-cicd/blob/main/devops/templates/ado-release-template.yml#L12) from the calling pipeline
 3. echo the IP access list enablement status to the logs
 
-The below cmdlets gave me an easy way to control enablement or disablement of the IP access lists on the workspace I targeting via the DevOps pipeline.
+The below cmdlets gave me an easy way to toggle enablement or disablement of the workspace IP access lists via the Azure DevOps release pipeline.
 
 ```bash
 echo "Listing existing Databricks Workspace IP Access Lists"
@@ -65,7 +65,7 @@ echo "Checking Databricks Workspace IP Access Lists enablement status"
 databricks workspace-conf get-status enableIpAccessLists -t ${{ parameters.BUNDLE_TARGET }} --log-level ${{ parameters.DATABRICKS_LOG_LEVEL }}
 ```
 
-Now onto the fun bit -- managing create, update, and delete operations within the IP access list.
+Now onto the fun bit -- standing up the capability to trigger create, update, and delete operations within the IP access list.
 
 Noticing that the Databricks CLI currently only supports JSON inputs for IP access list changes I chose to store the workspace IP ACLs in dedicated .JSON files per environment within a single folder in my repo e.g. `./workspace-ip-access-lists` with each JSON object aligning to the below inputs as [shown here](https://github.com/globalbao/azure-databricks-cicd/blob/main/workspace-ip-access-lists/dev.json).
 
