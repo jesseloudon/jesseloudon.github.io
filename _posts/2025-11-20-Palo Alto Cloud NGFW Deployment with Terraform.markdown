@@ -25,7 +25,7 @@ Be sure to also checkout the [Palo Alto documentation on Cloud NGFW](https://doc
 
 These are the providers I pinned to for my Palo Alto deployment. Note that I am using AzAPI provider because at the time of writing AzureRM did not have a resource covering my usecase to deploy a Palo Alto NGFW with Strata Cloud Manager (SCM) integration.
 
-```h
+```hcl
 terraform {
   required_version = ">= 1.3"
   required_providers {
@@ -49,7 +49,7 @@ There's also 2 separate baseline public IPs resources to cover the Egress NAT tr
 
 Finally there's a user assigned managed identity which is required by the Palo Alto NGFW as it didn't support a system managed identity.
 
-```h
+```hcl
 data "azurerm_client_config" "current" {}
 
 resource "azurerm_palo_alto_virtual_network_appliance" "this" {
@@ -96,7 +96,7 @@ The AzAPI resource here is fairly simple:
 - for each on the public IPs based on the count
 - link the FW to the network virtual appliance and VWAN Hub
 
-```h
+```hcl
 resource "azapi_resource" "this" {
   type      = "PaloAltoNetworks.Cloudngfw/firewalls@2025-05-23"
   name      = var.firewall_name
@@ -168,7 +168,7 @@ resource "azapi_resource" "this" {
 
 These variables below complete the full IaC codebase for the Palo Alto Cloud NGFW deployment and I used them to ensure the module for the deployment was repeatable and as generic as possible.
 
-```h
+```hcl
 variable "resource_group_name" {
   type        = string
   description = "The name of the Resource Group where the Palo Alto Cloud NGFW Firewall will be deployed."
