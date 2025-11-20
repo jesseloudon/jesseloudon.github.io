@@ -1,6 +1,6 @@
 ---
 title: "Palo Alto Cloud NGFW SCM Deployment with Terraform"
-excerpt: ""
+excerpt: "Learn how to deploy Palo Alto Cloud Next-Generation Firewall with Strata Cloud Manager integration using Terraform."
 header:
   og_image: /assets/images/pacloudngfw.png
   teaser: /assets/images/pacloudngfw.png
