@@ -272,16 +272,16 @@ variable "strata_cloud_manager_name" {
 
 variable "marketplace_details" {
   type = object({
-    offer_id     = string
-    publisher_id = string
+    offer_id     = string # e.g. "pan_swfw_cloud_ngfw"
+    publisher_id = string # e.g. "paloaltonetworks"
   })
   description = "Marketplace details for the Palo Alto Cloud NGFW Firewall."
 }
 
 variable "plan_data" {
   type = object({
-    billing_cycle = string
-    plan_id       = string
+    billing_cycle = string # e.g. "MONTHLY"
+    plan_id       = string # e.g. "panw-cloud-ngfw-payg"
   })
   description = "Plan data for the Palo Alto Cloud NGFW Firewall."
 }
