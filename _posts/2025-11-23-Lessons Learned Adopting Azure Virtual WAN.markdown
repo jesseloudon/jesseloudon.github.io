@@ -43,7 +43,7 @@ So for example:
 - Australia East Region - AE vWAN + AE vWAN Hub deployed
 - Australia SouthEast Region - ASE vWAN Hub deployed (and associated to AE vWAN)
 
-Having your vWAN Hubs associated to the same vWAN ensures that hub to hub connectivity and routing is automatically established and there's no need for peering/VPN/ExpressRoute connections between vWAN Hubs in either region.
+Having your vWAN Hubs associated to the same vWAN ensures that hub to hub connectivity and routing is automatically established and there's no need to create VPN/ExpressRoute connections directly between your vWAN Hubs in either region.
 
 ## Allowing Traffic from Non-Virtual WAN Networks
 
