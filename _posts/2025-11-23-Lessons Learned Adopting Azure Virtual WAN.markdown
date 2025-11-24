@@ -1,6 +1,6 @@
 ---
 title: "Lessons Learned Adopting Azure Virtual WAN"
-excerpt: "Lessons learned adopting Azure Virtual WAN from a traditional hub and spoke architecture"
+excerpt: "Discover lessons learned adopting Azure Virtual WAN from a traditional hub and spoke architecture"
 header:
   og_image: /assets/images/vwan-migration.png
   teaser: /assets/images/vwan-migration.png
