@@ -77,7 +77,7 @@ Below you can see my next hop test result between subnets showing traffic sendin
 
 ![Microsegmentation Traffic Inspection 1](/assets/images/vwan-migration-4.png "Microsegmentation Traffic Inspection 1")
 
-Now to achieve micro segementation I've created a route table associated to my subnets and a UDR for my VNET 10.1.0.0/16 to send to the firewall IP address 10.0.0.132. You can see based on the test result below that traffic between subnets is now directed to the firewall in the hub.
+Now to achieve micro segmentation I've created a route table associated to my subnets and a UDR for my VNET 10.1.0.0/16 to send to the firewall IP address 10.0.0.132. You can see based on the test result below that traffic between subnets is now directed to the firewall in the hub.
 
 ![Microsegmentation Traffic Inspection 2](/assets/images/vwan-migration-5.png "Microsegmentation Traffic Inspection 2")
 
