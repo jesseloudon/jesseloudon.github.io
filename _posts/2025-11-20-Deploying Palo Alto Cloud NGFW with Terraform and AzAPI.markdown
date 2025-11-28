@@ -14,8 +14,7 @@ tags:
   - "terraform"
   - "azapi"
 ---
-
-Hey folks in this blog post I'm going to cover how you can easily deploy the Palo Alto Cloud Next-Generation Firewall (NGFW) with Strata Cloud Manager integration using Terraform and AzAPI.
+Hey folks in this blog post I'm going to cover how you can get started with deploying Palo Alto Cloud Next-Generation Firewall (NGFW) with Strata Cloud Manager integration using Terraform and AzAPI.
 
 This blog will cover the IaC side of things and to keep this short and sweet I'm assuming you already have working knowledge of how to deploy your IaC via CICD workflows/pipelines.
 

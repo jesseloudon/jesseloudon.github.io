@@ -12,7 +12,7 @@ tags:
 - "terraform"
 - "infrastructure as code"
 ---
-Hey folks in this blog post I'll be describing three distinct Terragrunt file patterns for orchestrating your Terraform codebase at scale.
+Hey folks in this blog post I'll be describing three distinct Terragrunt file patterns for orchestrating your Terraform codebase at scale. These Terragrunt tips and tricks will help you through tricky situations should your Terraform inputs rise in complexity and scale.
 
 > Terragrunt is an orchestrator for Terraform/OpenTofu and is designed for scalable deployments across multiple environments (e.g. DEV, TEST, UAT, PROD)
 
