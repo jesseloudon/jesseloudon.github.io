@@ -13,6 +13,9 @@ Public speaking is a powerful medium for communicating ideas and sharing knowled
 
 ## History
 
+### Event: [Global Azure @ Melbourne Azure Nights](https://lnkd.in/gCRfrSvR) - April 2026
+Live presentation on how Microsoft Foundry Agents injected with specialised instructions can be integrated into your Policy-as-Code flow to automate the entire post-deployment testing and reporting process end-to-end and thus reducing manual effort by leveraging the power of AI Agents.
+
 ### Event: [Global Azure @ Microsoft Reactor Sydney](https://www.meetup.com/Microsoft-Reactor-Sydney/) - May 2024
 Live presentation on using GitHub Copilot on Azure Policies. Walkthrough through a few scenarios to demonstrate and determine if an AI-assistant can help us in our Policy development journey including live demonstration, slides, and Q&A.
 

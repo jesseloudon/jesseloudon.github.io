@@ -65,14 +65,31 @@ gallery:
     title: "Citrix Certified Administrator XenApp"
 ---
 
+I lead Arinco's high-performing teams in designing and delivering secure Azure, DevOps, and AI transformation programs for mid-market to enterprise organisations. My influence extends to shaping opportunities, establishing trusted advisory relationships, and delivering complex multi-stream initiatives.
+
+In presales, I work directly with C-suite and senior leaders to define high-impact programs of work, articulate value propositions, and align cloud adoption strategies to measurable business outcomes. My approach is rooted in curiosity and structured problem-solving, enabling me to uncover core organisational challenges and position pragmatic, executable pathways for Azure adoption and cloud maturity.
+
+In delivery, my focus areas include:
+
+- Agentic software development and engineering
+- Microsoft Data and AI platforms
+- Azure landing zones and enterprise networking
+- DevOps and DevSecOps operating models
+- Migration and modernisation roadmaps (6Rs)
+
+I'm passionate about connecting technical, organisational, and commercial drivers to shape cohesive programs of work - helping customers move from fragmented initiatives to governed, scalable operating models that sustain long-term value.
+
+I help influence Arinco's broader capability by leading the Intelligent Platforms stream (~40 ANZ consultants), driving the continual evolution of accelerators, delivery practices, and internal IP.
+
+Finally, I'm an advocate for cloud and AI adoption through internal forums, public speaking, and community evangelism, and was recognised as a Microsoft MVP from 2021-2023 for my contributions in the Azure Policy governance field.
+
 ## Get in touch
 
-* Twitter: [coder_au](https://twitter.com/coder_au)
 * LinkedIn: [JesseLoudon](https://www.linkedin.com/in/jesseloudon/)
+* YouTube: [JesseLoudon](https://www.youtube.com/channel/UCZ79IZ2ofpJhLVAOgN0n9tw)
 * Web: [jloudon.com](https://jloudon.com)
 * GitHub: [JesseLoudon](https://github.com/jesseloudon)
 * Sessionize: [JesseLoudon](https://sessionize.com/JesseLoudon/)
-* YouTube: [JesseLoudon](https://www.youtube.com/channel/UCZ79IZ2ofpJhLVAOgN0n9tw)
 
 ## Jesse's Industry Awards & Accreditation :ballot_box_with_check:
 
