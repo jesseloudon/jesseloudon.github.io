@@ -1,6 +1,8 @@
 ---
 import { site } from '../lib/site';
-const { title = site.title, description = site.description } = Astro.props;
+const { title = site.title, description = site.description, image = '/assets/images/jesse-profile-2024.jpg', type = 'website' } = Astro.props;
+const canonical = new URL(Astro.url.pathname, site.url).toString();
+const socialImage = new URL(image, site.url).toString();
 ---
 <!doctype html>
 <html lang="en-AU">
@@ -8,6 +10,16 @@ const { title = site.title, description = site.description } = Astro.props;
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <meta property="og:type" content={type} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={socialImage} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={socialImage} />
     <link rel="icon" href="/assets/images/favicon.png" />
     <link rel="alternate" type="application/rss+xml" title={`${site.title} RSS`} href="/rss.xml" />
     <title>{title} | {site.title}</title>
@@ -26,6 +38,7 @@ const { title = site.title, description = site.description } = Astro.props;
         <a href="/about/">About</a>
         <a href="/speaking/">Speaking</a>
         <a href="/tags/">Topics</a>
+        <a href="/search/">Search</a>
         <button class="theme-toggle" type="button" aria-label="Switch to dark mode" aria-pressed="false">
           <span aria-hidden="true">☾</span>
         </button>
