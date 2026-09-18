@@ -1,0 +1,57 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+<BaseLayout title="Search" description="Search Jesse Loudon's articles about Azure, DevOps, AI and cloud governance.">
+  <section class="wrap search-page">
+    <p class="eyebrow">Knowledge base</p>
+    <h1>Search the articles</h1>
+    <p class="intro">Find practical notes, patterns and lessons from the field.</p>
+    <form class="search-form" id="search-form">
+      <label for="search-input">Search articles</label>
+      <div class="search-row">
+        <input id="search-input" name="q" type="search" placeholder="Try Azure Policy or Terraform" autocomplete="off" />
+        <button class="button" type="submit">Search</button>
+      </div>
+    </form>
+    <p id="search-status" class="muted" aria-live="polite"></p>
+    <div id="search-results" class="search-results"></div>
+  </section>
+</BaseLayout>
+<script>
+  const form = document.querySelector<HTMLFormElement>('#search-form');
+  const input = document.querySelector<HTMLInputElement>('#search-input');
+  const status = document.querySelector<HTMLElement>('#search-status');
+  const results = document.querySelector<HTMLElement>('#search-results');
+  if (!form || !input || !status || !results) throw new Error('Search interface failed to initialize.');
+  type Pagefind = { search: (term: string) => Promise<{ results: Array<{ data: () => Promise<{ url: string; excerpt: string; meta?: Record<string, string> }> }> }> };
+  let pagefind: Pagefind | undefined;
+
+  const runSearch = async (term: string) => {
+    if (!term.trim()) {
+      status.textContent = 'Enter a term to search the articles.';
+      results.replaceChildren();
+      return;
+    }
+    // Pagefind creates this module during the production build.
+    // @ts-expect-error Pagefind runtime is generated after Astro builds.
+    pagefind ??= await import(/* @vite-ignore */ '/pagefind/pagefind.js') as Pagefind;
+    const response = await pagefind.search(term);
+    const items = await Promise.all(response.results.slice(0, 10).map((result) => result.data()));
+    status.textContent = `${response.results.length} result${response.results.length === 1 ? '' : 's'}`;
+    results.innerHTML = items.map((item) => `<article class="result"><p class="eyebrow">${item.meta?.category || 'Article'}</p><h2><a href="${item.url}">${item.meta?.title || item.url}</a></h2><p>${item.excerpt}</p></article>`).join('');
+  };
+
+  form?.addEventListener('submit', (event) => {
+    event.preventDefault();
+    const term = new FormData(form).get('q')?.toString() || '';
+    history.replaceState({}, '', term ? `?q=${encodeURIComponent(term)}` : '/search/');
+    runSearch(term);
+  });
+
+  const initialTerm = new URLSearchParams(location.search).get('q') || '';
+  input.value = initialTerm;
+  if (initialTerm) runSearch(initialTerm);
+</script>
+<style>
+  .search-page{max-width:820px;padding-top:75px;padding-bottom:80px}.search-page h1{font:700 clamp(2.5rem,6vw,4.4rem)/1.08 'Space Grotesk';letter-spacing:-.045em;margin:12px 0}.intro{font-size:1.2rem;color:var(--muted)}.search-form{margin-top:40px}.search-form label{display:block;font-weight:700;margin-bottom:8px}.search-row{display:flex;gap:12px}.search-row input{min-width:0;flex:1;padding:12px 14px;border:1px solid var(--line);border-radius:5px;background:var(--surface);color:var(--ink);font:inherit}.search-results{margin-top:35px}.result{border-top:1px solid var(--line);padding:24px 0}.result h2{font:600 1.45rem 'Space Grotesk';margin:5px 0}.result p:last-child{color:var(--muted);margin:5px 0}@media(max-width:600px){.search-row{display:block}.search-row .button{margin-top:10px}}
+</style>
