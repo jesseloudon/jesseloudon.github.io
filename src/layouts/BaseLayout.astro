@@ -1,0 +1,39 @@
+---
+import { site } from '../lib/site';
+const { title = site.title, description = site.description } = Astro.props;
+---
+<!doctype html>
+<html lang="en-AU">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="description" content={description} />
+    <link rel="icon" href="/assets/images/favicon.png" />
+    <link rel="alternate" type="application/rss+xml" title={`${site.title} RSS`} href="/rss.xml" />
+    <title>{title} | {site.title}</title>
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="/">Jesse <span>Loudon</span></a>
+      <nav aria-label="Main navigation">
+        <a href="/#articles">Articles</a>
+        <a href="/about/">About</a>
+        <a href="/speaking/">Speaking</a>
+        <a href="/tags/">Topics</a>
+      </nav>
+    </header>
+    <main><slot /></main>
+    <footer class="site-footer">
+      <div><strong>Jesse Loudon</strong><p>Azure, DevOps, AI and cloud governance.</p></div>
+      <div class="social">{site.social.map(([name, url]) => <a href={url}>{name}</a>)}</div>
+      <small>© {new Date().getFullYear()} Jesse Loudon · jloudon.com</small>
+    </footer>
+  </body>
+</html>
+<style is:global>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Space+Grotesk:wght@500;600;700&display=swap');
+:root{--ink:#17212b;--muted:#637181;--line:#dbe4ea;--accent:#0078d4;--warm:#e9f5fb;--max:1120px}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;color:var(--ink);font:16px/1.7 'DM Sans',sans-serif;background:#fff}a{color:var(--accent);text-decoration:none}a:hover{text-decoration:underline}.site-header{max-width:var(--max);margin:auto;padding:28px 24px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--line)}.brand{font:700 1.3rem 'Space Grotesk';color:var(--ink)}.brand span{color:var(--accent)}nav{display:flex;gap:24px;font-weight:500}nav a{color:var(--ink)}main{min-height:65vh}.site-footer{max-width:var(--max);margin:80px auto 0;padding:40px 24px;display:flex;gap:30px;align-items:start;justify-content:space-between;border-top:1px solid var(--line);color:var(--muted)}.site-footer p{margin:4px 0}.social{display:flex;gap:16px;flex-wrap:wrap}.site-footer small{align-self:end}@media(max-width:700px){.site-header{display:block}.site-header nav{margin-top:18px;gap:16px;flex-wrap:wrap}.site-footer{display:block}.social{margin:20px 0}}
+.wrap{max-width:var(--max);margin:auto;padding:0 24px}.eyebrow{text-transform:uppercase;letter-spacing:.13em;color:var(--accent);font-size:.78rem;font-weight:700}.button{display:inline-block;border-radius:5px;background:var(--accent);color:#fff;padding:10px 18px;font-weight:700}.button:hover{text-decoration:none;background:#005a9e}.muted{color:var(--muted)}
+.article-content{font-size:1.07rem}.article-content h2{margin-top:2.5rem;font:600 1.7rem 'Space Grotesk'}.article-content h3{font:600 1.25rem 'Space Grotesk';margin-top:2rem}.article-content img{max-width:100%;height:auto}.article-content pre{overflow:auto;padding:20px;border-radius:8px}.article-content table{border-collapse:collapse;width:100%;display:block;overflow:auto}.article-content th,.article-content td{border:1px solid var(--line);padding:8px 12px;text-align:left}.article-content blockquote{border-left:4px solid var(--accent);margin-left:0;padding-left:20px;color:var(--muted)}
+</style>
