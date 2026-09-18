@@ -1,0 +1,9 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { taxonomySlug } from '../../lib/site';
+const posts = await getCollection('posts');
+const tags = [...new Set(posts.flatMap((post) => post.data.tags || []))].sort();
+---
+<BaseLayout title="Topics"><section class="wrap taxonomy"><p class="eyebrow">Browse the archive</p><h1>Topics</h1><div class="tag-cloud">{tags.map((tag) => <a href={`/tags/${taxonomySlug(tag)}/`}>#{tag}</a>)}</div></section></BaseLayout>
+<style>.taxonomy{padding-top:75px}.taxonomy h1{font:700 4rem 'Space Grotesk'}.tag-cloud{display:flex;flex-wrap:wrap;gap:14px}.tag-cloud a{border:1px solid var(--line);border-radius:99px;padding:8px 16px}</style>

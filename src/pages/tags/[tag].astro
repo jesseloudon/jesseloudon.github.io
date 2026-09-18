@@ -1,0 +1,14 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PostCard from '../../components/PostCard.astro';
+import { taxonomySlug } from '../../lib/site';
+export async function getStaticPaths() {
+  const posts = await getCollection('posts');
+  const tags = [...new Set(posts.flatMap((p) => p.data.tags || []))];
+  return tags.map((tag) => ({ params: { tag: taxonomySlug(tag) }, props: { tag, posts: posts.filter((p) => p.data.tags?.some((t) => taxonomySlug(t) === taxonomySlug(tag))).sort((a,b) => b.data.date.valueOf() - a.data.date.valueOf()) } }));
+}
+const { tag, posts } = Astro.props;
+---
+<BaseLayout title={`Tag: ${tag}`}><section class="wrap taxonomy"><p class="eyebrow">Topic</p><h1>#{tag}</h1>{posts.map((post) => <PostCard post={post} />)}</section></BaseLayout>
+<style>.taxonomy{max-width:820px;padding-top:75px}.taxonomy h1{font:700 3.5rem 'Space Grotesk';margin-bottom:45px}</style>
