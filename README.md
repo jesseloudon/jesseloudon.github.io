@@ -1,14 +1,19 @@
-![CanvaLogo](https://jloudon.com/assets/images/CanvaLogo.png)
+# Jesse Loudon personal site
 
-![Backup Entire Site to Azure on Master Push](https://github.com/jesseloudon/jesseloudon.github.io/workflows/Backup%20Entire%20Site%20to%20Azure%20on%20Master%20Push/badge.svg)
+Personal website and technical publication built with Astro and hosted on GitHub Pages.
 
-# Personal Blog Project based on Jekyll themes and hosted by GitHub Pages
+## Development
 
-Check out this blog series about why and how I built this site:
+```bash
+npm install
+npm run dev
+```
 
-* Part 1 - https://jloudon.com/blogging/OpenSource-Blogging-with-Jekyll-GitHub-VSCode-Part1/
+Run the checks and production build locally with:
 
-* Part 2 - https://jloudon.com/blogging/OpenSource-Blogging-with-Jekyll-GitHub-VSCode-Part2/
+```bash
+npm run check
+npm run build
+```
 
-Here's a collection of links to help you get setup with Open Source blogging: 
-https://jloudon.com/BloggingToolkit/
+The site is deployed by `.github/workflows/astro.yml` when changes are pushed to `master`.

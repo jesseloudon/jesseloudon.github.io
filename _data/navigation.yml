@@ -1,9 +1,0 @@
-customsidenav:
-- title: Links
-  children:
-    - title: "Home"
-      url: /
-    - title: "About"
-      url: /about/
-    - title: "Speaking"
-      url: /speaking/
