@@ -24,7 +24,23 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   const results = document.querySelector<HTMLElement>('#search-results');
   if (!form || !input || !status || !results) throw new Error('Search interface failed to initialize.');
   type Pagefind = { search: (term: string) => Promise<{ results: Array<{ data: () => Promise<{ url: string; excerpt: string; meta?: Record<string, string> }> }> }> };
+  type SearchEntry = { title: string; category: string; excerpt: string; url: string; text: string };
   let pagefind: Pagefind | undefined;
+
+  const renderResults = (items: Array<{ title: string; category: string; excerpt: string; url: string }>) => {
+    results.replaceChildren();
+    for (const item of items.slice(0, 10)) {
+      const article = document.createElement('article');
+      article.className = 'result';
+      article.innerHTML = `<p class="eyebrow"></p><h2><a></a></h2><p></p>`;
+      article.querySelector('.eyebrow')!.textContent = item.category;
+      const link = article.querySelector('a')!;
+      link.textContent = item.title;
+      link.setAttribute('href', item.url);
+      article.querySelector('p:last-child')!.textContent = item.excerpt;
+      results.append(article);
+    }
+  };
 
   const runSearch = async (term: string) => {
     if (!term.trim()) {
@@ -32,13 +48,28 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       results.replaceChildren();
       return;
     }
-    // Pagefind creates this module during the production build.
-    // @ts-expect-error Pagefind runtime is generated after Astro builds.
-    pagefind ??= await import(/* @vite-ignore */ '/pagefind/pagefind.js') as Pagefind;
-    const response = await pagefind.search(term);
-    const items = await Promise.all(response.results.slice(0, 10).map((result) => result.data()));
-    status.textContent = `${response.results.length} result${response.results.length === 1 ? '' : 's'}`;
-    results.innerHTML = items.map((item) => `<article class="result"><p class="eyebrow">${item.meta?.category || 'Article'}</p><h2><a href="${item.url}">${item.meta?.title || item.url}</a></h2><p>${item.excerpt}</p></article>`).join('');
+    try {
+      // Pagefind creates this module during the production build.
+      // @ts-expect-error Pagefind runtime is generated after Astro builds.
+      pagefind ??= await import(/* @vite-ignore */ '/pagefind/pagefind.js') as Pagefind;
+      const response = await pagefind.search(term);
+      const items = await Promise.all(response.results.slice(0, 10).map((result) => result.data()));
+      status.textContent = `${response.results.length} result${response.results.length === 1 ? '' : 's'}`;
+      renderResults(items.map((item) => ({ title: item.meta?.title || item.url, category: item.meta?.category || 'Article', excerpt: item.excerpt, url: item.url })));
+    } catch {
+      try {
+        const response = await fetch('/search-index.json');
+        if (!response.ok) throw new Error('Search index unavailable.');
+        const entries = await response.json() as SearchEntry[];
+        const query = term.toLowerCase();
+        const matches = entries.filter((entry) => entry.text.toLowerCase().includes(query));
+        status.textContent = `${matches.length} result${matches.length === 1 ? '' : 's'}`;
+        renderResults(matches);
+      } catch {
+        status.textContent = 'Search is temporarily unavailable. Please try again later.';
+        results.replaceChildren();
+      }
+    }
   };
 
   form?.addEventListener('submit', (event) => {
