@@ -29,6 +29,11 @@ const socialImage = new URL(image, site.url).toString();
         document.documentElement.dataset.theme = 'dark';
       }
     </script>
+    <style is:inline>
+      html { background: #fff; color-scheme: light; }
+      html[data-theme="dark"] { background: #111c24; color-scheme: dark; }
+      body { background: inherit; }
+    </style>
   </head>
   <body>
     <header class="site-header">
