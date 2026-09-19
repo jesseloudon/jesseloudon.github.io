@@ -10,5 +10,5 @@ export async function getStaticPaths() {
 }
 const { tag, posts } = Astro.props;
 ---
-<BaseLayout title={`Tag: ${tag}`}><section class="wrap taxonomy"><p class="eyebrow">Topic</p><h1>#{tag}</h1>{posts.map((post) => <PostCard post={post} />)}</section></BaseLayout>
-<style>.taxonomy{max-width:820px;padding-top:75px}.taxonomy h1{font:700 3.5rem 'Space Grotesk';margin-bottom:45px}</style>
+<BaseLayout title={`Topic: ${tag}`} description={`Jesse Loudon's articles and field notes about ${tag}.`}><section class="wrap taxonomy"><p class="eyebrow">Following one thread</p><h1>#{tag}</h1><p class="taxonomy-intro">These notes collect the questions, patterns and lessons connected to <strong>{tag}</strong>. Read from the latest entry or work backwards to see how the thinking developed.</p>{posts.map((post) => <PostCard post={post} />)}</section></BaseLayout>
+<style>.taxonomy{max-width:820px;padding-top:75px;padding-bottom:80px}.taxonomy h1{font:700 3.5rem 'Space Grotesk';margin:12px 0}.taxonomy-intro{max-width:700px;color:var(--muted);font-size:1.1rem;margin:0 0 35px}</style>

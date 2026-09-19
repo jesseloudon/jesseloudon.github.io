@@ -37,6 +37,7 @@ const socialImage = new URL(image, site.url).toString();
         <a href="/#articles">Articles</a>
         <a href="/about/">About</a>
         <a href="/speaking/">Speaking</a>
+        <a href="/about/#how-i-help">How I help</a>
         <a href="/tags/">Topics</a>
         <a href="/search/">Search</a>
         <button class="theme-toggle" type="button" aria-label="Switch to dark mode" aria-pressed="false">
@@ -46,7 +47,7 @@ const socialImage = new URL(image, site.url).toString();
     </header>
     <main><slot /></main>
     <footer class="site-footer">
-      <div><strong>Jesse Loudon</strong><p>Azure, DevOps, AI and cloud governance.</p></div>
+      <div><strong>Jesse Loudon</strong><p>Cloud strategy, architecture influence and practical transformation.</p></div>
       <div class="social">{site.social.map(([name, url]) => <a href={url}>{name}</a>)}</div>
       <small>© {new Date().getFullYear()} Jesse Loudon · jloudon.com</small>
     </footer>

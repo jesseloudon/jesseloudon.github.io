@@ -30,7 +30,7 @@ const articleImage = post.data.header?.og_image || post.data.header?.teaser || '
     <p class="eyebrow" data-pagefind-meta="category">{post.data.categories?.[0] || 'Article'} · {formatDate(post.data.date)}</p>
     <h1 data-pagefind-meta="title">{post.data.title}</h1>
     {post.data.excerpt && <p class="dek">{post.data.excerpt}</p>}
-    <p class="article-meta">{readingTime} min read</p>
+    <p class="article-meta">{readingTime} min read · A field note from the {post.data.categories?.[0] || 'practice'} archive</p>
     {headings.some((heading) => heading.depth === 2) && <aside class="toc" aria-label="On this page"><strong>On this page</strong><ul>{headings.filter((heading) => heading.depth === 2).map((heading) => <li><a href={`#${heading.slug}`}>{heading.text}</a></li>)}</ul></aside>}
     <div class="article-content"><Content /></div>
     {related.length > 0 && <section class="related"><p class="eyebrow">Keep reading</p><div class="related-grid">{related.map((candidate) => <a class="related-card" href={`/${taxonomySlug(candidate.data.categories?.[0] || 'blog')}/${slugFor(candidate)}/`}><strong>{candidate.data.title}</strong><span>{formatDate(candidate.data.date)}</span></a>)}</div></section>}
