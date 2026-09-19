@@ -5,5 +5,5 @@ import { taxonomySlug } from '../../lib/site';
 const posts = await getCollection('posts');
 const tags = [...new Set(posts.flatMap((post) => post.data.tags || []))].sort();
 ---
-<BaseLayout title="Topics"><section class="wrap taxonomy"><p class="eyebrow">Browse the archive</p><h1>Topics</h1><div class="tag-cloud">{tags.map((tag) => <a href={`/tags/${taxonomySlug(tag)}/`}>#{tag}</a>)}</div></section></BaseLayout>
-<style>.taxonomy{padding-top:75px}.taxonomy h1{font:700 4rem 'Space Grotesk'}.tag-cloud{display:flex;flex-wrap:wrap;gap:14px}.tag-cloud a{border:1px solid var(--line);border-radius:99px;padding:8px 16px}</style>
+<BaseLayout title="Topics" description="Browse Jesse Loudon's writing by topic, from cloud governance and Azure Policy to DevOps and automation."><section class="wrap taxonomy"><p class="eyebrow">Browse the archive</p><h1>Topics</h1><p class="taxonomy-intro">The archive follows the questions that have shaped my work: how to govern cloud platforms, automate responsibly, and help teams adopt better ways of working. Choose a topic to follow one thread through the notes.</p><div class="tag-cloud">{tags.map((tag) => <a href={`/tags/${taxonomySlug(tag)}/`}>#{tag}</a>)}</div></section></BaseLayout>
+<style>.taxonomy{padding-top:75px;padding-bottom:80px}.taxonomy h1{font:700 4rem 'Space Grotesk';margin:12px 0}.taxonomy-intro{max-width:680px;color:var(--muted);font-size:1.1rem;margin:0 0 40px}.tag-cloud{display:flex;flex-wrap:wrap;gap:14px}.tag-cloud a{border:1px solid var(--line);border-radius:99px;padding:8px 16px}</style>

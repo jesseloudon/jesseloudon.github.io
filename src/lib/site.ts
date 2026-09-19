@@ -1,11 +1,11 @@
 export const site = {
   title: 'Jesse Loudon',
-  description: 'Azure, DevOps, AI, and policy-as-code notes from Jesse Loudon.',
+  description: 'Jesse Loudon is a principal cloud consultant who helps organisations shape, sell and deliver secure Azure, DevOps and AI transformation.',
   url: 'https://jloudon.com',
   social: [
     ['LinkedIn', 'https://www.linkedin.com/in/jesseloudon/'],
-    ['GitHub', 'https://github.com/jesseloudon'],
-    ['YouTube', 'https://www.youtube.com/channel/UCZ79IZ2ofpJhLVAOgN0n9tw'],
+    ['GitHub', 'https://github.com/globalbao'],
+    ['YouTube', 'https://www.youtube.com/@jesseloudon'],
     ['X', 'https://twitter.com/coder_au']
   ]
 };
