@@ -22,7 +22,7 @@ Hey folks! I recently featured as a guest on the **Ctrl+Alt+Azure** podcast for 
 
 > The Ctrl+Alt+Azure podcast was launched back in October 2019 by Microsoft Azure MVPs [Tobias Zimmergren](https://twitter.com/zimmergren) and [Jussi Roine](https://twitter.com/jussiroine).
 
-Tobias had reached out to me over twitter to check my availability and interest in contributing to an upcoming episode dedicated to Azure Policy as Code. 
+Tobias had reached out to me over twitter to check my availability and interest in contributing to an upcoming episode dedicated to Azure Policy as Code.
 
 Admittedly I was surprised by Tobias's message, and other community events were already on my calendar, but the fact of the matter is that having actively advocated on this exact subject matter over the past 12+ months **I would not be passing up such a wonderful opportunity!**
 
@@ -32,7 +32,7 @@ Admittedly I was surprised by Tobias's message, and other community events were 
 
 # Azure Policy as Code - Episode 109 - Session Abstract
 
-:bulb: Don't have 40 mins to listen to the entire episode but want to know what's discussed? **I've got you covered!** 
+:bulb: Don't have 40 mins to listen to the entire episode but want to know what's discussed? **I've got you covered!**
 
 Here's **13** points of **Azure Policy as Code goodness** covered during episode 109! :muscle:
 
@@ -54,7 +54,7 @@ Here's **13** points of **Azure Policy as Code goodness** covered during episode
 
 # The Ctrl+Alt+Azure podcast journey
 
-My own research of the Ctrl+Alt+Azure podcast's early beginnings and it's **journey from episode 1 to episode 52** (late last year) has yielded many insightful blog posts from both Tobias and Jussi. 
+My own research of the Ctrl+Alt+Azure podcast's early beginnings and it's **journey from episode 1 to episode 52** (late last year) has yielded many insightful blog posts from both Tobias and Jussi.
 
 I highly recommend checking them out! For example I found a couple **beautiful gems in their documented journey** some of which include:
 
@@ -66,15 +66,18 @@ I highly recommend checking them out! For example I found a couple **beautiful g
 * Technology and tooling choices.
 
 **Launch annoucements**
+
 * [Announcing a new podcast Ctrl Alt Azure](https://zimmergren.net/announcing-a-new-podcast-ctrl-alt-azure/) - Tobias Zimmergren
 * [Announcing our new podcast Ctrl Alt Azure the first episode is out now](https://jussiroine.com/2019/10/announcing-our-new-podcast-ctrlaltazure-the-first-episode-is-out-now/) - Jussi Roine
 
 **Getting started blog posts**
+
 * [How we planned and launched a podcast the technical story](https://zimmergren.net/how-we-planned-and-launched-a-podcast-the-technical-story/) - Tobias Zimmergren
 * [Getting started with a podcast the equipment setup and logistics](https://jussiroine.com/2019/12/getting-started-with-a-podcast-the-equipment-setup-and-logistics/) - Jussi Roine
 
 **Podcast anniversaries**
-*  [The first anniversary of the Ctrl Alt Azure podcast]([https://jussiroine.com/2020/11/the-first-anniversary-of-the-ctrlaltazure-podcast/) - Jussi Roine
+
+* [The first anniversary of the Ctrl Alt Azure podcast]([https://jussiroine.com/2020/11/the-first-anniversary-of-the-ctrlaltazure-podcast/) - Jussi Roine
 
 # Conclusion
 

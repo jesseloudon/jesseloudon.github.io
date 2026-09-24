@@ -50,7 +50,7 @@ So if you are assigning your policy to the subscription scope a role assignment 
 
 If, later on, you delete that policy assignment the managed identity will also automatically get deleted, which makes sense, because you might not need that managed identity ever again - but wait, for some reason the RBAC role assignment still exists for the deleted managed identity.
 
-This leaves you with a security principal on the Access Control (IAM) role assignments page that displays as "Identity not found" with an "Unknown" type. Not harmful, I think, but also not a clean/tidy experience to encounter. 
+This leaves you with a security principal on the Access Control (IAM) role assignments page that displays as "Identity not found" with an "Unknown" type. Not harmful, I think, but also not a clean/tidy experience to encounter.
 
 My hope is that Microsoft identify this as a problem and resolve it - so I've reached out to the Azure Policy Program Managers via Twitter...
 
@@ -147,7 +147,7 @@ Remove-AzRoleAssignment -ObjectId $object -RoleDefinitionName $roledef -Scope $r
 
 Finding and removing Azure RBAC role assignments might not be a common occurence for your team but I think it's important to share with the community how to complete a task like this programmatically.
 
-I came across this problem during my testing of Azure policy assignments, which use a managed identity for certain effects, and would've never thought to look for these role assignments otherwise. 
+I came across this problem during my testing of Azure policy assignments, which use a managed identity for certain effects, and would've never thought to look for these role assignments otherwise.
 
 If you don't look, you'll never find :)
 

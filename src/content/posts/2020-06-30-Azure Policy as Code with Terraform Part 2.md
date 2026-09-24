@@ -27,9 +27,9 @@ In case you missed Part 1, let's take a quick look again at my example repositor
 
 ![globalbao azurerm policy modules](/assets/images/terraform5.png "globalbao azurerm policy modules")
 
-Each child module above manages only 1 resource type. For example /modules/policy-definitions manages AzureRM policy definitions. 
+Each child module above manages only 1 resource type. For example /modules/policy-definitions manages AzureRM policy definitions.
 
-The parent module calls all child modules and it's where we set input variable values if required by the child modules. 
+The parent module calls all child modules and it's where we set input variable values if required by the child modules.
 
 For example here's the parent module calling /modules/policy-assignments and setting values for 4 input variables.
 
@@ -46,7 +46,7 @@ module "policy_assignments" {
 
 # Module Best-Practices
 
-By the way, there's a few Terraform best-practices for module design that I've adhered to: 
+By the way, there's a few Terraform best-practices for module design that I've adhered to:
 
 * The root module and any nested modules should have README files.
 * Main.tf should be the primary entrypoint and contain nested module calls.
@@ -175,7 +175,7 @@ resource "azurerm_policy_definition" "addTagToRG" {
 
 Finally, also within the policy definition resource block, you can reference your variable list values using `${var.variableName[count.index]}`.
 
-Using `${var.variableName[count.index]} `means the index of tag keys contained in your variable list can be referenced for each policy definition resource created.
+Using `${var.variableName[count.index]}`means the index of tag keys contained in your variable list can be referenced for each policy definition resource created.
 
 Specific variable index items can also be referenced using `${var.variableName[0]}`, `${var.variableName[1]}`, `${var.variableName[2]}`, etc.
 
@@ -363,7 +363,7 @@ This pattern creates a policyset (initiative) and avoids hard-coding built-in po
 **Implementation Steps**
 
 1. Define a variable `list` containing the display names of built-in policy definitions.
-2. Define a `data source` to `azurerm_policy_definition `referencing the variable list.
+2. Define a `data source` to `azurerm_policy_definition`referencing the variable list.
 3. Reference each data source value within the policyset `policy_definitions` resource block.
 
 First, define a variable list containing the display names of existing built-in policy definitions that you want to include in a policyset.
@@ -392,7 +392,7 @@ variable "security_policyset_definitions" {
 }
 ```
 
-Next, define a data source to azurerm_policy_definition and use `count = length(var.variableName) `to iterate the data source lookup based on the number of values in your variable list.
+Next, define a data source to azurerm_policy_definition and use `count = length(var.variableName)`to iterate the data source lookup based on the number of values in your variable list.
 
 Then, use `display_name` = `var.variableName[count.index]` to lookup policy definitions based on the display names definined in your variable list.
 
@@ -403,7 +403,7 @@ data "azurerm_policy_definition" "security_policyset_definitions" {
 }
 ```
 
-Finally, within the policyset resource block, reference each `policydefinitionId `from the data source using `${data.dataSource.dataSourceName.*.id[X]}`.
+Finally, within the policyset resource block, reference each `policydefinitionId`from the data source using `${data.dataSource.dataSourceName.*.id[X]}`.
 
 The example below is for if you have 15 policy definitions contained in your variable list.
 
@@ -475,9 +475,9 @@ POLICY_DEFINITIONS
 
 # Closing Remarks
 
-Authoring my own AzureRM policy modules provided me with maximum control over the HCL code and freedom to experiment with various coding patterns. 
+Authoring my own AzureRM policy modules provided me with maximum control over the HCL code and freedom to experiment with various coding patterns.
 
-A month ago, when I was testing Azure Policy deployments with Terraform, there wasn't any AzureRM Policy module available from Microsoft on the Terraform Registry. 
+A month ago, when I was testing Azure Policy deployments with Terraform, there wasn't any AzureRM Policy module available from Microsoft on the Terraform Registry.
 
 Today there are 22 Azure-related modules publicly available and we've just scratched the surface of what's possible with Azure Policy as Code with Terraform so watch this space for future developments as the HashiCorp/Microsoft partnership ramps up!
 

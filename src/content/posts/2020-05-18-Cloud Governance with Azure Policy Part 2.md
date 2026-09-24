@@ -41,15 +41,15 @@ You can turn these settings off to see all resources, namespaces, and resource t
 
 ![azure policy extension settings](/assets/images/azurepolicy2.png "azure policy extension settings")
 
-After extension installation, authenticate to Azure via the VSCode command palette (CTRL+SHIFT+P) > Azure Sign In 
+After extension installation, authenticate to Azure via the VSCode command palette (CTRL+SHIFT+P) > Azure Sign In
 
 ![azure signin vscode](/assets/images/azurepolicy3.png "azure signin vscode")
 
-Authentication is also possible via  Azure Policy Extension > Sign in to Azure 
+Authentication is also possible via  Azure Policy Extension > Sign in to Azure
 
 ![azure policy extension signin](/assets/images/azurepolicy4.png "azure policy extension signin")
 
-After authentication, if you have access to multiple subscriptions, you can add/remove Azure subscriptions from the policy extension using  CTRL+SHIFT+P > Azure: Select Subscriptions 
+After authentication, if you have access to multiple subscriptions, you can add/remove Azure subscriptions from the policy extension using  CTRL+SHIFT+P > Azure: Select Subscriptions
 
 For optimal performance, I recommend having only 1 Azure subscription selected when using the policy extension.
 
@@ -61,15 +61,15 @@ Here’s a quick overview of the trees currently available in the Azure Policy e
 
 * Resources
   * Subscription
-      * **Resource Providers** (resources are divided by resource provider such as 'Microsoft.Compute' or 'Microsoft.Network' that are registered to the selected subscription)
-      * **Resource Groups** (tracked resources e.g. resources that are members of a resource group are shown here)
+    * **Resource Providers** (resources are divided by resource provider such as 'Microsoft.Compute' or 'Microsoft.Network' that are registered to the selected subscription)
+    * **Resource Groups** (tracked resources e.g. resources that are members of a resource group are shown here)
 
 * Policies
   * Subscription
-      * Assignments
-      * **Built-In Definitions**
-      * Custom Definitions
-      * Initiatives
+    * Assignments
+    * **Built-In Definitions**
+    * Custom Definitions
+    * Initiatives
 
 Above, I've highlighted Resources/Resource Providers and Resources/Resource Groups because this is where you can navigate the Azure ecosystem and discover property aliases that can be used as fields in your custom policy definitions. Super important and a powerful enabler!
 
@@ -83,17 +83,16 @@ When you browse through the built-in policy definitions you’ll notice the JSON
 * description
 * policy rule
 * if (logical evaluation)
-    * not
-    * allOf
-    * anyOf
+  * not
+  * allOf
+  * anyOf
 * then (effect)
-    * deny
-    * audit
-    * append
-    * auditIfNotExists
-    * deployIfNotExists
-    * disabled
-
+  * deny
+  * audit
+  * append
+  * auditIfNotExists
+  * deployIfNotExists
+  * disabled
 
 Here's a collapsed snippet of a policy definition in JSON.
 
@@ -222,25 +221,27 @@ There's more than 1 method currently available which you can use to discover an 
 * Azure PowerShell (example below)
 * Azure Resource Graph (example below – but not specific to Microsoft.Authorization namespace)
 
-
 **Azure CLI**
+
 ``` bash
 az provider show --namespace "Microsoft.Authorization" --expand "resourceTypes/aliases" --query "resourceTypes[].aliases[].name"
 ```
 
 **PowerShell**
+
 ``` powershell
 Get-AzPolicyAlias -ResourceTypeMatch 'roleassignment' | fl
 ```
 
 **Azure Resource Graph**
+
 ``` powershell
 Search-AzGraph -Query "Resources | where type=~'microsoft.storage/storageaccounts' | limit 1 | project aliases"
 ```
 
 # Closing Remarks
 
-Using the Azure policy extension for Visual Studio Code to do your initial discovery of property aliases can be beneficial to your custom policy authoring because it shows actual live resource data from your Azure subscription. 
+Using the Azure policy extension for Visual Studio Code to do your initial discovery of property aliases can be beneficial to your custom policy authoring because it shows actual live resource data from your Azure subscription.
 
 Seeing live resource data from your subscription helps to establish context around what to look for and the possible values a property alias might have.
 
@@ -252,7 +253,7 @@ What's coming...
 * Policy and alias validation
 * Policy compliance state testing
 
-If you have any ideas, feature requests, or find any bugs with the Azure Policy extension you can email authorpolicy@microsoft.com
+If you have any ideas, feature requests, or find any bugs with the Azure Policy extension you can email <authorpolicy@microsoft.com>
 
 In Part 3 (WIP) of this series I’ll walkthrough managing the Azure Policy Lifecycle.
 

@@ -32,13 +32,13 @@ I then moved onto creating a new AD FS 2016 relying party trust using the sp-met
 
 ![ADFSClaimIssuanceRules](/assets/images/ClaimIssuanceRules.png "ADFS Claim Issuance Rules")
 
-Unfortunately during my testing I was continually returned the following web page message from the customer’s IdentityNow portal. 
+Unfortunately during my testing I was continually returned the following web page message from the customer’s IdentityNow portal.
 
 ![SailpointIdentityNowWebError](/assets/images/SailPoint-Error.png "Sailpoint IdentityNow Web Error")
 
 This was occurring after the initial AD FS authentication and token being issued.
 
-Whilst the web page error is vague in it’s description of the error, I knew that because the initial AD FS authentication had succeeded that I was dealing with a claims issue between the IdP and SP. 
+Whilst the web page error is vague in it’s description of the error, I knew that because the initial AD FS authentication had succeeded that I was dealing with a claims issue between the IdP and SP.
 
 # InvalidNameIDPolicy SAML Response
 
@@ -82,7 +82,7 @@ Happy days! 🙂
 
 In conclusion when configuring SAML authentication via AD FS 2016 (IdP) to IdentityNow (SP) you may need to insert a SPNameQualifier value as an outgoing claim property from AD FS. The SPNameQualifier value should match the Entity ID value specified in your IdentityNow portal.
 
-Cheers, 
+Cheers,
 Jesse
 
 [sp-guide]:https://community.sailpoint.com/docs/DOC-7131

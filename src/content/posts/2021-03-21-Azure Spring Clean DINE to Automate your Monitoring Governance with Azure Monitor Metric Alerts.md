@@ -17,11 +17,12 @@ tags:
 ---
 ![AzureSpringClean2021](/assets/images/azspringclean-dine-blog-image.png "Azure Spring Clean 2021")
 
-Azure Spring Clean is an annual global community-driven event founded/run by [Joe Carlyle](https://twitter.com/wedoazure) and [Thomas Thornton](https://twitter.com/tamstar1234) with the aim of promoting well managed Azure tenants. Over 5 days in March expert-level content from contributors around the globe will be shared via [AzureSpringClean.com](https://www.azurespringclean.com/). 
+Azure Spring Clean is an annual global community-driven event founded/run by [Joe Carlyle](https://twitter.com/wedoazure) and [Thomas Thornton](https://twitter.com/tamstar1234) with the aim of promoting well managed Azure tenants. Over 5 days in March expert-level content from contributors around the globe will be shared via [AzureSpringClean.com](https://www.azurespringclean.com/).
 
-Today I'm excited to share with you patterns for leveraging DeployIfNotExists (DINE) policies to automate your Azure Monitoring Governance with Azure Monitor Metric Alerts. This blog post aims to give you a *general* overview of what you need to know with splashings of *advanced* technical details from the field. 
+Today I'm excited to share with you patterns for leveraging DeployIfNotExists (DINE) policies to automate your Azure Monitoring Governance with Azure Monitor Metric Alerts. This blog post aims to give you a *general* overview of what you need to know with splashings of *advanced* technical details from the field.
 
 ## Executive Summary
+
 * Azure Policy's DeployIfNotExists effect provides automation capability via nested Azure Resource Manager (ARM) templates
 * Azure Monitor Metric Alerts are just one example use-case for DINE policy automation
 * Policy-as-Code workflows ensure a repeatable, scalable, automated, and auditable process
@@ -33,13 +34,14 @@ Example deployment of 2x Metric Alerts using our example DINE policy:
 ![DINEPolicyDeployment2](/assets/images/azspringclean-dine-blog-image6.png "DINE policy example deployment 2x metric alerts - Source: jloudon.com")
 
 ## Wait, what's a DINE policy?
+
 Firstly let me introduce DINE policies to you! Do you recall the film Inception where Cobb (Leonardo DiCaprio) uses dreams to extract information from, or plant ideas on, his targets?
 
 ![Inception2010](/assets/images/azspringclean-dine-blog-image2.jpg "Source: Inception (2010)")
 
 Well Azure Policy's DeployIfNotExists effect IS Microsoft's Inception :japanese_castle: masterpiece!
 
-DINE policies are essentially an Azure Resource Manager (ARM) template nested within an Azure Policy definition; and you as the developer are the film :clapper: director, deciding what conditions need to evaluate to true/false before the ARM template is applied to your non-compliant Azure resource. 
+DINE policies are essentially an Azure Resource Manager (ARM) template nested within an Azure Policy definition; and you as the developer are the film :clapper: director, deciding what conditions need to evaluate to true/false before the ARM template is applied to your non-compliant Azure resource.
 
 Just have a look at this simplified breakdown of a DINE policy where I've removed some details to show you the overall framework for usage. How cool is this! :rocket:
 
@@ -48,6 +50,7 @@ Just have a look at this simplified breakdown of a DINE policy where I've remove
 With DINE policies you can apply compliance, at scale, to your Management Groups and Subscriptions and use Azure Policy's compliance conditions to evaluate nearly any type of resource. The possibilities for DINE policies are quite staggering if you think about it!
 
 ## Designing your DINE inception
+>
 > Before we build, we must have a vision.
 
 **Key Questions To Ask Yourself**
@@ -65,7 +68,8 @@ And here's some example responses to these key questions based on the below Azur
 ![DINEPolicyDesignKeyQuestionResponses](/assets/images/azspringclean-dine-blog-image8.png "DINE Policy Design Key Question Responses - Image Source: LAB3")
 
 ## Implementing DINE with Bicep
-Now that we've completed an initial design, let's look at implementation of our Azure Monitoring Governance Standard. 
+
+Now that we've completed an initial design, let's look at implementation of our Azure Monitoring Governance Standard.
 
 Today I'm showcasing two example policy-as-code workflows -
 
@@ -74,10 +78,10 @@ Today I'm showcasing two example policy-as-code workflows -
 
 > For a comparison of Bicep v Terraform check out [Bicep vs Terraform - A fair and balanced comparison - Jon Gallant](https://youtu.be/3lTrIgTJ9yc) and [Azure Bicep vs Terraform Overview - AzureTar](https://youtu.be/exk1QIRwAhU)
 
-Prior to writing this blog post I dived into [Bicep v0.3.1](https://github.com/Azure/bicep/releases/tag/v0.3.1) and manually converted one of my previous DINE policies written in Terraform (.tf) into a Bicep (.bicep) format. The end result was these 4 files below. 
+Prior to writing this blog post I dived into [Bicep v0.3.1](https://github.com/Azure/bicep/releases/tag/v0.3.1) and manually converted one of my previous DINE policies written in Terraform (.tf) into a Bicep (.bicep) format. The end result was these 4 files below.
 
 | File | Purpose
-:-----|:------
+:----- | :------
 main.bicep | Root module and creates 1x Resource Group for the AzMonitor Action Group
 policyDefinition.bicep | Creates 1x DeployIfNotExists Policy Definition and 1x Initiative (policyset)
 policyAssignment.bicep | Creates 1x Policy Assignment for the Initiative and 1x Role Assignment
@@ -85,17 +89,19 @@ actionGroup.bicep | Creates 1x AzMonitor Action Group used by the DINE Policy
 
 The structure/layout of the .bicep files (illustrated below) ensures that as your Bicep deployment grows in complexity/size you can keep resource types organised in a modular fashion. I've carried this pattern across from past experience managing large Terraform deployments.
 
-![DINEPolicyBicepModules](/assets/images/azspringclean-dine-blog-image9.png "Implementing DINE policies with Bicep Modules - Source: jloudon.com") 
+![DINEPolicyBicepModules](/assets/images/azspringclean-dine-blog-image9.png "Implementing DINE policies with Bicep Modules - Source: jloudon.com")
 
 Now for the sake of keeping this blog post under 30 minutes reading time (no, not kidding!) I'm going to focus only on key sections of the above .bicep files.
 
 > Pssst...You can also create and test all examples shown in this blog post directly via the Azure Portal!
 
 **Firstly, we should define condition(s) for policy evaluation**
+
 * Our target resource type is Microsoft.Network/loadBalancers
 * Only Load Balancers with Standard SKU support Metric Alerts
 
 *:arrow_down: policyDefinition.bicep*
+
 ```s
 policyRule: {
     if: {
@@ -113,12 +119,14 @@ policyRule: {
 ```
 
 **Here we'll use the DINE effect, set a resource type to evaluate, and define condition(s) for DINE evaluation**
+
 * Contributor RBAC role needed for the ARM template to deploy a Metric Alert
 * Microsoft.Insights/metricAlerts is our resource type to evaluate during the DINE policy operation
 * 3x existenceCondition rules determine whether our resource is compliant or non-compliant (*note: these rules purposefully have broad requirements*)
 * The Bicep escape sequence e.g. `\'/resourceGroups/\'` used in our 3rd existenceCondition rule is interesting - read more about it [here](https://docs.microsoft.com/en-us/azure/azure-resource-manager/bicep/data-types#strings?WT.mc_id=AZ-MVP-5004598)
 
 *:arrow_down: policyDefinition.bicep*
+
 ```s
 then: {
     effect: 'deployIfNotExists'
@@ -146,6 +154,7 @@ then: {
 ```
 
 **Here we'll define resource(s) to create with the ARM template**
+
 * Template parameters `resourceName`, `resourceId`, and `resourceLocation` are used to pass in field() values accessible during template runtime
 * Template parameters `actionGroupName`, `actionGroupRG`, and `actionGroupID` are used to pass in values from the actionGroup.bicep file
 * Note the Bicep escaping required for `odata.type`
@@ -153,6 +162,7 @@ then: {
 * 3x Metric Alert Dimensions provide additional monitoring capability across multiple data fields e.g. `ProtocolType`, `FrontendIPAddress`, and `BackendIPAddress`
 
 *:arrow_down: policyDefinition.bicep*
+
 ```s
 deployment: {
     properties: {
@@ -301,6 +311,7 @@ deployment: {
 **And here's the all-important parameter default values we're passing in**
 
 *:arrow_down: main.bicep*
+
 ```s
 param resourceGroupName string = 'BicepExampleRG'
 param resourceGrouplocation string = 'australiaeast'
@@ -331,10 +342,12 @@ param assignmentEnforcementMode string = 'Default'
 > :wave: If the metricAlert inputs above aren't making much sense I recommend parsing Microsoft's ARM template reference for [Metric Alerts](https://docs.microsoft.com/en-us/azure/templates/microsoft.insights/metricalerts?tabs=json?WT.mc_id=AZ-MVP-5004598)
 
 **Finally we're creating an RBAC role assignment**
+
 * This step is needed because Azure policy assignments don't automatically create an RBAC role assignment for the generated identity which means our DINE policy won't have the required permissions to create a metric alert at the target's resource group
 * Above finding may be a bug/defect with policy assignments and I hope it's looked at by Microsoft support in due course :smile:
 
 *:arrow_down: policyAssignment.bicep*
+
 ```s
 resource roleAssignment 'Microsoft.Authorization/roleAssignments@2020-04-01-preview' = {
   name: guid(bicepExampleAssignment.name, bicepExampleAssignment.type, subscription().subscriptionId)
@@ -350,6 +363,7 @@ Ok folks, that was a ton of code to process so congrats if you're still with me!
 > You can find more examples of Bicep usage w/ Azure Policies here: [github.com/globalbao/azure-policy-as-code](https://github.com/globalbao/azure-policy-as-code)
 
 ### Implementation/Testing Flow
+
 To deploy this example with Bicep ensure you have at least [azure-cli](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli?WT.mc_id=AZ-MVP-5004598) version 2.20.0 which comes with Bicep integration (nice!). I also recommend grabbing the [Bicep VSCode extension](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-bicep) to benefit from validation and intellisense for your .bicep files.
 
 * **1 - Deploy your DINE policy using Bicep via below cli steps**
@@ -385,9 +399,9 @@ az policy state trigger-scan
 
 ## Implementing DINE with Terraform
 
-Last year (2020) was a huge year of Terraform for me and I had the wonderful opportunity to design and deploy about 38 Azure Monitoring Governance DINE policies for a large client. 
+Last year (2020) was a huge year of Terraform for me and I had the wonderful opportunity to design and deploy about 38 Azure Monitoring Governance DINE policies for a large client.
 
-These 38 DINE policies are designed to provide baseline Monitoring Governance for production workloads where no existing metric alerts are deployed. 
+These 38 DINE policies are designed to provide baseline Monitoring Governance for production workloads where no existing metric alerts are deployed.
 
 > Note: There's flexibility provided by the DINE policy via their `existenceCondition` rules. For example - if metric alerts are deployed to the target resources e.g. Load Balancer, SQL Database, etc and they match the existenceCondition rules set within the policy JSON then these DINE policies will not overwrite, deny, or replace these alerts.
 
@@ -414,6 +428,7 @@ And here's a summary of the 38x Monitoring Governance DINE policies, 1x Initiati
 > There's plenty of detailed README action within this project so I'm hesitant to duplicate the Terraform code here as the JSON pattern is nearly identical to what I've shown above with Bicep. You can find the full repo at [github.com/globalbao/azure-policy-as-code](https://github.com/globalbao/azure-policy-as-code)
 
 ### Implementation/Testing Flow
+
 To deploy/test this example with Terraform ensure you have at least [hashicorp-terraform](https://releases.hashicorp.com/terraform/0.13.6/) version 0.13.6. I also recommend grabbing the [HashiCorp Terraform VSCode extension](https://marketplace.visualstudio.com/items?itemName=HashiCorp.terraform) to benefit from syntax highlighting and other awesome editing features for your .tf files.
 
 * **1 - Deploy your DINE policy using Terraform via below cli steps**
@@ -444,6 +459,7 @@ az policy state trigger-scan
 * **2 - Steps 2-5 here are the same as described above within the 'DINE with Bicep > Implemention/Testing Flow' section**
 
 ## Machine Learning via Dynamic Thresholds
+
 Before we continue on with this blog post it's worth giving a shoutout to the Microsoft team that brought us dynamic thresholds for use with Azure monitor metric alerts (v2) :+1:
 
 I think it's ultra-cool that we have the option to use either static or dynamic thresholds (machine learning) because with more configuration choice comes greater use-cases for consumers. And we're also less constrained when designing our Azure Monitoring Governance patterns.
@@ -457,7 +473,7 @@ Historically I've preferred leveraging dynamic thresholds over static thresholds
 * As resource usage patterns change seasonally, or due to other predictable events, only sigificant / out of the ordinary alerts are raised for resources resulting in reduced 'alert noise' for the service desk to respond to
 * I'm also an advocate of data-driven monitoring where buckets of data are analyzed by machine learning for trends/patterns and alerts raised only if they meet our dynamic threshold specifications
 
-> The big caveat to using Dynamic Thresholds is that without enough metric data ([3 days and at least 30 samples](https://docs.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-dynamic-thresholds#how-much-data-is-needed-to-trigger-an-alert?WT.mc_id=AZ-MVP-5004598)) to parse and learn from you won't have any alerts raised by Azure Monitor. This doesn't impact existing resources that have enough historical metric data to provide, but does impact our ability to effectively monitor newly provisioned resources. To combat this caveat you can look to deploy metric alerts using static thresholds to your new resources and then remove them after a period of time. 
+> The big caveat to using Dynamic Thresholds is that without enough metric data ([3 days and at least 30 samples](https://docs.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-dynamic-thresholds#how-much-data-is-needed-to-trigger-an-alert?WT.mc_id=AZ-MVP-5004598)) to parse and learn from you won't have any alerts raised by Azure Monitor. This doesn't impact existing resources that have enough historical metric data to provide, but does impact our ability to effectively monitor newly provisioned resources. To combat this caveat you can look to deploy metric alerts using static thresholds to your new resources and then remove them after a period of time.
 
 What are your thoughts on static vs dynamic thresholds? Let me know in the comments below! :loudspeaker:
 
@@ -508,7 +524,7 @@ Azure Portal vanguards can go to [portal.azure.com/#blade/Microsoft_Azure_Policy
 
 ### 5 Example Built-In Azure Monitoring Governance DINE policies
 
-If searching using the above methods isn't your thing and you're time poor here's 5 DINE policies I've picked out as examples specifically related to Azure Monitoring Governance. 
+If searching using the above methods isn't your thing and you're time poor here's 5 DINE policies I've picked out as examples specifically related to Azure Monitoring Governance.
 
 You can freely test these policies today in your environment!
 
@@ -520,13 +536,13 @@ You can freely test these policies today in your environment!
 
 # Conclusion
 
-I'm going to have to end this blog post here although I've many more ideas and thoughts to include about the why, where, what, when, and who of Azure Policy and it's automation capability via the DeployIfNotExists effect. 
+I'm going to have to end this blog post here although I've many more ideas and thoughts to include about the why, where, what, when, and who of Azure Policy and it's automation capability via the DeployIfNotExists effect.
 
 Many hours of sleep have been lost but it's been worth every cycle to share knowledge and learnings with the Azure community :heart:
 
 Huge thanks to [Joe Carlyle](https://twitter.com/wedoazure) and [Thomas Thornton](https://twitter.com/tamstar1234) for the opportunity to contribute to this year's #AzureSpringClean - make sure to check out expert-level content from contributors around the globe via [AzureSpringClean.com](https://www.azurespringclean.com/) :rocket:
 
-I hope this blog post has inspired you to do more with Azure Policy, Azure Monitor Metric Alerts, and adopt a policy-as-code workflow for your well managed Azure Tenants. 
+I hope this blog post has inspired you to do more with Azure Policy, Azure Monitor Metric Alerts, and adopt a policy-as-code workflow for your well managed Azure Tenants.
 
 Your comments/questions/suggestions are most welcome, cheers!
 

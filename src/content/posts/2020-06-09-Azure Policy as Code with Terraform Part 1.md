@@ -38,7 +38,7 @@ I believe there are 4 key elements of a policy as code workflow:
 
 # The JSON+X pattern
 
-Before we start looking at Terraform patterns, let’s examine the existing Azure Policy as Code pattern from Microsoft. Here’s the Microsoft example of a folder structure for your policy source code repo. 
+Before we start looking at Terraform patterns, let’s examine the existing Azure Policy as Code pattern from Microsoft. Here’s the Microsoft example of a folder structure for your policy source code repo.
 
 ![Microsoft policy as code folder structure](/assets/images/terraform2.png "Microsoft policy as code folder structure")
 
@@ -50,18 +50,20 @@ After defining your Azure policies as JSON files you need to decide which of the
 
 For example, the below three cmdlets all create a single policy definition named "Audit Storage Accounts Open to Public Networks".
 
-
 **ARMClient**
+
 ```
 armclient PUT "/subscriptions/{subscriptionId}/providers/Microsoft.Authorization/policyDefinitions/AuditStorageAccounts?api-version=2019-09-01" @<path to policy definition JSON file>
 ```
 
 **Azure PowerShell**
+
 ```powershell
 New-AzPolicyDefinition -Name 'AuditStorageAccounts' -DisplayName 'Audit Storage Accounts Open to Public Networks' -Policy 'AuditStorageAccounts.json'
 ```
 
 **Azure CLI**
+
 ``` bash
 az policy definition create --name 'audit-storage-accounts-open-to-public-networks' --display-name 'Audit Storage Accounts Open to Public Networks' --description 'This policy ensures that storage accounts with exposures to public networks are audited.' --rules '<path to json file>' --mode All
 ```
@@ -98,6 +100,7 @@ az login
 az account list
 az account set --subscription="XXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXX"
 ```
+
 ``` terraform
 Terraform fmt -recursive
 Terraform validate
@@ -208,7 +211,7 @@ There are five key elements of this architecture pattern. These are the ability 
 2. Enable manual-apply on workspaces and integrate team member reviews of Terraform plans stored in each workspace as part of your deployment pipeline. Or enable auto-apply on workspaces if a review is not required.
 3. Maintain a consistent and controlled pipeline for your Azure policy deployments to multiple Azure environments based off the same source code repo giving you a single source of truth for Azure policy as code.
 4. Remotely store and separate Terraform state files within each respective workspace providing a single source of truth for environment state.
-5. Remotely store sensitive and non-sensitive variables within each respective workspace allowing you to manage variations in Azure Policy deployments as required. For example, you may want to use the deny effect for some policies in prod but in test/dev you deploy the same policies with an audit effect. 
+5. Remotely store sensitive and non-sensitive variables within each respective workspace allowing you to manage variations in Azure Policy deployments as required. For example, you may want to use the deny effect for some policies in prod but in test/dev you deploy the same policies with an audit effect.
 
 Terraform usage can be a single main.tf file or a module consisting of main.tf, outputs.tf, and variables.tf. This is fine for a small-scale Azure Policy deployment of a few policies, policysets, and assignments but once you need to deploy more than 5 of any resource you'll notice the management of a single Terraform module can become unscalable.
 

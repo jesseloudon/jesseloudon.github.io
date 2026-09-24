@@ -18,7 +18,7 @@ tags:
 
 Hey folks in this blog post I'm going to share with you how to win the battle versus Azure Policy non-compliance.
 
-I had a scope requirement for a recent customer engagement to implement diagnostic settings for several resource types - one of which was Azure Kubernetes Service (AKS) clusters. 
+I had a scope requirement for a recent customer engagement to implement diagnostic settings for several resource types - one of which was Azure Kubernetes Service (AKS) clusters.
 
 These diagnostic settings needed to be customised per the design document and ultimately logs were to be forwarded to a log analytics workspace -- perfect fit for leveraging policy-as-code and deployIfNotExists policies!
 
@@ -50,7 +50,7 @@ So here's a simplistic image illustrating my flow when troubleshooting the root 
 
 `Screenshot #1` (or `SS #1`) shows a non-compliant AKS cluster. This evaluation result is AFTER a remediation task had successfully configured the diagnostic settings per my requirements on the resource. Initially I was puzzled to see this non-compliant result but it became clear why this was was happening as I investigated the policy's existenceCondition.
 
-`SS #2` shows the reason for non-compliance is because **target value** and **current value** for the **evaluated field** is **not matching**. The path for the evaluated field is also an array "properties.logs[*].enabled" which basically means there's more than one element to evaluate. 
+`SS #2` shows the reason for non-compliance is because **target value** and **current value** for the **evaluated field** is **not matching**. The path for the evaluated field is also an array "properties.logs[*].enabled" which basically means there's more than one element to evaluate.
 
 > I was able to view the reason for non-compliance by clicking into the *Details* link under the Compliance reason column -- a crucial piece of evidence for troubleshooting -- in the future I hope we'll be able to query this exact data programmatically.
 
@@ -69,13 +69,13 @@ So here's a simplistic image illustrating my flow when troubleshooting the root 
 
 > These parameter names also need to be in the right order. And as the original policy was a builtin type, I duplicated the JSON into a custom policy and modified the existenceCondition as shown in `SS #5`.
 
-After checking numerous builtin policies for configuring diagnostic settings I can confirm Microsoft have paramaterised the individual logs/metrics so you can specify during your policy assignment which logs/metrics you want to configure (by default they are all set to "True"). 
+After checking numerous builtin policies for configuring diagnostic settings I can confirm Microsoft have paramaterised the individual logs/metrics so you can specify during your policy assignment which logs/metrics you want to configure (by default they are all set to "True").
 
 This is great, as it allows developers/admins to be flexible with the policy's settings without having to change/duplicate the policy definition JSON to get a desired result. **However I believe most of these builtin policies have the same design flaw with the existenceCondition as outlined in this blog post.**
 
 # Battle Report
 
-I found that the builtin policy's existenceCondition shown below only 100% works if the logs/metric parameter default values do not change e.g. from "True" to "False". 
+I found that the builtin policy's existenceCondition shown below only 100% works if the logs/metric parameter default values do not change e.g. from "True" to "False".
 
 ```json
 "existenceCondition": {
@@ -98,7 +98,7 @@ I found that the builtin policy's existenceCondition shown below only 100% works
 
 My definition of an 100% working deployIfNotExists policy is one which:
 
-* successfully deploys the policy's nested ARM template to your non-compliant resource 
+* successfully deploys the policy's nested ARM template to your non-compliant resource
 * post-remediation marks the resource as compliant after an evaluation scan
 
 Now for my use-case I needed to set a few of these parameters to "False" per below example.

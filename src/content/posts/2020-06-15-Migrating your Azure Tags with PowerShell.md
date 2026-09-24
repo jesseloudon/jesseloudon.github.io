@@ -24,8 +24,8 @@ Sometimes we also need to migrate our existing tag values to new tag key/value p
 
 * You have a large Azure environment consisting of many tag key/value pairs
 * You have existing tag values you want to retain and migrate to new tag key/value pairs
-* You want to document and automate the tag migration programmatically 
-* You want to backup existing tag keys and values prior to making any changes 
+* You want to document and automate the tag migration programmatically
+* You want to backup existing tag keys and values prior to making any changes
 
 # Tag Migration Script
 
@@ -94,7 +94,7 @@ if ($resourcesOldKeyBackup) {
 
 The first 8 script lines shown above are pretty standard - Authenticate to Azure and set your Azure Context/Subscription if you have multiple Subscriptions.
 
-In lines 11-12 below we're defining the old tag key costcenter in a variable $oldKey and the new tag key costcentre also in a variable $newKey. 
+In lines 11-12 below we're defining the old tag key costcenter in a variable $oldKey and the new tag key costcentre also in a variable $newKey.
 
 Note: You can change these variable values to anything you want of course. I've just provided them as an example for the context of this blog.
 
@@ -122,7 +122,7 @@ Lines 33-49 are using the same script logic explained above, but we are querying
 
 # Example Tag Migration Script Usage
 
-Now I'll demonstrate using my tag migration script. 
+Now I'll demonstrate using my tag migration script.
 
 The screenshot below shows my demo environment where I have a mix of resources and resource groups with the tag key costcenter and various tag values e.g. examplevalue1, examplevalue2, etc
 

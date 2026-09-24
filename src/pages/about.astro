@@ -1,40 +1,85 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
+import BaseLayout from "../layouts/BaseLayout.astro";
 
 const capabilities = [
-  ['Opportunity shaping', 'Listening for the business problem, qualifying the opportunity and turning an ambiguous need into a credible program of work.'],
-  ['Executive communication', 'Making architecture and trade-offs clear to senior leaders, sponsors and non-technical stakeholders so decisions can happen with confidence.'],
-  ['Trusted advisory', 'Building the relationships that let customers share the real constraints, then connecting those signals to a practical technology roadmap.'],
-  ['Team enablement', 'Raising capability through mentoring, workshops, reusable patterns and clear ways of working that teams can own after the engagement.'],
-  ['Architecture direction', 'Creating secure Azure, DevOps and AI foundations that balance strategic intent with delivery reality.'],
-  ['Community leadership', 'Sharing useful patterns through public speaking, writing and open source so good practice travels beyond one project.']
+  [
+    "Opportunity shaping",
+    "Listening for the business problem, qualifying the opportunity and turning an ambiguous need into a credible program of work.",
+  ],
+  [
+    "Executive communication",
+    "Making architecture and trade-offs clear to senior leaders, sponsors and non-technical stakeholders so decisions can happen with confidence.",
+  ],
+  [
+    "Trusted advisory",
+    "Building the relationships that let customers share the real constraints, then connecting those signals to a practical technology roadmap.",
+  ],
+  [
+    "Team enablement",
+    "Raising capability through mentoring, workshops, reusable patterns and clear ways of working that teams can own after the engagement.",
+  ],
+  [
+    "Architecture direction",
+    "Creating secure Azure, DevOps and AI foundations that balance strategic intent with delivery reality.",
+  ],
+  [
+    "Community leadership",
+    "Sharing useful patterns through public speaking, writing and open source so good practice travels beyond one project.",
+  ],
 ];
 
 const journey = [
-  ['Now', 'Tech Principal Consultant at Arinco', 'Leading architecture, presales and delivery oversight for complex Azure, DevOps and AI transformation programs.'],
-  ['2024', 'DevOps stream leadership', 'Accountable for a stream of approximately 40 consultants, its accelerators, internal IP and continual improvement.'],
-  ['2022', 'Joined Arinco', 'Moved into a role combining technical leadership, trusted advisory work, delivery oversight and practice capability uplift.'],
-  ['Earlier', 'From systems administration to cloud architecture', 'Built a career across infrastructure, identity, networking, automation, Azure, DevOps and enterprise architecture.'],
-  ['Always', 'Learning, adapting and sharing', 'Continually moving toward the next useful technology and translating it into practical outcomes for customers and teams.']
+  [
+    "Now",
+    "Tech Principal Consultant at Arinco",
+    "Leading architecture, presales and delivery oversight for complex Azure, DevOps and AI transformation programs.",
+  ],
+  [
+    "2024",
+    "DevOps stream leadership",
+    "Accountable for a stream of approximately 40 consultants, its accelerators, internal IP and continual improvement.",
+  ],
+  [
+    "2022",
+    "Joined Arinco",
+    "Moved into a role combining technical leadership, trusted advisory work, delivery oversight and practice capability uplift.",
+  ],
+  [
+    "Earlier",
+    "From systems administration to cloud architecture",
+    "Built a career across infrastructure, identity, networking, automation, Azure, DevOps and enterprise architecture.",
+  ],
+  [
+    "Always",
+    "Learning, adapting and sharing",
+    "Continually moving toward the next useful technology and translating it into practical outcomes for customers and teams.",
+  ],
 ];
 
 const credentials = [
-  ['Microsoft Azure MVP', '2021-2023'],
-  ['DevOps Engineer Expert', 'Microsoft'],
-  ['Azure Solutions Architect Expert', 'Microsoft'],
-  ['GitHub Advanced Security', 'GitHub'],
-  ['GitHub Copilot', 'GitHub'],
-  ['Terraform Associate', 'HashiCorp']
+  ["Microsoft Azure MVP", "2021-2023"],
+  ["DevOps Engineer Expert", "Microsoft"],
+  ["Azure Solutions Architect Expert", "Microsoft"],
+  ["GitHub Advanced Security", "GitHub"],
+  ["GitHub Copilot", "GitHub"],
+  ["Terraform Associate", "HashiCorp"],
 ];
 ---
 
-<BaseLayout title="About Jesse" description="About Jesse Loudon, Tech Principal Consultant at Arinco, helping leaders shape and deliver cloud, DevOps and AI transformation.">
+<BaseLayout
+  title="About Jesse"
+  description="About Jesse Loudon, Tech Principal Consultant at Arinco, helping leaders shape and deliver cloud, DevOps and AI transformation."
+>
   <section class="about-hero">
     <div class="wrap about-hero-inner">
       <div>
         <p class="eyebrow">About Jesse Loudon</p>
         <h1>Built for change.<br /><span>Focused on useful outcomes.</span></h1>
-        <p class="hero-lede">I help organisations move from complex technology ambitions to secure, governed and repeatable ways of working, while helping the people involved feel confident in the change.</p>
+        <p class="hero-lede">
+          I help organisations move from complex technology ambitions to secure,
+          governed and repeatable ways of working, while helping the people
+          involved feel confident in the change.
+        </p>
       </div>
       <div class="hero-note">
         <img src="/assets/images/jesse-about-portrait.jpg" alt="Jesse Loudon" />
@@ -45,9 +90,24 @@ const credentials = [
   <section class="wrap introduction">
     <div class="section-label">The short version</div>
     <div class="intro-copy">
-      <p class="lead">I am a Tech Principal Consultant at Arinco, where I combine architecture, presales, delivery oversight and practice leadership across Azure, DevOps and AI transformation programs.</p>
-      <p>My work sits at the intersection of technology, people and business outcomes. I qualify and shape opportunities, present options to senior leaders, establish trusted advisory relationships, act as a design authority and help delivery teams turn strategy into platforms that can be operated in the real world.</p>
-      <p>What has remained consistent throughout my career is not a single product or platform. It is the ability to learn what is next, understand where it creates value, and help people adopt it without losing sight of security, governance or delivery discipline.</p>
+      <p class="lead">
+        I am a Tech Principal Consultant at Arinco, where I combine
+        architecture, presales, delivery oversight and practice leadership
+        across Azure, DevOps and AI transformation programs.
+      </p>
+      <p>
+        My work sits at the intersection of technology, people and business
+        outcomes. I qualify and shape opportunities, present options to senior
+        leaders, establish trusted advisory relationships, act as a design
+        authority and help delivery teams turn strategy into platforms that can
+        be operated in the real world.
+      </p>
+      <p>
+        What has remained consistent throughout my career is not a single
+        product or platform. It is the ability to learn what is next, understand
+        where it creates value, and help people adopt it without losing sight of
+        security, governance or delivery discipline.
+      </p>
     </div>
   </section>
 
@@ -55,10 +115,30 @@ const credentials = [
     <div class="wrap">
       <p class="eyebrow">Recent impact</p>
       <div class="impact-grid">
-        <div><strong>$3M+</strong><span>contract value for a major platform transformation where I led presales and architectural oversight</span></div>
-        <div><strong>40+</strong><span>consultants influenced through DevOps stream leadership, accelerators and enablement</span></div>
-        <div><strong>15+</strong><span>years in client-facing consulting, architecture and technology leadership roles</span></div>
-        <div><strong>544</strong><span>stars on the GlobalBao Azure Policy community project at the time of writing</span></div>
+        <div>
+          <strong>$3M+</strong><span
+            >contract value for a major platform transformation where I led
+            presales and architectural oversight</span
+          >
+        </div>
+        <div>
+          <strong>40+</strong><span
+            >consultants influenced through DevOps stream leadership,
+            accelerators and enablement</span
+          >
+        </div>
+        <div>
+          <strong>15+</strong><span
+            >years in client-facing consulting, architecture and technology
+            leadership roles</span
+          >
+        </div>
+        <div>
+          <strong>544</strong><span
+            >stars on the GlobalBao Azure Policy community project at the time
+            of writing</span
+          >
+        </div>
       </div>
     </div>
   </section>
@@ -66,13 +146,15 @@ const credentials = [
   <section id="how-i-help" class="wrap capabilities">
     <div class="section-label">How I help</div>
     <div class="capability-grid">
-      {capabilities.map(([title, description], index) => (
-        <article>
-          <span>{String(index + 1).padStart(2, '0')}</span>
-          <h2>{title}</h2>
-          <p>{description}</p>
-        </article>
-      ))}
+      {
+        capabilities.map(([title, description], index) => (
+          <article>
+            <span>{String(index + 1).padStart(2, "0")}</span>
+            <h2>{title}</h2>
+            <p>{description}</p>
+          </article>
+        ))
+      }
     </div>
   </section>
 
@@ -81,10 +163,30 @@ const credentials = [
     <div class="influence-content">
       <h2>Influence without needing to own every decision.</h2>
       <div class="influence-grid">
-        <article><h3>Listen before prescribing</h3><p>I use curiosity to uncover the operational, commercial and human context behind a technical request.</p></article>
-        <article><h3>Make the complex usable</h3><p>I translate architecture into stories, options and decisions that different audiences can act on.</p></article>
-        <article><h3>Leave capability behind</h3><p>I measure success by whether teams can explain, operate and improve what we have built together.</p></article>
-        <article><h3>Build confidence through clarity</h3><p>I create momentum by being direct about trade-offs, risks, dependencies and the next useful step.</p></article>
+        <article>
+          <h3>Listen before prescribing</h3><p>
+            I use curiosity to uncover the operational, commercial and human
+            context behind a technical request.
+          </p>
+        </article>
+        <article>
+          <h3>Make the complex usable</h3><p>
+            I translate architecture into stories, options and decisions that
+            different audiences can act on.
+          </p>
+        </article>
+        <article>
+          <h3>Leave capability behind</h3><p>
+            I measure success by whether teams can explain, operate and improve
+            what we have built together.
+          </p>
+        </article>
+        <article>
+          <h3>Build confidence through clarity</h3><p>
+            I create momentum by being direct about trade-offs, risks,
+            dependencies and the next useful step.
+          </p>
+        </article>
       </div>
     </div>
   </section>
@@ -94,12 +196,19 @@ const credentials = [
     <div class="journey-content">
       <h2>The tools changed.<br />The approach evolved.</h2>
       <div class="timeline">
-        {journey.map(([period, title, description]) => (
-          <article>
-            <span class="period">{period}</span>
-            <div><h3>{title}</h3><p>{description}</p></div>
-          </article>
-        ))}
+        {
+          journey.map(([period, title, description]) => (
+            <article>
+              <span class="period">{period}</span>
+              <div>
+                <>
+                  <h3>{title}</h3>
+                  <p>{description}</p>
+                </>
+              </div>
+            </article>
+          ))
+        }
       </div>
     </div>
   </section>
@@ -111,8 +220,18 @@ const credentials = [
         <h2>Curiosity is a delivery capability.</h2>
       </div>
       <div>
-        <p>I have worked through several shifts in the industry: from traditional systems administration and identity, through infrastructure automation and cloud platforms, into DevOps, security governance, data platforms and AI.</p>
-        <p>Each shift required more than learning a new tool. It required changing how teams think, how work is organised and how value is measured. That is the part I enjoy most: helping people make the change practical enough to stick.</p>
+        <p>
+          I have worked through several shifts in the industry: from traditional
+          systems administration and identity, through infrastructure automation
+          and cloud platforms, into DevOps, security governance, data platforms
+          and AI.
+        </p>
+        <p>
+          Each shift required more than learning a new tool. It required
+          changing how teams think, how work is organised and how value is
+          measured. That is the part I enjoy most: helping people make the
+          change practical enough to stick.
+        </p>
       </div>
     </div>
   </section>
@@ -121,25 +240,391 @@ const credentials = [
     <div class="section-label">Selected recognition</div>
     <div>
       <div class="credential-list">
-        {credentials.map(([name, issuer]) => <div><strong>{name}</strong><span>{issuer}</span></div>)}
+        {
+          credentials.map(([name, issuer]) => (
+            <div>
+              <>
+                <strong>{name}</strong>
+                <span>{issuer}</span>
+              </>
+            </div>
+          ))
+        }
       </div>
       <div class="external-proof">
-        <a href="https://www.credly.com/users/jesseloudon/badges/credly">View verified credentials on Credly</a>
-        <a href="https://github.com/globalbao/awesome-azure-policy">Explore the GlobalBao Azure Policy project</a>
+        <a href="https://www.credly.com/users/jesseloudon/badges/credly"
+          >View verified credentials on Credly</a
+        >
+        <a href="https://github.com/globalbao/awesome-azure-policy"
+          >Explore the GlobalBao Azure Policy project</a
+        >
       </div>
     </div>
   </section>
 
   <section class="about-cta">
     <div class="wrap cta-inner">
-      <div><p class="eyebrow">Connect</p><h2>Interested in the work?</h2><p>Find me on LinkedIn, explore the technical writing or get in touch about opportunity shaping, architecture direction, speaking or delivery collaboration.</p></div>
-      <div class="cta-actions"><a class="button" href="https://www.linkedin.com/in/jesseloudon/">LinkedIn profile</a><a class="button button-light" href="/speaking/">Speaking profile</a></div>
+      <div>
+        <p class="eyebrow">Connect</p><h2>Interested in the work?</h2><p>
+          Find me on LinkedIn, explore the technical writing or get in touch
+          about opportunity shaping, architecture direction, speaking or
+          delivery collaboration.
+        </p>
+      </div>
+      <div class="cta-actions">
+        <a class="button" href="https://www.linkedin.com/in/jesseloudon/"
+          >LinkedIn profile</a
+        ><a class="button button-light" href="/speaking/">Speaking profile</a>
+      </div>
     </div>
   </section>
 </BaseLayout>
 
 <style>
-  .about-hero{background:var(--dark-surface);color:#fff}.about-hero-inner{min-height:460px;display:flex;align-items:center;justify-content:space-between;gap:50px}.about-hero .eyebrow{color:#66c7f4}.about-hero h1{font:700 clamp(3rem,7vw,6.3rem)/.96 'Space Grotesk';letter-spacing:-.07em;margin:18px 0 28px}.about-hero h1 span{color:#66c7f4}.hero-lede{max-width:670px;color:#c3d0db;font-size:1.2rem}.hero-note{width:160px;height:160px;position:relative;border:6px solid #426072;border-radius:50%;transform:rotate(5deg);flex:none;overflow:hidden;box-shadow:0 0 0 5px rgba(102,199,244,.12)}.hero-note img{width:100%;height:100%;display:block;object-fit:cover;object-position:center 42%;transform:rotate(-5deg) scale(1.08)}.introduction,.capabilities,.influence,.journey,.credentials{display:grid;grid-template-columns:.35fr 1fr;gap:70px}.introduction{padding-top:100px;padding-bottom:100px}.section-label{text-transform:uppercase;letter-spacing:.13em;color:var(--accent);font-size:.78rem;font-weight:700;padding-top:8px}.intro-copy{max-width:760px}.intro-copy p{color:var(--muted)}.intro-copy .lead{font:600 1.55rem/1.35 'Space Grotesk';color:var(--ink);letter-spacing:-.02em}.impact{background:var(--warm);padding:65px 0}.impact-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:25px}.impact-grid div{border-top:3px solid var(--accent);padding-top:15px}.impact-grid strong{display:block;font:700 clamp(1.8rem,3vw,2.5rem) 'Space Grotesk';color:var(--accent)}.impact-grid span{display:block;color:var(--muted);font-size:.9rem;line-height:1.4;margin-top:8px}.capabilities{padding-top:100px;padding-bottom:110px}.capability-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:45px 55px}.capability-grid article{border-top:1px solid var(--line);padding-top:18px}.capability-grid article>span{font:700 .8rem 'Space Grotesk';color:var(--accent)}.capability-grid h2{font:600 1.55rem/1.1 'Space Grotesk';margin:25px 0 8px}.capability-grid p{color:var(--muted);max-width:390px;margin:0}.influence{padding-bottom:110px}.influence-content>h2{font:600 clamp(2rem,4vw,3.2rem)/1.05 'Space Grotesk';letter-spacing:-.05em;margin:0 0 35px}.influence-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}.influence-grid article{border:1px solid var(--line);border-radius:8px;padding:22px}.influence-grid h3{font:600 1.15rem 'Space Grotesk';margin:0 0 8px}.influence-grid p{color:var(--muted);margin:0}.journey{padding-bottom:110px}.journey-content>h2{font:600 clamp(2rem,4vw,3.2rem)/1.05 'Space Grotesk';letter-spacing:-.05em;margin:0 0 45px}.timeline{border-top:1px solid var(--line)}.timeline article{display:grid;grid-template-columns:100px 1fr;gap:30px;padding:25px 0;border-bottom:1px solid var(--line)}.period{font:700 .95rem 'Space Grotesk';color:var(--accent)}.timeline h3{font:600 1.25rem 'Space Grotesk';margin:0 0 5px}.timeline p{color:var(--muted);margin:0}.adaptation{background:var(--dark-surface);color:#fff;padding:90px 0}.adaptation-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:80px}.adaptation .eyebrow{color:#66c7f4}.adaptation h2{font:600 clamp(2rem,4vw,3.6rem)/1.05 'Space Grotesk';letter-spacing:-.05em;margin:15px 0}.adaptation p:not(.eyebrow){color:#c3d0db;font-size:1.1rem}.credentials{padding-top:100px;padding-bottom:100px}.credential-list{display:grid;grid-template-columns:repeat(2,1fr);gap:0 40px}.credential-list div{display:flex;justify-content:space-between;gap:20px;border-bottom:1px solid var(--line);padding:16px 0}.credential-list strong{font:600 1rem 'Space Grotesk'}.credential-list span{color:var(--muted);text-align:right}.external-proof{display:flex;flex-wrap:wrap;gap:20px;margin-top:25px;font-size:.92rem;font-weight:700}.about-cta{background:var(--accent);color:#fff}.about-cta .eyebrow{color:#c9edff}.about-cta h2{font:600 2.7rem/1 'Space Grotesk';margin:12px 0}.about-cta p:not(.eyebrow){color:#d7effb;max-width:600px}.cta-inner{padding-top:70px;padding-bottom:70px;display:flex;justify-content:space-between;align-items:center;gap:40px}.cta-actions{display:flex;flex-wrap:wrap;gap:12px}.button-light{background:#fff;color:var(--accent)}.button-light:hover{background:#e7f6fd;color:var(--accent)}
-  @media(max-width:800px){.about-hero-inner{min-height:0;padding-top:75px;padding-bottom:75px;display:block}.hero-note{margin-top:45px}.introduction,.capabilities,.influence,.journey,.credentials{display:block;padding-top:75px;padding-bottom:75px}.introduction .intro-copy,.capability-grid,.influence-content,.journey-content,.credential-list{margin-top:40px}.impact-grid{grid-template-columns:repeat(2,1fr)}.adaptation-grid{display:block}.adaptation-grid>div+div{margin-top:35px}.cta-inner{display:block}.cta-actions{margin-top:25px}}
-  @media(max-width:600px){.impact-grid,.capability-grid,.influence-grid,.credential-list{display:block}.impact-grid div{margin-top:25px}.capability-grid article{margin-top:35px}.influence-grid article{margin-top:15px}.timeline article{grid-template-columns:70px 1fr;gap:15px}.credential-list div{display:block}.credential-list span{display:block;text-align:left;margin-top:5px}}
+  .about-hero {
+    background: var(--dark-surface);
+    color: #fff;
+  }
+  .about-hero-inner {
+    min-height: 460px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+  }
+  .about-hero .eyebrow {
+    color: #66c7f4;
+  }
+  .about-hero h1 {
+    font: 700 clamp(3rem, 7vw, 6.3rem)/0.96 "Space Grotesk";
+    letter-spacing: -0.07em;
+    margin: 18px 0 28px;
+  }
+  .about-hero h1 span {
+    color: #66c7f4;
+  }
+  .hero-lede {
+    max-width: 670px;
+    color: #c3d0db;
+    font-size: 1.2rem;
+  }
+  .hero-note {
+    width: 160px;
+    height: 160px;
+    position: relative;
+    border: 6px solid #426072;
+    border-radius: 50%;
+    transform: rotate(5deg);
+    flex: none;
+    overflow: hidden;
+    box-shadow: 0 0 0 5px rgba(102, 199, 244, 0.12);
+  }
+  .hero-note img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    object-position: center 42%;
+    transform: rotate(-5deg) scale(1.08);
+  }
+  .introduction,
+  .capabilities,
+  .influence,
+  .journey,
+  .credentials {
+    display: grid;
+    grid-template-columns: 0.35fr 1fr;
+    gap: 70px;
+  }
+  .introduction {
+    padding-top: 100px;
+    padding-bottom: 100px;
+  }
+  .section-label {
+    text-transform: uppercase;
+    letter-spacing: 0.13em;
+    color: var(--accent);
+    font-size: 0.78rem;
+    font-weight: 700;
+    padding-top: 8px;
+  }
+  .intro-copy {
+    max-width: 760px;
+  }
+  .intro-copy p {
+    color: var(--muted);
+  }
+  .intro-copy .lead {
+    font: 600 1.55rem/1.35 "Space Grotesk";
+    color: var(--ink);
+    letter-spacing: -0.02em;
+  }
+  .impact {
+    background: var(--warm);
+    padding: 65px 0;
+  }
+  .impact-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    margin-top: 25px;
+  }
+  .impact-grid div {
+    border-top: 3px solid var(--accent);
+    padding-top: 15px;
+  }
+  .impact-grid strong {
+    display: block;
+    font: 700 clamp(1.8rem, 3vw, 2.5rem) "Space Grotesk";
+    color: var(--accent);
+  }
+  .impact-grid span {
+    display: block;
+    color: var(--muted);
+    font-size: 0.9rem;
+    line-height: 1.4;
+    margin-top: 8px;
+  }
+  .capabilities {
+    padding-top: 100px;
+    padding-bottom: 110px;
+  }
+  .capability-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 45px 55px;
+  }
+  .capability-grid article {
+    border-top: 1px solid var(--line);
+    padding-top: 18px;
+  }
+  .capability-grid article > span {
+    font: 700 0.8rem "Space Grotesk";
+    color: var(--accent);
+  }
+  .capability-grid h2 {
+    font: 600 1.55rem/1.1 "Space Grotesk";
+    margin: 25px 0 8px;
+  }
+  .capability-grid p {
+    color: var(--muted);
+    max-width: 390px;
+    margin: 0;
+  }
+  .influence {
+    padding-bottom: 110px;
+  }
+  .influence-content > h2 {
+    font: 600 clamp(2rem, 4vw, 3.2rem)/1.05 "Space Grotesk";
+    letter-spacing: -0.05em;
+    margin: 0 0 35px;
+  }
+  .influence-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+  }
+  .influence-grid article {
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 22px;
+  }
+  .influence-grid h3 {
+    font: 600 1.15rem "Space Grotesk";
+    margin: 0 0 8px;
+  }
+  .influence-grid p {
+    color: var(--muted);
+    margin: 0;
+  }
+  .journey {
+    padding-bottom: 110px;
+  }
+  .journey-content > h2 {
+    font: 600 clamp(2rem, 4vw, 3.2rem)/1.05 "Space Grotesk";
+    letter-spacing: -0.05em;
+    margin: 0 0 45px;
+  }
+  .timeline {
+    border-top: 1px solid var(--line);
+  }
+  .timeline article {
+    display: grid;
+    grid-template-columns: 100px 1fr;
+    gap: 30px;
+    padding: 25px 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .period {
+    font: 700 0.95rem "Space Grotesk";
+    color: var(--accent);
+  }
+  .timeline h3 {
+    font: 600 1.25rem "Space Grotesk";
+    margin: 0 0 5px;
+  }
+  .timeline p {
+    color: var(--muted);
+    margin: 0;
+  }
+  .adaptation {
+    background: var(--dark-surface);
+    color: #fff;
+    padding: 90px 0;
+  }
+  .adaptation-grid {
+    display: grid;
+    grid-template-columns: 0.8fr 1.2fr;
+    gap: 80px;
+  }
+  .adaptation .eyebrow {
+    color: #66c7f4;
+  }
+  .adaptation h2 {
+    font: 600 clamp(2rem, 4vw, 3.6rem)/1.05 "Space Grotesk";
+    letter-spacing: -0.05em;
+    margin: 15px 0;
+  }
+  .adaptation p:not(.eyebrow) {
+    color: #c3d0db;
+    font-size: 1.1rem;
+  }
+  .credentials {
+    padding-top: 100px;
+    padding-bottom: 100px;
+  }
+  .credential-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0 40px;
+  }
+  .credential-list div {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    border-bottom: 1px solid var(--line);
+    padding: 16px 0;
+  }
+  .credential-list strong {
+    font: 600 1rem "Space Grotesk";
+  }
+  .credential-list span {
+    color: var(--muted);
+    text-align: right;
+  }
+  .external-proof {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 25px;
+    font-size: 0.92rem;
+    font-weight: 700;
+  }
+  .about-cta {
+    background: var(--accent);
+    color: #fff;
+  }
+  .about-cta .eyebrow {
+    color: #c9edff;
+  }
+  .about-cta h2 {
+    font: 600 2.7rem/1 "Space Grotesk";
+    margin: 12px 0;
+  }
+  .about-cta p:not(.eyebrow) {
+    color: #d7effb;
+    max-width: 600px;
+  }
+  .cta-inner {
+    padding-top: 70px;
+    padding-bottom: 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+  }
+  .cta-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .button-light {
+    background: #fff;
+    color: var(--accent);
+  }
+  .button-light:hover {
+    background: #e7f6fd;
+    color: var(--accent);
+  }
+  @media (max-width: 800px) {
+    .about-hero-inner {
+      min-height: 0;
+      padding-top: 75px;
+      padding-bottom: 75px;
+      display: block;
+    }
+    .hero-note {
+      margin-top: 45px;
+    }
+    .introduction,
+    .capabilities,
+    .influence,
+    .journey,
+    .credentials {
+      display: block;
+      padding-top: 75px;
+      padding-bottom: 75px;
+    }
+    .introduction .intro-copy,
+    .capability-grid,
+    .influence-content,
+    .journey-content,
+    .credential-list {
+      margin-top: 40px;
+    }
+    .impact-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .adaptation-grid {
+      display: block;
+    }
+    .adaptation-grid > div + div {
+      margin-top: 35px;
+    }
+    .cta-inner {
+      display: block;
+    }
+    .cta-actions {
+      margin-top: 25px;
+    }
+  }
+  @media (max-width: 600px) {
+    .impact-grid,
+    .capability-grid,
+    .influence-grid,
+    .credential-list {
+      display: block;
+    }
+    .impact-grid div {
+      margin-top: 25px;
+    }
+    .capability-grid article {
+      margin-top: 35px;
+    }
+    .influence-grid article {
+      margin-top: 15px;
+    }
+    .timeline article {
+      grid-template-columns: 70px 1fr;
+      gap: 15px;
+    }
+    .credential-list div {
+      display: block;
+    }
+    .credential-list span {
+      display: block;
+      text-align: left;
+      margin-top: 5px;
+    }
+  }
 </style>

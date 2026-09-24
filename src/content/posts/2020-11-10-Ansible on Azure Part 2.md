@@ -15,7 +15,7 @@ tags:
 - "ansible on azure"
 - "molecule"
 ---
-This is Part 2 of the Ansible on Azure series. In this blog you'll discover how Terraform IaC can automate your Ansible control host deployment to Azure. 
+This is Part 2 of the Ansible on Azure series. In this blog you'll discover how Terraform IaC can automate your Ansible control host deployment to Azure.
 
 I'll showcase the custom module [terraform-azurerm-ansible-linux-vm](https://github.com/globalbao/terraform-azurerm-ansible-linux-vm) and highlight some noteworthy items. Each new heading will cover a different resource type for easy reader consumption.
 
@@ -65,7 +65,7 @@ output "azurerm_resource_group_name" {
 * This new VNET will be an isolated space and subnet for the Ansible control host and Molecule test instances to directly communicate over.
 * I recommend appending your initials to new VNET's name e.g. `vnetName = "ansibledev-yourinitials"`.
 * Remember to avoid configuring any VNET peering or gateway devices on this new VNET to ensure it remains isolated from the rest of your environments.
-* Here I'm also outputting the new VNET's name to the Terraform console as we'll need to reference this value within our Molecule `create.yml` file later in [Part 3](https://jloudon.com/cloud/Ansible-on-Azure-Part-3/) of this series. 
+* Here I'm also outputting the new VNET's name to the Terraform console as we'll need to reference this value within our Molecule `create.yml` file later in [Part 3](https://jloudon.com/cloud/Ansible-on-Azure-Part-3/) of this series.
 
 ```terraform
 variable "vnetName" {
@@ -480,6 +480,7 @@ cd terraform-azurerm-ansible-linux-vm
 ```terraform
 terraform init
 ```
+
 * 3 - Set the value of `module.linux_vm.nsgRule1.source_address_prefix` to your own Public IP address.
 * 4 - Authenticate to Azure via AzCLI
 
@@ -488,7 +489,7 @@ az login
 az account set -s subscriptionID
 ```
 
-* 5 - Run Terraform to create the module resources. 
+* 5 - Run Terraform to create the module resources.
 
 ```terraform
 terraform apply -auto-approve
@@ -508,7 +509,7 @@ Remember to take note of the following outputs.
 Setup/test the SSH authentication.
 
 * 6 - Create a new local file for the private key e.g. `C:\Local\vm1key.pem`
-* 7 - Modify the `C:\Local\vm1key.pem` file's permissions so only your Windows account has read/write access. 
+* 7 - Modify the `C:\Local\vm1key.pem` file's permissions so only your Windows account has read/write access.
 * 8 - Remove all other inherited permissions (e.g. System/Administrator Group) from `C:\Local\vm1key.pem`.
 * 9 - Copy & paste the Terraform output of `tls_private_key` into this new file.
 * 10 - Open `VSCode > Remote Explorer > SSH Targets > Add New`

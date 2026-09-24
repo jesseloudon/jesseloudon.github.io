@@ -180,7 +180,7 @@ remote_state {
 
 **Example scenario**: You're managing enterprise infrastructure with thousands of resources and assignments, and your CI/CD workflows keep failing with "argument list too long" errors.
 
-This pattern addresses enterprise scale implementations where CLI argument length limits become a constraint. It provides a practical approach for managing large datasets effectively. When you pass large datasets through Terragrunt inputs, they get converted to command-line arguments for the underlying Terraform execution. And there are limits! 
+This pattern addresses enterprise scale implementations where CLI argument length limits become a constraint. It provides a practical approach for managing large datasets effectively. When you pass large datasets through Terragrunt inputs, they get converted to command-line arguments for the underlying Terraform execution. And there are limits!
 
 > I used this pattern to manage Azure RBAC across multiple Azure subscriptions with 2000+ role assignments, 500+ service principals, and 200+ Azure AD groups. But only after I started hitting the limits described above, and in hindsight we should have split up and managed the non-dependent resources separately instead of combining them.
 

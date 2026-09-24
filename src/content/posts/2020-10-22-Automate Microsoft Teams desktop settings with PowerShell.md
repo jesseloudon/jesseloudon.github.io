@@ -91,6 +91,7 @@ if (!$processCheckFinal -and $cookieFileCheck)
     }
 }
 ```
+
 > The full script above can be found [here](https://gist.github.com/jesseloudon/e723b5f81b52daed41caba5c572566f5)
 
 The above PowerShell script can be modified to cater for situations where you have multiple settings to manage - for example:
@@ -156,6 +157,7 @@ if ($registryPathCheck -and $configCheck)
     }
 }
 ```
+
 > The full script above can be found [here](https://gist.github.com/jesseloudon/e3e9dc838cff1b4a8085edc35acd0bb0)
 
 In the future I hope there'll be an GPO/ADMX for configuring these settings easily at scale, for now I'm happy to continue managing these settings with PowerShell.

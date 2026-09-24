@@ -49,7 +49,7 @@ Let's examine two possible scenarios you may encounter with Ansible role develop
 
 1. Pull the existing role from source control via Git
 2. Run `molecule init scenario rhel8 -d azure` to initialize a new Molecule scenario that uses the Molecule-Azure driver
-3. Modify the new Molecule scenario files to suit your test requirements e.g. `/Molecule/rhel8/*.yml` 
+3. Modify the new Molecule scenario files to suit your test requirements e.g. `/Molecule/rhel8/*.yml`
 4. Update the Ansible tasks as required e.g. `/Tasks/*.yml`
 5. Run `az login` to authenticate to Azure
 6. Run `molecule create -s rhel8` to test the new Molecule scenario's resource deployment
@@ -92,6 +92,7 @@ Below you’ll find examples which can be used as a foundation for testing Ansib
 * **[rhel8/create.yml](https://github.com/globalbao/terraform-azurerm-ansible-linux-vm/tree/master/examples/molecule/rhel8)**
 
 The significant parts of my modification to the default create.yml are:
+
 * removed tasks which created a virtual network and subnet as I'm deploying my Molecule scenario instance into an existing VNET/Subnet
 * added parameters to the `azure_rm_virtualmachine` resource to target an existing VNET/Subnet
 * changed `public_ip_allocation_method` to disabled
@@ -123,6 +124,7 @@ A completed run using `molecule create -s rhel8` shows the following.
 * **[win2019/create.yml](https://github.com/globalbao/terraform-azurerm-ansible-linux-vm/tree/master/examples/molecule/win2019)**
 
 The significant parts of my modification to the default create.yml are:
+
 * added the `azure_rm_virtualmachineextension` resource which is used to run a PowerShell script that enables WinRM on the Win2019 instance
 * ensured the Win2019 instance's `private IP` is passed to the Molecule instance config dict so it can be used as the WinRM target address
 * removed the task which creates a key pair as I'm using a username/password to connect over WinRM to the Win2019 instance
@@ -143,6 +145,7 @@ A completed run using `molecule create -s win2019` shows the following.
 * **[win2019/molecule.yml](https://github.com/globalbao/terraform-azurerm-ansible-linux-vm/tree/master/examples/molecule/win2019)**
 
 The significant parts of my modification to the default molecule.yml are:
+
 * added `win_rm` arguments to `provisioner.connection_options` to allow connectivity to the Windows 2019 instance
 
 <script src="https://gist.github.com/jesseloudon/14210412395a357a378e0573cd0133e3.js"></script>

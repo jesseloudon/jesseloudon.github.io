@@ -16,7 +16,7 @@ tags:
 ---
 Whilst researching Infrastructure as Code alternatives to Azure Resource Manager templates I stumbled across the [Azure Building Blocks][AZBB] (AZBB) tool. It's not widely adopted and you'll see why later on this in blog.
 
-Because I'm not keen on authoring large JSON files (aka ARM templates) for IaC I'm going to put Azure Building Blocks to the test with a simple Hub & Spoke VNET deployment. Later on I'll also demonstrate the same deployment using an AzureCLI script - my current preferred alternative to ARM Templates - so you'll see the differences. 
+Because I'm not keen on authoring large JSON files (aka ARM templates) for IaC I'm going to put Azure Building Blocks to the test with a simple Hub & Spoke VNET deployment. Later on I'll also demonstrate the same deployment using an AzureCLI script - my current preferred alternative to ARM Templates - so you'll see the differences.
 
 FYI - AZBB currently supports the following resource types:
 
@@ -31,13 +31,14 @@ FYI - AZBB currently supports the following resource types:
 <i>Note: Before writing this blog I also tested deploying VMs to Azure using the AZBB tool and ran into an issue which turned out to be a blocker for further tests. You can view open/closed AZBB project issues [here][azbb-issues].</i>
 
 ## What is AZBB?
+
 ![AzBBlogo](/assets/images/AZBBlogo.png "azbb logo")
 
 > The Azure Building Blocks project is a command line tool and set of Azure Resource Manager templates designed to simplify deployment of Azure resources. Users author a set of simplified parameters to specify settings for Azure resources, and the command line tool merges these parameters with best practice defaults to produce a set of final parameter files that can be deployed with the Azure Resource Manager templates - source: [Microsoft][AZBBWiki]
 
 ![AzBBOverview](/assets/images/azbb-overview.png "azbb Overview")
 
-Based on the above description - a key advantage behind using Azure Building Blocks is to save you time by merging your JSON parameter files with it's pre-defined ARM templates as part of it's deployment flow to Azure. 
+Based on the above description - a key advantage behind using Azure Building Blocks is to save you time by merging your JSON parameter files with it's pre-defined ARM templates as part of it's deployment flow to Azure.
 
 These pre-defined ARM templates also apply some best-practice defaults such as:
 
@@ -50,13 +51,15 @@ These pre-defined ARM templates also apply some best-practice defaults such as:
 Unfortunately these best-practice defaults are not easily found - so to discover what defaults are applied (and to override them when needed) have a look at the reference wiki for each supported resource e.g. [https://github.com/mspnp/template-building-blocks/wiki/Virtual-Machines][azbb-vmwiki]
 
 ## Demo Deployment
-For this demo I'm deploying a basic HUB/SPOKE Virtual Network architecture common with production Azure environments where the Hub VNET may contain shared services such as a Firewall, Domain Controllers, JumpBoxes, and an ExpressRoute Gateway. 
+
+For this demo I'm deploying a basic HUB/SPOKE Virtual Network architecture common with production Azure environments where the Hub VNET may contain shared services such as a Firewall, Domain Controllers, JumpBoxes, and an ExpressRoute Gateway.
 
 ![azbbdemo](/assets/images/azbb-demodeployment.png "azbb demo deployment")
 
 <i>This deployment is sourced from premade AZBB parameter files publicly available here: [https://github.com/mspnp/template-building-blocks/tree/master/scenarios][AZBBScenarios]</i>
 
 ## Step 1 - Install NPM/Node.js
+
 To run the AZBB tool locally we first need to install NPM/Nodejs so on my local machine I downloaded/ran the Windows x64 client installer from [https://www.npmjs.com/get-npm][GETNPM].
 
 Then I ran `npm install` from a VSCode terminal to setup Azure Building Blocks and then `azbb` to test the tool was installed correctly.
@@ -71,6 +74,7 @@ Seeing this screen is a good sign :)
 ![azbbshell](/assets/images/azbb-shell.png "azbb shell")
 
 ## Step 2 - Generate/Copy a .JSON parameter file
+
 Before we can deploy into Azure we either need to create a new parameter file or use a premade one. To save time I cloned the AZBB repo from GitHub and referenced a premade parameter file matching the demo deployment details e.g. VNETs, TAGS, PEERINGS, DNS SERVERS.
 
 ```
@@ -181,6 +185,7 @@ The parameter file we are using (below) is at `\template-building-blocks\scenari
 ```
 
 ## Step 3 - Deploy with Azure Building Blocks
+
 From my VSCode terminal I authenticated into Azure then noted my Subscription ID which I'll need soon.
 
 ```
@@ -202,6 +207,7 @@ After azbb completed running I could see the deployment tasks had succeeded from
 ![AZBBportalstatus](/assets/images/AZBB-portaldeployments.png "azbb post-deployment portal status")
 
 > `azbb` switches you should be aware of:
+
 * -g is the resource group you are deploying to
 * -s is your subscription id
 * -l is the Azure region your are deploying to
@@ -213,6 +219,7 @@ After azbb completed running I could see the deployment tasks had succeeded from
 ![azbb-output](/assets/images/azbb-output.png "azbb output")
 
 ## Deploy with AzCLI
+
 To demonstrate the difference with JSON vs azcli I've included the exact same VNET architecture deployed above and transferred it to .azcli format so you can see the differences in structure. I can deploy this script directly from a VSCode terminal using the AzureCLI extension for VSCode [https://github.com/microsoft/vscode-azurecli][azcliextension].
 
 I find azcli scripting very compact in terms of structure/layout on your screen, making to simplier to deploy multiple Azure resources from the same script. Azcli has also been easier for me to learn/adopt because of the built-in help snippets provided and Microsoft's wiki.
@@ -239,11 +246,12 @@ az network vnet subnet create -n "data" --address-prefix "10.1.3.0/24" --vnet-na
 az network vnet peering create -g "VNET-AZCLI-RG" -n "msft-hub-vnet-to-msft-spoke1-vnet" --vnet-name "msft-hub-vnet" --remote-vnet "msft-spoke1-vnet" --allow-vnet-access --allow-forwarded-traffic --allow-gateway-transit
 az network vnet peering create -g "VNET-AZCLI-RG" -n "msft-spoke1-vnet-to-msft-hub-vnet" --vnet-name "msft-spoke1-vnet" --remote-vnet "msft-hub-vnet" --allow-vnet-access --allow-forwarded-traffic
 ```
+
 ## Conclusion
 
 Azure Building Blocks showed potential as an alternative to ARM templates but I've been disappointed by a lack of further development and some ongoing issues with deploying VMs using the tool. The best-practice defaults that are applied as part of the pre-defined ARM templates are a necessary inclusion but we all know Azure is moving faster than the speed at which these best-practice defaults are updated in the templates - which leads you to situations where you'll need to override these defaults and that's where things can get painful.
 
-For now I'm sticking with AzureCLI as my IaC tool for deployments. 
+For now I'm sticking with AzureCLI as my IaC tool for deployments.
 
 Would be interesting to hear your thoughts on this in the comments below!
 

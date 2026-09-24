@@ -12,7 +12,7 @@ tags:
 - "covid19"
 - "2020"
 ---
-After such a memorable 2020 year (for both good & bad reasons) I've been itching to publish my retrospective. 
+After such a memorable 2020 year (for both good & bad reasons) I've been itching to publish my retrospective.
 
 I've split this retro into two parts 'pre COVID-19' and 'during COVID-19' to assist with my recollection of events. Yay.
 
@@ -49,7 +49,7 @@ So what the heck happened in 2020?
 * Dived into the opensource community via my [GlobalBao](https://github.com/globalbao) org releasing 8x public repos into the wild west including my #1 popular repo [Terraform-AzureRM-Policy](https://github.com/globalbao/terraform-azurerm-policy)
 * Sat and passed [HashiCorp's Terraform Associate Exam](https://www.linkedin.com/posts/jesseloudon_hashicorp-certified-terraform-associate-activity-6709247600694034432-GhtF)
 * Walked over 20,000 steps daily for a week during Telstra Purple's [Zombie Challenge](https://outbreakchallenge.com/)
-* Witnessed the birth of the [Andrew Probyn v Scott Morrison](https://www.youtube.com/watch?v=VfRwJ1ISnM0) meme 
+* Witnessed the birth of the [Andrew Probyn v Scott Morrison](https://www.youtube.com/watch?v=VfRwJ1ISnM0) meme
 * Awarded the [Content Hero](https://www.linkedin.com/posts/jesseloudon_as-an-infrastructure-engineer-theres-never-activity-6684967671332769792-7-qv) badge from the Microsoft Azure team (self-submission)
 * Advocated for blogging at Telstra Purple presenting an internal hour-long virtual session covering blogging tips, tricks, methodology.
 * Decided to avoid [cruise ships](https://youtu.be/_9WpEoJSuCM) indefinitely

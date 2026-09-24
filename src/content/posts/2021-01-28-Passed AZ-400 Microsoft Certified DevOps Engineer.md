@@ -29,11 +29,13 @@ I'm positive that the concept of studying just enough to pass is nothing new or 
 **The principals behind Just-Enough-Study (JES) are simply --**
 
 *Identify major gaps in your knowledge*
+
 * Perform your own review of the AZ-400 exam skills outline.
 * Look for key terms, terminology, and solutions that you are unfamiliar with. Take note of what you don't know and followup when you have time.
 * If you are coming from the infrastructure side/background, focus on the developer aspects.
 
 *Utilise study resources, practice tests, and labs to address major knowledge gaps*
+
 * There's many AZ-400 study resources available online (mostly free) if you search, here's a few that I've found helpful in my journey to becoming a Microsoft Certified DevOps Engineer Expert.
 
 1. **[Microsoft Learn - DevOps Engineer Learning Paths](https://docs.microsoft.com/en-us/learn/browse/?roles=devops-engineer&resource_type=learning%20path?WT.mc_id=AZ-MVP-5004598)** - *Free*
@@ -44,6 +46,7 @@ I'm positive that the concept of studying just enough to pass is nothing new or 
 6. **[Azure DevOps Labs](https://www.azuredevopslabs.com/)** - *Free*
 
 *Avoid a deep-dive into xyz*
+
 * Because you have a limited amount of time/energy to study effectively each day so your attention needs to be targeted to the major gaps in your knowledge.
 * Learn the new concept at a high-level, take notes if you need to remember something, then move on quickly, later you can circle back to your notes to refresh your memory.
 * Think of your limited study hours as 'sprints', you might only lock in 1-2 hours of daily study time so this needs to be targeted and purposeful.

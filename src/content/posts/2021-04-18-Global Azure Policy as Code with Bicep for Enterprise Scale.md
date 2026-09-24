@@ -15,7 +15,7 @@ tags:
 ---
 ![GlobalAzure2021](/assets/images/globalazure2021-2.png "Global Azure 2021")
 
-> [Global Azure](https://globalazure.net/) is a community event about the Microsoft Azure platform. On April 15-17 the Global Azure community goes online to share, learn, and have community Azure fun together. 
+> [Global Azure](https://globalazure.net/) is a community event about the Microsoft Azure platform. On April 15-17 the Global Azure community goes online to share, learn, and have community Azure fun together.
 
 This year I was fortunate to have a session accepted for Global Azure 2021 titled: **Policy as Code with Bicep for Enterprise Scale**
 
@@ -24,7 +24,8 @@ Recently I've been diving into Microsoft's new DSL Bicep and as I'm passionate a
 Admittedly, I left my [sessionize submission](https://sessionize.com/JesseLoudon/) very late and probably just scraped in. Even so it was a wonderful surprise to see my session accepted followed by a frantic scramble to prepare my presentation (YT links below) and code which can be found here [https://github.com/globalbao/azure-policy-as-code](https://github.com/globalbao/azure-policy-as-code).
 
 ## Presentation Structure
-I structured my presentation into 3x levels so that beginners could start with a small proof of concept deployment and then scale up in complexity and advanced logic as their comfort levels increased with Bicep and Azure Policy. 
+
+I structured my presentation into 3x levels so that beginners could start with a small proof of concept deployment and then scale up in complexity and advanced logic as their comfort levels increased with Bicep and Azure Policy.
 
 More experienced users can jump straight to Level 3 and learn/adopt a Policy as Code workflow with Bicep.
 

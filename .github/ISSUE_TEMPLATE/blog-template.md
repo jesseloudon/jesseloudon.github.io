@@ -7,6 +7,6 @@ assignees: jesseloudon
 
 ---
 
-**Posted:** 
-**Link:** 
+**Posted:**
+**Link:**
 **Related:**

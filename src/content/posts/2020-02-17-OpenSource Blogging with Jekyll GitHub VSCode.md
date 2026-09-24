@@ -69,7 +69,7 @@ After creating new content locally when I want to preview the entire site I'll r
 bundle exec jekyll serve
 ```
 
-This will auto-build from my local Git repository & publish the site at http://127.0.0.1:4000
+This will auto-build from my local Git repository & publish the site at <http://127.0.0.1:4000>
 
 ### Online Publishing
 
@@ -126,10 +126,10 @@ First we need to setup our local development environment for the blog site by in
 8. Next we need to install the `Jekyll` and `Bundler` RubyGems with following cmdlet:
 
 ```
-$ gem install jekyll bundler
+gem install jekyll bundler
 ```
 
-9. If you run into issues here try re-installing Ruby+Devkit starting from Step 2 above.
+1. If you run into issues here try re-installing Ruby+Devkit starting from Step 2 above.
 
 ![RubyInstaller](/assets/images/RubyInstaller.png "Ruby Installer")
 
@@ -163,15 +163,15 @@ Let's look at how this works with the **Remote Theme** (1st from the list above)
 Try executing the following cmdlets from a VSCode Terminal:
 
 ```bash
-$ cd C:/
-$ git clone https://github.com/mmistakes/mm-github-pages-starter
-$ cd mm-github-pages-starter/
-$ bundle exec jekyll serve
+cd C:/
+git clone https://github.com/mmistakes/mm-github-pages-starter
+cd mm-github-pages-starter/
+bundle exec jekyll serve
 ```
 
 > When running `bundle exec jekyll serve` - if you're seeing an error similar to 'cannot load such file -- webrick (LoadError)' use `bundle add webrick` [https://github.com/jekyll/jekyll/issues/8531](https://github.com/jekyll/jekyll/issues/8531)
 
-After a successful serve - browsing to http://localhost:4000 will display a home page like this:
+After a successful serve - browsing to <http://localhost:4000> will display a home page like this:
 
 ![Jekylltheme1](/assets/images/Jekylltheme1.png "Jekyll theme")
 

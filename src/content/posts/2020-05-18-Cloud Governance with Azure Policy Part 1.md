@@ -13,7 +13,7 @@ tags:
 - "policy as code"
 - "policy audit vs deny effects"
 ---
-I'd like to start this blog series with a discussion about balancing priorities because governance over your Azure tenants and subscriptions can be a tricky path to navigate. 
+I'd like to start this blog series with a discussion about balancing priorities because governance over your Azure tenants and subscriptions can be a tricky path to navigate.
 
 Tricky navigation of priorities can often be seen in larger Azure customers where development and operational teams might operate across multiple geographies along with separate reporting lines.
 

@@ -17,6 +17,7 @@ tags:
 The recent inaugural HashiTalks Australia & New Zealand event was an incredible opportunity to present a 30min session on how combining Terraform with CSVs and ForEach we can deploy at scale from large datasets and achieve a Don't Repeat Yourself (DRY) methodology.
 
 Firstly, here's what you can expect from this article:
+
 * further context not captured by the recorded session
 * insights into pros and cons (very important to know these before diving in)
 * another usage pattern for your Terraform infrastructure-as-code journey
@@ -25,7 +26,7 @@ Firstly, here's what you can expect from this article:
 
 # Further Context + Pros/Cons
 
-CSVs and ForEach are not a 'silver bullet' for all your IaC scaling problems. I'm absolutely not saying go out and use CSVs and ForEach for ALL your Terraform IaC initiatives. If you're reading this you're hopefully taking the time to do your research and testing to evaluate the pattern for yourself! 
+CSVs and ForEach are not a 'silver bullet' for all your IaC scaling problems. I'm absolutely not saying go out and use CSVs and ForEach for ALL your Terraform IaC initiatives. If you're reading this you're hopefully taking the time to do your research and testing to evaluate the pattern for yourself!
 
 There'll be situations where you should be using native HCL for your data/inputs to avoid complexity whilst adhering to the KISS principle. What I've learnt from deploying large datasets are that these situations are not as common as I would like. Particularly if you need to manage an application that is NOT cloud-native and requires a vast range of IaaS resources to operate in your cloud of choice e.g. Microsoft Azure.
 
@@ -41,6 +42,7 @@ What I've also learnt in the CSV vs YAML debate:
 Take a look at these 2x NSG rules represented in two data formats. Then imagine managing 100s to 1000s of these NSG rules across multiple NSGs and multiple environments.
 
 **YAML example**
+
 ```yaml
 nsg1:
   - action: Allow
@@ -70,6 +72,7 @@ nsg1:
 ```
 
 **CSV example**
+
 ```csv
 action,description,destination_details,destination_port_ranges,destination_type,direction,priority,protocol,rule_name,source_details,source_port_ranges,source_type
 Allow,Allow RDP from Corp,VirtualNetwork,3389,Tag,Inbound,100,TCP,AllowRDPfromCorp,10.10.0.0/24,*,IP Address
@@ -77,6 +80,7 @@ Deny,Deny RDP from Internet,VirtualNetwork,3389,Tag,Inbound,200,TCP,DenyRDPfromI
 ```
 
 Regardless of if you choose YAML or CSV watch out for these common IaC issues relating to:
+
 * **Bad data** - this is where, due to the human-factor, you'll have incorrect/errorneous values to investigate and ultimately fix-up before your IaC workflow is healthy.
 * **Multiple sources of truth** - working with customers to build environments as IaC often means working across teams of people who have their own process and habits for maintaining their IaC source of truth. This often differs from your own which leads to confusion/frustration.
 * **Exceptions to your usage patterns** - there'll be times when the dataset and Terraform consumption pattern isn't fit-for-purpose to meet every use-case and you'll need to create an exception/ad-hoc implementation pattern.
@@ -90,18 +94,22 @@ Cheers,
 
 Jesse
 
-### Session Slides:
+### Session Slides
+
 ![HashiTalksANZ2021](/assets/gifs/hashitalksanz2021.gif "HashiTalks ANZ: DRY Coding with Terraform, CSVs, ForEach")
 
-### Recorded Session:
+### Recorded Session
+
 [HashiTalks: Australia / New Zealand - YouTube](https://www.youtube.com/watch?v=JuzBolDyGdg&t=976s)
 
-### VSCode extensions:
+### VSCode extensions
+
 [Edit csv](https://marketplace.visualstudio.com/items?itemName=janisdd.vscode-edit-csv)
 
 [Rainbox CSV](https://marketplace.visualstudio.com/items?itemName=mechatroner.rainbow-csv)
 
-### Additional Reading:
+### Additional Reading
+
 [Terraform + CSVs = Netflix](https://lucian.blog/terraform-csvs-netflix/)
 
 [CSVDecode](https://www.terraform.io/docs/language/functions/csvdecode.html)

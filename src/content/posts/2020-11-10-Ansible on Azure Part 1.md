@@ -31,9 +31,11 @@ Key solutions used in this series:
 * [GitHub](https://github.com/join) - source control repositories.
 
 ## Quick Background
+
 I'm not experienced with *nix and when an opportunity arose to develop new Ansible roles I tried, and failed spectacularly, with having my development environment solely on my Win10 SurfaceBook2 coupled with WSL1 and Ubuntu 18.04 distro. The root cause stemmed from a lack of available RAM to host numerous VMs locally. Also because WSL2 isn't available for my specific OS build I was stuck with WSL1 so ran into various integration issues. After many hours were dropped into troubleshooting issues between Docker, Vagrant, and WSL1 on my local environment it was time to let it go. In summary, I shelved WSL and the local-only dev dream until I can test out WSL2 on a beefier host.
 
 ## Ansible on Azure: Development Ecosystem and Flow
+
 The ecosystem I settled on below is a cloud-only solution. I've used this to rapidly develop Ansible roles on Azure via the Azure-Molecule driver YAML files -all from the comfort of my local machine and the familiarity of VSCode.
 
 ![ansible configuration management ecosystem overview](/assets/images/ansibleonazure01.png "ansible configuration management ecosystem overview")
@@ -49,6 +51,7 @@ So let's step through a typical development flow of events as shown above.
 7. Git `pull` the latest Ansible repo changes from GitHub for further development in Azure.
 
 ### Key Advantages of Ansible on Azure
+
 Why might we choose to develop Ansible roles on Azure infrastructure?
 
 * **The deployment & destruction process is repeatable**. Having a Terraform module that automates deployment of the Ansible control host and all software package requirements ensures we remove the element of human error and can achieve a similiar developer experience across many deployments. Additionally, we can easily create/destroy the test resources on demand with the Molecule-Azure driver.
@@ -58,6 +61,7 @@ Why might we choose to develop Ansible roles on Azure infrastructure?
 * **Access to unique Ansible facts**. When developing Ansible roles on Azure instances we can access Ansible facts that are unique to Azure infrastructure and use those facts with Ansible tasks such as conditionals.
 
 ### Key Disadvantages of Ansible on Azure
+
 And why might we choose to avoid developing Ansible roles on Azure infrastructure?
 
 * **Network interruptions**. Network connectivity between your local machine and the Ansible host in Azure must be stable. Packet loss and latency spikes will impact the experience.
@@ -65,6 +69,7 @@ And why might we choose to avoid developing Ansible roles on Azure infrastructur
 * **Plugin dependencies**. Developing Ansible roles with Azure has a dependency on about 35~ individual Python plugins (most are called out in Part 2 of this series) which, when new versions are released, require integration testing with your Molecule scenarios.
 
 ## Getting Started
+
 To help you get started I've made this Terraform module publicly available [terraform-azurerm-ansible-linux-vm](https://github.com/globalbao/terraform-azurerm-ansible-linux-vm)
 
 Usage of the module automates the creation of the following Ansible development environment:

@@ -1,4 +1,8 @@
 {
     "cSpell.language": "en,en-GB",
-    "svg.preview.background": "editor"
+    "svg.preview.background": "editor",
+    "[astro]": {
+        "editor.defaultFormatter": "astro-build.astro-vscode",
+        "editor.formatOnSave": true
+    }
 }

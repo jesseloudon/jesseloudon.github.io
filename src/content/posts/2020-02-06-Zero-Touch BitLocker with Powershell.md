@@ -57,6 +57,7 @@ I've attempted to summarise the above solution with this short description:
 * The initial disk encryption process runs in the background invisible to the Laptop's end-user once the machine is powered on again after the PS script has successfully completed all steps.
 
 ## The Script
+
 The heart and soul of all this is a single PowerShell script which is designed to check several pre-requisites are met before enabling BitLocker on the local system drive and backing up the recovery key to Active Directory. As per my diagram above I am applying this PS script from a GPO to run during a corporate Laptop's system shutdown. I found this reduced user impact and was as seamless as it gets.
 
 I recommend creating and testing your own script by taking elements that you require from below as some sections may not apply to your environment/needs.

@@ -1,41 +1,207 @@
 ---
-import { getCollection, render } from 'astro:content';
-import BaseLayout from '../layouts/BaseLayout.astro';
-import { formatDate, slugFor, taxonomySlug } from '../lib/site';
+import { getCollection, render } from "astro:content";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { formatDate, slugFor, taxonomySlug } from "../lib/site";
 export async function getStaticPaths() {
-  const posts = await getCollection('posts');
+  const posts = await getCollection("posts");
   return posts.map((post) => {
     const related = posts
       .filter((candidate) => candidate.id !== post.id)
       .map((candidate) => ({
         post: candidate,
-        score: (candidate.data.categories?.[0] === post.data.categories?.[0] ? 2 : 0)
-          + (candidate.data.tags?.filter((tag) => post.data.tags?.includes(tag)).length || 0)
+        score:
+          (candidate.data.categories?.[0] === post.data.categories?.[0]
+            ? 2
+            : 0) +
+          (candidate.data.tags?.filter((tag) => post.data.tags?.includes(tag))
+            .length || 0),
       }))
       .filter(({ score }) => score > 0)
-      .sort((a, b) => b.score - a.score || b.post.data.date.valueOf() - a.post.data.date.valueOf())
+      .sort(
+        (a, b) =>
+          b.score - a.score ||
+          b.post.data.date.valueOf() - a.post.data.date.valueOf(),
+      )
       .slice(0, 3)
       .map(({ post: candidate }) => candidate);
-    return { params: { slug: `${taxonomySlug(post.data.categories?.[0] || 'blog')}/${slugFor(post)}` }, props: { post, related } };
+    return {
+      params: {
+        slug: `${taxonomySlug(post.data.categories?.[0] || "blog")}/${slugFor(post)}`,
+      },
+      props: { post, related },
+    };
   });
 }
 const { post, related = [] } = Astro.props;
 const { Content, headings } = await render(post);
-const wordCount = (post.body || '').trim().split(/\s+/).filter(Boolean).length;
+const wordCount = (post.body || "").trim().split(/\s+/).filter(Boolean).length;
 const readingTime = Math.max(1, Math.ceil(wordCount / 220));
-const articleImage = post.data.header?.og_image || post.data.header?.teaser || '/assets/images/jesse-profile-2024.jpg';
+const articleImage =
+  post.data.header?.og_image ||
+  post.data.header?.teaser ||
+  "/assets/images/jesse-profile-2024.jpg";
 ---
-<BaseLayout title={post.data.title} description={post.data.excerpt} image={articleImage} type="article">
+
+<BaseLayout
+  title={post.data.title}
+  description={post.data.excerpt}
+  image={articleImage}
+  type="article"
+>
   <article class="wrap article" data-pagefind-body>
-    <p class="eyebrow" data-pagefind-meta="category">{post.data.categories?.[0] || 'Article'} · {formatDate(post.data.date)}</p>
+    <p class="eyebrow" data-pagefind-meta="category">
+      {post.data.categories?.[0] || "Article"} · {formatDate(post.data.date)}
+    </p>
     <h1 data-pagefind-meta="title">{post.data.title}</h1>
     {post.data.excerpt && <p class="dek">{post.data.excerpt}</p>}
-    <p class="article-meta">{readingTime} min read · A field note from the {post.data.categories?.[0] || 'practice'} archive</p>
-    {headings.some((heading) => heading.depth === 2) && <aside class="toc" aria-label="On this page"><strong>On this page</strong><ul>{headings.filter((heading) => heading.depth === 2).map((heading) => <li><a href={`#${heading.slug}`}>{heading.text}</a></li>)}</ul></aside>}
+    <p class="article-meta">
+      {readingTime} min read · A field note from the {
+        post.data.categories?.[0] || "practice"
+      } archive
+    </p>
+    {
+      headings.some((heading) => heading.depth === 2) && (
+        <aside class="toc" aria-label="On this page">
+          <>
+            <strong>On this page</strong>
+            <ul>
+              {headings
+                .filter((heading) => heading.depth === 2)
+                .map((heading) => (
+                  <li>
+                    <a href={`#${heading.slug}`}>{heading.text}</a>
+                  </li>
+                ))}
+            </ul>
+          </>
+        </aside>
+      )
+    }
     <div class="article-content"><Content /></div>
-    {related.length > 0 && <section class="related"><p class="eyebrow">Keep reading</p><div class="related-grid">{related.map((candidate) => <a class="related-card" href={`/${taxonomySlug(candidate.data.categories?.[0] || 'blog')}/${slugFor(candidate)}/`}><strong>{candidate.data.title}</strong><span>{formatDate(candidate.data.date)}</span></a>)}</div></section>}
-    <footer class="article-footer"><a href="/#articles">← Back to articles</a>{post.data.tags?.map((tag) => <a href={`/tags/${taxonomySlug(tag)}/`}>#{tag}</a>)}</footer>
-    <script type="application/ld+json" set:html={JSON.stringify({ '@context': 'https://schema.org', '@type': 'Article', headline: post.data.title, description: post.data.excerpt, datePublished: post.data.date.toISOString(), author: { '@type': 'Person', name: 'Jesse Loudon', url: 'https://jloudon.com/about/' }, image: new URL(articleImage, 'https://jloudon.com').toString(), mainEntityOfPage: new URL(Astro.url.pathname, 'https://jloudon.com').toString() })} />
+    {
+      related.length > 0 && (
+        <section class="related">
+          <>
+            <p class="eyebrow">Keep reading</p>
+            <div class="related-grid">
+              {related.map((candidate) => (
+                <a
+                  class="related-card"
+                  href={`/${taxonomySlug(candidate.data.categories?.[0] || "blog")}/${slugFor(candidate)}/`}
+                >
+                  <strong>{candidate.data.title}</strong>
+                  <span>{formatDate(candidate.data.date)}</span>
+                </a>
+              ))}
+            </div>
+          </>
+        </section>
+      )
+    }
+    <footer class="article-footer">
+      <a href="/#articles">← Back to articles</a>{
+        post.data.tags?.map((tag) => (
+          <a href={`/tags/${taxonomySlug(tag)}/`}>#{tag}</a>
+        ))
+      }
+    </footer>
+    <script
+      type="application/ld+json"
+      set:html={JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "Article",
+        headline: post.data.title,
+        description: post.data.excerpt,
+        datePublished: post.data.date.toISOString(),
+        author: {
+          "@type": "Person",
+          name: "Jesse Loudon",
+          url: "https://jloudon.com/about/",
+        },
+        image: new URL(articleImage, "https://jloudon.com").toString(),
+        mainEntityOfPage: new URL(
+          Astro.url.pathname,
+          "https://jloudon.com",
+        ).toString(),
+      })}
+    />
   </article>
 </BaseLayout>
-<style>.article{max-width:820px;padding-top:75px}.article h1{font:700 clamp(2.5rem,6vw,4.4rem)/1.08 'Space Grotesk';letter-spacing:-.045em;margin:12px 0 20px}.dek{font-size:1.3rem;color:var(--muted);border-bottom:1px solid var(--line);padding-bottom:35px}.article-meta{color:var(--muted);font-size:.9rem}.toc{border-left:3px solid var(--accent);padding:14px 20px;margin:30px 0;background:var(--warm)}.toc strong{font:600 1.05rem 'Space Grotesk'}.toc ul{margin:8px 0 0;padding-left:20px}.article-content{padding-top:30px}.related{border-top:1px solid var(--line);margin-top:65px;padding-top:25px}.related-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.related-card{display:flex;flex-direction:column;gap:8px;border:1px solid var(--line);border-radius:6px;padding:15px;color:var(--ink)}.related-card:hover{background:var(--warm);text-decoration:none}.related-card span{color:var(--muted);font-size:.85rem}.article-footer{border-top:1px solid var(--line);margin-top:35px;padding:22px 0;display:flex;gap:22px;flex-wrap:wrap;font-weight:700}@media(max-width:650px){.related-grid{grid-template-columns:1fr}}</style>
+<style>
+  .article {
+    max-width: 820px;
+    padding-top: 75px;
+  }
+  .article h1 {
+    font: 700 clamp(2.5rem, 6vw, 4.4rem)/1.08 "Space Grotesk";
+    letter-spacing: -0.045em;
+    margin: 12px 0 20px;
+  }
+  .dek {
+    font-size: 1.3rem;
+    color: var(--muted);
+    border-bottom: 1px solid var(--line);
+    padding-bottom: 35px;
+  }
+  .article-meta {
+    color: var(--muted);
+    font-size: 0.9rem;
+  }
+  .toc {
+    border-left: 3px solid var(--accent);
+    padding: 14px 20px;
+    margin: 30px 0;
+    background: var(--warm);
+  }
+  .toc strong {
+    font: 600 1.05rem "Space Grotesk";
+  }
+  .toc ul {
+    margin: 8px 0 0;
+    padding-left: 20px;
+  }
+  .article-content {
+    padding-top: 30px;
+  }
+  .related {
+    border-top: 1px solid var(--line);
+    margin-top: 65px;
+    padding-top: 25px;
+  }
+  .related-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+  }
+  .related-card {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    padding: 15px;
+    color: var(--ink);
+  }
+  .related-card:hover {
+    background: var(--warm);
+    text-decoration: none;
+  }
+  .related-card span {
+    color: var(--muted);
+    font-size: 0.85rem;
+  }
+  .article-footer {
+    border-top: 1px solid var(--line);
+    margin-top: 35px;
+    padding: 22px 0;
+    display: flex;
+    gap: 22px;
+    flex-wrap: wrap;
+    font-weight: 700;
+  }
+  @media (max-width: 650px) {
+    .related-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
