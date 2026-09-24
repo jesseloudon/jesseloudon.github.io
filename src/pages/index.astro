@@ -5,7 +5,6 @@ import PostCard from "../components/PostCard.astro";
 const posts = (await getCollection("posts")).sort(
   (a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
 );
-const featured = posts.slice(0, 3);
 ---
 
 <BaseLayout>
@@ -84,12 +83,10 @@ const featured = posts.slice(0, 3);
   <section id="articles" class="wrap articles">
     <div class="section-heading">
       <div>
-        <p class="eyebrow">From the notebook</p><h2>
-          Featured & latest articles
-        </h2>
+        <p class="eyebrow">From the notebook</p><h2>All articles</h2>
       </div><a href="/tags/">Browse topics →</a>
     </div><div class="featured">
-      {featured.map((post) => <PostCard post={post} />)}
+      {posts.map((post) => <PostCard post={post} />)}
     </div>
   </section>
   <section class="speaking">
