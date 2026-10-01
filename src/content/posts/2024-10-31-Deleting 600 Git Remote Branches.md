@@ -133,6 +133,9 @@ Running the mass delete script on git remote branches
 
 In closing, my recommendations for effective management of old/stale/merged branches in GitHub are:
 
+* Turn on automatic deletion of branches from the repo's settings. [See this link for guidance.](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/configuring-pull-request-merges/managing-the-automatic-deletion-of-branches)
+* Educate your developer teams on how to restore a deleted branch if they need to. [See this link for guidance.](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-branches-in-your-repository/deleting-and-restoring-branches-in-a-pull-request#restoring-a-deleted-branch)
+
 Thanks for making it this far if you’re still with me. Funny enough I think it took me more time to write this blog post than it did to technically solve the problem statement I had 🙂
 
 Cheers,
