@@ -27,8 +27,6 @@ I also noticed that BitBucket Server’s setting/policy which automatically dele
 
 ![bitbucket server setting branch delete on merge](/assets/images/GitBranchDeletionSetting.png "BitBucket Server’s default setting")
 
-BitBucket Server’s default setting
-
 Now as part of the repo migration to GitHub I didn’t feel there was a great benefit from retaining that many stale remote branches, particularly if they have been merged already. After a brief dicussion with the repo owners it was agreed that I could delete any remote branch that had been created prior to 1st July 2024.
 
 I did briefly investigate the possibility of mass deleting these old remote branches through an existing tool or addon compatible with BitBucket Server however that didn’t surface anything viable.
@@ -83,8 +81,6 @@ With this generated CSV in hand listing hundreds of remote branches that were st
 
 ![viewing/modifying the generated CSV named reponame_branches_to_delete_before_2024-07-01.csv](/assets/images/GitBranchesCSVReview.png "viewing/modifying the generated CSV named reponame_branches_to_delete_before_2024-07-01.csv")
 
-viewing/modifying the generated CSV named reponame\_branches\_to\_delete\_before\_2024-07-01.csv
-
 The beautiful thing about GitHub Copilot Chat is that based on the context from the previous chat history I did not need to give it as much instructions when generating the below deletion script. My only prompt to Copilot was:
 
 > “create a bash script to delete all remote branches specified in a CSV”
@@ -129,9 +125,10 @@ Based on that test I had a level of confidence that this is what I wanted and ra
 
 ![Running the mass delete script on git remote branches](/assets/images/GitRemoteBranchDeletion.png "Running the mass delete script on git remote branches")
 
-Running the mass delete script on git remote branches
-
 In closing, my recommendations for effective management of old/stale/merged branches in GitHub are:
+
+* Turn on automatic deletion of branches from the repo's settings. [See this link for guidance.](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/configuring-pull-request-merges/managing-the-automatic-deletion-of-branches)
+* Educate your developer teams on how to restore a deleted branch if they need to. [See this link for guidance.](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-branches-in-your-repository/deleting-and-restoring-branches-in-a-pull-request#restoring-a-deleted-branch)
 
 Thanks for making it this far if you’re still with me. Funny enough I think it took me more time to write this blog post than it did to technically solve the problem statement I had 🙂
 
