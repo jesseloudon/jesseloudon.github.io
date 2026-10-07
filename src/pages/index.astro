@@ -2,6 +2,7 @@
 import { getCollection } from "astro:content";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import PostCard from "../components/PostCard.astro";
+import CountUp from "../components/CountUp.astro";
 const posts = (await getCollection("posts")).sort(
   (a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
 );
@@ -30,15 +31,15 @@ const posts = (await getCollection("posts")).sort(
   </section>
   <section class="proof wrap" aria-label="Career highlights">
     <div>
-      <strong>15+</strong><span
+      <CountUp value={15} suffix="+" /><span
         >years in client-facing<br />consulting roles</span
       >
     </div><div>
-      <strong>$3M+</strong><span
+      <CountUp value={3} prefix="$" suffix="M+" /><span
       >program contract value;<br />led presales and architecture oversight</span
       >
     </div><div>
-      <strong>40+</strong><span
+      <CountUp value={40} suffix="+" /><span
       >consultants in a DevOps<br />stream leadership role</span
       >
     </div><div>

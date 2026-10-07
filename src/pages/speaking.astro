@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import CountUp from "../components/CountUp.astro";
 
 const talks = [
   {
@@ -237,7 +238,7 @@ const themes = [
 
   <section class="proof wrap" aria-label="Speaking highlights">
     <div>
-      <strong>10+</strong><span>community talks<br />and appearances</span>
+      <CountUp value={10} suffix="+" /><span>community talks<br />and appearances</span>
     </div>
     <div>
       <strong>2021-23</strong><span>Microsoft Azure<br />MVP recognition</span>
