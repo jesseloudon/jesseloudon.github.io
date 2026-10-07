@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import CountUp from "../components/CountUp.astro";
 
 const capabilities = [
   [
@@ -116,25 +117,25 @@ const credentials = [
       <p class="eyebrow">Recent impact</p>
       <div class="impact-grid">
         <div>
-          <strong>$3M+</strong><span
+          <CountUp value={3} prefix="$" suffix="M+" /><span
             >contract value for a major platform transformation where I led
             presales and architectural oversight</span
           >
         </div>
         <div>
-          <strong>40+</strong><span
+          <CountUp value={40} suffix="+" /><span
             >consultants influenced through DevOps stream leadership,
             accelerators and enablement</span
           >
         </div>
         <div>
-          <strong>15+</strong><span
+          <CountUp value={15} suffix="+" /><span
             >years in client-facing consulting, architecture and technology
             leadership roles</span
           >
         </div>
         <div>
-          <strong>544</strong><span
+          <CountUp value={544} /><span
             >stars on the GlobalBao Azure Policy community project at the time
             of writing</span
           >
