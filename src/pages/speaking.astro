@@ -2,7 +2,162 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import CountUp from "../components/CountUp.astro";
 
+const communityVideos = [
+  {
+    year: "On demand",
+    event: "The Tech'o'Space Podcast",
+    venue: "Episode 32",
+    title: "Azure, DevOps & Security: A Leader's Journey",
+    description:
+      "A podcast conversation about leadership across Azure, DevOps and security.",
+    url: "https://www.youtube.com/watch?v=8RaOk9ZW2bs",
+  },
+  {
+    year: "2021",
+    event: "Global Azure",
+    venue: "Online community event",
+    title: "Policy as Code with Bicep for Enterprise Scale",
+    description:
+      "Designing a Policy-as-Code approach for consistent governance across an enterprise Azure estate.",
+    url: "https://www.youtube.com/watch?v=qpnMJXw6pIg",
+    resources: [
+      [
+        "Slides",
+        "/assets/pdfs/GlobalAzure2021_PolicyAsCodeWithBicepForEnterpriseScale.pdf",
+      ],
+      [
+        "Read the companion article",
+        "/cloud/global-azure-policy-as-code-with-bicep-for-enterprise-scale/",
+      ],
+    ],
+  },
+  {
+    year: "2021",
+    event: "HashiTalks ANZ",
+    venue: "HashiCorp community event",
+    title: "DRY Coding with Terraform CSVs for_each",
+    description:
+      "Using Terraform data structures and for_each to create simpler, reusable infrastructure code.",
+    url: "https://www.youtube.com/watch?v=aARIovQQSJ4",
+    resources: [
+      ["Slides", "/assets/pdfs/DRY_CodingwithTerraformCSVsForEach.pdf"],
+      [
+        "Read the companion article",
+        "/cloud/hashitalks-anz-dry-coding-with-terraform-csvs-foreach/",
+      ],
+    ],
+  },
+  {
+    year: "2022",
+    event: "Microsoft Reactor Sydney",
+    venue: "Sydney, Australia",
+    title: "Flexing Your Security Governance with Azure Policy As Code",
+    description:
+      "Using Azure Bicep to build a security-focused Policy-as-Code approach that scales beyond a single subscription.",
+    url: "https://www.youtube.com/watch?v=SuH_TBBsvLI",
+    resources: [
+      [
+        "Slides",
+        "/assets/pdfs/MR2022-FlexingYourSecurityGovernanceWithAzurePolicyAsCode.pdf",
+      ],
+      [
+        "Read the companion article",
+        "/cloud/flexing-your-security-governance-with-azure-policy-as-code/",
+      ],
+    ],
+  },
+  {
+    year: "2021",
+    event: "Azure Sydney User Group",
+    venue: "Community meetup",
+    title: "Azure Policy as Code: Zero to Hero in 60 minutes",
+    description:
+      "A practical introduction to the building blocks of Azure Policy as Code with Bicep.",
+    url: "https://www.youtube.com/watch?v=AVn5glYBz84",
+    resources: [
+      [
+        "Slides",
+        "/assets/pdfs/AzureSydUserGroup2021_PolicyAsCode_ZeroToHero60min.pdf",
+      ],
+    ],
+  },
+  {
+    year: "On demand",
+    event: "Bicep Builders",
+    venue: "Community session",
+    title:
+      "Azure Sentinel and policy as code with Jesse Loudon and Casey Mullineaux",
+    description:
+      "Jesse Loudon and Casey Mullineaux discuss Azure Sentinel and Policy as Code.",
+    url: "https://www.youtube.com/watch?v=B03V3Tazcec",
+  },
+  {
+    year: "2021",
+    event: "Melbourne Azure Security",
+    venue: "Community meetup",
+    title: "Flexing Your Security Governance with Azure Policy as Code",
+    description:
+      "A security-focused Azure Bicep session with live demonstrations and practical governance patterns.",
+    url: "https://www.youtube.com/watch?v=-KSLh2I9e1U",
+    resources: [
+      [
+        "Slides",
+        "/assets/pdfs/MelbAzureSecMeetup2021_FlexingYourSecurityGovernanceWithAzurePolicyAsCode.pdf",
+      ],
+    ],
+  },
+  {
+    year: "2022",
+    event: "Microsoft Reactor Sydney",
+    venue: "Sydney, Australia",
+    title: "Authoring Custom Azure Policy Definitions",
+    description:
+      "A hands-on session covering custom policy structure, live authoring and maintainable definitions.",
+    url: "https://www.youtube.com/watch?v=qygOCyambK4",
+    resources: [
+      [
+        "Slides",
+        "/assets/pdfs/MR2022-AuthoringCustomAzurePolicyDefinitions.pdf",
+      ],
+      [
+        "Read more",
+        "https://learn.microsoft.com/en-us/azure/governance/policy/concepts/definition-structure?WT.mc_id=AZ-MVP-5004598",
+      ],
+    ],
+  },
+  {
+    year: "2021",
+    event: "DevOps Sydney",
+    venue: "Community meetup",
+    title: "Automate Infrastructure Governance with Azure Policy",
+    description:
+      "Applying Terraform and Policy as Code to make infrastructure governance repeatable and auditable.",
+    url: "https://www.youtube.com/watch?v=dPwy8nlNyNM",
+    resources: [
+      ["Slides", "/assets/pdfs/SydDevOps2021_AutomateInfraGovWithAzPolicy.pdf"],
+    ],
+  },
+  {
+    year: "2024",
+    event: "Global Azure",
+    venue: "Microsoft Reactor Sydney",
+    title: "Roadtesting GitHub Copilot on Azure Policies",
+    description:
+      "A practical look at where an AI assistant can help with Azure Policy development, demonstrations and Q&A.",
+    url: "https://www.youtube.com/watch?v=_Fjs7kUGeLI",
+  },
+];
+
 const talks = [
+  {
+    year: "On demand",
+    event: "Jesse Loudon YouTube",
+    venue: "Channel video",
+    title: "How to Effectively Govern Azure Tags using Azure Policy (Demo)",
+    description:
+      "A demonstration of using Azure Policy to govern Azure tags.",
+    links: [["Watch the demo", "https://youtu.be/Z93e2yYKO1Q"]],
+  },
   {
     year: "2026",
     event: "NGM Group Innovate for Impact",
@@ -30,55 +185,6 @@ const talks = [
     featured: true,
   },
   {
-    year: "2024",
-    event: "Global Azure",
-    venue: "Microsoft Reactor Sydney",
-    title: "GitHub Copilot on Azure Policies",
-    description:
-      "A practical look at where an AI assistant can help with Azure Policy development, from authoring through live demonstrations and Q&A.",
-    links: [
-      ["Watch the session", "https://youtu.be/_Fjs7kUGeLI?si=1pn20ZZJsR0WV0rG"],
-    ],
-  },
-  {
-    year: "2022",
-    event: "Microsoft Reactor Sydney",
-    venue: "Sydney, Australia",
-    title: "Authoring Custom Azure Policy Definitions",
-    description:
-      "A hands-on session covering custom policy structure, live authoring and the practical decisions behind maintainable definitions.",
-    links: [
-      ["Watch", "https://youtu.be/qygOCyambK4"],
-      [
-        "Slides",
-        "/assets/pdfs/MR2022-AuthoringCustomAzurePolicyDefinitions.pdf",
-      ],
-      [
-        "Read more",
-        "https://learn.microsoft.com/en-us/azure/governance/policy/concepts/definition-structure?WT.mc_id=AZ-MVP-5004598",
-      ],
-    ],
-  },
-  {
-    year: "2022",
-    event: "Microsoft Reactor Sydney",
-    venue: "Sydney, Australia",
-    title: "Flexing Your Security Governance with Azure Policy as Code",
-    description:
-      "Using Azure Bicep to build a security-focused Policy-as-Code approach that scales beyond a single subscription.",
-    links: [
-      ["Watch", "https://youtu.be/SuH_TBBsvLI"],
-      [
-        "Slides",
-        "/assets/pdfs/MR2022-FlexingYourSecurityGovernanceWithAzurePolicyAsCode.pdf",
-      ],
-      [
-        "Read the companion article",
-        "/cloud/flexing-your-security-governance-with-azure-policy-as-code/",
-      ],
-    ],
-  },
-  {
     year: "2021",
     event: "Ctrl+Alt+Azure",
     venue: "Podcast episode 109",
@@ -93,83 +199,6 @@ const talks = [
       [
         "Read the companion article",
         "/cloud/talking-azure-policy-as-code-on-the-ctrlaltazure-podcast/",
-      ],
-    ],
-  },
-  {
-    year: "2021",
-    event: "Melbourne Azure Security",
-    venue: "Community Meetup",
-    title: "Flexing Your Security Governance with Azure Policy as Code",
-    description:
-      "A security-focused Azure Bicep session with live demonstrations and practical governance patterns.",
-    links: [
-      ["Watch", "https://youtu.be/-KSLh2I9e1U"],
-      [
-        "Slides",
-        "/assets/pdfs/MelbAzureSecMeetup2021_FlexingYourSecurityGovernanceWithAzurePolicyAsCode.pdf",
-      ],
-    ],
-  },
-  {
-    year: "2021",
-    event: "DevOps Sydney",
-    venue: "Community Meetup",
-    title: "Automate Infrastructure Governance with Azure Policy",
-    description:
-      "Applying Terraform and Policy as Code to make infrastructure governance repeatable and auditable.",
-    links: [
-      ["Watch", "https://youtu.be/dPwy8nlNyNM?t=570"],
-      ["Slides", "/assets/pdfs/SydDevOps2021_AutomateInfraGovWithAzPolicy.pdf"],
-    ],
-  },
-  {
-    year: "2021",
-    event: "Azure Sydney User Group",
-    venue: "Community Meetup",
-    title: "Azure Policy as Code: Zero to Hero in 60 Minutes",
-    description:
-      "A practical introduction to the building blocks of Azure Policy as Code with Bicep.",
-    links: [
-      ["Watch", "https://youtu.be/AVn5glYBz84?t=2380"],
-      [
-        "Slides",
-        "/assets/pdfs/AzureSydUserGroup2021_PolicyAsCode_ZeroToHero60min.pdf",
-      ],
-    ],
-  },
-  {
-    year: "2021",
-    event: "Global Azure",
-    venue: "Online community event",
-    title: "Policy as Code with Bicep for Enterprise Scale",
-    description:
-      "Designing a Policy-as-Code approach for consistent governance across an enterprise Azure estate.",
-    links: [
-      ["Watch", "https://youtu.be/qpnMJXw6pIg"],
-      [
-        "Slides",
-        "/assets/pdfs/GlobalAzure2021_PolicyAsCodeWithBicepForEnterpriseScale.pdf",
-      ],
-      [
-        "Read the companion article",
-        "/cloud/global-azure-policy-as-code-with-bicep-for-enterprise-scale/",
-      ],
-    ],
-  },
-  {
-    year: "2021",
-    event: "HashiTalks ANZ",
-    venue: "HashiCorp community event",
-    title: "DRY Coding with Terraform, CSVs and for_each",
-    description:
-      "Using Terraform data structures and for_each to create simpler, reusable infrastructure code.",
-    links: [
-      ["Watch", "https://youtu.be/aARIovQQSJ4"],
-      ["Slides", "/assets/pdfs/DRY_CodingwithTerraformCSVsForEach.pdf"],
-      [
-        "Read the companion article",
-        "/cloud/hashitalks-anz-dry-coding-with-terraform-csvs-foreach/",
       ],
     ],
   },
@@ -300,6 +329,42 @@ const themes = [
             </article>
           ))
         }
+      </div>
+      <div class="community-recordings">
+        <div class="section-intro">
+          <p class="eyebrow">Community events playlist</p>
+          <h2>Watch each recording directly.</h2>
+          <p>
+            All ten videos from the community events playlist, linked to their
+            individual YouTube recordings.
+          </p>
+        </div>
+        <div class="talk-list">
+          {
+            communityVideos.map((video) => (
+              <article class="talk-card">
+                <div class="talk-year">{video.year}</div>
+                <div class="talk-body">
+                  <p class="talk-event">
+                    {video.event} <span>/</span> {video.venue}
+                  </p>
+                  <h3>{video.title}</h3>
+                  <p>{video.description}</p>
+                  <div class="talk-links">
+                    <a href={video.url}>
+                      Watch video <span>↗</span>
+                    </a>
+                    {video.resources?.map(([label, url]) => (
+                      <a href={url}>
+                        {label} <span>↗</span>
+                      </a>
+                    ))}
+                  </div>
+                </div>
+              </article>
+            ))
+          }
+        </div>
       </div>
     </div>
   </section>
