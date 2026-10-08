@@ -15,7 +15,7 @@ tags:
 - "policy extension vscode"
 - "policy alias"
 ---
-This is Part 2 of a blog series on Azure Policy. In [Part 1](https://jloudon.com/cloud/Cloud-Governance-with-Azure-Policy-Part-1/) I introduced you to the audit vs deny debate, using the native tooling for Cloud governance, and governance at scale through policy as code workflows.
+This is Part 2 of a blog series on Azure Policy. In [Part 1](/cloud/cloud-governance-with-azure-policy-part-1/) I introduced you to the audit vs deny debate, using the native tooling for Cloud governance, and governance at scale through policy as code workflows.
 
 # Using the Azure Policy extension for VSCode
 

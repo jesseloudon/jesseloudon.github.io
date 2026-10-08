@@ -19,15 +19,15 @@ This is Part 2 of the Ansible on Azure series. In this blog you'll discover how 
 
 I'll showcase the custom module [terraform-azurerm-ansible-linux-vm](https://github.com/globalbao/terraform-azurerm-ansible-linux-vm) and highlight some noteworthy items. Each new heading will cover a different resource type for easy reader consumption.
 
-* [Part 1](https://jloudon.com/cloud/Ansible-on-Azure-Part-1/) covers the birds-eye solution overview and introduces you to key components.
-* [Part 2](https://jloudon.com/cloud/Ansible-on-Azure-Part-2/) showcases the Terraform module used to automate deployment of an Ansible control host into Azure.
-* [Part 3](https://jloudon.com/cloud/Ansible-on-Azure-Part-3/) dives into using the Molecule-Azure driver to rapidly develop Ansible playbook tasks on Azure instances.
+* [Part 1](/cloud/ansible-on-azure-part-1/) covers the birds-eye solution overview and introduces you to key components.
+* [Part 2](/cloud/ansible-on-azure-part-2/) showcases the Terraform module used to automate deployment of an Ansible control host into Azure.
+* [Part 3](/cloud/ansible-on-azure-part-3/) dives into using the Molecule-Azure driver to rapidly develop Ansible playbook tasks on Azure instances.
 
 Finally, I'll also provide a step-by-step example of using the module to deploy an Ansible control host into Azure.
 
 ## Development Ecosystem Mapping
 
-In terms of our development ecosystem described in [Part 1](https://jloudon.com/cloud/Ansible-on-Azure-Part-1/), and shown below, this blog covers **stages 1-3**.
+In terms of our development ecosystem described in [Part 1](/cloud/ansible-on-azure-part-1/), and shown below, this blog covers **stages 1-3**.
 
 ![ansible configuration management ecosystem](/assets/images/ansibleonazure01.png "ansible configuration management ecosystem")
 
@@ -35,7 +35,7 @@ In terms of our development ecosystem described in [Part 1](https://jloudon.com/
 
 * This new Resource Group will help isolate our new Ansible development environment and support a quick destroy later.
 * I recommend appending your initials to new RG's name e.g. `rgName = "ansibledev-yourinitials"` to allow for easy identification later.
-* Here I'm also outputting the new RG's name to the Terraform console. We'll need to reference this value within our Molecule `create.yml` file later in [Part 3](https://jloudon.com/cloud/Ansible-on-Azure-Part-3/) of this series.
+* Here I'm also outputting the new RG's name to the Terraform console. We'll need to reference this value within our Molecule `create.yml` file later in [Part 3](/cloud/ansible-on-azure-part-3/) of this series.
 
 ```terraform
 variable "rgName" {
@@ -65,7 +65,7 @@ output "azurerm_resource_group_name" {
 * This new VNET will be an isolated space and subnet for the Ansible control host and Molecule test instances to directly communicate over.
 * I recommend appending your initials to new VNET's name e.g. `vnetName = "ansibledev-yourinitials"`.
 * Remember to avoid configuring any VNET peering or gateway devices on this new VNET to ensure it remains isolated from the rest of your environments.
-* Here I'm also outputting the new VNET's name to the Terraform console as we'll need to reference this value within our Molecule `create.yml` file later in [Part 3](https://jloudon.com/cloud/Ansible-on-Azure-Part-3/) of this series.
+* Here I'm also outputting the new VNET's name to the Terraform console as we'll need to reference this value within our Molecule `create.yml` file later in [Part 3](/cloud/ansible-on-azure-part-3/) of this series.
 
 ```terraform
 variable "vnetName" {
@@ -520,7 +520,7 @@ Setup/test the SSH authentication.
 
 > Note: The above steps 6-14 work on my Win10 machine but if you encounter issues I recommend reviewing the official doco here: [https://code.visualstudio.com/docs/remote/ssh](https://code.visualstudio.com/docs/remote/ssh)
 
-* 15 - Work on your Ansible development (see [Part 3](https://jloudon.com/cloud/Ansible-on-Azure-Part-3/)).
+* 15 - Work on your Ansible development (see [Part 3](/cloud/ansible-on-azure-part-3/)).
 * 16 - Remove the environment.
 
 ```terraform
@@ -544,7 +544,7 @@ In this blog we looked at deploying an Ansible control host into Azure using the
 
 We also examined the shell script used to automate installation of the many software packages needed on the Ansible control host. And we stepped through an example of running the module code and connecting to the host over SSH from VSCode.
 
-In [Part 3](https://jloudon.com/cloud/Ansible-on-Azure-Part-3/) of this series we'll dive into using the Molecule testing framework and the Molecule-Azure driver. This is the final piece of the puzzle to rapidly test Ansible playbook tasks within our development environment.
+In [Part 3](/cloud/ansible-on-azure-part-3/) of this series we'll dive into using the Molecule testing framework and the Molecule-Azure driver. This is the final piece of the puzzle to rapidly test Ansible playbook tasks within our development environment.
 
 Cheers,
 

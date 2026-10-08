@@ -16,9 +16,9 @@ tags:
 ---
 Greetings fellow Azure enthusiasts. This is a 3-part series I've really enjoyed writing and hope you find use in my content. In this blog you'll discover the Ansible on Azure development ecosystem, key advantages/disadvantages, and how to get started.
 
-* [Part 1](https://jloudon.com/cloud/Ansible-on-Azure-Part-1/) covers the birds-eye solution overview and introduces you to key components.
-* [Part 2](https://jloudon.com/cloud/Ansible-on-Azure-Part-2/) showcases the Terraform module used to automate deployment of an Ansible control host into Azure.
-* [Part 3](https://jloudon.com/cloud/Ansible-on-Azure-Part-3/) dives into using the Molecule-Azure driver to rapidly develop Ansible playbook tasks on Azure instances.
+* [Part 1](/cloud/ansible-on-azure-part-1/) covers the birds-eye solution overview and introduces you to key components.
+* [Part 2](/cloud/ansible-on-azure-part-2/) showcases the Terraform module used to automate deployment of an Ansible control host into Azure.
+* [Part 3](/cloud/ansible-on-azure-part-3/) dives into using the Molecule-Azure driver to rapidly develop Ansible playbook tasks on Azure instances.
 
 Key solutions used in this series:
 
@@ -95,13 +95,13 @@ If you're keen to get started first install these pre-requisities on your local 
 * [VSCode (extension) Remote Development](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.vscode-remote-extensionpack)
 * [AzureCLI](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli?WT.mc_id=AZ-MVP-5004598)
 
-Then follow the development flow listed in steps 1-7 above and/or check out [Part 2](https://jloudon.com/cloud/Ansible-on-Azure-Part-2/) and [Part 3](https://jloudon.com/cloud/Ansible-on-Azure-Part-3/) of this series for in-depth guidance.
+Then follow the development flow listed in steps 1-7 above and/or check out [Part 2](/cloud/ansible-on-azure-part-2/) and [Part 3](/cloud/ansible-on-azure-part-3/) of this series for in-depth guidance.
 
 ## Closing Remarks
 
 In this blog we covered the birds-eye solution overview of Ansible on Azure, introduced key components that can be used, looked at an example development flow, compared key advantages/disadvantages in deciding if this is the right solution, and kicked off your journey with some startup instructions.
 
-Join me for [Part 2](https://jloudon.com/cloud/Ansible-on-Azure-Part-2/) where I'll showcase the Terraform module used to automate deployment of an Ansible control host into Azure.
+Join me for [Part 2](/cloud/ansible-on-azure-part-2/) where I'll showcase the Terraform module used to automate deployment of an Ansible control host into Azure.
 
 Cheers,
 

@@ -21,15 +21,15 @@ So what the heck happened in 2020?
 # Pre COVID-19 (Jan to Mar 2020)
 
 * Witnessed the [Black Summer](https://en.wikipedia.org/wiki/2019%E2%80%9320_Australian_bushfire_season)
-* Blogged about [Zero-Touch BitLocker with PowerShell](https://jloudon.com/security/Zero-Touch-BitLocker-with-Powershell/) which amazingly sat in draft for 2 years
+* Blogged about [Zero-Touch BitLocker with PowerShell](/security/zero-touch-bitlocker-with-powershell/) which amazingly sat in draft for 2 years
 * Started blogging about tech on [https://blog.kloud.com.au/](https://blog.kloud.com.au/)
 * Played left-back in an AAM team for [CHUFC](https://hillsfootball.com.au/clubs/castle-hill-united-football-club/)
-* Attended [Microsoft OpenHack](https://openhack.microsoft.com/) on Containers and [blogged](https://jloudon.com/events/My-experience-at-Microsoft-Containers-OpenHack-featuring-Kubernetes-challenges/) about it
+* Attended [Microsoft OpenHack](https://openhack.microsoft.com/) on Containers and [blogged](/events/my-experience-at-microsoft-containers-openhack-featuring-kubernetes-challenges/) about it
 * Missed out on [Microsoft Ignite](https://myignite.microsoft.com/home)!
 * Consulted to [Qantas](https://www.qantas.com/au/en.html) on SSO/ADFS projects
 * Officially aged by 1 year...
 * Published a summary of my 5 [recent tech blogs](https://www.linkedin.com/pulse/my-tech-blogs-2020-digest-1-jesse-loudon/) to LinkedIn
-* Kicked off jloudon.com and [blogged](https://jloudon.com/blogging/OpenSource-Blogging-with-Jekyll-GitHub-VSCode-Part1/) about the experience
+* Kicked off jloudon.com and [blogged](/blogging/opensource-blogging-with-jekyll-github-vscode/) about the experience
 * Deployed my 1st [GitHub Action](https://github.com/marketplace/actions/azure-storage-firewall-default-action) during the [GitHub Hackaton](https://githubhackathon.com/) and received some nice swag
 * Started using [Twitter](https://twitter.com/coder_au)
 

@@ -19,13 +19,13 @@ This is Part 3 of the Ansible on Azure series. In this blog you'll discover Ansi
 
 During my own discovery and testing solution examples of the Molecule-Azure driver were scarce to find so I'm hoping to aggregate my learnings in this blog.
 
-* [Part 1](https://jloudon.com/cloud/Ansible-on-Azure-Part-1/) covers the birds-eye solution overview and introduces you to key components.
-* [Part 2](https://jloudon.com/cloud/Ansible-on-Azure-Part-2/) showcases the Terraform module used to automate deployment of an Ansible control host into Azure.
-* [Part 3](https://jloudon.com/cloud/Ansible-on-Azure-Part-3/) dives into using the Molecule-Azure driver to rapidly develop Ansible playbook tasks on Azure instances.
+* [Part 1](/cloud/ansible-on-azure-part-1/) covers the birds-eye solution overview and introduces you to key components.
+* [Part 2](/cloud/ansible-on-azure-part-2/) showcases the Terraform module used to automate deployment of an Ansible control host into Azure.
+* [Part 3](/cloud/ansible-on-azure-part-3/) dives into using the Molecule-Azure driver to rapidly develop Ansible playbook tasks on Azure instances.
 
 ## Development Ecosystem Mapping
 
-In terms of our development ecosystem described in [Part 1](https://jloudon.com/cloud/Ansible-on-Azure-Part-1/), and shown below, this blog covers **stages 4-7**.
+In terms of our development ecosystem described in [Part 1](/cloud/ansible-on-azure-part-1/), and shown below, this blog covers **stages 4-7**.
 
 ![ansible configuration management ecosystem](/assets/images/ansibleonazure01.png "ansible configuration management ecosystem")
 
@@ -97,7 +97,7 @@ The significant parts of my modification to the default create.yml are:
 * added parameters to the `azure_rm_virtualmachine` resource to target an existing VNET/Subnet
 * changed `public_ip_allocation_method` to disabled
 
-If you're following along from [Part 2](https://jloudon.com/cloud/Ansible-on-Azure-Part-2/) of this blog series - remember to update `virtual_network_resource_group_name` and `virtual_network_name` variables with the relevant Terraform output values.
+If you're following along from [Part 2](/cloud/ansible-on-azure-part-2/) of this blog series - remember to update `virtual_network_resource_group_name` and `virtual_network_name` variables with the relevant Terraform output values.
 
 <script src="https://gist.github.com/jesseloudon/0b07fc5ab17bf5985a17d7c9564fe73d.js"></script>
 
@@ -132,7 +132,7 @@ The significant parts of my modification to the default create.yml are:
 * added parameters to the `azure_rm_virtualmachine` resource to target an existing VNET/Subnet
 * changed `public_ip_allocation_method` to disabled
 
-If you're following along from [Part 2](https://jloudon.com/cloud/Ansible-on-Azure-Part-2/) of this blog series - remember to update `virtual_network_resource_group_name` and `virtual_network_name` variables with the relevant Terraform output values.
+If you're following along from [Part 2](/cloud/ansible-on-azure-part-2/) of this blog series - remember to update `virtual_network_resource_group_name` and `virtual_network_name` variables with the relevant Terraform output values.
 
 <script src="https://gist.github.com/jesseloudon/12ed89147e7ca7d753b3cbc1bd954b9b.js"></script>
 

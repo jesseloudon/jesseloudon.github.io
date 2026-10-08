@@ -15,7 +15,7 @@ tags:
 - "azure governance"
 - "json"
 ---
-During my last blog series [Cloud Governance with Azure Policy](https://jloudon.com/cloud/Cloud-Governance-with-Azure-Policy-Part-1/) I introduced some common use cases for Azure Policy and demonstrated how to author a custom policy definition using the Azure Policy extension for VSCode. This blog series is still related to cloud governance but, because it focuses more on managing an Azure policy as code workflow using Terraform, it deserves a new heading.
+During my last blog series [Cloud Governance with Azure Policy](/cloud/cloud-governance-with-azure-policy-part-1/) I introduced some common use cases for Azure Policy and demonstrated how to author a custom policy definition using the Azure Policy extension for VSCode. This blog series is still related to cloud governance but, because it focuses more on managing an Azure policy as code workflow using Terraform, it deserves a new heading.
 
 Coming up I’ll show you some usage patterns for deploying Azure policies using Terraform modules for these resource types:
 
@@ -191,7 +191,7 @@ output "auditRoleAssignmentType_user_policy_id" {
 }
 ```
 
-The above custom policy definition audits the field `Microsoft.Authorization/roleAssignments/principalType` for a `User` value and is useful to detect "RBAC drift" where users are being assigned directly to ACLs of Azure resources outside of a security group. If you're interested in reading more about this I've blogged about the creation process [here](https://jloudon.com/cloud/Cloud-Governance-with-Azure-Policy-Part-2/).
+The above custom policy definition audits the field `Microsoft.Authorization/roleAssignments/principalType` for a `User` value and is useful to detect "RBAC drift" where users are being assigned directly to ACLs of Azure resources outside of a security group. If you're interested in reading more about this I've blogged about the creation process [here](/cloud/cloud-governance-with-azure-policy-part-2/).
 
 # Governance at Scale with Terraform Cloud and Azure Policies
 
@@ -241,7 +241,7 @@ There are multiple patterns available to manage Azure policies as code across yo
 
 Terraform brings some additional elements to a policy as code workflow to make it more repeatable, scalable, automatable, and auditable.
 
-In [Part 2](https://jloudon.com/cloud/Azure-Policy-as-Code-with-Terraform-Part-2/) of this series I'll walk through how my example [AzureRM policy modules repo](https://github.com/globalbao/terraform-azurerm-policy) works under the hood, demo the code, show you how to resolve an issue that may arise when recreating a policy which is a member of a policyset, and we'll explore some Terraform coding patterns which can be reused for your own Terraform modules saving you time during the module authoring process.
+In [Part 2](/cloud/azure-policy-as-code-with-terraform-part-2/) of this series I'll walk through how my example [AzureRM policy modules repo](https://github.com/globalbao/terraform-azurerm-policy) works under the hood, demo the code, show you how to resolve an issue that may arise when recreating a policy which is a member of a policyset, and we'll explore some Terraform coding patterns which can be reused for your own Terraform modules saving you time during the module authoring process.
 
 Happy coding,
 
