@@ -10,6 +10,8 @@ const talks = [
     title: "Critical Thinking in the Age of AI",
     description:
       "A lightning talk on responsible AI adoption, human judgement and governance, alongside coaching teams building solutions for three local charities during a two-day hackathon.",
+    image: "/assets/images/speaking-hackathon-2026.jpg",
+    imageAlt: "Jesse Loudon speaking at the NGM Group Innovate for Impact hackathon",
     links: [
       ["Event impact", "https://lnkd.in/p/gdbKGrY5"],
       ["Arinco recap", "https://lnkd.in/p/ge8Vvcv9"],
@@ -26,7 +28,13 @@ const talks = [
     title: "Policy as Code with Microsoft Foundry Agents",
     description:
       "How specialised AI agents can automate post-deployment testing and reporting in a Policy-as-Code flow.",
-    links: [["Watch the session", "https://lnkd.in/gJ-2z-_q"]],
+    youtubeId: "paDZ48NvnXY",
+    links: [
+      [
+        "Watch the session",
+        "https://www.youtube.com/watch?v=paDZ48NvnXY&t=19645s",
+      ],
+    ],
     featured: true,
   },
   {
@@ -36,6 +44,7 @@ const talks = [
     title: "Azure, DevOps & Security: A Leader's Journey",
     description:
       "A podcast conversation about leadership across Azure, DevOps and security.",
+    youtubeId: "8RaOk9ZW2bs",
     links: [["Watch the episode", "https://youtu.be/8RaOk9ZW2bs"]],
   },
   {
@@ -45,6 +54,7 @@ const talks = [
     title: "How to Effectively Govern Azure Tags using Azure Policy (Demo)",
     description:
       "A demonstration of using Azure Policy to govern Azure tags.",
+    youtubeId: "Z93e2yYKO1Q",
     links: [["Watch the demo", "https://youtu.be/Z93e2yYKO1Q"]],
   },
   {
@@ -54,6 +64,7 @@ const talks = [
     title: "Roadtesting GitHub Copilot on Azure Policies",
     description:
       "A practical look at where an AI assistant can help with Azure Policy development, demonstrations and Q&A.",
+    youtubeId: "_Fjs7kUGeLI",
     links: [["Watch the session", "https://youtu.be/_Fjs7kUGeLI"]],
   },
   {
@@ -63,6 +74,7 @@ const talks = [
     title: "Authoring Custom Azure Policy Definitions",
     description:
       "A hands-on session covering custom policy structure, live authoring and maintainable definitions.",
+    youtubeId: "qygOCyambK4",
     links: [
       ["Watch", "https://youtu.be/qygOCyambK4"],
       [
@@ -82,6 +94,7 @@ const talks = [
     title: "Flexing Your Security Governance with Azure Policy As Code",
     description:
       "Using Azure Bicep to build a security-focused Policy-as-Code approach that scales beyond a single subscription.",
+    youtubeId: "SuH_TBBsvLI",
     links: [
       ["Watch", "https://youtu.be/SuH_TBBsvLI"],
       [
@@ -102,6 +115,7 @@ const talks = [
       "Azure Sentinel and policy as code with Jesse Loudon and Casey Mullineaux",
     description:
       "Jesse Loudon and Casey Mullineaux discuss Azure Sentinel and Policy as Code.",
+    youtubeId: "B03V3Tazcec",
     links: [["Watch the session", "https://youtu.be/B03V3Tazcec"]],
   },
   {
@@ -111,6 +125,8 @@ const talks = [
     title: "Managing Azure Policy as Code with Bicep",
     description:
       "A conversation about the practical patterns, tradeoffs and lessons learned from managing Azure governance as code.",
+    image: "/assets/images/JesseLoudonTeamsBackground.png",
+    imageAlt: "Jesse Loudon speaking on the Ctrl+Alt+Azure podcast",
     links: [
       [
         "Listen to the episode",
@@ -129,6 +145,7 @@ const talks = [
     title: "Automate Infrastructure Governance with Azure Policy",
     description:
       "Applying Terraform and Policy as Code to make infrastructure governance repeatable and auditable.",
+    youtubeId: "dPwy8nlNyNM",
     links: [
       ["Watch", "https://youtu.be/dPwy8nlNyNM"],
       ["Slides", "/assets/pdfs/SydDevOps2021_AutomateInfraGovWithAzPolicy.pdf"],
@@ -141,6 +158,7 @@ const talks = [
     title: "Azure Policy as Code: Zero to Hero in 60 minutes",
     description:
       "A practical introduction to the building blocks of Azure Policy as Code with Bicep.",
+    youtubeId: "AVn5glYBz84",
     links: [
       ["Watch", "https://youtu.be/AVn5glYBz84"],
       [
@@ -156,6 +174,7 @@ const talks = [
     title: "Policy as Code with Bicep for Enterprise Scale",
     description:
       "Designing a Policy-as-Code approach for consistent governance across an enterprise Azure estate.",
+    youtubeId: "qpnMJXw6pIg",
     links: [
       ["Watch", "https://youtu.be/qpnMJXw6pIg"],
       [
@@ -175,6 +194,7 @@ const talks = [
     title: "DRY Coding with Terraform CSVs for_each",
     description:
       "Using Terraform data structures and for_each to create simpler, reusable infrastructure code.",
+    youtubeId: "aARIovQQSJ4",
     links: [
       ["Watch", "https://youtu.be/aARIovQQSJ4"],
       ["Slides", "/assets/pdfs/DRY_CodingwithTerraformCSVsForEach.pdf"],
@@ -191,6 +211,7 @@ const talks = [
     title: "Flexing Your Security Governance with Azure Policy as Code",
     description:
       "A security-focused Azure Bicep session with live demonstrations and practical governance patterns.",
+    youtubeId: "-KSLh2I9e1U",
     links: [
       ["Watch", "https://youtu.be/-KSLh2I9e1U"],
       [
@@ -310,10 +331,33 @@ talks.sort((a, b) => Number(b.year) - Number(a.year));
         {
           talks.map((talk) => (
             <article class:list={["talk-card", { featured: talk.featured }]}>
-              <div class="talk-year">{talk.year}</div>
+              {
+                talk.youtubeId ? (
+                  <a
+                    class="talk-thumbnail-link"
+                    href={`https://www.youtube.com/watch?v=${talk.youtubeId}`}
+                    aria-label={`Watch ${talk.title}`}
+                  >
+                    <img
+                      class="talk-thumbnail"
+                      src={`https://i.ytimg.com/vi/${talk.youtubeId}/hqdefault.jpg`}
+                      alt={`${talk.title} video thumbnail`}
+                      loading="lazy"
+                    />
+                  </a>
+                ) : (
+                  <img
+                    class="talk-thumbnail"
+                    src={talk.image}
+                    alt={talk.imageAlt}
+                    loading="lazy"
+                  />
+                )
+              }
               <div class="talk-body">
                 <p class="talk-event">
-                  {talk.event} <span>/</span> {talk.venue}
+                  {talk.event} <span>/</span> {talk.venue} <span>/</span>{" "}
+                  {talk.year}
                 </p>
                 <h3>{talk.title}</h3>
                 <p>{talk.description}</p>
@@ -529,10 +573,21 @@ talks.sort((a, b) => Number(b.year) - Number(a.year));
   }
   .talk-card {
     display: grid;
-    grid-template-columns: 100px 1fr;
-    gap: 35px;
+    grid-template-columns: 140px 1fr;
+    gap: 24px;
     border-bottom: 1px solid #cbdde6;
-    padding: 35px 0;
+    padding: 24px 0;
+  }
+  .talk-thumbnail-link {
+    display: block;
+    height: fit-content;
+  }
+  .talk-thumbnail {
+    display: block;
+    width: 140px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 6px;
   }
   .talk-card.featured {
     border-left: 5px solid var(--accent);
@@ -541,10 +596,6 @@ talks.sort((a, b) => Number(b.year) - Number(a.year));
     margin-left: -25px;
     margin-right: -25px;
     padding-right: 25px;
-  }
-  .talk-year {
-    font: 700 1.2rem "Space Grotesk";
-    color: var(--accent);
   }
   .talk-event {
     font: 700 0.78rem;
@@ -671,10 +722,11 @@ talks.sort((a, b) => Number(b.year) - Number(a.year));
       padding: 70px 0;
     }
     .talk-card {
-      display: block;
+      grid-template-columns: 1fr;
     }
-    .talk-year {
-      margin-bottom: 15px;
+    .talk-thumbnail {
+      width: 100%;
+      height: 160px;
     }
     .talk-card.featured {
       margin-left: -10px;
