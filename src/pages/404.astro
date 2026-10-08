@@ -17,6 +17,15 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     </div>
   </section></BaseLayout
 >
+<script is:inline>
+  const requestedPath = window.location.pathname;
+  const normalizedPath = requestedPath.toLowerCase();
+  if (requestedPath !== normalizedPath) {
+    window.location.replace(
+      `${normalizedPath}${window.location.search}${window.location.hash}`,
+    );
+  }
+</script>
 <style>
   .not-found {
     padding: 120px 24px;

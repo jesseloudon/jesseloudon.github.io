@@ -288,7 +288,7 @@ set up an automated pipeline to inspect security and compliance
 I hope you found this guide useful and wish you the best of luck in your exam journey 🙂
 Look out for another post after I pass the exam `/confidence`
 
-> Update Jan 2021: Read about how I passed AZ400 here: [https://jloudon.com/exams/Passed-AZ-400-Microsoft-Certified-DevOps-Engineer/](https://jloudon.com/exams/Passed-AZ-400-Microsoft-Certified-DevOps-Engineer/)
+> Update Jan 2021: Read about how I passed AZ400 here: [Passed AZ-400 Microsoft Certified DevOps Engineer](/exams/passed-az-400-microsoft-certified-devops-engineer/)
 
 Cheers,
 Jesse
