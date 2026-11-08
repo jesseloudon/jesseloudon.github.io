@@ -240,8 +240,8 @@ const themes = [
 ];
 
 talks.sort((a, b) => Number(b.year) - Number(a.year));
-const { embedded = false } = Astro.props;
-const HeroHeading = embedded ? "h2" : "h1";
+const { embedded = false, primaryHeading = false } = Astro.props;
+const HeroHeading = embedded && !primaryHeading ? "h2" : "h1";
 ---
 
   <section class="speaker-hero">
