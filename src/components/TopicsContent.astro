@@ -1,0 +1,58 @@
+---
+import { getCollection } from "astro:content";
+import { taxonomySlug } from "../lib/site";
+
+const { embedded = false } = Astro.props;
+const Heading = embedded ? "h2" : "h1";
+const posts = await getCollection("posts");
+const tags = [...new Set(posts.flatMap((post) => post.data.tags || []))].sort();
+---
+
+<section class="wrap taxonomy">
+  <p class="eyebrow">Browse the archive</p>
+  <Heading>Topics</Heading>
+  <p class="taxonomy-intro">
+    The archive follows the questions that have shaped my work: how to govern
+    cloud platforms, automate responsibly, and help teams adopt better ways of
+    working. Choose a topic to follow one thread through the notes.
+  </p>
+  <details open={!embedded}>
+    <summary>Browse all {tags.length} topics</summary>
+    <div class="tag-cloud">
+      {tags.map((tag) => <a href={`/tags/${taxonomySlug(tag)}/`}>#{tag}</a>)}
+    </div>
+  </details>
+</section>
+
+<style>
+  .taxonomy {
+    padding-top: 75px;
+    padding-bottom: 80px;
+  }
+  .taxonomy :is(h1, h2) {
+    font: 700 clamp(2.5rem, 6vw, 4rem)/1.08 "Space Grotesk";
+    margin: 12px 0;
+  }
+  .taxonomy-intro {
+    max-width: 680px;
+    color: var(--muted);
+    font-size: 1.1rem;
+    margin: 0 0 30px;
+  }
+  summary {
+    cursor: pointer;
+    color: var(--accent);
+    font-weight: 700;
+  }
+  .tag-cloud {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin-top: 24px;
+  }
+  .tag-cloud a {
+    border: 1px solid var(--line);
+    border-radius: 99px;
+    padding: 8px 16px;
+  }
+</style>

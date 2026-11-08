@@ -1,0 +1,29 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import PostCard from "../components/PostCard.astro";
+
+const posts = (await getCollection("posts")).sort(
+  (a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
+);
+---
+
+<BaseLayout title="Articles" description="Browse all articles by Jesse Loudon.">
+  <section class="wrap archive">
+    <p class="eyebrow">From the notebook</p>
+    <h1>All articles</h1>
+    <p><a href="/#topics">Browse topics</a> · <a href="/#search">Search articles</a></p>
+    {posts.map((post) => <PostCard post={post} />)}
+  </section>
+</BaseLayout>
+
+<style>
+  .archive {
+    padding-top: 75px;
+  }
+  .archive h1 {
+    font: 700 clamp(2.5rem, 6vw, 4.4rem)/1.08 "Space Grotesk";
+    letter-spacing: -0.045em;
+    margin: 12px 0;
+  }
+</style>
