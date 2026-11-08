@@ -1,6 +1,6 @@
 export const site = {
   title: 'Jesse Loudon',
-  description: 'Jesse Loudon is a principal cloud consultant who helps organisations shape, sell and deliver secure Azure, DevOps and AI transformation.',
+  description: 'Jesse Loudon is a Senior Digital Cloud Solution Architect at Microsoft, helping customers translate business priorities into secure, scalable, AI-ready cloud solutions.',
   url: 'https://jloudon.com',
   social: [
     ['LinkedIn', 'https://www.linkedin.com/in/jesseloudon/'],
