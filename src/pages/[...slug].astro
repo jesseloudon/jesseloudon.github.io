@@ -40,12 +40,14 @@ const articleImage =
   post.data.header?.og_image ||
   post.data.header?.teaser ||
   "/assets/images/jesse-profile-2024.jpg";
+const articleImageAlt = post.data.header?.image_alt;
 ---
 
 <BaseLayout
   title={post.data.title}
   description={post.data.excerpt}
   image={articleImage}
+  imageAlt={articleImageAlt}
   type="article"
 >
   <article class="wrap article" data-pagefind-body>

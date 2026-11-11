@@ -4,6 +4,7 @@ const {
   title = site.title,
   description = site.description,
   image = "/assets/images/jesse-profile-2024.jpg",
+  imageAlt,
   type = "website",
 } = Astro.props;
 const canonical = new URL(Astro.url.pathname, site.url).toString();
@@ -22,10 +23,12 @@ const socialImage = new URL(image, site.url).toString();
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonical} />
     <meta property="og:image" content={socialImage} />
+    {imageAlt && <meta property="og:image:alt" content={imageAlt} />}
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={socialImage} />
+    {imageAlt && <meta name="twitter:image:alt" content={imageAlt} />}
     <link rel="icon" href="/assets/images/favicon.png" />
     <link
       rel="alternate"
