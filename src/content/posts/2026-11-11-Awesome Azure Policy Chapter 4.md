@@ -28,63 +28,65 @@ This is Microsoft's command-line tool that checks policy definitions for known i
 
 At my last count there are 57 rules tests providing a wide scope of checks. Just by digging into some of these rules shown below I learnt a few new tricks/tips.
 
-- All<wbr>Parameter<wbr>References<wbr>Must<wbr>Resolve<wbr>Tests.cs
-- App<wbr>Service<wbr>Config<wbr>Field<wbr>Alias<wbr>Tests.cs
-- Array<wbr>Compared<wbr>As<wbr>Scalar<wbr>Tests.cs
-- Array<wbr>Or<wbr>Object<wbr>Parameter<wbr>In<wbr>Equality<wbr>Operator<wbr>Tests.cs
-- Blocking<wbr>Effect<wbr>On<wbr>Role<wbr>Assignments<wbr>Tests.cs
-- Broad<wbr>Type<wbr>Matching<wbr>Operator<wbr>Tests.cs
-- Conditional<wbr>Field<wbr>Alias<wbr>Tests.cs
-- Count<wbr>Less<wbr>Than<wbr>Array<wbr>Length<wbr>Tests.cs
-- Deeply<wbr>Nested<wbr>Field<wbr>Alias<wbr>Tests.cs
-- Description<wbr>Duplicates<wbr>Display<wbr>Name<wbr>Tests.cs
-- Effect<wbr>Allowed<wbr>Values<wbr>Should<wbr>Not<wbr>Mix<wbr>Incompatible<wbr>Effects<wbr>Tests.cs
-- Effect<wbr>Parameter<wbr>Missing<wbr>Allowed<wbr>Values<wbr>Tests.cs
-- Effect<wbr>Parameter<wbr>Missing<wbr>Default<wbr>Value<wbr>Tests.cs
-- Field<wbr>Alias<wbr>Unavailable<wbr>In<wbr>Any<wbr>Api<wbr>Version<wbr>Tests.cs
-- Field<wbr>Alias<wbr>Unavailable<wbr>In<wbr>Latest<wbr>Api<wbr>Version<wbr>Tests.cs
-- Field<wbr>Alias<wbr>Unavailable<wbr>In<wbr>Old<wbr>Api<wbr>Versions<wbr>Tests.cs
-- Field<wbr>Function<wbr>On<wbr>Counted<wbr>Array<wbr>Alias<wbr>Tests.cs
-- Hard<wbr>Coded<wbr>Policy<wbr>Enforcement<wbr>Effect<wbr>Tests.cs
-- Implicit<wbr>Array<wbr>Enumeration<wbr>Tests.cs
-- Implicit<wbr>Resource<wbr>Type<wbr>Targeting<wbr>Tests.cs
-- Invalid<wbr>Effect<wbr>Parameter<wbr>Value<wbr>Tests.cs
-- Length<wbr>Function<wbr>On<wbr>Array<wbr>Alias<wbr>Tests.cs
-- Like<wbr>Not<wbr>Like<wbr>Without<wbr>Wildcards<wbr>Tests.cs
-- Literal<wbr>Asterisk<wbr>In<wbr>Match<wbr>Operator<wbr>Tests.cs
-- Logical<wbr>Functions<wbr>In<wbr>Value<wbr>Conditions<wbr>Tests.cs
-- Match<wbr>Without<wbr>Wildcards<wbr>Tests.cs
-- Missing<wbr>Audit<wbr>Effect<wbr>Counterpart<wbr>Tests.cs
-- Missing<wbr>Policy<wbr>Definition<wbr>Description<wbr>Tests.cs
-- Missing<wbr>Policy<wbr>Definition<wbr>Display<wbr>Name<wbr>Tests.cs
-- Nested<wbr>Not<wbr>Condition<wbr>Tests.cs
-- Nested<wbr>Same<wbr>Type<wbr>Quantifiers<wbr>Should<wbr>Be<wbr>Flattened<wbr>Tests.cs
-- Nsg<wbr>Security<wbr>Rule<wbr>Child<wbr>Only<wbr>Enforcement<wbr>Tests.cs
-- Nsg<wbr>Security<wbr>Rule<wbr>Parent<wbr>Only<wbr>Enforcement<wbr>Tests.cs
-- Numeric<wbr>Field<wbr>Or<wbr>Value<wbr>In<wbr>Equality<wbr>Operator<wbr>Tests.cs
-- Numeric<wbr>Parameter<wbr>In<wbr>Equality<wbr>Operator<wbr>Tests.cs
-- Object<wbr>Compared<wbr>As<wbr>Scalar<wbr>Tests.cs
-- Optional<wbr>Field<wbr>Alias<wbr>Tests.cs
-- Ordering<wbr>Operator<wbr>On<wbr>Incompatible<wbr>Field<wbr>Type<wbr>In<wbr>Old<wbr>Api<wbr>Versions<wbr>Tests.cs
-- Ordering<wbr>Operator<wbr>On<wbr>Incompatible<wbr>Field<wbr>Type<wbr>Tests.cs
-- Parameter<wbr>Missing<wbr>Description<wbr>Tests.cs
-- Parameter<wbr>Missing<wbr>Display<wbr>Name<wbr>Tests.cs
-- Policy<wbr>Rule<wbr>References<wbr>Multiple<wbr>Resource<wbr>Types<wbr>Tests.cs
-- Read<wbr>Only<wbr>Field<wbr>Alias<wbr>Tests.cs
-- Request<wbr>Context<wbr>Identity<wbr>Is<wbr>Enforcement<wbr>Only<wbr>Tests.cs
-- Resource<wbr>Type<wbr>Not<wbr>Evaluated<wbr>By<wbr>Policy<wbr>Tests.cs
-- Resource<wbr>Types<wbr>Not<wbr>Supported<wbr>By<wbr>Indexed<wbr>Mode<wbr>Tests.cs
-- Risky<wbr>Effect<wbr>Parameter<wbr>Default<wbr>Value<wbr>Tests.cs
-- Simplify<wbr>Multiple<wbr>Equals<wbr>To<wbr>In<wbr>Tests.cs
-- Simplify<wbr>Multiple<wbr>Not<wbr>Equals<wbr>To<wbr>Not<wbr>In<wbr>Tests.cs
-- Try<wbr>Get<wbr>Use<wbr>With<wbr>Null<wbr>Coercing<wbr>Operator<wbr>Tests.cs
-- Type<wbr>Condition<wbr>First<wbr>In<wbr>All<wbr>Of<wbr>Tests.cs
-- Type<wbr>Only<wbr>If<wbr>Condition<wbr>Tests.cs
-- Unguarded<wbr>Request<wbr>Context<wbr>Identity<wbr>Access<wbr>Tests.cs
-- Unguarded<wbr>Substring<wbr>Function<wbr>Tests.cs
-- Unguarded<wbr>Try<wbr>Get<wbr>Operator<wbr>Value<wbr>Tests.cs
-- Unnecessary<wbr>Quantifier<wbr>Wrapper<wbr>Tests.cs
-- Vm<wbr>Os<wbr>Type<wbr>Field<wbr>Alias<wbr>Tests.cs
+<ul style="overflow-wrap: anywhere;">
+<li>AllParameterReferencesMustResolveTests.cs</li>
+<li>AppServiceConfigFieldAliasTests.cs</li>
+<li>ArrayComparedAsScalarTests.cs</li>
+<li>ArrayOrObjectParameterInEqualityOperatorTests.cs</li>
+<li>BlockingEffectOnRoleAssignmentsTests.cs</li>
+<li>BroadTypeMatchingOperatorTests.cs</li>
+<li>ConditionalFieldAliasTests.cs</li>
+<li>CountLessThanArrayLengthTests.cs</li>
+<li>DeeplyNestedFieldAliasTests.cs</li>
+<li>DescriptionDuplicatesDisplayNameTests.cs</li>
+<li>EffectAllowedValuesShouldNotMixIncompatibleEffectsTests.cs</li>
+<li>EffectParameterMissingAllowedValuesTests.cs</li>
+<li>EffectParameterMissingDefaultValueTests.cs</li>
+<li>FieldAliasUnavailableInAnyApiVersionTests.cs</li>
+<li>FieldAliasUnavailableInLatestApiVersionTests.cs</li>
+<li>FieldAliasUnavailableInOldApiVersionsTests.cs</li>
+<li>FieldFunctionOnCountedArrayAliasTests.cs</li>
+<li>HardCodedPolicyEnforcementEffectTests.cs</li>
+<li>ImplicitArrayEnumerationTests.cs</li>
+<li>ImplicitResourceTypeTargetingTests.cs</li>
+<li>InvalidEffectParameterValueTests.cs</li>
+<li>LengthFunctionOnArrayAliasTests.cs</li>
+<li>LikeNotLikeWithoutWildcardsTests.cs</li>
+<li>LiteralAsteriskInMatchOperatorTests.cs</li>
+<li>LogicalFunctionsInValueConditionsTests.cs</li>
+<li>MatchWithoutWildcardsTests.cs</li>
+<li>MissingAuditEffectCounterpartTests.cs</li>
+<li>MissingPolicyDefinitionDescriptionTests.cs</li>
+<li>MissingPolicyDefinitionDisplayNameTests.cs</li>
+<li>NestedNotConditionTests.cs</li>
+<li>NestedSameTypeQuantifiersShouldBeFlattenedTests.cs</li>
+<li>NsgSecurityRuleChildOnlyEnforcementTests.cs</li>
+<li>NsgSecurityRuleParentOnlyEnforcementTests.cs</li>
+<li>NumericFieldOrValueInEqualityOperatorTests.cs</li>
+<li>NumericParameterInEqualityOperatorTests.cs</li>
+<li>ObjectComparedAsScalarTests.cs</li>
+<li>OptionalFieldAliasTests.cs</li>
+<li>OrderingOperatorOnIncompatibleFieldTypeInOldApiVersionsTests.cs</li>
+<li>OrderingOperatorOnIncompatibleFieldTypeTests.cs</li>
+<li>ParameterMissingDescriptionTests.cs</li>
+<li>ParameterMissingDisplayNameTests.cs</li>
+<li>PolicyRuleReferencesMultipleResourceTypesTests.cs</li>
+<li>ReadOnlyFieldAliasTests.cs</li>
+<li>RequestContextIdentityIsEnforcementOnlyTests.cs</li>
+<li>ResourceTypeNotEvaluatedByPolicyTests.cs</li>
+<li>ResourceTypesNotSupportedByIndexedModeTests.cs</li>
+<li>RiskyEffectParameterDefaultValueTests.cs</li>
+<li>SimplifyMultipleEqualsToInTests.cs</li>
+<li>SimplifyMultipleNotEqualsToNotInTests.cs</li>
+<li>TryGetUseWithNullCoercingOperatorTests.cs</li>
+<li>TypeConditionFirstInAllOfTests.cs</li>
+<li>TypeOnlyIfConditionTests.cs</li>
+<li>UnguardedRequestContextIdentityAccessTests.cs</li>
+<li>UnguardedSubstringFunctionTests.cs</li>
+<li>UnguardedTryGetOperatorValueTests.cs</li>
+<li>UnnecessaryQuantifierWrapperTests.cs</li>
+<li>VmOsTypeFieldAliasTests.cs</li>
+</ul>
 
 Having been working with Azure Policy for years on the frontlines I think this linter tool is amazing value to include for all your customer's policy-as-code and platform operation repos. On the agentic front, given we're now doing more with agents and AI, having this linter execute as a pre-merge check is another method we can maintain a high standard of quality for the work our agents are doing.
 
