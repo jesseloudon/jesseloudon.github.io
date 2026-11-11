@@ -112,23 +112,41 @@ Having the flexibility to control policy changes across multiple assignment scop
 
 ## Seeing What's Underneath a Policy Exemption
 
-Another Microsoft addition is Steven Bucher's [compliance substate announcement for Azure Policy exemptions](https://techcommunity.microsoft.com/blog/azuregovernanceandmanagementblog/introducing-compliance-substate-for-azure-policy-exemptions/4541703).
+Another notable mention is Steven Bucher's [compliance substate announcement for Azure Policy exemptions](https://techcommunity.microsoft.com/blog/azuregovernanceandmanagementblog/introducing-compliance-substate-for-azure-policy-exemptions/4541703).
 
-An exempt resource still shows as Exempt, but the additional substate tells you whether its underlying result is Compliant or Non-compliant. The article shows how to add the column to an assignment's compliance report and query it through Azure Resource Graph. Look for `complianceSubState` within `properties.stateDetails`.
+This new data point (substate) makes it easier for us to review existing Policy Exemptions giving you a much better starting point for reviewing whether that exemption still needs to exist.
 
-This follows nicely from the exemption reporting covered in [Chapter 1](/cloud/awesome-azure-policy-chapter-1/). Knowing an exemption exists is useful; knowing that the resource now meets the policy gives you a much better starting point for reviewing whether that exemption still needs to exist.
+The additional substate tells you whether its underlying result is Compliant or Non-compliant. The article shows how to add the column to an assignment's compliance report and query it through Azure Resource Graph. 
+
+- Look for `complianceSubState` within `properties.stateDetails`.
+
+Here's the provided starting KQL query to list every exempted resource and its substate:
+
+```kql
+policyresources
+| where type == "microsoft.policyinsights/policystates"
+| extend complianceState = tostring(properties.complianceState)
+| extend complianceSubState = tostring(properties.stateDetails.complianceSubState),
+         resourceId = tostring(properties.resourceId),
+         policyAssignmentId = tostring(properties.policyAssignmentId)
+| where complianceState == "Exempt"
+| project resourceId, policyAssignmentId, complianceState, complianceSubState
+```
 
 I'd use the substate to prioritise a review with the resource owner, alongside the exemption's reason and expiry date, rather than treating a green result as an instruction to automatically delete the exemption.
 
 ## Azure Policy and APIM: Different Layers of AI Governance
 
-My final pick is Thomas Thornton's [From Azure Policy to APIM: Implementing Azure AI Guardrails](https://thomasthornton.cloud/from-azure-policy-to-apim-implementing-azure-ai-guardrails/), published on 17 August 2026.
+My final pick is Thomas Thornton's [From Azure Policy to APIM: Implementing Azure AI Guardrails](https://thomasthornton.cloud/from-azure-policy-to-apim-implementing-azure-ai-guardrails/).
 
-Thomas makes a useful distinction: **Azure Policy governs resource deployment and configuration; API Management policies govern requests flowing through the gateway.** They aren't interchangeable policy engines.
+[![Azure-APIM-AI-Guardrails-Policy](https://github.com/thomast1906/thomasthorntoncloud-examples/blob/master/AZure-APIM-AI-guardrails-policy/drawings/two-layer-ai-governance-model.jpg)](https://github.com/thomast1906/thomasthorntoncloud-examples/tree/master/AZure-APIM-AI-guardrails-policy)
 
-The article connects network access, authentication, diagnostics, and approved-model controls at the resource layer with token limits, content safety, and usage telemetry at the runtime layer. I think that separation is worth keeping visible when discussing what an AI platform's guardrails actually cover.
+The above image from Thomas sums it up perfectly showing the two governance layers regarding resource governance and runtime governance in an example architecture:
 
-Thomas also highlights the operational side of applying controls to an existing estate. Disabling public access or local authentication can affect consumers that already depend on those paths. Start with visibility where immediate enforcement could disrupt workloads, understand the dependencies, and check the linked policy references and APIM tier support before adopting the examples.
+- Azure Policy (resource governance) - controls what can be deployed and how resources are configured
+- API Management (runtime governance) - controls what happens when applications consume those resources
+
+Having worked on customer projects recently involving both Microsoft Foundry and API Management - Thomas's blog post reaffirms my own design/implementation experience and gives me another perspective I had not yet considered!
 
 Great write-up Thomas!
 
@@ -138,31 +156,5 @@ Thanks again for reading about the latest awesome Azure Policy content from acro
 
 In the era of AI and agents, sadly Azure Policy does not get much attention or headline news but I can tell you that it's more important than ever to consider how we are governing and securing our Azure tenants and the resources within them because changes that impact resource compliance and security posture are now happening at speeds we've never seen before. Today, Azure Policy remains a steadfast control in our cloud governance toolbox.
 
-<details>
-<summary>Microsoft linter image attribution and licence</summary>
-<pre style="white-space: pre-wrap; overflow-wrap: anywhere;">Copyright (c) Microsoft Corporation.
-
-MIT License
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED *AS IS*, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.</pre>
-<p>Source: <a href="https://github.com/Azure/azure-policy-linter/blob/4a153e9cf10911dab1276287cd89652d4d2cf682/LICENSE">Microsoft Azure Policy Linter MIT licence</a>. The screenshot above is reproduced from that project at the linked snapshot.</p>
-</details>
-
-Until next time,\
+Until next time,
 Jesse
