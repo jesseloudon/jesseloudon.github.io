@@ -139,7 +139,7 @@ I'd use the substate to prioritise a review with the resource owner, alongside t
 
 My final pick is Thomas Thornton's [From Azure Policy to APIM: Implementing Azure AI Guardrails](https://thomasthornton.cloud/from-azure-policy-to-apim-implementing-azure-ai-guardrails/).
 
-[![Azure-APIM-AI-Guardrails-Policy](https://github.com/thomast1906/thomasthorntoncloud-examples/blob/master/AZure-APIM-AI-guardrails-policy/drawings/two-layer-ai-governance-model.jpg)](https://github.com/thomast1906/thomasthorntoncloud-examples/tree/master/AZure-APIM-AI-guardrails-policy)
+[![Azure-APIM-AI-Guardrails-Policy](https://github.com/thomast1906/thomasthorntoncloud-examples/blob/master/AZure-APIM-AI-guardrails-policy/drawings/two-layer-ai-governance-model.jpg)]([https://github.com/thomast1906/thomasthorntoncloud-examples/tree/master/AZure-APIM-AI-guardrails-policy](https://github.com/thomast1906/thomasthorntoncloud-examples/blob/master/AZure-APIM-AI-guardrails-policy/drawings/two-layer-ai-governance-model.jpg))
 
 The above image from Thomas sums it up perfectly showing the two governance layers regarding resource governance and runtime governance in an example architecture:
 
@@ -154,7 +154,9 @@ Great write-up Thomas!
 
 Thanks again for reading about the latest awesome Azure Policy content from across the industry.
 
-In the era of AI and agents, sadly Azure Policy does not get much attention or headline news but I can tell you that it's more important than ever to consider how we are governing and securing our Azure tenants and the resources within them because changes that impact resource compliance and security posture are now happening at speeds we've never seen before. Today, Azure Policy remains a steadfast control in our cloud governance toolbox.
+In the era of AI and agents, sadly Azure Policy does not get much attention or headline news but I can tell you that it's more important than ever to consider how we are **governing and securing our Azure tenants and the resources** within them because changes that impact resource compliance and security posture are now **happening at speeds we've never seen before**.
+
+Today, Azure Policy remains a steadfast control in our cloud governance toolbox.
 
 Until next time,
 Jesse
