@@ -88,7 +88,9 @@ At my last count there are 57 rules tests providing a wide scope of checks. Just
 <li>VmOsTypeFieldAliasTests.cs</li>
 </ul>
 
-Having been working with Azure Policy for years on the frontlines I think this linter tool is amazing value to include for all your customer's policy-as-code and platform operation repos. On the agentic front, given we're now doing more with agents and AI, having this linter execute as a pre-merge check is another method we can maintain a high standard of quality for the work our agents are doing.
+Having been working with Azure Policy for years on the frontlines I think this linter tool is amazing value to include for all your customer's policy-as-code and platform operation repos. 
+
+On the agentic front, given we're now doing more with agents and AI, having this linter execute as a pre-merge check is another method we should leverage to maintain a high standard of quality for the work our agents are doing.
 
 Kudos to Steven Bucher and the Microsoft team for making this knowledge available as a public tool. You can fork/clone it from GitHub here [github.com/azure/azure-policy-linter](https://github.com/Azure/azure-policy-linter) and start testing and customising it for your own usecases.
 
@@ -116,9 +118,9 @@ Another notable mention is Steven Bucher's [compliance substate announcement for
 
 This new data point (substate) makes it easier for us to review existing Policy Exemptions giving you a much better starting point for reviewing whether that exemption still needs to exist.
 
-The additional substate tells you whether its underlying result is Compliant or Non-compliant. The article shows how to add the column to an assignment's compliance report and query it through Azure Resource Graph. 
+The additional substate tells you whether its underlying result is Compliant or Non-compliant. Steven's article shows how to add the column to an assignment's compliance report and query it through Azure Resource Graph. 
 
-- Look for `complianceSubState` within `properties.stateDetails`.
+> Look for `complianceSubState` within `properties.stateDetails`.
 
 Here's the provided starting KQL query to list every exempted resource and its substate:
 
