@@ -139,7 +139,7 @@ I'd use the substate to prioritise a review with the resource owner, alongside t
 
 My final pick is Thomas Thornton's [From Azure Policy to APIM: Implementing Azure AI Guardrails](https://thomasthornton.cloud/from-azure-policy-to-apim-implementing-azure-ai-guardrails/).
 
-[![Azure-APIM-AI-Guardrails-Policy](https://github.com/thomast1906/thomasthorntoncloud-examples/blob/master/AZure-APIM-AI-guardrails-policy/drawings/two-layer-ai-governance-model.jpg)]([https://github.com/thomast1906/thomasthorntoncloud-examples/tree/master/AZure-APIM-AI-guardrails-policy](https://github.com/thomast1906/thomasthorntoncloud-examples/blob/master/AZure-APIM-AI-guardrails-policy/drawings/two-layer-ai-governance-model.jpg))
+[![Thomas Thornton's diagram of Azure Policy and API Management AI governance layers](https://raw.githubusercontent.com/thomast1906/thomasthorntoncloud-examples/master/AZure-APIM-AI-guardrails-policy/drawings/two-layer-ai-governance-model.jpg)](https://github.com/thomast1906/thomasthorntoncloud-examples/blob/master/AZure-APIM-AI-guardrails-policy/drawings/two-layer-ai-governance-model.jpg)
 
 The above image from Thomas sums it up perfectly showing the two governance layers regarding resource governance and runtime governance in an example architecture:
 
